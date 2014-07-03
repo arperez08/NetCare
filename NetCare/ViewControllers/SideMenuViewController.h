@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface SideMenuViewController : UIViewController{
-    
+    IBOutlet UIScrollView * scrollView;
 }
+@property (nonatomic, retain) IBOutlet UIScrollView * scrollView;
 @property (strong, nonatomic) UITabBarController *tabBarController;
 - (IBAction)btnHome:(id)sender;
 - (IBAction)btnMemberInfo:(id)sender;

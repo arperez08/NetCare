@@ -9,17 +9,12 @@
 #import "MemberInfoViewController.h"
 #import "PKRevealController.h"
 
-#define kImageHeight		191.0
-#define kImageWidth			315.0
-#define kTransitionDuration	0.75
-#define kTopPlacement		140.0
-
 @interface MemberInfoViewController ()
 
 @end
 
 @implementation MemberInfoViewController
-@synthesize containerView, mainView, flipToView, cardImageId;
+@synthesize imgCard, imgCardBack, cardContainer,btnFlip,viewEligibility;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -41,28 +36,49 @@
     {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:revealImagePortrait landscapeImagePhone:nil style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView:)];
     }
-    
-    CGRect frame = CGRectMake(round((self.view.bounds.size.width - kImageWidth) / 2.0),
-							  kTopPlacement, kImageWidth, kImageHeight);
-	self.containerView = [[UIView alloc] initWithFrame:frame];
-	[self.view addSubview:self.containerView];
+    [self.cardContainer addSubview:imgCardBack];
+}
 
-	// create the initial image view
-	frame = CGRectMake(0.0, 0.0, kImageWidth, kImageHeight);
-	self.mainView = [[UIImageView alloc] initWithFrame:frame];
-	self.mainView.image = [UIImage imageNamed:@"blankCard.jpg"];
-	[self.containerView addSubview:mainView];
-    
-    // create the alternate image view (to transition between)
-	CGRect imageFrame = CGRectMake(0.0, 0.0, kImageWidth, kImageHeight);
-	self.flipToView = [[UIImageView alloc] initWithFrame:imageFrame];
-	self.flipToView.image = [UIImage imageNamed:@"blankCard.jpg"];
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button addTarget:self action:@selector(btnFlipImage:) forControlEvents:UIControlEventTouchDown];
-    [button setTitle:@"" forState:UIControlStateNormal];
-    button.frame = CGRectMake(0.0, 0.0, kImageWidth, kImageHeight);
-    [self.containerView addSubview:button];
+- (IBAction)btnFlipImage:(id)sender {
+    [UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:0.75];
+	
+	[UIView setAnimationTransition:([self.imgCard superview] ?
+									UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromRight)
+						   forView:self.cardContainer cache:YES];
+	if ([imgCardBack superview]){
+		[self.imgCardBack removeFromSuperview];
+		[self.cardContainer addSubview:imgCard];
+	}
+	else{
+		[self.imgCard removeFromSuperview];
+		[self.cardContainer addSubview:imgCardBack];
+	}
+	[UIView commitAnimations];
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration;
+{
+    UIView *tabBar = [self.tabBarController.view.subviews objectAtIndex:1];
+    if(toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+    	[self.navigationController setNavigationBarHidden:TRUE animated:YES];
+        tabBar.hidden = TRUE;
+        self.cardContainer.frame = CGRectMake(20.0, 20.0, 530, 290);
+        self.imgCard.frame = CGRectMake(0.0, 0.0, 530, 290);
+        self.imgCardBack.frame = CGRectMake(0.0, 0.0, 530, 290);
+        self.btnFlip.frame = CGRectMake(0.0, 0.0, 530, 290);
+        viewEligibility.hidden = YES;
+    }
+    else
+    {
+    	[self.navigationController setNavigationBarHidden:FALSE animated:YES];
+        tabBar.hidden = FALSE;
+        self.cardContainer.frame = CGRectMake(20.0, 70.0, 280, 165);
+        self.imgCard.frame = CGRectMake(0.0, 0.0, 280, 165);
+        self.imgCardBack.frame = CGRectMake(0.0, 0.0, 280, 165);
+        self.btnFlip.frame = CGRectMake(0.0, 0.0, 280, 165);
+        viewEligibility.hidden = NO;
+    }
 }
 
 #pragma mark - Actions
@@ -84,23 +100,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)btnFlipImage:(id)sender {
-    [UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:kTransitionDuration];
-	
-	[UIView setAnimationTransition:([self.mainView superview] ?
-									UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromRight)
-						   forView:self.containerView cache:YES];
-	if ([flipToView superview])
-	{
-		[self.flipToView removeFromSuperview];
-		[self.containerView addSubview:mainView];
-	}
-	else
-	{
-		[self.mainView removeFromSuperview];
-		[self.containerView addSubview:flipToView];
-	}
-	[UIView commitAnimations];
-}
+
 @end

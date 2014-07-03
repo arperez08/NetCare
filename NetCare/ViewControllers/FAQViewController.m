@@ -180,7 +180,7 @@
     if(![button isSelected])
         [cellCount replaceObjectAtIndex:_index withObject:[NSNumber numberWithInt:0]];
     else
-        [cellCount replaceObjectAtIndex:_index withObject:[NSNumber numberWithInt:[[cellArray objectAtIndex:_index]count]]];
+        [cellCount replaceObjectAtIndex:_index withObject:[NSNumber numberWithLong:[[cellArray objectAtIndex:_index]count]]];
     [MIMtableView reloadData];
 }
 

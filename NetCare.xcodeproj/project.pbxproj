@@ -13,7 +13,6 @@
 		7CA90C45196385E400E9545A /* DependentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C43196385E400E9545A /* DependentInfoViewController.m */; };
 		7CA90C49196387F800E9545A /* dependents.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90C47196387F800E9545A /* dependents.png */; };
 		7CA90C4A196387F800E9545A /* member.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90C48196387F800E9545A /* member.png */; };
-		7CA90C4C1963A91C00E9545A /* blankCard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90C4B1963A91C00E9545A /* blankCard.jpg */; };
 		7CA90C781963C73A00E9545A /* BGbody.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90C6A1963C73A00E9545A /* BGbody.png */; };
 		7CA90C791963C73A00E9545A /* About Netcare.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90C6C1963C73A00E9545A /* About Netcare.png */; };
 		7CA90C7A1963C73A00E9545A /* Claims.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90C6D1963C73A00E9545A /* Claims.png */; };
@@ -115,6 +114,9 @@
 		7CBC772F1964EC23003987FA /* SideMenuiPadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC772E1964EC23003987FA /* SideMenuiPadViewController.xib */; };
 		7CBC77321964EC9B003987FA /* AboutViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77301964EC9B003987FA /* AboutViewController_iPad.xib */; };
 		7CBC77331964EC9B003987FA /* FAQViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77311964EC9B003987FA /* FAQViewController_iPad.xib */; };
+		7CBC7738196539DA003987FA /* sample01.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC7736196539DA003987FA /* sample01.png */; };
+		7CBC7739196539DA003987FA /* sample02.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC7737196539DA003987FA /* sample02.png */; };
+		7CBC773B1965507A003987FA /* bg_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC773A1965507A003987FA /* bg_text.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,7 +138,6 @@
 		7CA90C43196385E400E9545A /* DependentInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DependentInfoViewController.m; sourceTree = "<group>"; };
 		7CA90C47196387F800E9545A /* dependents.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dependents.png; sourceTree = "<group>"; };
 		7CA90C48196387F800E9545A /* member.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = member.png; sourceTree = "<group>"; };
-		7CA90C4B1963A91C00E9545A /* blankCard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blankCard.jpg; sourceTree = "<group>"; };
 		7CA90C6A1963C73A00E9545A /* BGbody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BGbody.png; sourceTree = "<group>"; };
 		7CA90C6C1963C73A00E9545A /* About Netcare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "About Netcare.png"; sourceTree = "<group>"; };
 		7CA90C6D1963C73A00E9545A /* Claims.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Claims.png; sourceTree = "<group>"; };
@@ -287,6 +288,9 @@
 		7CBC772E1964EC23003987FA /* SideMenuiPadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuiPadViewController.xib; sourceTree = "<group>"; };
 		7CBC77301964EC9B003987FA /* AboutViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController_iPad.xib; sourceTree = "<group>"; };
 		7CBC77311964EC9B003987FA /* FAQViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FAQViewController_iPad.xib; sourceTree = "<group>"; };
+		7CBC7736196539DA003987FA /* sample01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample01.png; sourceTree = "<group>"; };
+		7CBC7737196539DA003987FA /* sample02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample02.png; sourceTree = "<group>"; };
+		7CBC773A1965507A003987FA /* bg_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_text.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -598,13 +602,15 @@
 		7CB365DC19628223003E216F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7CBC773A1965507A003987FA /* bg_text.png */,
+				7CA90C6B1963C73A00E9545A /* Icons */,
+				7CBC7736196539DA003987FA /* sample01.png */,
+				7CBC7737196539DA003987FA /* sample02.png */,
 				7C8106011963F55000993A09 /* icon.png */,
 				7CA90CC31963EBF900E9545A /* background-tablecell.png */,
 				7CA90CBF1963EAA500E9545A /* disclosure.png */,
 				7CA90CC01963EAA500E9545A /* shrink.png */,
 				7CA90C6A1963C73A00E9545A /* BGbody.png */,
-				7CA90C6B1963C73A00E9545A /* Icons */,
-				7CA90C4B1963A91C00E9545A /* blankCard.jpg */,
 				7CA90C47196387F800E9545A /* dependents.png */,
 				7CA90C48196387F800E9545A /* member.png */,
 				7C8A4CE01962A6C50019880C /* bgMain.png */,
@@ -726,6 +732,7 @@
 				7CA90CC41963EBF900E9545A /* background-tablecell.png in Resources */,
 				7CBC77321964EC9B003987FA /* AboutViewController_iPad.xib in Resources */,
 				7CBC771B1964DED7003987FA /* FAQViewController.xib in Resources */,
+				7CBC773B1965507A003987FA /* bg_text.png in Resources */,
 				7C8106021963F55000993A09 /* icon.png in Resources */,
 				7CBC771C1964DED7003987FA /* FindProviderViewController.xib in Resources */,
 				7CA90C49196387F800E9545A /* dependents.png in Resources */,
@@ -735,7 +742,6 @@
 				7CA90C7E1963C73A00E9545A /* Find Provider.png in Resources */,
 				7CB3652F19627C28003E216F /* InfoPlist.strings in Resources */,
 				7CB365AD19627DEF003E216F /* blackArrow.png in Resources */,
-				7CA90C4C1963A91C00E9545A /* blankCard.jpg in Resources */,
 				7CA90CC21963EAA500E9545A /* shrink.png in Resources */,
 				7CB365B419627DEF003E216F /* whiteArrow@2x.png in Resources */,
 				7CA90C821963C73A00E9545A /* Member Info.png in Resources */,
@@ -754,6 +760,7 @@
 				7CBC77171964DED7003987FA /* DeductibleViewController.xib in Resources */,
 				7CBC77191964DED7003987FA /* EligibilityViewController.xib in Resources */,
 				7CB365E019628298003E216F /* ico_menu_sm.png in Resources */,
+				7CBC7739196539DA003987FA /* sample02.png in Resources */,
 				7CBC77181964DED7003987FA /* DependentInfoViewController.xib in Resources */,
 				7CB365AF19627DEF003E216F /* blueArrow.png in Resources */,
 				7CBC771D1964DED7003987FA /* GenSurveyViewController.xib in Resources */,
@@ -772,6 +779,7 @@
 				7CB3653719627C28003E216F /* Images.xcassets in Resources */,
 				7CBC771F1964DED7003987FA /* MainViewController.xib in Resources */,
 				7CB365E21962895E003E216F /* nclogo.png in Resources */,
+				7CBC7738196539DA003987FA /* sample01.png in Resources */,
 				7CBC77221964DED7003987FA /* SideMenuViewController.xib in Resources */,
 				7CA90C781963C73A00E9545A /* BGbody.png in Resources */,
 				7CBC77151964DED7003987FA /* AboutViewController.xib in Resources */,

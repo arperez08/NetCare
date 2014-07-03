@@ -9,14 +9,17 @@
 #import <UIKit/UIKit.h>
 
 @interface MemberInfoViewController : UIViewController{
-    UIView *containerView;
-	UIImageView *mainView;
-	UIImageView *flipToView;
+    IBOutlet UIImageView *imgCard;
+    IBOutlet UIImageView *imgCardBack;
+    IBOutlet UIView *cardContainer;
+    IBOutlet UIButton *btnFlip;
+    
 }
-@property (nonatomic, retain) NSString *cardImageId;
-@property (nonatomic, retain) UIView *containerView;
-@property (nonatomic, retain) UIImageView *mainView;
-@property (nonatomic, retain) UIImageView *flipToView;
+@property (nonatomic, retain) IBOutlet UIImageView *imgCard;
+@property (nonatomic, retain) IBOutlet UIImageView *imgCardBack;
+@property (nonatomic, retain) IBOutlet UIView *cardContainer;
+@property (nonatomic, retain) IBOutlet UIButton *btnFlip;
+@property (strong, nonatomic) IBOutlet UIView *viewEligibility;
 
 - (IBAction)btnFlipImage:(id)sender;
 

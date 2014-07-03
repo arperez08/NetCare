@@ -27,6 +27,7 @@
 @end
 
 @implementation SideMenuViewController
+@synthesize scrollView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +42,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 900);
 }
 
 - (void)didReceiveMemoryWarning
