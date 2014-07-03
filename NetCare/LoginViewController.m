@@ -10,6 +10,7 @@
 #import "PKRevealController.h"
 #import "MainViewController.h"
 #import "SideMenuViewController.h"
+#import "SideMenuiPadViewController.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 
@@ -147,24 +148,34 @@
 }
 
 - (IBAction)btnLogin:(id)sender {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        MainViewController *mvc = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:[NSBundle mainBundle]];
+        SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
+        
+        UINavigationController *navigateVC = [[UINavigationController alloc] initWithRootViewController:mvc];
+        UIViewController *leftViewController = smvc;
+        PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:navigateVC
+                                                                                        leftViewController:leftViewController
+                                                                                       rightViewController:nil
+                                                                                                   options:nil];
+        [self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController pushViewController:revealController animated:YES];
+    }
+    else {
+        MainViewController *mvc = [[MainViewController alloc] initWithNibName:@"MainViewController_iPad" bundle:[NSBundle mainBundle]];
+        SideMenuiPadViewController *smvc = [[SideMenuiPadViewController alloc] init];
+        
+        UINavigationController *navigateVC = [[UINavigationController alloc] initWithRootViewController:mvc];
+        UIViewController *leftViewController = smvc;
+        PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:navigateVC
+                                                                                        leftViewController:leftViewController
+                                                                                       rightViewController:nil
+                                                                                                   options:nil];
+        [self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController pushViewController:revealController animated:YES];
+    }
     
-    
-    
-    
-    
-    MainViewController *mvc = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:[NSBundle mainBundle]];
-    SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
-    
-    UINavigationController *navigateVC = [[UINavigationController alloc] initWithRootViewController:mvc];
-    UIViewController *leftViewController = smvc;
-    PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:navigateVC
-                                                                                    leftViewController:leftViewController
-                                                                                   rightViewController:nil
-                                                                                               options:nil];
-    
-    
-    [self.navigationController setNavigationBarHidden:YES];
-    [self.navigationController pushViewController:revealController animated:YES];
+
     
 }
 @end

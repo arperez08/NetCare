@@ -61,7 +61,8 @@
     {
         NSMutableArray *_cellArray=[[NSMutableArray alloc]initWithObjects:[cellArrayValue objectAtIndex:i],nil];
         [cellArray addObject:_cellArray];
-        [cellCount addObject:[NSNumber numberWithInt:[_cellArray count]]];
+        //[cellCount addObject:[NSNumber numberWithInt:[_cellArray count]]];
+        [cellCount addObject:[NSNumber numberWithLong:[_cellArray count]]];
         [cellCount replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:0]];
     }
     [MIMtableView reloadData];

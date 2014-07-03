@@ -31,18 +31,8 @@
 		7CA90C8D1963D10400E9545A /* EligibilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C8B1963D10400E9545A /* EligibilityViewController.m */; };
 		7CA90C921963D11000E9545A /* ClaimsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C901963D11000E9545A /* ClaimsViewController.m */; };
 		7CA90C971963D12800E9545A /* DeductibleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C951963D12800E9545A /* DeductibleViewController.m */; };
-		7CA90C9D1963D13900E9545A /* EventsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90C9B1963D13900E9545A /* EventsViewController.xib */; };
 		7CA90CA11963D14E00E9545A /* GenSurveyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C9F1963D14E00E9545A /* GenSurveyViewController.m */; };
 		7CA90CA61963D15C00E9545A /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90CA41963D15C00E9545A /* FAQViewController.m */; };
-		7CA90CB11963D19800E9545A /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90CA81963D19800E9545A /* AboutViewController.xib */; };
-		7CA90CB21963D19800E9545A /* ClaimsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90CA91963D19800E9545A /* ClaimsViewController.xib */; };
-		7CA90CB31963D19800E9545A /* DeductibleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90CAA1963D19800E9545A /* DeductibleViewController.xib */; };
-		7CA90CB41963D19800E9545A /* DependentInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90CAB1963D19800E9545A /* DependentInfoViewController.xib */; };
-		7CA90CB51963D19800E9545A /* EligibilityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90CAC1963D19800E9545A /* EligibilityViewController.xib */; };
-		7CA90CB61963D19800E9545A /* FAQViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90CAD1963D19800E9545A /* FAQViewController.xib */; };
-		7CA90CB71963D19800E9545A /* GenSurveyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90CAE1963D19800E9545A /* GenSurveyViewController.xib */; };
-		7CA90CB81963D19800E9545A /* MemberInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90CAF1963D19800E9545A /* MemberInfoViewController.xib */; };
-		7CA90CB91963D19800E9545A /* ProductListingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90CB01963D19800E9545A /* ProductListingViewController.xib */; };
 		7CA90CBC1963D19E00E9545A /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90CBB1963D19E00E9545A /* EventsViewController.m */; };
 		7CA90CBE1963E45100E9545A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90CBD1963E45100E9545A /* Default-568h@2x.png */; };
 		7CA90CC11963EAA500E9545A /* disclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90CBF1963EAA500E9545A /* disclosure.png */; };
@@ -97,7 +87,6 @@
 		7CB365C619627DEF003E216F /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB365A319627DEF003E216F /* SBJsonWriter.m */; };
 		7CB365C819627E08003E216F /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB365C719627E08003E216F /* libz.1.1.3.dylib */; };
 		7CB365CA19627E20003E216F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB365C919627E20003E216F /* libz.dylib */; };
-		7CB365D019627ED1003E216F /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB365CC19627ED1003E216F /* MainViewController.xib */; };
 		7CB365D119627ED1003E216F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB365CF19627ED1003E216F /* MainViewController.m */; };
 		7CB365D519627EFF003E216F /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB365D319627EFF003E216F /* SideMenuViewController.m */; };
 		7CB365DA19627F37003E216F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB365D819627F37003E216F /* LoginViewController.m */; };
@@ -105,10 +94,27 @@
 		7CB365E019628298003E216F /* ico_menu_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CB365DF19628298003E216F /* ico_menu_sm.png */; };
 		7CB365E21962895E003E216F /* nclogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CB365E11962895E003E216F /* nclogo.png */; };
 		7CB365E619628A98003E216F /* FindProviderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB365E419628A98003E216F /* FindProviderViewController.m */; };
-		7CB365EB19628FFC003E216F /* FindProviderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB365E819628FFC003E216F /* FindProviderViewController.xib */; };
-		7CB365EC19628FFC003E216F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB365E919628FFC003E216F /* LoginViewController.xib */; };
-		7CB365ED19628FFC003E216F /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB365EA19628FFC003E216F /* SideMenuViewController.xib */; };
 		7CB365F1196290E3003E216F /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB365EF196290E3003E216F /* AboutViewController.m */; };
+		7CBC77151964DED7003987FA /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77071964DED7003987FA /* AboutViewController.xib */; };
+		7CBC77161964DED7003987FA /* ClaimsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77081964DED7003987FA /* ClaimsViewController.xib */; };
+		7CBC77171964DED7003987FA /* DeductibleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77091964DED7003987FA /* DeductibleViewController.xib */; };
+		7CBC77181964DED7003987FA /* DependentInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC770A1964DED7003987FA /* DependentInfoViewController.xib */; };
+		7CBC77191964DED7003987FA /* EligibilityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC770B1964DED7003987FA /* EligibilityViewController.xib */; };
+		7CBC771A1964DED7003987FA /* EventsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC770C1964DED7003987FA /* EventsViewController.xib */; };
+		7CBC771B1964DED7003987FA /* FAQViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC770D1964DED7003987FA /* FAQViewController.xib */; };
+		7CBC771C1964DED7003987FA /* FindProviderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC770E1964DED7003987FA /* FindProviderViewController.xib */; };
+		7CBC771D1964DED7003987FA /* GenSurveyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC770F1964DED7003987FA /* GenSurveyViewController.xib */; };
+		7CBC771E1964DED7003987FA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77101964DED7003987FA /* LoginViewController.xib */; };
+		7CBC771F1964DED7003987FA /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77111964DED7003987FA /* MainViewController.xib */; };
+		7CBC77201964DED7003987FA /* MemberInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77121964DED7003987FA /* MemberInfoViewController.xib */; };
+		7CBC77211964DED7003987FA /* ProductListingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77131964DED7003987FA /* ProductListingViewController.xib */; };
+		7CBC77221964DED7003987FA /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77141964DED7003987FA /* SideMenuViewController.xib */; };
+		7CBC77261964E00A003987FA /* LoginViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77251964E00A003987FA /* LoginViewController_iPad.xib */; };
+		7CBC77281964E144003987FA /* MainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77271964E144003987FA /* MainViewController_iPad.xib */; };
+		7CBC772C1964E704003987FA /* SideMenuiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CBC772A1964E704003987FA /* SideMenuiPadViewController.m */; };
+		7CBC772F1964EC23003987FA /* SideMenuiPadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC772E1964EC23003987FA /* SideMenuiPadViewController.xib */; };
+		7CBC77321964EC9B003987FA /* AboutViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77301964EC9B003987FA /* AboutViewController_iPad.xib */; };
+		7CBC77331964EC9B003987FA /* FAQViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77311964EC9B003987FA /* FAQViewController_iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,20 +158,10 @@
 		7CA90C901963D11000E9545A /* ClaimsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClaimsViewController.m; sourceTree = "<group>"; };
 		7CA90C941963D12800E9545A /* DeductibleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeductibleViewController.h; sourceTree = "<group>"; };
 		7CA90C951963D12800E9545A /* DeductibleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeductibleViewController.m; sourceTree = "<group>"; };
-		7CA90C9B1963D13900E9545A /* EventsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsViewController.xib; sourceTree = "<group>"; };
 		7CA90C9E1963D14E00E9545A /* GenSurveyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenSurveyViewController.h; sourceTree = "<group>"; };
 		7CA90C9F1963D14E00E9545A /* GenSurveyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenSurveyViewController.m; sourceTree = "<group>"; };
 		7CA90CA31963D15C00E9545A /* FAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
 		7CA90CA41963D15C00E9545A /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
-		7CA90CA81963D19800E9545A /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
-		7CA90CA91963D19800E9545A /* ClaimsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClaimsViewController.xib; sourceTree = "<group>"; };
-		7CA90CAA1963D19800E9545A /* DeductibleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeductibleViewController.xib; sourceTree = "<group>"; };
-		7CA90CAB1963D19800E9545A /* DependentInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DependentInfoViewController.xib; sourceTree = "<group>"; };
-		7CA90CAC1963D19800E9545A /* EligibilityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EligibilityViewController.xib; sourceTree = "<group>"; };
-		7CA90CAD1963D19800E9545A /* FAQViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FAQViewController.xib; sourceTree = "<group>"; };
-		7CA90CAE1963D19800E9545A /* GenSurveyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GenSurveyViewController.xib; sourceTree = "<group>"; };
-		7CA90CAF1963D19800E9545A /* MemberInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberInfoViewController.xib; sourceTree = "<group>"; };
-		7CA90CB01963D19800E9545A /* ProductListingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductListingViewController.xib; sourceTree = "<group>"; };
 		7CA90CBA1963D19E00E9545A /* EventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsViewController.h; sourceTree = "<group>"; };
 		7CA90CBB1963D19E00E9545A /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsViewController.m; sourceTree = "<group>"; };
 		7CA90CBD1963E45100E9545A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -257,7 +253,6 @@
 		7CB365A319627DEF003E216F /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		7CB365C719627E08003E216F /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		7CB365C919627E20003E216F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		7CB365CC19627ED1003E216F /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		7CB365CE19627ED1003E216F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		7CB365CF19627ED1003E216F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		7CB365D219627EFF003E216F /* SideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
@@ -269,11 +264,29 @@
 		7CB365E11962895E003E216F /* nclogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nclogo.png; sourceTree = "<group>"; };
 		7CB365E319628A98003E216F /* FindProviderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindProviderViewController.h; sourceTree = "<group>"; };
 		7CB365E419628A98003E216F /* FindProviderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindProviderViewController.m; sourceTree = "<group>"; };
-		7CB365E819628FFC003E216F /* FindProviderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindProviderViewController.xib; sourceTree = "<group>"; };
-		7CB365E919628FFC003E216F /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		7CB365EA19628FFC003E216F /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		7CB365EE196290E3003E216F /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		7CB365EF196290E3003E216F /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		7CBC77071964DED7003987FA /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		7CBC77081964DED7003987FA /* ClaimsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClaimsViewController.xib; sourceTree = "<group>"; };
+		7CBC77091964DED7003987FA /* DeductibleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeductibleViewController.xib; sourceTree = "<group>"; };
+		7CBC770A1964DED7003987FA /* DependentInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DependentInfoViewController.xib; sourceTree = "<group>"; };
+		7CBC770B1964DED7003987FA /* EligibilityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EligibilityViewController.xib; sourceTree = "<group>"; };
+		7CBC770C1964DED7003987FA /* EventsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsViewController.xib; sourceTree = "<group>"; };
+		7CBC770D1964DED7003987FA /* FAQViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FAQViewController.xib; sourceTree = "<group>"; };
+		7CBC770E1964DED7003987FA /* FindProviderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindProviderViewController.xib; sourceTree = "<group>"; };
+		7CBC770F1964DED7003987FA /* GenSurveyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GenSurveyViewController.xib; sourceTree = "<group>"; };
+		7CBC77101964DED7003987FA /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		7CBC77111964DED7003987FA /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		7CBC77121964DED7003987FA /* MemberInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberInfoViewController.xib; sourceTree = "<group>"; };
+		7CBC77131964DED7003987FA /* ProductListingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductListingViewController.xib; sourceTree = "<group>"; };
+		7CBC77141964DED7003987FA /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
+		7CBC77251964E00A003987FA /* LoginViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController_iPad.xib; sourceTree = "<group>"; };
+		7CBC77271964E144003987FA /* MainViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController_iPad.xib; sourceTree = "<group>"; };
+		7CBC77291964E704003987FA /* SideMenuiPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuiPadViewController.h; sourceTree = "<group>"; };
+		7CBC772A1964E704003987FA /* SideMenuiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuiPadViewController.m; sourceTree = "<group>"; };
+		7CBC772E1964EC23003987FA /* SideMenuiPadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuiPadViewController.xib; sourceTree = "<group>"; };
+		7CBC77301964EC9B003987FA /* AboutViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController_iPad.xib; sourceTree = "<group>"; };
+		7CBC77311964EC9B003987FA /* FAQViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FAQViewController_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -539,20 +552,8 @@
 		7CB365CB19627ED1003E216F /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
-				7CA90CA81963D19800E9545A /* AboutViewController.xib */,
-				7CA90CA91963D19800E9545A /* ClaimsViewController.xib */,
-				7CA90CAA1963D19800E9545A /* DeductibleViewController.xib */,
-				7CA90CAB1963D19800E9545A /* DependentInfoViewController.xib */,
-				7CA90CAC1963D19800E9545A /* EligibilityViewController.xib */,
-				7CA90C9B1963D13900E9545A /* EventsViewController.xib */,
-				7CA90CAD1963D19800E9545A /* FAQViewController.xib */,
-				7CB365E819628FFC003E216F /* FindProviderViewController.xib */,
-				7CA90CAE1963D19800E9545A /* GenSurveyViewController.xib */,
-				7CB365E919628FFC003E216F /* LoginViewController.xib */,
-				7CB365CC19627ED1003E216F /* MainViewController.xib */,
-				7CA90CAF1963D19800E9545A /* MemberInfoViewController.xib */,
-				7CA90CB01963D19800E9545A /* ProductListingViewController.xib */,
-				7CB365EA19628FFC003E216F /* SideMenuViewController.xib */,
+				7CBC77051964DED7003987FA /* iPad */,
+				7CBC77061964DED7003987FA /* iPhone */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -586,6 +587,8 @@
 				7CA90C3C196382E900E9545A /* MemberInfoViewController.m */,
 				7CA90C851963CDD400E9545A /* ProductListingViewController.h */,
 				7CA90C861963CDD400E9545A /* ProductListingViewController.m */,
+				7CBC77291964E704003987FA /* SideMenuiPadViewController.h */,
+				7CBC772A1964E704003987FA /* SideMenuiPadViewController.m */,
 				7CB365D219627EFF003E216F /* SideMenuViewController.h */,
 				7CB365D319627EFF003E216F /* SideMenuViewController.m */,
 			);
@@ -610,6 +613,39 @@
 				7CB365DD19628223003E216F /* ico_menu.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		7CBC77051964DED7003987FA /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				7CBC77301964EC9B003987FA /* AboutViewController_iPad.xib */,
+				7CBC77311964EC9B003987FA /* FAQViewController_iPad.xib */,
+				7CBC772E1964EC23003987FA /* SideMenuiPadViewController.xib */,
+				7CBC77271964E144003987FA /* MainViewController_iPad.xib */,
+				7CBC77251964E00A003987FA /* LoginViewController_iPad.xib */,
+			);
+			path = iPad;
+			sourceTree = "<group>";
+		};
+		7CBC77061964DED7003987FA /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				7CBC77071964DED7003987FA /* AboutViewController.xib */,
+				7CBC77081964DED7003987FA /* ClaimsViewController.xib */,
+				7CBC77091964DED7003987FA /* DeductibleViewController.xib */,
+				7CBC770A1964DED7003987FA /* DependentInfoViewController.xib */,
+				7CBC770B1964DED7003987FA /* EligibilityViewController.xib */,
+				7CBC770C1964DED7003987FA /* EventsViewController.xib */,
+				7CBC770D1964DED7003987FA /* FAQViewController.xib */,
+				7CBC770E1964DED7003987FA /* FindProviderViewController.xib */,
+				7CBC770F1964DED7003987FA /* GenSurveyViewController.xib */,
+				7CBC77101964DED7003987FA /* LoginViewController.xib */,
+				7CBC77111964DED7003987FA /* MainViewController.xib */,
+				7CBC77121964DED7003987FA /* MemberInfoViewController.xib */,
+				7CBC77131964DED7003987FA /* ProductListingViewController.xib */,
+				7CBC77141964DED7003987FA /* SideMenuViewController.xib */,
+			);
+			path = iPhone;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -688,54 +724,59 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CA90CC41963EBF900E9545A /* background-tablecell.png in Resources */,
+				7CBC77321964EC9B003987FA /* AboutViewController_iPad.xib in Resources */,
+				7CBC771B1964DED7003987FA /* FAQViewController.xib in Resources */,
 				7C8106021963F55000993A09 /* icon.png in Resources */,
-				7CA90C9D1963D13900E9545A /* EventsViewController.xib in Resources */,
+				7CBC771C1964DED7003987FA /* FindProviderViewController.xib in Resources */,
 				7CA90C49196387F800E9545A /* dependents.png in Resources */,
 				7CA90C801963C73A00E9545A /* home.png in Resources */,
+				7CBC772F1964EC23003987FA /* SideMenuiPadViewController.xib in Resources */,
+				7CBC77211964DED7003987FA /* ProductListingViewController.xib in Resources */,
 				7CA90C7E1963C73A00E9545A /* Find Provider.png in Resources */,
-				7CB365EC19628FFC003E216F /* LoginViewController.xib in Resources */,
 				7CB3652F19627C28003E216F /* InfoPlist.strings in Resources */,
 				7CB365AD19627DEF003E216F /* blackArrow.png in Resources */,
-				7CB365EB19628FFC003E216F /* FindProviderViewController.xib in Resources */,
 				7CA90C4C1963A91C00E9545A /* blankCard.jpg in Resources */,
-				7CA90CB61963D19800E9545A /* FAQViewController.xib in Resources */,
 				7CA90CC21963EAA500E9545A /* shrink.png in Resources */,
 				7CB365B419627DEF003E216F /* whiteArrow@2x.png in Resources */,
 				7CA90C821963C73A00E9545A /* Member Info.png in Resources */,
+				7CBC77261964E00A003987FA /* LoginViewController_iPad.xib in Resources */,
 				7CA90C7F1963C73A00E9545A /* Gen Survey.png in Resources */,
 				7CB365B219627DEF003E216F /* grayArrow@2x.png in Resources */,
 				7CA90C831963C73A00E9545A /* Product Listing.png in Resources */,
 				7CB365DE19628223003E216F /* ico_menu.png in Resources */,
+				7CBC77201964DED7003987FA /* MemberInfoViewController.xib in Resources */,
 				7CA90C7B1963C73A00E9545A /* Deductible.png in Resources */,
+				7CBC771A1964DED7003987FA /* EventsViewController.xib in Resources */,
 				7CB365B019627DEF003E216F /* blueArrow@2x.png in Resources */,
+				7CBC77331964EC9B003987FA /* FAQViewController_iPad.xib in Resources */,
 				7CA90C7A1963C73A00E9545A /* Claims.png in Resources */,
 				7CA90C7D1963C73A00E9545A /* FAQ's.png in Resources */,
-				7CA90CB31963D19800E9545A /* DeductibleViewController.xib in Resources */,
-				7CA90CB71963D19800E9545A /* GenSurveyViewController.xib in Resources */,
-				7CA90CB81963D19800E9545A /* MemberInfoViewController.xib in Resources */,
-				7CA90CB51963D19800E9545A /* EligibilityViewController.xib in Resources */,
-				7CB365ED19628FFC003E216F /* SideMenuViewController.xib in Resources */,
-				7CA90CB41963D19800E9545A /* DependentInfoViewController.xib in Resources */,
+				7CBC77171964DED7003987FA /* DeductibleViewController.xib in Resources */,
+				7CBC77191964DED7003987FA /* EligibilityViewController.xib in Resources */,
 				7CB365E019628298003E216F /* ico_menu_sm.png in Resources */,
-				7CB365D019627ED1003E216F /* MainViewController.xib in Resources */,
+				7CBC77181964DED7003987FA /* DependentInfoViewController.xib in Resources */,
 				7CB365AF19627DEF003E216F /* blueArrow.png in Resources */,
+				7CBC771D1964DED7003987FA /* GenSurveyViewController.xib in Resources */,
 				7C8A4CE11962A6C50019880C /* bgMain.png in Resources */,
-				7CA90CB21963D19800E9545A /* ClaimsViewController.xib in Resources */,
 				7CB365AE19627DEF003E216F /* blackArrow@2x.png in Resources */,
 				7CA90C7C1963C73A00E9545A /* Eligibility Info.png in Resources */,
+				7CBC77161964DED7003987FA /* ClaimsViewController.xib in Resources */,
 				7CB365B319627DEF003E216F /* whiteArrow.png in Resources */,
 				7CA90CC11963EAA500E9545A /* disclosure.png in Resources */,
 				7CA90C791963C73A00E9545A /* About Netcare.png in Resources */,
+				7CBC771E1964DED7003987FA /* LoginViewController.xib in Resources */,
 				7CA90C811963C73A00E9545A /* Logout.png in Resources */,
 				7CB365B119627DEF003E216F /* grayArrow.png in Resources */,
 				7CA90C841963C73A00E9545A /* Upcoming Events.png in Resources */,
 				7CA90CBE1963E45100E9545A /* Default-568h@2x.png in Resources */,
 				7CB3653719627C28003E216F /* Images.xcassets in Resources */,
+				7CBC771F1964DED7003987FA /* MainViewController.xib in Resources */,
 				7CB365E21962895E003E216F /* nclogo.png in Resources */,
+				7CBC77221964DED7003987FA /* SideMenuViewController.xib in Resources */,
 				7CA90C781963C73A00E9545A /* BGbody.png in Resources */,
-				7CA90CB11963D19800E9545A /* AboutViewController.xib in Resources */,
-				7CA90CB91963D19800E9545A /* ProductListingViewController.xib in Resources */,
+				7CBC77151964DED7003987FA /* AboutViewController.xib in Resources */,
 				7CA90C4A196387F800E9545A /* member.png in Resources */,
+				7CBC77281964E144003987FA /* MainViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,6 +805,7 @@
 				7CB365BF19627DEF003E216F /* SBJsonStreamParserAdapter.m in Sources */,
 				7CB365B619627DEF003E216F /* MyAnnotation.m in Sources */,
 				7CB365DA19627F37003E216F /* LoginViewController.m in Sources */,
+				7CBC772C1964E704003987FA /* SideMenuiPadViewController.m in Sources */,
 				7CB365D519627EFF003E216F /* SideMenuViewController.m in Sources */,
 				7CA90C45196385E400E9545A /* DependentInfoViewController.m in Sources */,
 				7CA90C3E196382E900E9545A /* MemberInfoViewController.m in Sources */,
@@ -918,9 +960,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetCare/NetCare-Prefix.pch";
 				INFOPLIST_FILE = "NetCare/NetCare-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "26EF201B-8B8A-4FD8-A576-B5ECB533CF2A";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -933,9 +976,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetCare/NetCare-Prefix.pch";
 				INFOPLIST_FILE = "NetCare/NetCare-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "26EF201B-8B8A-4FD8-A576-B5ECB533CF2A";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
