@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     UIImage *revealImagePortrait = [UIImage imageNamed:@"ico_menu_sm"];
     if (self.navigationController.revealController.type & PKRevealControllerTypeLeft)
@@ -53,6 +54,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)btnShowMenu:(id)sender {
+    [self showLeftView:sender];
 }
 
 @end

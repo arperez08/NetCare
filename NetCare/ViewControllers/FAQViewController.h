@@ -16,5 +16,6 @@
     NSMutableArray *cellCount;
 }
 @property(nonatomic,retain)IBOutlet UITableView *MIMtableView;
+- (IBAction)btnShowMenu:(id)sender;
 
 @end

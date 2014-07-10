@@ -15,6 +15,8 @@
 
 @implementation MemberInfoViewController
 @synthesize imgCard, imgCardBack, cardContainer,btnFlip,viewEligibility;
+@synthesize btnMenu, lblTitle, imgTopBar;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -30,6 +32,7 @@
     // Do any additional setup after loading the view from its nib.
     
     self.title = @"Member Information";
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     
     UIImage *revealImagePortrait = [UIImage imageNamed:@"ico_menu_sm"];
     if (self.navigationController.revealController.type & PKRevealControllerTypeLeft)
@@ -57,27 +60,54 @@
 	[UIView commitAnimations];
 }
 
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return YES;
+}
+
+
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration;
 {
     UIView *tabBar = [self.tabBarController.view.subviews objectAtIndex:1];
     if(toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
-    	[self.navigationController setNavigationBarHidden:TRUE animated:YES];
-        tabBar.hidden = TRUE;
-        self.cardContainer.frame = CGRectMake(20.0, 20.0, 530, 290);
-        self.imgCard.frame = CGRectMake(0.0, 0.0, 530, 290);
-        self.imgCardBack.frame = CGRectMake(0.0, 0.0, 530, 290);
-        self.btnFlip.frame = CGRectMake(0.0, 0.0, 530, 290);
-        viewEligibility.hidden = YES;
+         tabBar.hidden = TRUE;
+        if ([[UIScreen mainScreen] bounds].size.height == 568) {            // iPhone 5/5S
+            self.cardContainer.frame = CGRectMake(20.0, 20.0, 530, 290);
+            self.imgCard.frame = CGRectMake(0.0, 0.0, 530, 290);
+            self.imgCardBack.frame = CGRectMake(0.0, 0.0, 530, 290);
+            self.btnFlip.frame = CGRectMake(0.0, 0.0, 530, 290);
+            viewEligibility.hidden = YES;
+            btnMenu.hidden = YES;
+            lblTitle.hidden = YES;
+            imgTopBar.hidden = YES;
+        }
+        else{                                                               // iPhone 4/4S
+            self.cardContainer.frame = CGRectMake(20.0, 20.0, 450, 290);
+            self.imgCard.frame = CGRectMake(0.0, 0.0, 450, 290);
+            self.imgCardBack.frame = CGRectMake(0.0, 0.0, 450, 290);
+            self.btnFlip.frame = CGRectMake(0.0, 0.0, 450, 290);
+            viewEligibility.hidden = YES;
+            btnMenu.hidden = YES;
+            lblTitle.hidden = YES;
+            imgTopBar.hidden = YES;
+        }
     }
     else
     {
-    	[self.navigationController setNavigationBarHidden:FALSE animated:YES];
+        // Portrairt mode
         tabBar.hidden = FALSE;
-        self.cardContainer.frame = CGRectMake(20.0, 70.0, 280, 165);
+        self.cardContainer.frame = CGRectMake(20.0, 78.0, 280, 165);
         self.imgCard.frame = CGRectMake(0.0, 0.0, 280, 165);
         self.imgCardBack.frame = CGRectMake(0.0, 0.0, 280, 165);
         self.btnFlip.frame = CGRectMake(0.0, 0.0, 280, 165);
         viewEligibility.hidden = NO;
+        btnMenu.hidden = NO;
+        lblTitle.hidden = NO;
+        imgTopBar.hidden = NO;
     }
 }
 
@@ -100,5 +130,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)btnShowMenu:(id)sender {
+    [self showLeftView:sender];
+}
 
 @end

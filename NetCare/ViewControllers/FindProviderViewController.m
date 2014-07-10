@@ -31,6 +31,7 @@
     // Do any additional setup after loading the view from its nib.
     
     self.title = @"Find Provider";
+    [self.navigationController setNavigationBarHidden:YES];
     UIImage *revealImagePortrait = [UIImage imageNamed:@"ico_menu_sm"];
     if (self.navigationController.revealController.type & PKRevealControllerTypeLeft)
     {
@@ -38,8 +39,6 @@
     }
     
     mapView.showsUserLocation = YES;
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -122,6 +121,7 @@
 }
 
 
-
-
+- (IBAction)btnShowMenu:(id)sender {
+    [self showLeftView:sender];
+}
 @end

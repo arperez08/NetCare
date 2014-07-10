@@ -30,6 +30,7 @@
     // Do any additional setup after loading the view from its nib.
     
     self.title = @"Eligibility Information";
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     UIImage *revealImagePortrait = [UIImage imageNamed:@"ico_menu_sm"];
     if (self.navigationController.revealController.type & PKRevealControllerTypeLeft)

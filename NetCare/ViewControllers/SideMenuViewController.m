@@ -41,9 +41,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 900);
+    // Do any additional setup after loading the view from its nib.
+    [self.navigationController setNavigationBarHidden:YES];
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 800);
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,14 +68,32 @@
 }
 
 - (IBAction)btnAbout:(id)sender {
-    AboutViewController *hvc = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:[NSBundle mainBundle]];
+    AboutViewController *avc = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:[NSBundle mainBundle]];
+    GenSurveyViewController *gsvc = [[GenSurveyViewController alloc] initWithNibName:@"GenSurveyViewController" bundle:[NSBundle mainBundle]];
+    FAQViewController *faqvc = [[FAQViewController alloc] initWithNibName:@"FAQViewController" bundle:[NSBundle mainBundle]];
+    
+    avc.title = @"About NetCare";
+    avc.tabBarItem.image = [UIImage imageNamed:@"About Netcare"];
+    gsvc.title = @"Contact Us";
+    gsvc.tabBarItem.image = [UIImage imageNamed:@"Gen Survey"];
+    faqvc.title = @"FAQ's";
+    faqvc.tabBarItem.image = [UIImage imageNamed:@"FAQ's"];
+    
+    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.viewControllers = @[avc, gsvc, faqvc];
     SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
-    UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
+    UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:self.tabBarController];
+    //UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
     UIViewController *leftViewController = smvc;
     PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:homeVC
                                                                                     leftViewController:leftViewController
                                                                                    rightViewController:nil
                                                                                                options:nil];
+    
+    //UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topbar.png"]];
+    //[self.tabBarController.tabBar insertSubview:imageView atIndex:0];
+    
+    [self.tabBarController.navigationController setNavigationBarHidden:YES];
     [self.navigationController pushViewController:revealController animated:YES];
 }
 
@@ -94,6 +114,12 @@
                                                                                     leftViewController:leftViewController
                                                                                    rightViewController:nil
                                                                                                options:nil];
+    
+    
+    [revealController shouldAutorotate];
+    
+    //[self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self.tabBarController.navigationController setNavigationBarHidden:YES];
     [self.navigationController pushViewController:revealController animated:YES];
 }
 
@@ -195,6 +221,7 @@
                                                                                     leftViewController:leftViewController
                                                                                    rightViewController:nil
                                                                                                options:nil];
+    [self.navigationController setNavigationBarHidden:YES];
     [self.navigationController pushViewController:revealController animated:YES];
 }
 

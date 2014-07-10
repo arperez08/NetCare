@@ -13,6 +13,9 @@
     IBOutlet UIImageView *imgCardBack;
     IBOutlet UIView *cardContainer;
     IBOutlet UIButton *btnFlip;
+    IBOutlet UIButton *btnMenu;
+    IBOutlet UILabel *lblTitle;
+    IBOutlet UIImageView *imgTopBar;
     
 }
 @property (nonatomic, retain) IBOutlet UIImageView *imgCard;
@@ -20,8 +23,11 @@
 @property (nonatomic, retain) IBOutlet UIView *cardContainer;
 @property (nonatomic, retain) IBOutlet UIButton *btnFlip;
 @property (strong, nonatomic) IBOutlet UIView *viewEligibility;
+@property (strong, nonatomic) IBOutlet UIButton *btnMenu;
+@property (strong, nonatomic) IBOutlet UILabel *lblTitle;
+@property (strong, nonatomic) IBOutlet UIImageView *imgTopBar;
 
 - (IBAction)btnFlipImage:(id)sender;
-
+- (IBAction)btnShowMenu:(id)sender;
 
 @end

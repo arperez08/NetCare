@@ -31,6 +31,7 @@
     // Do any additional setup after loading the view from its nib.
     
     self.title = @"FAQ's";
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     UIImage *revealImagePortrait = [UIImage imageNamed:@"ico_menu_sm"];
     if (self.navigationController.revealController.type & PKRevealControllerTypeLeft)
@@ -188,7 +189,9 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-
+- (IBAction)btnShowMenu:(id)sender {
+    [self showLeftView:sender];
+}
 
 
 @end

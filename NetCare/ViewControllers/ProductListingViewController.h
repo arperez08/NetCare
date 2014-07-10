@@ -13,4 +13,5 @@
     
 }
 @property (nonatomic, strong) UIDocumentInteractionController *controller;
+- (IBAction)btnShowMenu:(id)sender;
 @end

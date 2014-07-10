@@ -11,6 +11,11 @@
 @interface MainViewController : UIViewController{
 
 }
+@property (strong, nonatomic) UITabBarController *tabBarController;
+- (IBAction)btnShowMenu:(id)sender;
+- (IBAction)btnFindProvider:(id)sender;
+- (IBAction)btnClaimUpdates:(id)sender;
+- (IBAction)bthMemberInfo:(id)sender;
 
 
 @end

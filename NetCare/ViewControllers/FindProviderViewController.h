@@ -15,5 +15,7 @@
     IBOutlet MKMapView* mapView;
 }
 
+- (IBAction)btnShowMenu:(id)sender;
+
 @property(nonatomic,retain)	IBOutlet MKMapView* mapView;
 @end

@@ -29,6 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"Upcoming Events";
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     UIImage *revealImagePortrait = [UIImage imageNamed:@"ico_menu_sm"];
     if (self.navigationController.revealController.type & PKRevealControllerTypeLeft)
@@ -56,5 +57,8 @@
     }
 }
 
+- (IBAction)btnShowMenu:(id)sender {
+    [self showLeftView:sender];
+}
 
 @end

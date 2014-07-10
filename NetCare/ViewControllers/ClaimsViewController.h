@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ClaimsViewController : UIViewController
-
+{
+    
+}
+- (IBAction)btnShowMenu:(id)sender;
 @end

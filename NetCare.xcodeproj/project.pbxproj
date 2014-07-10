@@ -7,13 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C0DA24F196E614200E0E665 /* BGpng in Resources */ = {isa = PBXBuildFile; fileRef = 7C0DA245196E614200E0E665 /* BGpng */; };
+		7C0DA251196E614200E0E665 /* Netcare logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0DA248196E614200E0E665 /* Netcare logo.png */; };
+		7C0DA252196E614200E0E665 /* signin bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0DA249196E614200E0E665 /* signin bar.png */; };
+		7C0DA253196E614200E0E665 /* check box.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0DA24B196E614200E0E665 /* check box.png */; };
+		7C0DA254196E614200E0E665 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0DA24C196E614200E0E665 /* check.png */; };
+		7C0DA255196E614200E0E665 /* nav bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0DA24D196E614200E0E665 /* nav bar.png */; };
+		7C0DA256196E614200E0E665 /* registration box.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0DA24E196E614200E0E665 /* registration box.png */; };
+		7C0DA25A196E675F00E0E665 /* loginbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0DA259196E675F00E0E665 /* loginbg.png */; };
+		7C0DA25C196E68D300E0E665 /* menuBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0DA25B196E68D300E0E665 /* menuBG.png */; };
+		7C0DA25E196E7C1900E0E665 /* FindProvider.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C0DA25D196E7C1900E0E665 /* FindProvider.jpg */; };
 		7C8106021963F55000993A09 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8106011963F55000993A09 /* icon.png */; };
 		7C8A4CE11962A6C50019880C /* bgMain.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8A4CE01962A6C50019880C /* bgMain.png */; };
 		7CA90C3E196382E900E9545A /* MemberInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C3C196382E900E9545A /* MemberInfoViewController.m */; };
 		7CA90C45196385E400E9545A /* DependentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C43196385E400E9545A /* DependentInfoViewController.m */; };
 		7CA90C49196387F800E9545A /* dependents.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90C47196387F800E9545A /* dependents.png */; };
 		7CA90C4A196387F800E9545A /* member.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90C48196387F800E9545A /* member.png */; };
-		7CA90C781963C73A00E9545A /* BGbody.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90C6A1963C73A00E9545A /* BGbody.png */; };
 		7CA90C791963C73A00E9545A /* About Netcare.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90C6C1963C73A00E9545A /* About Netcare.png */; };
 		7CA90C7A1963C73A00E9545A /* Claims.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90C6D1963C73A00E9545A /* Claims.png */; };
 		7CA90C7B1963C73A00E9545A /* Deductible.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90C6E1963C73A00E9545A /* Deductible.png */; };
@@ -37,6 +46,7 @@
 		7CA90CC11963EAA500E9545A /* disclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90CBF1963EAA500E9545A /* disclosure.png */; };
 		7CA90CC21963EAA500E9545A /* shrink.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90CC01963EAA500E9545A /* shrink.png */; };
 		7CA90CC41963EBF900E9545A /* background-tablecell.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA90CC31963EBF900E9545A /* background-tablecell.png */; };
+		7CAB593D19665D5000E1BF42 /* topbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAB593C19665D5000E1BF42 /* topbar.png */; };
 		7CB3652519627C28003E216F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB3652419627C28003E216F /* Foundation.framework */; };
 		7CB3652719627C28003E216F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB3652619627C28003E216F /* CoreGraphics.framework */; };
 		7CB3652919627C28003E216F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB3652819627C28003E216F /* UIKit.framework */; };
@@ -116,7 +126,6 @@
 		7CBC77331964EC9B003987FA /* FAQViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77311964EC9B003987FA /* FAQViewController_iPad.xib */; };
 		7CBC7738196539DA003987FA /* sample01.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC7736196539DA003987FA /* sample01.png */; };
 		7CBC7739196539DA003987FA /* sample02.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC7737196539DA003987FA /* sample02.png */; };
-		7CBC773B1965507A003987FA /* bg_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC773A1965507A003987FA /* bg_text.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +139,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C0DA245196E614200E0E665 /* BGpng */ = {isa = PBXFileReference; lastKnownFileType = file; path = BGpng; sourceTree = "<group>"; };
+		7C0DA248196E614200E0E665 /* Netcare logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Netcare logo.png"; sourceTree = "<group>"; };
+		7C0DA249196E614200E0E665 /* signin bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signin bar.png"; sourceTree = "<group>"; };
+		7C0DA24B196E614200E0E665 /* check box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check box.png"; sourceTree = "<group>"; };
+		7C0DA24C196E614200E0E665 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		7C0DA24D196E614200E0E665 /* nav bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav bar.png"; sourceTree = "<group>"; };
+		7C0DA24E196E614200E0E665 /* registration box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "registration box.png"; sourceTree = "<group>"; };
+		7C0DA259196E675F00E0E665 /* loginbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginbg.png; sourceTree = "<group>"; };
+		7C0DA25B196E68D300E0E665 /* menuBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuBG.png; sourceTree = "<group>"; };
+		7C0DA25D196E7C1900E0E665 /* FindProvider.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FindProvider.jpg; sourceTree = "<group>"; };
 		7C8106011963F55000993A09 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		7C8A4CE01962A6C50019880C /* bgMain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgMain.png; sourceTree = "<group>"; };
 		7CA90C3B196382E900E9545A /* MemberInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberInfoViewController.h; sourceTree = "<group>"; };
@@ -138,7 +157,6 @@
 		7CA90C43196385E400E9545A /* DependentInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DependentInfoViewController.m; sourceTree = "<group>"; };
 		7CA90C47196387F800E9545A /* dependents.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dependents.png; sourceTree = "<group>"; };
 		7CA90C48196387F800E9545A /* member.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = member.png; sourceTree = "<group>"; };
-		7CA90C6A1963C73A00E9545A /* BGbody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BGbody.png; sourceTree = "<group>"; };
 		7CA90C6C1963C73A00E9545A /* About Netcare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "About Netcare.png"; sourceTree = "<group>"; };
 		7CA90C6D1963C73A00E9545A /* Claims.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Claims.png; sourceTree = "<group>"; };
 		7CA90C6E1963C73A00E9545A /* Deductible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Deductible.png; sourceTree = "<group>"; };
@@ -169,6 +187,7 @@
 		7CA90CBF1963EAA500E9545A /* disclosure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disclosure.png; sourceTree = "<group>"; };
 		7CA90CC01963EAA500E9545A /* shrink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shrink.png; sourceTree = "<group>"; };
 		7CA90CC31963EBF900E9545A /* background-tablecell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-tablecell.png"; sourceTree = "<group>"; };
+		7CAB593C19665D5000E1BF42 /* topbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topbar.png; sourceTree = "<group>"; };
 		7CB3652119627C28003E216F /* NetCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB3652419627C28003E216F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7CB3652619627C28003E216F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -290,7 +309,6 @@
 		7CBC77311964EC9B003987FA /* FAQViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FAQViewController_iPad.xib; sourceTree = "<group>"; };
 		7CBC7736196539DA003987FA /* sample01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample01.png; sourceTree = "<group>"; };
 		7CBC7737196539DA003987FA /* sample02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample02.png; sourceTree = "<group>"; };
-		7CBC773A1965507A003987FA /* bg_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_text.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +337,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C0DA246196E614200E0E665 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				7C0DA259196E675F00E0E665 /* loginbg.png */,
+				7C0DA248196E614200E0E665 /* Netcare logo.png */,
+				7C0DA249196E614200E0E665 /* signin bar.png */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		7C0DA24A196E614200E0E665 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				7C0DA24B196E614200E0E665 /* check box.png */,
+				7C0DA24C196E614200E0E665 /* check.png */,
+				7C0DA24D196E614200E0E665 /* nav bar.png */,
+				7C0DA24E196E614200E0E665 /* registration box.png */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		7CA90C6B1963C73A00E9545A /* Icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -602,7 +641,12 @@
 		7CB365DC19628223003E216F /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				7CBC773A1965507A003987FA /* bg_text.png */,
+				7C0DA25D196E7C1900E0E665 /* FindProvider.jpg */,
+				7C0DA25B196E68D300E0E665 /* menuBG.png */,
+				7C0DA245196E614200E0E665 /* BGpng */,
+				7C0DA246196E614200E0E665 /* login */,
+				7C0DA24A196E614200E0E665 /* Register */,
+				7CAB593C19665D5000E1BF42 /* topbar.png */,
 				7CA90C6B1963C73A00E9545A /* Icons */,
 				7CBC7736196539DA003987FA /* sample01.png */,
 				7CBC7737196539DA003987FA /* sample02.png */,
@@ -610,7 +654,6 @@
 				7CA90CC31963EBF900E9545A /* background-tablecell.png */,
 				7CA90CBF1963EAA500E9545A /* disclosure.png */,
 				7CA90CC01963EAA500E9545A /* shrink.png */,
-				7CA90C6A1963C73A00E9545A /* BGbody.png */,
 				7CA90C47196387F800E9545A /* dependents.png */,
 				7CA90C48196387F800E9545A /* member.png */,
 				7C8A4CE01962A6C50019880C /* bgMain.png */,
@@ -732,7 +775,6 @@
 				7CA90CC41963EBF900E9545A /* background-tablecell.png in Resources */,
 				7CBC77321964EC9B003987FA /* AboutViewController_iPad.xib in Resources */,
 				7CBC771B1964DED7003987FA /* FAQViewController.xib in Resources */,
-				7CBC773B1965507A003987FA /* bg_text.png in Resources */,
 				7C8106021963F55000993A09 /* icon.png in Resources */,
 				7CBC771C1964DED7003987FA /* FindProviderViewController.xib in Resources */,
 				7CA90C49196387F800E9545A /* dependents.png in Resources */,
@@ -741,7 +783,9 @@
 				7CBC77211964DED7003987FA /* ProductListingViewController.xib in Resources */,
 				7CA90C7E1963C73A00E9545A /* Find Provider.png in Resources */,
 				7CB3652F19627C28003E216F /* InfoPlist.strings in Resources */,
+				7C0DA256196E614200E0E665 /* registration box.png in Resources */,
 				7CB365AD19627DEF003E216F /* blackArrow.png in Resources */,
+				7C0DA24F196E614200E0E665 /* BGpng in Resources */,
 				7CA90CC21963EAA500E9545A /* shrink.png in Resources */,
 				7CB365B419627DEF003E216F /* whiteArrow@2x.png in Resources */,
 				7CA90C821963C73A00E9545A /* Member Info.png in Resources */,
@@ -758,31 +802,39 @@
 				7CA90C7A1963C73A00E9545A /* Claims.png in Resources */,
 				7CA90C7D1963C73A00E9545A /* FAQ's.png in Resources */,
 				7CBC77171964DED7003987FA /* DeductibleViewController.xib in Resources */,
+				7CAB593D19665D5000E1BF42 /* topbar.png in Resources */,
 				7CBC77191964DED7003987FA /* EligibilityViewController.xib in Resources */,
+				7C0DA25A196E675F00E0E665 /* loginbg.png in Resources */,
 				7CB365E019628298003E216F /* ico_menu_sm.png in Resources */,
 				7CBC7739196539DA003987FA /* sample02.png in Resources */,
 				7CBC77181964DED7003987FA /* DependentInfoViewController.xib in Resources */,
 				7CB365AF19627DEF003E216F /* blueArrow.png in Resources */,
 				7CBC771D1964DED7003987FA /* GenSurveyViewController.xib in Resources */,
+				7C0DA254196E614200E0E665 /* check.png in Resources */,
 				7C8A4CE11962A6C50019880C /* bgMain.png in Resources */,
 				7CB365AE19627DEF003E216F /* blackArrow@2x.png in Resources */,
 				7CA90C7C1963C73A00E9545A /* Eligibility Info.png in Resources */,
 				7CBC77161964DED7003987FA /* ClaimsViewController.xib in Resources */,
 				7CB365B319627DEF003E216F /* whiteArrow.png in Resources */,
+				7C0DA252196E614200E0E665 /* signin bar.png in Resources */,
 				7CA90CC11963EAA500E9545A /* disclosure.png in Resources */,
 				7CA90C791963C73A00E9545A /* About Netcare.png in Resources */,
 				7CBC771E1964DED7003987FA /* LoginViewController.xib in Resources */,
+				7C0DA25E196E7C1900E0E665 /* FindProvider.jpg in Resources */,
+				7C0DA251196E614200E0E665 /* Netcare logo.png in Resources */,
 				7CA90C811963C73A00E9545A /* Logout.png in Resources */,
 				7CB365B119627DEF003E216F /* grayArrow.png in Resources */,
 				7CA90C841963C73A00E9545A /* Upcoming Events.png in Resources */,
 				7CA90CBE1963E45100E9545A /* Default-568h@2x.png in Resources */,
+				7C0DA255196E614200E0E665 /* nav bar.png in Resources */,
 				7CB3653719627C28003E216F /* Images.xcassets in Resources */,
+				7C0DA25C196E68D300E0E665 /* menuBG.png in Resources */,
 				7CBC771F1964DED7003987FA /* MainViewController.xib in Resources */,
 				7CB365E21962895E003E216F /* nclogo.png in Resources */,
 				7CBC7738196539DA003987FA /* sample01.png in Resources */,
 				7CBC77221964DED7003987FA /* SideMenuViewController.xib in Resources */,
-				7CA90C781963C73A00E9545A /* BGbody.png in Resources */,
 				7CBC77151964DED7003987FA /* AboutViewController.xib in Resources */,
+				7C0DA253196E614200E0E665 /* check box.png in Resources */,
 				7CA90C4A196387F800E9545A /* member.png in Resources */,
 				7CBC77281964E144003987FA /* MainViewController_iPad.xib in Resources */,
 			);
@@ -963,7 +1015,6 @@
 		7CB3654E19627C28003E216F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Rene Jaspe (3UY9WM34CJ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetCare/NetCare-Prefix.pch";
@@ -979,7 +1030,6 @@
 		7CB3654F19627C28003E216F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Rene Jaspe (3UY9WM34CJ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetCare/NetCare-Prefix.pch";

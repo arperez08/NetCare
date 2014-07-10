@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AboutViewController : UIViewController
-
+@interface AboutViewController : UIViewController{
+    
+}
+- (IBAction)btnShowMenu:(id)sender;
 @end

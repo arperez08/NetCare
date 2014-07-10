@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface GenSurveyViewController : UIViewController
-
+{
+    
+}
+- (IBAction)btnShowMenu:(id)sender;
 @end

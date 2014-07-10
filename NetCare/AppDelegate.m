@@ -25,9 +25,11 @@
         self.navController = [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] initWithNibName:@"LoginViewController_iPad" bundle:nil]];
     }
     
-    //self.navController = [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil]];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    [self.navController setNavigationBarHidden:YES];
+    self.navController.interactivePopGestureRecognizer.enabled = YES;
+    //[self.navController.navigationBar setBackgroundImage:[UIImage imageNamed:@"top_bar"] forBarMetrics:UIBarMetricsDefault];
+    
     [self.navController setNavigationBarHidden:YES];
     self.window.rootViewController = self.navController;
     
