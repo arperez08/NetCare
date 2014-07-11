@@ -60,8 +60,7 @@
 	[UIView commitAnimations];
 }
 
-- (BOOL)shouldAutorotate
-{
+- (BOOL)shouldAutorotate{
     return YES;
 }
 
@@ -73,7 +72,8 @@
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration;
 {
     UIView *tabBar = [self.tabBarController.view.subviews objectAtIndex:1];
-    if(toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+    if(toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
+    {
          tabBar.hidden = TRUE;
         if ([[UIScreen mainScreen] bounds].size.height == 568) {            // iPhone 5/5S
             self.cardContainer.frame = CGRectMake(20.0, 20.0, 530, 290);

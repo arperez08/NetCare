@@ -128,8 +128,7 @@
     
     //Label
     UILabel *headerTitle=[[UILabel alloc]initWithFrame:CGRectMake(15, 2, 280, 44)];
-    //[headerTitle setFont:[UIFont fontWithName:@"DINBDA" size:50]];
-    [headerTitle setFont:[UIFont fontWithName:@"Helvetica-Bold" size:14]];
+    [headerTitle setFont:[UIFont fontWithName:@"Helvetica" size:14]];
     [headerTitle setTextColor:[UIColor whiteColor]];
     [headerTitle setBackgroundColor:[UIColor clearColor]];
     [headerTitle setText:[sectionArray objectAtIndex:section]];

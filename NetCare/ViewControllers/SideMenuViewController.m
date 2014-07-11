@@ -12,7 +12,6 @@
 #import "MainViewController.h"
 #import "MemberInfoViewController.h"
 #import "DependentInfoViewController.h"
-#import "EligibilityViewController.h"
 #import "ClaimsViewController.h"
 #import "DeductibleViewController.h"
 #import "FindProviderViewController.h"
@@ -124,15 +123,7 @@
 }
 
 - (IBAction)btnEligibility:(id)sender {
-    EligibilityViewController *hvc = [[EligibilityViewController alloc] initWithNibName:@"EligibilityViewController" bundle:[NSBundle mainBundle]];
-    SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
-    UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
-    UIViewController *leftViewController = smvc;
-    PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:homeVC
-                                                                                    leftViewController:leftViewController
-                                                                                   rightViewController:nil
-                                                                                               options:nil];
-    [self.navigationController pushViewController:revealController animated:YES];
+
 }
 
 - (IBAction)btnClaims:(id)sender {
