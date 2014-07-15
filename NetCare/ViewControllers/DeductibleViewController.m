@@ -31,11 +31,7 @@
     
     self.title = @"Deductible";
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    UIImage *revealImagePortrait = [UIImage imageNamed:@"ico_menu_sm"];
-    if (self.navigationController.revealController.type & PKRevealControllerTypeLeft)
-    {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:revealImagePortrait landscapeImagePhone:nil style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView:)];
-    }
+
 }
 
 - (void)didReceiveMemoryWarning

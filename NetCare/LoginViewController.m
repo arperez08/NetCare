@@ -34,7 +34,6 @@
     return UIStatusBarStyleLightContent;
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -43,6 +42,11 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    
+    
+    txtUser.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Username" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
+    txtPassword.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -194,4 +198,6 @@
     [self.navigationController pushViewController:rvc animated:YES];
     
 }
+
+
 @end

@@ -53,6 +53,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (UIColor *)colorFromHexString:(NSString *)hexString {
+    unsigned rgbValue = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:hexString];
+    [scanner setScanLocation:1];
+    [scanner scanHexInt:&rgbValue];
+    return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
+}
+
+
 - (IBAction)btnHome:(id)sender {
     MainViewController *mvc = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:[NSBundle mainBundle]];
     SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
@@ -72,11 +82,11 @@
     FAQViewController *faqvc = [[FAQViewController alloc] initWithNibName:@"FAQViewController" bundle:[NSBundle mainBundle]];
     
     avc.title = @"About NetCare";
-    avc.tabBarItem.image = [UIImage imageNamed:@"About Netcare"];
+    avc.tabBarItem.image = [UIImage imageNamed:@"about"];
     gsvc.title = @"Contact Us";
-    gsvc.tabBarItem.image = [UIImage imageNamed:@"Gen Survey"];
+    gsvc.tabBarItem.image = [UIImage imageNamed:@"survey"];
     faqvc.title = @"FAQ's";
-    faqvc.tabBarItem.image = [UIImage imageNamed:@"FAQ's"];
+    faqvc.tabBarItem.image = [UIImage imageNamed:@"FAQs"];
     
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = @[avc, gsvc, faqvc];
@@ -85,13 +95,13 @@
     //UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
     UIViewController *leftViewController = smvc;
     PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:homeVC
-                                                                                    leftViewController:leftViewController
-                                                                                   rightViewController:nil
-                                                                                               options:nil];
+                                                                leftViewController:leftViewController
+                                                                rightViewController:nil
+                                                                options:nil];
     
-    //UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topbar.png"]];
-    //[self.tabBarController.tabBar insertSubview:imageView atIndex:0];
-    
+    UIColor *hexColor = [self colorFromHexString:@"#0d2b9c"];
+    self.tabBarController.tabBar.barTintColor = hexColor;
+    self.tabBarController.tabBar.tintColor = [UIColor whiteColor];
     [self.tabBarController.navigationController setNavigationBarHidden:YES];
     [self.navigationController pushViewController:revealController animated:YES];
 }
@@ -100,9 +110,9 @@
     MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController" bundle:[NSBundle mainBundle]];
     DependentInfoViewController *dvc = [[DependentInfoViewController alloc] initWithNibName:@"DependentInfoViewController" bundle:[NSBundle mainBundle]];
     hvc.title = @"Principal";
-    hvc.tabBarItem.image = [UIImage imageNamed:@"member"];
+    hvc.tabBarItem.image = [UIImage imageNamed:@"primary"];
     dvc.title = @"Dependent(s)";
-    dvc.tabBarItem.image = [UIImage imageNamed:@"dependents"];
+    dvc.tabBarItem.image = [UIImage imageNamed:@"dependent"];
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = @[hvc, dvc];
     SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
@@ -110,14 +120,13 @@
     //UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
     UIViewController *leftViewController = smvc;
     PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:homeVC
-                                                                                    leftViewController:leftViewController
-                                                                                   rightViewController:nil
-                                                                                               options:nil];
+                                                                leftViewController:leftViewController
+                                                                rightViewController:nil
+                                                                options:nil];
     
-    
-    [revealController shouldAutorotate];
-    
-    //[self.navigationController setNavigationBarHidden:YES animated:YES];
+    UIColor *hexColor = [self colorFromHexString:@"#0d2b9c"];
+    self.tabBarController.tabBar.barTintColor = hexColor;
+    self.tabBarController.tabBar.tintColor = [UIColor whiteColor];
     [self.tabBarController.navigationController setNavigationBarHidden:YES];
     [self.navigationController pushViewController:revealController animated:YES];
 }
@@ -132,9 +141,9 @@
     UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
     UIViewController *leftViewController = smvc;
     PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:homeVC
-                                                                                    leftViewController:leftViewController
-                                                                                   rightViewController:nil
-                                                                                               options:nil];
+                                                                leftViewController:leftViewController
+                                                                rightViewController:nil
+                                                                options:nil];
     [self.navigationController pushViewController:revealController animated:YES];
 }
 
@@ -144,9 +153,9 @@
     UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
     UIViewController *leftViewController = smvc;
     PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:homeVC
-                                                                                    leftViewController:leftViewController
-                                                                                   rightViewController:nil
-                                                                                               options:nil];
+                                                                leftViewController:leftViewController
+                                                                rightViewController:nil
+                                                                options:nil];
     [self.navigationController pushViewController:revealController animated:YES];
 }
 
@@ -161,9 +170,9 @@
     UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
     UIViewController *leftViewController = smvc;
     PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:homeVC
-                                                                                    leftViewController:leftViewController
-                                                                                   rightViewController:nil
-                                                                                               options:nil];
+                                                                leftViewController:leftViewController
+                                                                rightViewController:nil
+                                                                options:nil];
     [self.navigationController pushViewController:revealController animated:YES];
 }
 

@@ -34,11 +34,7 @@
     self.title = @"Member Information";
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
-    UIImage *revealImagePortrait = [UIImage imageNamed:@"ico_menu_sm"];
-    if (self.navigationController.revealController.type & PKRevealControllerTypeLeft)
-    {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:revealImagePortrait landscapeImagePhone:nil style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView:)];
-    }
+
     [self.cardContainer addSubview:imgCardBack];
 }
 
@@ -100,9 +96,9 @@
     {
         // Portrairt mode
         tabBar.hidden = FALSE;
-        self.cardContainer.frame = CGRectMake(20.0, 78.0, 280, 165);
-        self.imgCard.frame = CGRectMake(0.0, 0.0, 280, 165);
-        self.imgCardBack.frame = CGRectMake(0.0, 0.0, 280, 165);
+        self.cardContainer.frame = CGRectMake(12.0, 57.0, 300, 175);
+        self.imgCard.frame = CGRectMake(0.0, 0.0, 300, 175);
+        self.imgCardBack.frame = CGRectMake(0.0, 0.0, 300, 175);
         self.btnFlip.frame = CGRectMake(0.0, 0.0, 280, 165);
         viewEligibility.hidden = NO;
         btnMenu.hidden = NO;

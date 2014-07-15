@@ -49,11 +49,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.navigationController setNavigationBarHidden:YES];
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 800);
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 900);
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
 
     [btnBday addTarget:self action:@selector(showBDay:forEvent:) forControlEvents:UIControlEventTouchUpInside];
+    
+    txtTINNum.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"TIN" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+    txtSSN.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"SSN" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+    txtMemberNum.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Member Number" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+    txtLastName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Last Name" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+    txtFirstName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"First Name" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+    txtMiddle.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Middle Name" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+    txtDOB.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Date of Birth" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+    txtEmail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email Address" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+    txtUserName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"User Name" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+    txtPasswrod.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+    txtRePassword.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Re-Enter Password" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
 }
 
 -(void)dismissKeyboard {
@@ -89,9 +101,9 @@
 
 - (IBAction)btnMember:(id)sender {
     if (!memberCheckbox) {
-        [btnMember setImage:[UIImage imageNamed:@"checkbox_selected.png"] forState:UIControlStateNormal];
+        [btnMember setImage:[UIImage imageNamed:@"check.png"] forState:UIControlStateNormal];
         memberCheckbox = YES;
-        [btnProvider setImage:[UIImage imageNamed:@"checkbox_empty.png"] forState:UIControlStateNormal];
+        [btnProvider setImage:nil forState:UIControlStateNormal];
         providerCheckbox = NO;
         txtTINNum.enabled = FALSE;
         txtTINNum.alpha = 0.3;
@@ -105,9 +117,9 @@
 
 - (IBAction)btnProvider:(id)sender {
     if (!providerCheckbox) {
-        [btnProvider setImage:[UIImage imageNamed:@"checkbox_selected.png"] forState:UIControlStateNormal];
+        [btnProvider setImage:[UIImage imageNamed:@"check.png"] forState:UIControlStateNormal];
         providerCheckbox = YES;
-        [btnMember setImage:[UIImage imageNamed:@"checkbox_empty.png"] forState:UIControlStateNormal];
+        [btnMember setImage:nil forState:UIControlStateNormal];
         memberCheckbox = NO;
         txtTINNum.enabled = TRUE;
         txtTINNum.alpha = 1.0;
@@ -122,11 +134,11 @@
 
 - (IBAction)btnTerms:(id)sender {
     if (!termsCheckbox) {
-        [btnTems setImage:[UIImage imageNamed:@"checkbox_selected.png"] forState:UIControlStateNormal];
+        [btnTems setImage:[UIImage imageNamed:@"check.png"] forState:UIControlStateNormal];
         termsCheckbox = YES;
     }
     else if (termsCheckbox) {
-        [btnTems setImage:[UIImage imageNamed:@"checkbox_empty.png"] forState:UIControlStateNormal];
+        [btnTems setImage:nil forState:UIControlStateNormal];
         termsCheckbox = NO;
     }
 }

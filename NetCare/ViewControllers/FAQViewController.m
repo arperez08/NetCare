@@ -32,13 +32,7 @@
     
     self.title = @"FAQ's";
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    
-    UIImage *revealImagePortrait = [UIImage imageNamed:@"ico_menu_sm"];
-    if (self.navigationController.revealController.type & PKRevealControllerTypeLeft)
-    {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:revealImagePortrait landscapeImagePhone:nil style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView:)];
-    }
-    
+      
     
     sectionArray=[[NSMutableArray alloc]initWithObjects:
                   @"Can I cancel or enroll in a Dental or Vision Plan at any time?",
@@ -107,11 +101,11 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     //View with the button to expand and shrink and
     //Label to display the Heading.
-    UIView *headerView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 280, 44)];
+    UIView *headerView=[[UIView alloc]initWithFrame:CGRectMake(0, 10, 280, 44)];
     
     //Background Image
-    UIImageView *headerBg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"background-tablecell"]];
-    [headerView addSubview:headerBg];
+    //UIImageView *headerBg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"background-tablecell"]];
+    //[headerView addSubview:headerBg];
     
     //Button
     UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
@@ -128,7 +122,7 @@
     
     //Label
     UILabel *headerTitle=[[UILabel alloc]initWithFrame:CGRectMake(15, 2, 280, 44)];
-    [headerTitle setFont:[UIFont fontWithName:@"Helvetica" size:14]];
+    [headerTitle setFont:[UIFont fontWithName:@"Helvetica-Bold" size:12]];
     [headerTitle setTextColor:[UIColor whiteColor]];
     [headerTitle setBackgroundColor:[UIColor clearColor]];
     [headerTitle setText:[sectionArray objectAtIndex:section]];
@@ -150,9 +144,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell=[[UITableViewCell alloc]  initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     //Add the Label
-    UILabel *cellTitle=[[UILabel alloc]initWithFrame:CGRectMake(15, 10, 280, 500)];
+    UILabel *cellTitle=[[UILabel alloc]initWithFrame:CGRectMake(15, 5, 280, 350)];
     [cellTitle setBackgroundColor:[UIColor clearColor]];
-    [cellTitle setFont:[UIFont fontWithName:@"Helvetica" size:14]];
+    [cellTitle setFont:[UIFont fontWithName:@"Helvetica" size:12]];
     [cellTitle setTextColor:[UIColor blackColor]];
     [cellTitle setText:[[cellArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
     cellTitle.lineBreakMode = NSLineBreakByWordWrapping;

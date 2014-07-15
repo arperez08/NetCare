@@ -14,36 +14,19 @@
 		7C2348C0196FC1DB00C9F0A9 /* UIBarButtonItem+WEPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2348BB196FC1DB00C9F0A9 /* UIBarButtonItem+WEPopover.m */; };
 		7C2348C2196FD4A200C9F0A9 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2348C1196FD4A200C9F0A9 /* RegistrationViewController.xib */; };
 		7C3CC478196F62B100AB4EC6 /* background-tablecell.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC450196F62B100AB4EC6 /* background-tablecell.png */; };
-		7C3CC479196F62B100AB4EC6 /* BGpng in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC451196F62B100AB4EC6 /* BGpng */; };
-		7C3CC47A196F62B100AB4EC6 /* loginbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC452196F62B100AB4EC6 /* loginbg.png */; };
 		7C3CC47B196F62B100AB4EC6 /* menuBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC453196F62B100AB4EC6 /* menuBG.png */; };
 		7C3CC47C196F62B100AB4EC6 /* nav bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC454196F62B100AB4EC6 /* nav bar.png */; };
 		7C3CC47E196F62B100AB4EC6 /* signin bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC456196F62B100AB4EC6 /* signin bar.png */; };
-		7C3CC47F196F62B100AB4EC6 /* About Netcare.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC458196F62B100AB4EC6 /* About Netcare.png */; };
-		7C3CC482196F62B100AB4EC6 /* Claims.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC45B196F62B100AB4EC6 /* Claims.png */; };
-		7C3CC483196F62B100AB4EC6 /* Deductible.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC45C196F62B100AB4EC6 /* Deductible.png */; };
+		7C3CC483196F62B100AB4EC6 /* deductible.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC45C196F62B100AB4EC6 /* deductible.png */; };
 		7C3CC484196F62B100AB4EC6 /* dependentbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC45D196F62B100AB4EC6 /* dependentbtn.png */; };
-		7C3CC485196F62B100AB4EC6 /* dependents.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC45E196F62B100AB4EC6 /* dependents.png */; };
-		7C3CC486196F62B100AB4EC6 /* Eligibility Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC45F196F62B100AB4EC6 /* Eligibility Info.png */; };
-		7C3CC487196F62B100AB4EC6 /* FAQ's.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC460196F62B100AB4EC6 /* FAQ's.png */; };
-		7C3CC488196F62B100AB4EC6 /* Find Provider.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC461196F62B100AB4EC6 /* Find Provider.png */; };
-		7C3CC489196F62B100AB4EC6 /* Gen Survey.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC462196F62B100AB4EC6 /* Gen Survey.png */; };
 		7C3CC48A196F62B100AB4EC6 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC463196F62B100AB4EC6 /* home.png */; };
-		7C3CC48B196F62B100AB4EC6 /* homebtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC464196F62B100AB4EC6 /* homebtn.png */; };
 		7C3CC48C196F62B100AB4EC6 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC465196F62B100AB4EC6 /* icon.png */; };
 		7C3CC48D196F62B100AB4EC6 /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC466196F62B100AB4EC6 /* logout.png */; };
-		7C3CC48E196F62B100AB4EC6 /* Member Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC467196F62B100AB4EC6 /* Member Info.png */; };
-		7C3CC48F196F62B100AB4EC6 /* member.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC468196F62B100AB4EC6 /* member.png */; };
 		7C3CC490196F62B100AB4EC6 /* memberbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC469196F62B100AB4EC6 /* memberbtn.png */; };
 		7C3CC491196F62B100AB4EC6 /* menubtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC46A196F62B100AB4EC6 /* menubtn.png */; };
-		7C3CC492196F62B100AB4EC6 /* Product Listing.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC46B196F62B100AB4EC6 /* Product Listing.png */; };
 		7C3CC493196F62B100AB4EC6 /* Upcoming Events.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC46C196F62B100AB4EC6 /* Upcoming Events.png */; };
 		7C3CC494196F62B100AB4EC6 /* FindProvider.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC46D196F62B100AB4EC6 /* FindProvider.jpg */; };
-		7C3CC495196F62B100AB4EC6 /* nclogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC46E196F62B100AB4EC6 /* nclogo.png */; };
 		7C3CC496196F62B100AB4EC6 /* Netcare logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC46F196F62B100AB4EC6 /* Netcare logo.png */; };
-		7C3CC497196F62B100AB4EC6 /* check box.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC471196F62B100AB4EC6 /* check box.png */; };
-		7C3CC498196F62B100AB4EC6 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC472196F62B100AB4EC6 /* check.png */; };
-		7C3CC499196F62B100AB4EC6 /* registration box.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC473196F62B100AB4EC6 /* registration box.png */; };
 		7C3CC49A196F62B100AB4EC6 /* sample01.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC474196F62B100AB4EC6 /* sample01.png */; };
 		7C3CC49B196F62B100AB4EC6 /* sample02.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC475196F62B100AB4EC6 /* sample02.png */; };
 		7C3CC49C196F62B100AB4EC6 /* whitebox.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC476196F62B100AB4EC6 /* whitebox.png */; };
@@ -54,6 +37,23 @@
 		7C3CC4A5196F647400AB4EC6 /* LaunchImg_568hRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC4A4196F647400AB4EC6 /* LaunchImg_568hRetina.png */; };
 		7C3CC4A7196F66F200AB4EC6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC4A6196F66F200AB4EC6 /* Default-568h@2x.png */; };
 		7C3CC4AB196F67AE00AB4EC6 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3CC4A9196F67AE00AB4EC6 /* RegistrationViewController.m */; };
+		7C7D645F1974BABB00AF246A /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D645D1974BABB00AF246A /* BG.png */; };
+		7C7D64601974BABB00AF246A /* loginbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D645E1974BABB00AF246A /* loginbar.png */; };
+		7C7D64661974BEFB00AF246A /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D64611974BEFB00AF246A /* about.png */; };
+		7C7D64671974BEFB00AF246A /* about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D64621974BEFB00AF246A /* about@2x.png */; };
+		7C7D64681974BEFB00AF246A /* menubtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D64631974BEFB00AF246A /* menubtn@2x.png */; };
+		7C7D64691974BEFB00AF246A /* survey.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D64641974BEFB00AF246A /* survey.png */; };
+		7C7D646A1974BEFB00AF246A /* survey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D64651974BEFB00AF246A /* survey@2x.png */; };
+		7C7D646D1974BF5000AF246A /* FAQs.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D646B1974BF5000AF246A /* FAQs.png */; };
+		7C7D646E1974BF5000AF246A /* FAQs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D646C1974BF5000AF246A /* FAQs@2x.png */; };
+		7C7D64721974C1A800AF246A /* FindProviderMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7D64701974C1A800AF246A /* FindProviderMenuViewController.m */; };
+		7C7D64731974C1A800AF246A /* FindProviderMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D64711974C1A800AF246A /* FindProviderMenuViewController.xib */; };
+		7C7D64761974C20F00AF246A /* deductiblebox.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D64741974C20F00AF246A /* deductiblebox.png */; };
+		7C7D647E1974C5CB00AF246A /* dependent.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D647A1974C5CB00AF246A /* dependent.png */; };
+		7C7D647F1974C5CB00AF246A /* dependent@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D647B1974C5CB00AF246A /* dependent@2x.png */; };
+		7C7D64801974C5CB00AF246A /* primary.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D647C1974C5CB00AF246A /* primary.png */; };
+		7C7D64811974C5CB00AF246A /* primary@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D647D1974C5CB00AF246A /* primary@2x.png */; };
+		7C7D64831974CF8A00AF246A /* textwhitebox.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D64821974CF8A00AF246A /* textwhitebox.png */; };
 		7CA90C3E196382E900E9545A /* MemberInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C3C196382E900E9545A /* MemberInfoViewController.m */; };
 		7CA90C45196385E400E9545A /* DependentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C43196385E400E9545A /* DependentInfoViewController.m */; };
 		7CA90C881963CDD400E9545A /* ProductListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C861963CDD400E9545A /* ProductListingViewController.m */; };
@@ -109,6 +109,24 @@
 		7CBC77211964DED7003987FA /* ProductListingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77131964DED7003987FA /* ProductListingViewController.xib */; };
 		7CBC77221964DED7003987FA /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77141964DED7003987FA /* SideMenuViewController.xib */; };
 		7CBC772C1964E704003987FA /* SideMenuiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CBC772A1964E704003987FA /* SideMenuiPadViewController.m */; };
+		7CC9A8421973628B00E89DD4 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8411973628B00E89DD4 /* home@2x.png */; };
+		7CC9A84F1973712300E89DD4 /* aboutNetcare.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8431973712300E89DD4 /* aboutNetcare.png */; };
+		7CC9A8501973712300E89DD4 /* aboutNetcare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8441973712300E89DD4 /* aboutNetcare@2x.png */; };
+		7CC9A8511973712300E89DD4 /* claims@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8451973712300E89DD4 /* claims@2x.png */; };
+		7CC9A8521973712300E89DD4 /* deductible@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8461973712300E89DD4 /* deductible@2x.png */; };
+		7CC9A8531973712300E89DD4 /* events.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8471973712300E89DD4 /* events.png */; };
+		7CC9A8541973712300E89DD4 /* events@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8481973712300E89DD4 /* events@2x.png */; };
+		7CC9A8551973712300E89DD4 /* logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8491973712300E89DD4 /* logout@2x.png */; };
+		7CC9A8571973712300E89DD4 /* productlisting.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A84B1973712300E89DD4 /* productlisting.png */; };
+		7CC9A8581973712300E89DD4 /* productlisting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A84C1973712300E89DD4 /* productlisting@2x.png */; };
+		7CC9A8591973712300E89DD4 /* provider.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A84D1973712300E89DD4 /* provider.png */; };
+		7CC9A85A1973712300E89DD4 /* provider@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A84E1973712300E89DD4 /* provider@2x.png */; };
+		7CC9A85C197371E600E89DD4 /* claims.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A85B197371E600E89DD4 /* claims.png */; };
+		7CC9A8631973785100E89DD4 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A85F1973785100E89DD4 /* check.png */; };
+		7CC9A8641973785100E89DD4 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8601973785100E89DD4 /* check@2x.png */; };
+		7CC9A8651973785100E89DD4 /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8611973785100E89DD4 /* checkbox.png */; };
+		7CC9A8661973785100E89DD4 /* checkbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8621973785100E89DD4 /* checkbox@2x.png */; };
+		7CC9A8681973A6BA00E89DD4 /* shadowline.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8671973A6BA00E89DD4 /* shadowline.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,36 +153,19 @@
 		7C2348BB196FC1DB00C9F0A9 /* UIBarButtonItem+WEPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+WEPopover.m"; sourceTree = "<group>"; };
 		7C2348C1196FD4A200C9F0A9 /* RegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		7C3CC450196F62B100AB4EC6 /* background-tablecell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-tablecell.png"; sourceTree = "<group>"; };
-		7C3CC451196F62B100AB4EC6 /* BGpng */ = {isa = PBXFileReference; lastKnownFileType = file; path = BGpng; sourceTree = "<group>"; };
-		7C3CC452196F62B100AB4EC6 /* loginbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginbg.png; sourceTree = "<group>"; };
 		7C3CC453196F62B100AB4EC6 /* menuBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuBG.png; sourceTree = "<group>"; };
 		7C3CC454196F62B100AB4EC6 /* nav bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav bar.png"; sourceTree = "<group>"; };
 		7C3CC456196F62B100AB4EC6 /* signin bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signin bar.png"; sourceTree = "<group>"; };
-		7C3CC458196F62B100AB4EC6 /* About Netcare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "About Netcare.png"; sourceTree = "<group>"; };
-		7C3CC45B196F62B100AB4EC6 /* Claims.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Claims.png; sourceTree = "<group>"; };
-		7C3CC45C196F62B100AB4EC6 /* Deductible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Deductible.png; sourceTree = "<group>"; };
+		7C3CC45C196F62B100AB4EC6 /* deductible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deductible.png; sourceTree = "<group>"; };
 		7C3CC45D196F62B100AB4EC6 /* dependentbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dependentbtn.png; sourceTree = "<group>"; };
-		7C3CC45E196F62B100AB4EC6 /* dependents.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dependents.png; sourceTree = "<group>"; };
-		7C3CC45F196F62B100AB4EC6 /* Eligibility Info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Eligibility Info.png"; sourceTree = "<group>"; };
-		7C3CC460196F62B100AB4EC6 /* FAQ's.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FAQ's.png"; sourceTree = "<group>"; };
-		7C3CC461196F62B100AB4EC6 /* Find Provider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Find Provider.png"; sourceTree = "<group>"; };
-		7C3CC462196F62B100AB4EC6 /* Gen Survey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gen Survey.png"; sourceTree = "<group>"; };
 		7C3CC463196F62B100AB4EC6 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
-		7C3CC464196F62B100AB4EC6 /* homebtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homebtn.png; sourceTree = "<group>"; };
 		7C3CC465196F62B100AB4EC6 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		7C3CC466196F62B100AB4EC6 /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
-		7C3CC467196F62B100AB4EC6 /* Member Info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Member Info.png"; sourceTree = "<group>"; };
-		7C3CC468196F62B100AB4EC6 /* member.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = member.png; sourceTree = "<group>"; };
 		7C3CC469196F62B100AB4EC6 /* memberbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = memberbtn.png; sourceTree = "<group>"; };
 		7C3CC46A196F62B100AB4EC6 /* menubtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubtn.png; sourceTree = "<group>"; };
-		7C3CC46B196F62B100AB4EC6 /* Product Listing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Product Listing.png"; sourceTree = "<group>"; };
 		7C3CC46C196F62B100AB4EC6 /* Upcoming Events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Upcoming Events.png"; sourceTree = "<group>"; };
 		7C3CC46D196F62B100AB4EC6 /* FindProvider.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FindProvider.jpg; sourceTree = "<group>"; };
-		7C3CC46E196F62B100AB4EC6 /* nclogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nclogo.png; sourceTree = "<group>"; };
 		7C3CC46F196F62B100AB4EC6 /* Netcare logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Netcare logo.png"; sourceTree = "<group>"; };
-		7C3CC471196F62B100AB4EC6 /* check box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check box.png"; sourceTree = "<group>"; };
-		7C3CC472196F62B100AB4EC6 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
-		7C3CC473196F62B100AB4EC6 /* registration box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "registration box.png"; sourceTree = "<group>"; };
 		7C3CC474196F62B100AB4EC6 /* sample01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample01.png; sourceTree = "<group>"; };
 		7C3CC475196F62B100AB4EC6 /* sample02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample02.png; sourceTree = "<group>"; };
 		7C3CC476196F62B100AB4EC6 /* whitebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whitebox.png; sourceTree = "<group>"; };
@@ -176,6 +177,24 @@
 		7C3CC4A6196F66F200AB4EC6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		7C3CC4A8196F67AE00AB4EC6 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		7C3CC4A9196F67AE00AB4EC6 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		7C7D645D1974BABB00AF246A /* BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG.png; sourceTree = "<group>"; };
+		7C7D645E1974BABB00AF246A /* loginbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginbar.png; sourceTree = "<group>"; };
+		7C7D64611974BEFB00AF246A /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
+		7C7D64621974BEFB00AF246A /* about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about@2x.png"; sourceTree = "<group>"; };
+		7C7D64631974BEFB00AF246A /* menubtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubtn@2x.png"; sourceTree = "<group>"; };
+		7C7D64641974BEFB00AF246A /* survey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = survey.png; sourceTree = "<group>"; };
+		7C7D64651974BEFB00AF246A /* survey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "survey@2x.png"; sourceTree = "<group>"; };
+		7C7D646B1974BF5000AF246A /* FAQs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FAQs.png; sourceTree = "<group>"; };
+		7C7D646C1974BF5000AF246A /* FAQs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FAQs@2x.png"; sourceTree = "<group>"; };
+		7C7D646F1974C1A800AF246A /* FindProviderMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindProviderMenuViewController.h; sourceTree = "<group>"; };
+		7C7D64701974C1A800AF246A /* FindProviderMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindProviderMenuViewController.m; sourceTree = "<group>"; };
+		7C7D64711974C1A800AF246A /* FindProviderMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindProviderMenuViewController.xib; sourceTree = "<group>"; };
+		7C7D64741974C20F00AF246A /* deductiblebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deductiblebox.png; sourceTree = "<group>"; };
+		7C7D647A1974C5CB00AF246A /* dependent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dependent.png; sourceTree = "<group>"; };
+		7C7D647B1974C5CB00AF246A /* dependent@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dependent@2x.png"; sourceTree = "<group>"; };
+		7C7D647C1974C5CB00AF246A /* primary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = primary.png; sourceTree = "<group>"; };
+		7C7D647D1974C5CB00AF246A /* primary@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "primary@2x.png"; sourceTree = "<group>"; };
+		7C7D64821974CF8A00AF246A /* textwhitebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textwhitebox.png; sourceTree = "<group>"; };
 		7CA90C3B196382E900E9545A /* MemberInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberInfoViewController.h; sourceTree = "<group>"; };
 		7CA90C3C196382E900E9545A /* MemberInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberInfoViewController.m; sourceTree = "<group>"; };
 		7CA90C42196385E400E9545A /* DependentInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DependentInfoViewController.h; sourceTree = "<group>"; };
@@ -267,6 +286,24 @@
 		7CBC77141964DED7003987FA /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		7CBC77291964E704003987FA /* SideMenuiPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuiPadViewController.h; sourceTree = "<group>"; };
 		7CBC772A1964E704003987FA /* SideMenuiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuiPadViewController.m; sourceTree = "<group>"; };
+		7CC9A8411973628B00E89DD4 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
+		7CC9A8431973712300E89DD4 /* aboutNetcare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutNetcare.png; sourceTree = "<group>"; };
+		7CC9A8441973712300E89DD4 /* aboutNetcare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aboutNetcare@2x.png"; sourceTree = "<group>"; };
+		7CC9A8451973712300E89DD4 /* claims@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claims@2x.png"; sourceTree = "<group>"; };
+		7CC9A8461973712300E89DD4 /* deductible@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deductible@2x.png"; sourceTree = "<group>"; };
+		7CC9A8471973712300E89DD4 /* events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = events.png; sourceTree = "<group>"; };
+		7CC9A8481973712300E89DD4 /* events@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "events@2x.png"; sourceTree = "<group>"; };
+		7CC9A8491973712300E89DD4 /* logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout@2x.png"; sourceTree = "<group>"; };
+		7CC9A84B1973712300E89DD4 /* productlisting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = productlisting.png; sourceTree = "<group>"; };
+		7CC9A84C1973712300E89DD4 /* productlisting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "productlisting@2x.png"; sourceTree = "<group>"; };
+		7CC9A84D1973712300E89DD4 /* provider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = provider.png; sourceTree = "<group>"; };
+		7CC9A84E1973712300E89DD4 /* provider@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "provider@2x.png"; sourceTree = "<group>"; };
+		7CC9A85B197371E600E89DD4 /* claims.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = claims.png; sourceTree = "<group>"; };
+		7CC9A85F1973785100E89DD4 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		7CC9A8601973785100E89DD4 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
+		7CC9A8611973785100E89DD4 /* checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox.png; sourceTree = "<group>"; };
+		7CC9A8621973785100E89DD4 /* checkbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox@2x.png"; sourceTree = "<group>"; };
+		7CC9A8671973A6BA00E89DD4 /* shadowline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadowline.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,17 +353,16 @@
 		7C3CC44E196F62B100AB4EC6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7CC9A8671973A6BA00E89DD4 /* shadowline.png */,
 				7C3CC46D196F62B100AB4EC6 /* FindProvider.jpg */,
 				7C3CC4A4196F647400AB4EC6 /* LaunchImg_568hRetina.png */,
-				7C3CC46E196F62B100AB4EC6 /* nclogo.png */,
 				7C3CC46F196F62B100AB4EC6 /* Netcare logo.png */,
 				7C3CC474196F62B100AB4EC6 /* sample01.png */,
 				7C3CC475196F62B100AB4EC6 /* sample02.png */,
-				7C3CC476196F62B100AB4EC6 /* whitebox.png */,
 				7C3CC477196F62B100AB4EC6 /* whitebox_expired.png */,
+				7C3CC476196F62B100AB4EC6 /* whitebox.png */,
 				7C3CC44F196F62B100AB4EC6 /* background */,
 				7C3CC457196F62B100AB4EC6 /* btn_icons */,
-				7C3CC470196F62B100AB4EC6 /* Register */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -334,12 +370,14 @@
 		7C3CC44F196F62B100AB4EC6 /* background */ = {
 			isa = PBXGroup;
 			children = (
-				7C3CC4A2196F639000AB4EC6 /* registrationbox.png */,
+				7C7D64821974CF8A00AF246A /* textwhitebox.png */,
+				7C7D64741974C20F00AF246A /* deductiblebox.png */,
 				7C3CC450196F62B100AB4EC6 /* background-tablecell.png */,
-				7C3CC451196F62B100AB4EC6 /* BGpng */,
-				7C3CC452196F62B100AB4EC6 /* loginbg.png */,
+				7C7D645D1974BABB00AF246A /* BG.png */,
+				7C7D645E1974BABB00AF246A /* loginbar.png */,
 				7C3CC453196F62B100AB4EC6 /* menuBG.png */,
 				7C3CC454196F62B100AB4EC6 /* nav bar.png */,
+				7C3CC4A2196F639000AB4EC6 /* registrationbox.png */,
 				7C3CC456196F62B100AB4EC6 /* signin bar.png */,
 			);
 			path = background;
@@ -348,39 +386,46 @@
 		7C3CC457196F62B100AB4EC6 /* btn_icons */ = {
 			isa = PBXGroup;
 			children = (
+				7C7D647A1974C5CB00AF246A /* dependent.png */,
+				7C7D647B1974C5CB00AF246A /* dependent@2x.png */,
+				7C7D647C1974C5CB00AF246A /* primary.png */,
+				7C7D647D1974C5CB00AF246A /* primary@2x.png */,
+				7C7D64611974BEFB00AF246A /* about.png */,
+				7C7D64621974BEFB00AF246A /* about@2x.png */,
+				7CC9A8431973712300E89DD4 /* aboutNetcare.png */,
+				7CC9A8441973712300E89DD4 /* aboutNetcare@2x.png */,
+				7CC9A85F1973785100E89DD4 /* check.png */,
+				7CC9A8601973785100E89DD4 /* check@2x.png */,
+				7CC9A8611973785100E89DD4 /* checkbox.png */,
+				7CC9A8621973785100E89DD4 /* checkbox@2x.png */,
 				7C3CC49E196F637300AB4EC6 /* checkbox_empty.png */,
 				7C3CC49F196F637300AB4EC6 /* checkbox_selected.png */,
-				7C3CC458196F62B100AB4EC6 /* About Netcare.png */,
-				7C3CC45B196F62B100AB4EC6 /* Claims.png */,
-				7C3CC45C196F62B100AB4EC6 /* Deductible.png */,
+				7CC9A85B197371E600E89DD4 /* claims.png */,
+				7CC9A8451973712300E89DD4 /* claims@2x.png */,
+				7C3CC45C196F62B100AB4EC6 /* deductible.png */,
+				7CC9A8461973712300E89DD4 /* deductible@2x.png */,
 				7C3CC45D196F62B100AB4EC6 /* dependentbtn.png */,
-				7C3CC45E196F62B100AB4EC6 /* dependents.png */,
-				7C3CC45F196F62B100AB4EC6 /* Eligibility Info.png */,
-				7C3CC460196F62B100AB4EC6 /* FAQ's.png */,
-				7C3CC461196F62B100AB4EC6 /* Find Provider.png */,
-				7C3CC462196F62B100AB4EC6 /* Gen Survey.png */,
+				7CC9A8471973712300E89DD4 /* events.png */,
+				7CC9A8481973712300E89DD4 /* events@2x.png */,
+				7C7D646B1974BF5000AF246A /* FAQs.png */,
+				7C7D646C1974BF5000AF246A /* FAQs@2x.png */,
 				7C3CC463196F62B100AB4EC6 /* home.png */,
-				7C3CC464196F62B100AB4EC6 /* homebtn.png */,
+				7CC9A8411973628B00E89DD4 /* home@2x.png */,
 				7C3CC465196F62B100AB4EC6 /* icon.png */,
 				7C3CC466196F62B100AB4EC6 /* logout.png */,
-				7C3CC467196F62B100AB4EC6 /* Member Info.png */,
-				7C3CC468196F62B100AB4EC6 /* member.png */,
+				7CC9A8491973712300E89DD4 /* logout@2x.png */,
 				7C3CC469196F62B100AB4EC6 /* memberbtn.png */,
 				7C3CC46A196F62B100AB4EC6 /* menubtn.png */,
-				7C3CC46B196F62B100AB4EC6 /* Product Listing.png */,
+				7C7D64631974BEFB00AF246A /* menubtn@2x.png */,
+				7CC9A84B1973712300E89DD4 /* productlisting.png */,
+				7CC9A84C1973712300E89DD4 /* productlisting@2x.png */,
+				7CC9A84D1973712300E89DD4 /* provider.png */,
+				7CC9A84E1973712300E89DD4 /* provider@2x.png */,
+				7C7D64641974BEFB00AF246A /* survey.png */,
+				7C7D64651974BEFB00AF246A /* survey@2x.png */,
 				7C3CC46C196F62B100AB4EC6 /* Upcoming Events.png */,
 			);
 			path = btn_icons;
-			sourceTree = "<group>";
-		};
-		7C3CC470196F62B100AB4EC6 /* Register */ = {
-			isa = PBXGroup;
-			children = (
-				7C3CC471196F62B100AB4EC6 /* check box.png */,
-				7C3CC472196F62B100AB4EC6 /* check.png */,
-				7C3CC473196F62B100AB4EC6 /* registration box.png */,
-			);
-			path = Register;
 			sourceTree = "<group>";
 		};
 		7CB3651819627C28003E216F = {
@@ -566,6 +611,9 @@
 				7CBC772A1964E704003987FA /* SideMenuiPadViewController.m */,
 				7CB365D219627EFF003E216F /* SideMenuViewController.h */,
 				7CB365D319627EFF003E216F /* SideMenuViewController.m */,
+				7C7D646F1974C1A800AF246A /* FindProviderMenuViewController.h */,
+				7C7D64701974C1A800AF246A /* FindProviderMenuViewController.m */,
+				7C7D64711974C1A800AF246A /* FindProviderMenuViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -580,7 +628,6 @@
 		7CBC77061964DED7003987FA /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
-				7C2348C1196FD4A200C9F0A9 /* RegistrationViewController.xib */,
 				7CBC77071964DED7003987FA /* AboutViewController.xib */,
 				7CBC77081964DED7003987FA /* ClaimsViewController.xib */,
 				7CBC77091964DED7003987FA /* DeductibleViewController.xib */,
@@ -593,6 +640,7 @@
 				7CBC77111964DED7003987FA /* MainViewController.xib */,
 				7CBC77121964DED7003987FA /* MemberInfoViewController.xib */,
 				7CBC77131964DED7003987FA /* ProductListingViewController.xib */,
+				7C2348C1196FD4A200C9F0A9 /* RegistrationViewController.xib */,
 				7CBC77141964DED7003987FA /* SideMenuViewController.xib */,
 			);
 			path = iPhone;
@@ -673,62 +721,79 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C7D645F1974BABB00AF246A /* BG.png in Resources */,
 				7CBC771B1964DED7003987FA /* FAQViewController.xib in Resources */,
-				7C3CC48E196F62B100AB4EC6 /* Member Info.png in Resources */,
 				7C3CC49A196F62B100AB4EC6 /* sample01.png in Resources */,
 				7CBC771C1964DED7003987FA /* FindProviderViewController.xib in Resources */,
-				7C3CC48F196F62B100AB4EC6 /* member.png in Resources */,
+				7C7D64671974BEFB00AF246A /* about@2x.png in Resources */,
+				7C7D64681974BEFB00AF246A /* menubtn@2x.png in Resources */,
 				7C3CC494196F62B100AB4EC6 /* FindProvider.jpg in Resources */,
 				7CBC77211964DED7003987FA /* ProductListingViewController.xib in Resources */,
-				7C3CC498196F62B100AB4EC6 /* check.png in Resources */,
+				7C7D647E1974C5CB00AF246A /* dependent.png in Resources */,
+				7CC9A8571973712300E89DD4 /* productlisting.png in Resources */,
+				7C7D64831974CF8A00AF246A /* textwhitebox.png in Resources */,
+				7C7D646D1974BF5000AF246A /* FAQs.png in Resources */,
 				7C3CC4A0196F637300AB4EC6 /* checkbox_empty.png in Resources */,
 				7C3CC496196F62B100AB4EC6 /* Netcare logo.png in Resources */,
+				7CC9A8641973785100E89DD4 /* check@2x.png in Resources */,
 				7C3CC4A3196F639000AB4EC6 /* registrationbox.png in Resources */,
-				7C3CC499196F62B100AB4EC6 /* registration box.png in Resources */,
 				7C3CC490196F62B100AB4EC6 /* memberbtn.png in Resources */,
 				7CB3652F19627C28003E216F /* InfoPlist.strings in Resources */,
 				7C3CC49C196F62B100AB4EC6 /* whitebox.png in Resources */,
-				7C3CC483196F62B100AB4EC6 /* Deductible.png in Resources */,
+				7C7D64691974BEFB00AF246A /* survey.png in Resources */,
+				7CC9A8521973712300E89DD4 /* deductible@2x.png in Resources */,
+				7C3CC483196F62B100AB4EC6 /* deductible.png in Resources */,
 				7C3CC47C196F62B100AB4EC6 /* nav bar.png in Resources */,
+				7CC9A8661973785100E89DD4 /* checkbox@2x.png in Resources */,
+				7CC9A8501973712300E89DD4 /* aboutNetcare@2x.png in Resources */,
+				7C7D64661974BEFB00AF246A /* about.png in Resources */,
 				7CBC77201964DED7003987FA /* MemberInfoViewController.xib in Resources */,
-				7C3CC497196F62B100AB4EC6 /* check box.png in Resources */,
 				7C3CC4A7196F66F200AB4EC6 /* Default-568h@2x.png in Resources */,
 				7C3CC49B196F62B100AB4EC6 /* sample02.png in Resources */,
+				7CC9A8681973A6BA00E89DD4 /* shadowline.png in Resources */,
 				7CBC771A1964DED7003987FA /* EventsViewController.xib in Resources */,
-				7C3CC486196F62B100AB4EC6 /* Eligibility Info.png in Resources */,
-				7C3CC47A196F62B100AB4EC6 /* loginbg.png in Resources */,
-				7C3CC495196F62B100AB4EC6 /* nclogo.png in Resources */,
+				7CC9A8651973785100E89DD4 /* checkbox.png in Resources */,
+				7C7D646E1974BF5000AF246A /* FAQs@2x.png in Resources */,
+				7C7D64731974C1A800AF246A /* FindProviderMenuViewController.xib in Resources */,
+				7CC9A84F1973712300E89DD4 /* aboutNetcare.png in Resources */,
+				7CC9A8581973712300E89DD4 /* productlisting@2x.png in Resources */,
 				7C3CC48D196F62B100AB4EC6 /* logout.png in Resources */,
 				7C3CC491196F62B100AB4EC6 /* menubtn.png in Resources */,
+				7C7D646A1974BEFB00AF246A /* survey@2x.png in Resources */,
 				7CBC77171964DED7003987FA /* DeductibleViewController.xib in Resources */,
 				7CBC77181964DED7003987FA /* DependentInfoViewController.xib in Resources */,
+				7C7D64811974C5CB00AF246A /* primary@2x.png in Resources */,
 				7C3CC49D196F62B100AB4EC6 /* whitebox_expired.png in Resources */,
 				7C3CC48A196F62B100AB4EC6 /* home.png in Resources */,
+				7C7D647F1974C5CB00AF246A /* dependent@2x.png in Resources */,
 				7C3CC493196F62B100AB4EC6 /* Upcoming Events.png in Resources */,
 				7C3CC47B196F62B100AB4EC6 /* menuBG.png in Resources */,
+				7CC9A8531973712300E89DD4 /* events.png in Resources */,
 				7C2348C2196FD4A200C9F0A9 /* RegistrationViewController.xib in Resources */,
-				7C3CC485196F62B100AB4EC6 /* dependents.png in Resources */,
-				7C3CC492196F62B100AB4EC6 /* Product Listing.png in Resources */,
 				7C3CC47E196F62B100AB4EC6 /* signin bar.png in Resources */,
+				7CC9A85C197371E600E89DD4 /* claims.png in Resources */,
+				7CC9A8541973712300E89DD4 /* events@2x.png in Resources */,
 				7C3CC484196F62B100AB4EC6 /* dependentbtn.png in Resources */,
+				7CC9A8511973712300E89DD4 /* claims@2x.png in Resources */,
 				7CBC771D1964DED7003987FA /* GenSurveyViewController.xib in Resources */,
+				7C7D64601974BABB00AF246A /* loginbar.png in Resources */,
 				7C3CC48C196F62B100AB4EC6 /* icon.png in Resources */,
+				7C7D64801974C5CB00AF246A /* primary.png in Resources */,
+				7C7D64761974C20F00AF246A /* deductiblebox.png in Resources */,
 				7C3CC4A5196F647400AB4EC6 /* LaunchImg_568hRetina.png in Resources */,
-				7C3CC479196F62B100AB4EC6 /* BGpng in Resources */,
-				7C3CC47F196F62B100AB4EC6 /* About Netcare.png in Resources */,
+				7CC9A8421973628B00E89DD4 /* home@2x.png in Resources */,
+				7CC9A8551973712300E89DD4 /* logout@2x.png in Resources */,
 				7CBC77161964DED7003987FA /* ClaimsViewController.xib in Resources */,
 				7C3CC478196F62B100AB4EC6 /* background-tablecell.png in Resources */,
-				7C3CC487196F62B100AB4EC6 /* FAQ's.png in Resources */,
 				7CBC771E1964DED7003987FA /* LoginViewController.xib in Resources */,
 				7C3CC4A1196F637300AB4EC6 /* checkbox_selected.png in Resources */,
-				7C3CC482196F62B100AB4EC6 /* Claims.png in Resources */,
-				7C3CC48B196F62B100AB4EC6 /* homebtn.png in Resources */,
 				7CB3653719627C28003E216F /* Images.xcassets in Resources */,
-				7C3CC489196F62B100AB4EC6 /* Gen Survey.png in Resources */,
+				7CC9A8591973712300E89DD4 /* provider.png in Resources */,
+				7CC9A8631973785100E89DD4 /* check.png in Resources */,
 				7CBC771F1964DED7003987FA /* MainViewController.xib in Resources */,
-				7C3CC488196F62B100AB4EC6 /* Find Provider.png in Resources */,
 				7CBC77221964DED7003987FA /* SideMenuViewController.xib in Resources */,
 				7CBC77151964DED7003987FA /* AboutViewController.xib in Resources */,
+				7CC9A85A1973712300E89DD4 /* provider@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,6 +839,7 @@
 				7CB365B719627DEF003E216F /* PKRevealController.m in Sources */,
 				7CA90CA11963D14E00E9545A /* GenSurveyViewController.m in Sources */,
 				7CB365E619628A98003E216F /* FindProviderViewController.m in Sources */,
+				7C7D64721974C1A800AF246A /* FindProviderMenuViewController.m in Sources */,
 				7CB3653119627C28003E216F /* main.m in Sources */,
 				7CB365B519627DEF003E216F /* MBProgressHUD.m in Sources */,
 				7CB365F1196290E3003E216F /* AboutViewController.m in Sources */,
