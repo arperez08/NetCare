@@ -9,6 +9,9 @@
 #import "RegistrationViewController.h"
 #import "TSPopoverController.h"
 #import "TSActionSheet.h"
+#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
+#import "Constants.h"
 
 @interface RegistrationViewController ()
 
@@ -43,11 +46,20 @@
     return UIStatusBarStyleLightContent;
 }
 
+-(BOOL)connected {
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus currrentStatus = [reachability currentReachabilityStatus];
+    return currrentStatus;
+}
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    memberCheckbox = YES;
+    providerCheckbox = NO;
+    termsCheckbox = NO;
+    
     [self.navigationController setNavigationBarHidden:YES];
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 900);
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
@@ -96,7 +108,50 @@
 }
 
 - (IBAction)btnSubmit:(id)sender {
-    [self alertStatus:@"A confirmation email was sent..." :@"Notification"];
+    if ([self connected] == NotReachable){
+        [self alertStatus:@"No Network Connection" :@"Notification"];
+    }
+    else{
+        [self dismissKeyboard];
+        HUB = [[MBProgressHUD alloc]initWithView:self.view];
+        [self.view addSubview:HUB];
+        //HUB.labelText = @"";
+        [HUB showWhileExecuting:@selector(submitData) onTarget:self withObject:nil animated:YES];
+    }
+}
+
+- (void) submitData {
+    int intIDType = 1;
+    if (!memberCheckbox)
+        intIDType = 2;
+    NSString *strIDType = [NSString stringWithFormat:@"%d",intIDType];
+    
+    NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"RegisterUserVer2"];
+    NSLog(@"strURL: %@",strPortalURL);
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
+    [request setRequestMethod:@"POST"];
+    [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
+    [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
+//    [request setPostValue:@"080100011000" forKey:@"strMemberID"];
+//    [request setPostValue:@"MIGUEL" forKey:@"strLastName"];
+//    [request setPostValue:@"10/26/1969" forKey:@"strDOB"];
+//    [request setPostValue:@"jmiguel@moylans.net" forKey:@"strEmailAdd"];
+    [request setPostValue:txtMemberNum.text forKey:@"strMemberID"];
+    [request setPostValue:txtLastName.text forKey:@"strLastName"];
+    [request setPostValue:txtDOB.text forKey:@"strDOB"];
+    [request setPostValue:txtEmail.text forKey:@"strEmailAdd"];
+    [request setPostValue:strIDType forKey:@"intIDType"];
+    [request startSynchronous];
+    NSData *urlData = [request responseData];
+    NSError *error = [request error];
+    if (!error) {
+        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+        NSLog(@"responseData: %@",responseData);
+        [self alertStatus:responseData :@"Response"];
+    }
+    else{
+        NSLog(@"error: %@",error);
+    }
 }
 
 - (IBAction)btnMember:(id)sender {
@@ -143,8 +198,7 @@
     }
 }
 
--(void)updateTextField:(id)sender
-{
+-(void)updateTextField:(id)sender{
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"MMM dd, yyyy"];
     //txtBday.text = [dateFormat stringFromDate:BdayPicker.date];
@@ -153,8 +207,7 @@
 }
 
 
--(void)showBDay:(id)sender forEvent:(UIEvent*)event
-{
+-(void)showBDay:(id)sender forEvent:(UIEvent*)event{
     [self dismissKeyboard];
     UIViewController *bdayNameView = [[UIViewController alloc]init];
     bdayNameView.view.frame = CGRectMake(0,0, 300, 150);

@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
+#import "Reachability.h"
 
 @interface RegistrationViewController : UIViewController 
 {
+    MBProgressHUD *HUB;
+    
     IBOutlet UIScrollView * scrollView;
     BOOL memberCheckbox;
     BOOL providerCheckbox;

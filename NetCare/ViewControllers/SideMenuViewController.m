@@ -20,6 +20,7 @@
 #import "GenSurveyViewController.h"
 #import "FAQViewController.h"
 #import "AboutViewController.h"
+#import "FindProviderMenuViewController.h"
 
 @interface SideMenuViewController ()
 
@@ -213,7 +214,7 @@
 }
 
 - (IBAction)btnFindProvider:(id)sender {
-    FindProviderViewController *hvc = [[FindProviderViewController alloc] initWithNibName:@"FindProviderViewController" bundle:[NSBundle mainBundle]];
+    FindProviderMenuViewController *hvc = [[FindProviderMenuViewController alloc] initWithNibName:@"FindProviderMenuViewController" bundle:[NSBundle mainBundle]];
     SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
     UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
     UIViewController *leftViewController = smvc;
