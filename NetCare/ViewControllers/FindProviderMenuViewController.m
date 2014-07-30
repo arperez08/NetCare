@@ -10,6 +10,10 @@
 #import "TSPopoverController.h"
 #import "TSActionSheet.h"
 #import "PKRevealController.h"
+#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
+#import "Constants.h"
+#import "ProviderListViewController.h"
 
 @interface FindProviderMenuViewController ()
 
@@ -32,12 +36,31 @@
     return UIStatusBarStyleLightContent;
 }
 
+- (void) alertStatus:(NSString *)msg :(NSString *)title
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                        message:msg
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil, nil];
+    [alertView performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
+}
+
+-(BOOL)connected {
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus currrentStatus = [reachability currentReachabilityStatus];
+    return currrentStatus;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
     [self.navigationController setNavigationBarHidden:YES];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
     
     arrayItemsCountry = [[NSMutableArray alloc] init];
     [arrayItemsCountry addObject:@"Select Country"];
@@ -107,6 +130,55 @@
 - (IBAction)btnShowMenu:(id)sender {
     [self showLeftView:sender];
 }
+
+- (IBAction)btnSearch:(id)sender {
+    if ([self connected] == NotReachable){
+        [self alertStatus:@"No Network Connection" :@"Notification"];
+    }
+    else{
+        [self dismissKeyboard];
+        HUB = [[MBProgressHUD alloc]initWithView:self.view];
+        [self.view addSubview:HUB];
+        //HUB.labelText = @"";
+        [HUB showWhileExecuting:@selector(searchData) onTarget:self withObject:nil animated:YES];
+    }
+    
+}
+
+-(void)dismissKeyboard {
+    [txtSpecialization resignFirstResponder];
+    [txtCity resignFirstResponder];
+    [txtCountry resignFirstResponder];
+}
+
+- (void) searchData {
+    NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"GetProvider"];
+    NSLog(@"strURL: %@",strPortalURL);
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
+    [request setRequestMethod:@"POST"];
+    [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
+    [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
+    [request setPostValue:txtCountry.text forKey:@"strCountry"];
+    [request setPostValue:txtCity.text forKey:@"strCity"];
+    [request setPostValue:txtSpecialization.text forKey:@"strSpecialist"];
+    [request setPostValue:@	"" forKey:@"strState"];
+    [request startSynchronous];
+    NSData *urlData = [request responseData];
+    NSError *error = [request error];
+    if (!error) {
+        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+        //NSLog(@"responseData: %@",responseData);
+        
+        ProviderListViewController *plvc = [[ProviderListViewController alloc] initWithNibName:@"ProviderListViewController" bundle:[NSBundle mainBundle]];
+        plvc.responseData = responseData;
+        //[self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController pushViewController:plvc animated:YES];
+    }
+    else{
+        NSLog(@"error: %@",error);
+    }
+}
+
 
 #pragma mark - Actions
 - (void)showLeftView:(id)sender

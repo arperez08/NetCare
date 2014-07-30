@@ -125,7 +125,6 @@
     if (!memberCheckbox)
         intIDType = 2;
     NSString *strIDType = [NSString stringWithFormat:@"%d",intIDType];
-    
     NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"RegisterUserVer2"];
     NSLog(@"strURL: %@",strPortalURL);
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
@@ -136,6 +135,7 @@
 //    [request setPostValue:@"MIGUEL" forKey:@"strLastName"];
 //    [request setPostValue:@"10/26/1969" forKey:@"strDOB"];
 //    [request setPostValue:@"jmiguel@moylans.net" forKey:@"strEmailAdd"];
+//    [request setPostValue:@"1" forKey:@"intIDType"];
     [request setPostValue:txtMemberNum.text forKey:@"strMemberID"];
     [request setPostValue:txtLastName.text forKey:@"strLastName"];
     [request setPostValue:txtDOB.text forKey:@"strDOB"];

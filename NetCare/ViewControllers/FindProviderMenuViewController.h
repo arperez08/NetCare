@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
+#import "Reachability.h"
 
 @interface FindProviderMenuViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 {
+    MBProgressHUD *HUB;
+    
     IBOutlet UIButton *btnCountry;
     NSMutableArray *arrayItemsCountry;
     UIPickerView *countryPicker;
@@ -27,6 +31,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnSpecialization;
 
 - (IBAction)btnShowMenu:(id)sender;
+- (IBAction)btnSearch:(id)sender;
 
 
 @end
