@@ -14,6 +14,7 @@
 #import "ASIFormDataRequest.h"
 #import "Constants.h"
 #import "ProviderListViewController.h"
+#import "SBJson.h"
 
 @interface FindProviderMenuViewController ()
 
@@ -71,8 +72,10 @@
         NSString *displayNameString = [locale displayNameForKey:NSLocaleCountryCode value:countryCode];
         [arrayItemsCountry addObject:displayNameString];
     }
-    //arrayItemsCountry = [arrayItemsCountry sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    arrayItemsCountry = [arrayItemsCountry sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     [btnCountry addTarget:self action:@selector(showCountry:forEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [btnCity addTarget:self action:@selector(showCity:forEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [btnSpecialization addTarget:self action:@selector(showSpecialization:forEvent:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,8 +84,54 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)showSpecialization:(id)sender forEvent:(UIEvent*)event
+{
+    HUB = [[MBProgressHUD alloc]initWithView:self.view];
+    [self.view addSubview:HUB];
+    HUB.labelText = @"Loading State/City";
+    [HUB showWhileExecuting:@selector(getSpecializationList) onTarget:self withObject:nil animated:YES];
+    
+    UIViewController *prodNameView = [[UIViewController alloc]init];
+    prodNameView.view.frame = CGRectMake(0,0, 280, 162);
+    SpecializationPicker = [[UIPickerView alloc] init];
+    SpecializationPicker.frame  = CGRectMake(0,0, 280, 162);
+    SpecializationPicker.showsSelectionIndicator = YES;
+    SpecializationPicker.delegate = self;
+    SpecializationPicker.dataSource = self;
+    [prodNameView.view addSubview:SpecializationPicker];
+    TSPopoverController *popoverController = [[TSPopoverController alloc] initWithContentViewController:prodNameView];
+    popoverController.cornerRadius = 0;
+    popoverController.popoverBaseColor = [UIColor whiteColor];
+    popoverController.popoverGradient= YES;
+    [popoverController showPopoverWithTouch:event];
+}
+
+- (void)getSpecializationList{
+    NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"GetSpclst"];
+    NSLog(@"strURL: %@",strPortalURL);
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
+    [request setRequestMethod:@"POST"];
+    [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
+    [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
+    [request setPostValue:txtCountry.text forKey:@"strCountry"];
+    [request setPostValue:txtCity.text forKey:@"strStateCity"];
+    [request startSynchronous];
+    NSData *urlData = [request responseData];
+    NSError *error = [request error];
+    if (!error) {
+        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+        SBJsonParser *jsonParser = [SBJsonParser new];
+        arrayItemsSpecialization = [[NSMutableArray alloc] init];
+        arrayItemsSpecialization = (NSMutableArray *) [jsonParser objectWithString:responseData error:nil];
+    }
+    [SpecializationPicker reloadAllComponents];
+}
+
 -(void)showCountry:(id)sender forEvent:(UIEvent*)event
 {
+    btnCity.hidden = NO;
+    btnSpecialization.hidden = NO;
+    
     UIViewController *prodNameView = [[UIViewController alloc]init];
     prodNameView.view.frame = CGRectMake(0,0, 280, 162);
     countryPicker = [[UIPickerView alloc] init];
@@ -98,33 +147,47 @@
     [popoverController showPopoverWithTouch:event];
 }
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
-	return 1;
+
+-(void)showCity:(id)sender forEvent:(UIEvent*)event
+{
+    HUB = [[MBProgressHUD alloc]initWithView:self.view];
+    [self.view addSubview:HUB];
+    HUB.labelText = @"Loading State/City";
+    [HUB showWhileExecuting:@selector(getCityList) onTarget:self withObject:nil animated:YES];
+
+    UIViewController *prodNameView = [[UIViewController alloc]init];
+    prodNameView.view.frame = CGRectMake(0,0, 280, 162);
+    cityPicker = [[UIPickerView alloc] init];
+    cityPicker.frame  = CGRectMake(0,0, 280, 162);
+    cityPicker.showsSelectionIndicator = YES;
+    cityPicker.delegate = self;
+    cityPicker.dataSource = self;
+    [prodNameView.view addSubview:cityPicker];
+    TSPopoverController *popoverController = [[TSPopoverController alloc] initWithContentViewController:prodNameView];
+    popoverController.cornerRadius = 0;
+    popoverController.popoverBaseColor = [UIColor whiteColor];
+    popoverController.popoverGradient= YES;
+    [popoverController showPopoverWithTouch:event];
 }
 
-- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
-    if (thePickerView == countryPicker) {
-        return [arrayItemsCountry count];
+- (void) getCityList {
+    NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"GetStateCity"];
+    NSLog(@"strURL: %@",strPortalURL);
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
+    [request setRequestMethod:@"POST"];
+    [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
+    [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
+    [request setPostValue:txtCountry.text forKey:@"strCountry"];
+    [request startSynchronous];
+    NSData *urlData = [request responseData];
+    NSError *error = [request error];
+    if (!error) {
+        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+        SBJsonParser *jsonParser = [SBJsonParser new];
+        arrayItemsCity = [[NSMutableArray alloc] init];
+        arrayItemsCity = (NSMutableArray *) [jsonParser objectWithString:responseData error:nil];
     }
-    return [arrayItemsCountry count];
-}
-
-- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    if (thePickerView == countryPicker) {
-        NSString* countryName = [arrayItemsCountry objectAtIndex:row];
-        return countryName;
-    }
-    NSString* countryName = [arrayItemsCountry objectAtIndex:row];
-    return countryName;
-}
-
-- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    if (thePickerView == countryPicker) {
-        NSString* countryName = [arrayItemsCountry objectAtIndex:row];
-        if (![countryName  isEqual: @"Select Country"]) {
-            [txtCountry setText:countryName];
-        }
-    }
+    [cityPicker reloadAllComponents];
 }
 
 - (IBAction)btnShowMenu:(id)sender {
@@ -145,6 +208,14 @@
     
 }
 
+- (IBAction)btnClear:(id)sender {
+    txtCountry.text = @"";
+    txtCity.text = @"";
+    txtSpecialization.text = @"";
+    btnCity.hidden = YES;
+    btnSpecialization.hidden = YES;
+}
+
 -(void)dismissKeyboard {
     [txtSpecialization resignFirstResponder];
     [txtCity resignFirstResponder];
@@ -159,20 +230,36 @@
     [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
     [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
     [request setPostValue:txtCountry.text forKey:@"strCountry"];
-    [request setPostValue:txtCity.text forKey:@"strCity"];
     [request setPostValue:txtSpecialization.text forKey:@"strSpecialist"];
-    [request setPostValue:@	"" forKey:@"strState"];
+    NSArray* arrStateCity = [txtCity.text componentsSeparatedByString: @"/"];
+    if ([arrStateCity count] > 1) {
+        NSString *strState = [arrStateCity objectAtIndex: 0];
+        NSString *strCity = [arrStateCity objectAtIndex: 1];
+        [request setPostValue:strCity forKey:@"strCity"];
+        [request setPostValue:strState forKey:@"strState"];
+    }
+    else{
+        [request setPostValue:@"" forKey:@"strCity"];
+        [request setPostValue:@"" forKey:@"strState"];
+    }
     [request startSynchronous];
     NSData *urlData = [request responseData];
     NSError *error = [request error];
     if (!error) {
         NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
         //NSLog(@"responseData: %@",responseData);
-        
-        ProviderListViewController *plvc = [[ProviderListViewController alloc] initWithNibName:@"ProviderListViewController" bundle:[NSBundle mainBundle]];
-        plvc.responseData = responseData;
-        //[self.navigationController setNavigationBarHidden:YES];
-        [self.navigationController pushViewController:plvc animated:YES];
+        SBJsonParser *jsonParser = [SBJsonParser new];
+        NSMutableArray * arrayData = [[NSMutableArray alloc] init];
+        arrayData = (NSMutableArray *) [jsonParser objectWithString:responseData error:nil];
+        if ([arrayData count] > 0) {
+            ProviderListViewController *plvc = [[ProviderListViewController alloc] initWithNibName:@"ProviderListViewController" bundle:[NSBundle mainBundle]];
+            plvc.responseData = responseData;
+            [self.navigationController setNavigationBarHidden:YES];
+            [self.navigationController pushViewController:plvc animated:YES];
+        }
+        else{
+            [self alertStatus:@"Not found" :@""];
+        }
     }
     else{
         NSLog(@"error: %@",error);
@@ -192,4 +279,88 @@
         [self.navigationController.revealController showViewController:self.navigationController.revealController.leftViewController];
     }
 }
+
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
+	return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
+    if (thePickerView == countryPicker) {
+        return [arrayItemsCountry count];
+    }
+    if (thePickerView == cityPicker) {
+        return [arrayItemsCity count];
+    }
+    if (thePickerView == SpecializationPicker) {
+        return [arrayItemsSpecialization count];
+    }
+    return [arrayItemsCountry count];
+}
+
+//- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+//    if (thePickerView == countryPicker) {
+//        NSString* countryName = [arrayItemsCountry objectAtIndex:row];
+//        return countryName;
+//    }
+//    if (thePickerView == cityPicker) {
+//        NSMutableDictionary* dictCityName = [arrayItemsCity objectAtIndex:row];
+//        NSString *cityName = [NSString stringWithFormat:@"%@",[dictCityName objectForKey:@"strStateCity"]];
+//        return cityName;
+//    }
+//    
+//    NSString* countryName = [arrayItemsCountry objectAtIndex:row];
+//    return countryName;
+//}
+
+- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    if (thePickerView == countryPicker) {
+        NSString* countryName = [arrayItemsCountry objectAtIndex:row];
+        if ((![countryName  isEqual: @"Select Country"]) || !countryName) {
+            [txtCountry setText:countryName];
+        }
+    }
+    if (thePickerView == cityPicker) {
+        NSMutableDictionary* dictCityName = [arrayItemsCity objectAtIndex:row];
+        NSString *cityName = [NSString stringWithFormat:@"%@",[dictCityName objectForKey:@"strStateCity"]];
+        if (![cityName  isEqual: @"Select State/State"]) {
+            [txtCity setText:cityName];
+        }
+    }
+    if (thePickerView == SpecializationPicker) {
+        NSMutableDictionary* dictSpecName = [arrayItemsSpecialization objectAtIndex:row];
+        NSString *strSpclst = [NSString stringWithFormat:@"%@",[dictSpecName objectForKey:@"strSpclst"]];
+        if (![strSpclst  isEqual: @"Select Specialization"]) {
+            [txtSpecialization setText:strSpclst];
+        }
+    }
+}
+
+- (UIView *)pickerView:(UIPickerView *)thePickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    UILabel* tView = (UILabel*)view;
+    if (!tView){
+        tView = [[UILabel alloc] init];
+        [tView setTextAlignment:NSTextAlignmentCenter];
+    }
+    if (thePickerView == countryPicker) {
+        [tView setFont:[UIFont fontWithName:@"Helvetica" size:24]];
+        NSString* countryName = [arrayItemsCountry objectAtIndex:row];
+        tView.text=countryName;
+    }
+    if (thePickerView == cityPicker) {
+        [tView setFont:[UIFont fontWithName:@"Helvetica" size:18]];
+        NSMutableDictionary* dictCityName = [arrayItemsCity objectAtIndex:row];
+        NSString *cityName = [NSString stringWithFormat:@"%@",[dictCityName objectForKey:@"strStateCity"]];
+        tView.text=cityName;
+    }
+    if (thePickerView == SpecializationPicker) {
+        [tView setFont:[UIFont fontWithName:@"Helvetica" size:18]];
+        NSMutableDictionary* dictSpecName = [arrayItemsSpecialization objectAtIndex:row];
+        NSString *strSpclst = [NSString stringWithFormat:@"%@",[dictSpecName objectForKey:@"strSpclst"]];
+        tView.text=strSpclst;
+    }
+    return tView;
+}
+
 @end

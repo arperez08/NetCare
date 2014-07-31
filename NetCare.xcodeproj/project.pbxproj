@@ -43,6 +43,8 @@
 		7C42614C1988D820001D234A /* ProviderListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C4261491988D820001D234A /* ProviderListViewController.xib */; };
 		7C42614F1988DB0D001D234A /* arrowright.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C42614D1988DB0D001D234A /* arrowright.png */; };
 		7C4261501988DB0D001D234A /* arrowright@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C42614E1988DB0D001D234A /* arrowright@2x.png */; };
+		7C5363C71989C61B00DBF0DB /* ProviderDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C5363C51989C61B00DBF0DB /* ProviderDetailsViewController.m */; };
+		7C5363C81989C61B00DBF0DB /* ProviderDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C5363C61989C61B00DBF0DB /* ProviderDetailsViewController.xib */; };
 		7C7D645F1974BABB00AF246A /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D645D1974BABB00AF246A /* BG.png */; };
 		7C7D64601974BABB00AF246A /* loginbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D645E1974BABB00AF246A /* loginbar.png */; };
 		7C7D64661974BEFB00AF246A /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D64611974BEFB00AF246A /* about.png */; };
@@ -206,6 +208,9 @@
 		7C4261491988D820001D234A /* ProviderListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProviderListViewController.xib; sourceTree = "<group>"; };
 		7C42614D1988DB0D001D234A /* arrowright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowright.png; sourceTree = "<group>"; };
 		7C42614E1988DB0D001D234A /* arrowright@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowright@2x.png"; sourceTree = "<group>"; };
+		7C5363C41989C61B00DBF0DB /* ProviderDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviderDetailsViewController.h; sourceTree = "<group>"; };
+		7C5363C51989C61B00DBF0DB /* ProviderDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderDetailsViewController.m; sourceTree = "<group>"; };
+		7C5363C61989C61B00DBF0DB /* ProviderDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProviderDetailsViewController.xib; path = ../../ViewControllers/ProviderDetailsViewController.xib; sourceTree = "<group>"; };
 		7C7D645D1974BABB00AF246A /* BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG.png; sourceTree = "<group>"; };
 		7C7D645E1974BABB00AF246A /* loginbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginbar.png; sourceTree = "<group>"; };
 		7C7D64611974BEFB00AF246A /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
@@ -707,6 +712,8 @@
 				7CA90C3C196382E900E9545A /* MemberInfoViewController.m */,
 				7CA90C851963CDD400E9545A /* ProductListingViewController.h */,
 				7CA90C861963CDD400E9545A /* ProductListingViewController.m */,
+				7C5363C41989C61B00DBF0DB /* ProviderDetailsViewController.h */,
+				7C5363C51989C61B00DBF0DB /* ProviderDetailsViewController.m */,
 				7C8053411988D23C00FB6243 /* ProviderListTableViewCell.h */,
 				7C8053421988D23C00FB6243 /* ProviderListTableViewCell.m */,
 				7C8053161988CA0E00FB6243 /* ProviderListViewController.h */,
@@ -748,6 +755,7 @@
 				7C4261491988D820001D234A /* ProviderListViewController.xib */,
 				7C2348C1196FD4A200C9F0A9 /* RegistrationViewController.xib */,
 				7CBC77141964DED7003987FA /* SideMenuViewController.xib */,
+				7C5363C61989C61B00DBF0DB /* ProviderDetailsViewController.xib */,
 			);
 			path = iPhone;
 			sourceTree = "<group>";
@@ -842,6 +850,7 @@
 				7C7D64831974CF8A00AF246A /* textwhitebox.png in Resources */,
 				7C7D646D1974BF5000AF246A /* FAQs.png in Resources */,
 				7C3CC4A0196F637300AB4EC6 /* checkbox_empty.png in Resources */,
+				7C5363C81989C61B00DBF0DB /* ProviderDetailsViewController.xib in Resources */,
 				7C3CC496196F62B100AB4EC6 /* Netcare logo.png in Resources */,
 				7CC9A8641973785100E89DD4 /* check@2x.png in Resources */,
 				7C3CC4A3196F639000AB4EC6 /* registrationbox.png in Resources */,
@@ -932,6 +941,7 @@
 				7CB365B619627DEF003E216F /* MyAnnotation.m in Sources */,
 				7CB365DA19627F37003E216F /* LoginViewController.m in Sources */,
 				7CBC772C1964E704003987FA /* SideMenuiPadViewController.m in Sources */,
+				7C5363C71989C61B00DBF0DB /* ProviderDetailsViewController.m in Sources */,
 				7CB365D519627EFF003E216F /* SideMenuViewController.m in Sources */,
 				7CA90C45196385E400E9545A /* DependentInfoViewController.m in Sources */,
 				7C80533C1988D09400FB6243 /* SBJsonStreamWriterAccumulator.m in Sources */,

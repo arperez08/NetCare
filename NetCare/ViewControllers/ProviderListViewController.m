@@ -8,6 +8,7 @@
 
 #import "ProviderListViewController.h"
 #import "ProviderListTableViewCell.h"
+#import "ProviderDetailsViewController.h"
 #import "SBJson.h"
 
 @interface ProviderListViewController ()
@@ -30,7 +31,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    NSLog(@"%@",responseData);
+    //NSLog(@"%@",responseData);
     SBJsonParser *jsonParser = [SBJsonParser new];
     arrayData = [[NSMutableArray alloc] init];
     arrayData = (NSMutableArray *) [jsonParser objectWithString:responseData error:nil];
@@ -66,18 +67,23 @@
     }
     cell.lblName.text = [NSString stringWithFormat:@"%@",[jsonData objectForKey:@"strPrvName"]];
     cell.lblSpecialization.text = [NSString stringWithFormat:@"%@",[jsonData objectForKey:@"strSpecialist"]];
-    cell.lblAddress.text = [NSString stringWithFormat:@"%@ %@",[jsonData objectForKey:@"strCity"],[jsonData objectForKey:@"strCountry"]];
     
+    cell.lblAddress.text = [NSString stringWithFormat:@"%@ %@",[jsonData objectForKey:@"strCity"],[jsonData objectForKey:@"strCountry"]];
     
     cell.backgroundColor = [UIColor clearColor];
     cell.backgroundView = [[UIView alloc] init];
     //cell.selectedBackgroundView = [[UIView alloc] init];
-    
-    
+   
     return  cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSMutableDictionary *jsonData = [arrayData objectAtIndex:indexPath.section];
+    
+    ProviderDetailsViewController *pdvc = [[ProviderDetailsViewController alloc] initWithNibName:@"ProviderDetailsViewController" bundle:[NSBundle mainBundle]];
+    pdvc.jsonData = jsonData;
+    [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController pushViewController:pdvc animated:YES];
 
 }
 

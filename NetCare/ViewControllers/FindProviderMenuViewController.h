@@ -19,7 +19,12 @@
     UIPickerView *countryPicker;
 
     IBOutlet UIButton *btnCity;
+    NSMutableArray *arrayItemsCity;
+    UIPickerView *cityPicker;
+    
     IBOutlet UIButton *btnSpecialization;
+    NSMutableArray *arrayItemsSpecialization;
+    UIPickerView *SpecializationPicker;
 }
 
 @property (strong, nonatomic) IBOutlet UITextField *txtCountry;
@@ -32,6 +37,6 @@
 
 - (IBAction)btnShowMenu:(id)sender;
 - (IBAction)btnSearch:(id)sender;
-
+- (IBAction)btnClear:(id)sender;
 
 @end
