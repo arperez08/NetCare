@@ -12,6 +12,8 @@
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "Constants.h"
+#import "SBJson.h"
+#import "LoginViewController.h"
 
 @interface RegistrationViewController ()
 
@@ -61,7 +63,7 @@
     termsCheckbox = NO;
     
     [self.navigationController setNavigationBarHidden:YES];
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 900);
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 950);
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
 
@@ -94,11 +96,16 @@
     [txtRePassword resignFirstResponder];
 }
 
-#define kOFFSET_FOR_KEYBOARD 80.0
+-(BOOL) NSStringIsValidEmail:(NSString *)checkString {
+    BOOL stricterFilter = YES;
+    NSString *stricterFilterString = @"[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}";
+    NSString *laxString = @".+@([A-Za-z0-9]+\\.)+[A-Za-z]{2}[A-Za-z]*";
+    NSString *emailRegex = stricterFilter ? stricterFilterString : laxString;
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:checkString];
+}
 
-
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -107,49 +114,159 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+
 - (IBAction)btnSubmit:(id)sender {
     if ([self connected] == NotReachable){
         [self alertStatus:@"No Network Connection" :@"Notification"];
     }
     else{
         [self dismissKeyboard];
-        HUB = [[MBProgressHUD alloc]initWithView:self.view];
-        [self.view addSubview:HUB];
-        //HUB.labelText = @"";
-        [HUB showWhileExecuting:@selector(submitData) onTarget:self withObject:nil animated:YES];
+        [self validateData];
+    }
+}
+
+- (void) validateData{
+    if (memberCheckbox) {
+        if (([txtSSN.text isEqualToString:@""]) && ([txtMemberNum.text isEqualToString:@""])) {
+            [self alertStatus:@"SSN or Member number is required" :@"Error"];
+        }
+        else{
+            if (([txtLastName.text isEqualToString:@""]) || ([txtFirstName.text isEqualToString:@""]) || ([txtDOB.text isEqualToString:@""]) || ([txtEmail.text isEqualToString:@""]) || ([txtUserName.text isEqualToString:@""]) || ([txtPasswrod.text isEqualToString:@""])) {
+                
+                if ([txtLastName.text isEqualToString:@""]) {
+                    [self alertStatus:@"Last Name is required." :@"Error"];
+                }
+                else if ([txtFirstName.text isEqualToString:@""]) {
+                    [self alertStatus:@"First Name is required." :@"Error"];
+                }
+                else if ([txtDOB.text isEqualToString:@""]) {
+                    [self alertStatus:@"Date of Birth is required." :@"Error"];
+                }
+                else if ([txtEmail.text isEqualToString:@""]) {
+                    [self alertStatus:@"Email is required." :@"Error"];
+                }
+                else if ([txtUserName.text isEqualToString:@""]) {
+                    [self alertStatus:@"Username is required." :@"Error"];
+                }
+                else if ([txtPasswrod.text isEqualToString:@""]) {
+                    [self alertStatus:@"Password is required." :@"Error"];
+                }
+            }
+            else{
+                if ([self NSStringIsValidEmail:txtEmail.text]){
+                    if ([txtPasswrod.text isEqual:txtRePassword.text]) {
+                        if (!termsCheckbox) {
+                            [self alertStatus:@"Please accept terms and conditions" :@"Error"];
+                        }
+                        else{
+                            HUB = [[MBProgressHUD alloc]initWithView:self.view];
+                            [self.view addSubview:HUB];
+                            [HUB showWhileExecuting:@selector(submitData) onTarget:self withObject:nil animated:YES];
+                        }
+                    }
+                    else{
+                        [self alertStatus:@"Password did not match" :@"Error"];
+                    }
+                }
+                else{
+                    [self alertStatus:@"Invalid email address" :@"Error"];
+                }
+            }
+        }
+    }
+    else{
+        if ([txtTINNum.text isEqualToString:@""]) {
+            [self alertStatus:@"TIN number is required" :@"Error"];
+        }
+        else{
+            if (([txtLastName.text isEqualToString:@""]) || ([txtFirstName.text isEqualToString:@""]) || ([txtDOB.text isEqualToString:@""]) || ([txtEmail.text isEqualToString:@""]) || ([txtUserName.text isEqualToString:@""]) || ([txtPasswrod.text isEqualToString:@""])) {
+                
+                if ([txtLastName.text isEqualToString:@""]) {
+                    [self alertStatus:@"Last Name is required." :@"Error"];
+                }
+                else if ([txtFirstName.text isEqualToString:@""]) {
+                    [self alertStatus:@"First Name is required." :@"Error"];
+                }
+                else if ([txtDOB.text isEqualToString:@""]) {
+                    [self alertStatus:@"Date of Birth is required." :@"Error"];
+                }
+                else if ([txtEmail.text isEqualToString:@""]) {
+                    [self alertStatus:@"Email is required." :@"Error"];
+                }
+                else if ([txtUserName.text isEqualToString:@""]) {
+                    [self alertStatus:@"Username is required." :@"Error"];
+                }
+                else if ([txtPasswrod.text isEqualToString:@""]) {
+                    [self alertStatus:@"Password is required." :@"Error"];
+                }
+            }
+            else{
+                if ([self NSStringIsValidEmail:txtEmail.text]){
+                    if ([txtPasswrod.text isEqual:txtRePassword.text]) {
+                        if (!termsCheckbox) {
+                            [self alertStatus:@"Please accept terms and conditions" :@"Error"];
+                        }
+                        else{
+                            HUB = [[MBProgressHUD alloc]initWithView:self.view];
+                            [self.view addSubview:HUB];
+                            [HUB showWhileExecuting:@selector(submitData) onTarget:self withObject:nil animated:YES];
+                        }
+                    }
+                    else{
+                        [self alertStatus:@"Password did not match" :@"Error"];
+                    }
+                }
+                else{
+                    [self alertStatus:@"Invalid email address" :@"Error"];
+                }
+            }
+        }
     }
 }
 
 - (void) submitData {
-    int intIDType = 1;
+    int intIDType = 0;
     if (!memberCheckbox)
-        intIDType = 2;
+        intIDType = 1;
     NSString *strIDType = [NSString stringWithFormat:@"%d",intIDType];
-    NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"RegisterUserVer2"];
+    NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"RegisterUser"];
     NSLog(@"strURL: %@",strPortalURL);
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
     [request setRequestMethod:@"POST"];
     [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
     [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
-//    [request setPostValue:@"080100011000" forKey:@"strMemberID"];
-//    [request setPostValue:@"MIGUEL" forKey:@"strLastName"];
-//    [request setPostValue:@"10/26/1969" forKey:@"strDOB"];
-//    [request setPostValue:@"jmiguel@moylans.net" forKey:@"strEmailAdd"];
-//    [request setPostValue:@"1" forKey:@"intIDType"];
-    [request setPostValue:txtMemberNum.text forKey:@"strMemberID"];
+    [request setPostValue:txtMemberNum.text forKey:@"strMemTINNbr"];
+    [request setPostValue:txtSSN.text forKey:@"strSSN"];
+    [request setPostValue:txtFirstName.text forKey:@"strFirstName"];
+    [request setPostValue:txtMiddle.text forKey:@"strMiddleName"];
     [request setPostValue:txtLastName.text forKey:@"strLastName"];
     [request setPostValue:txtDOB.text forKey:@"strDOB"];
     [request setPostValue:txtEmail.text forKey:@"strEmailAdd"];
-    [request setPostValue:strIDType forKey:@"intIDType"];
+    [request setPostValue:txtUserName.text forKey:@"strUserName"];
+    [request setPostValue:txtPasswrod.text forKey:@"strPassword"];
+    [request setPostValue:strIDType forKey:@"intUserType"];
     [request startSynchronous];
     NSData *urlData = [request responseData];
     NSError *error = [request error];
     if (!error) {
         NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
         NSLog(@"responseData: %@",responseData);
-        [self alertStatus:responseData :@"Response"];
+        SBJsonParser *jsonParser = [SBJsonParser new];
+        NSMutableArray *arrayData = (NSMutableArray *) [jsonParser objectWithString:responseData error:nil];
+        NSMutableDictionary *dictData = [arrayData objectAtIndex:0];
+        NSString *strStatus = [NSString stringWithFormat:@"%@",[dictData objectForKey:@"strStatus"]];
+        if ([strStatus isEqualToString:@"Success"]) {
+            [self alertStatus:@"Registeration successfull, please check your registered email address for more information." :@"Success"];
+            LoginViewController *Lvc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:[NSBundle mainBundle]];
+            [self.navigationController setNavigationBarHidden:YES];
+            [self.navigationController pushViewController:Lvc animated:YES];
+        }
+        else{
+            [self alertStatus:strStatus :@"Error"];
+        }
     }
     else{
+        [self alertStatus:[NSString stringWithFormat:@"%@",error] :@"Error"];
         NSLog(@"error: %@",error);
     }
 }
@@ -200,7 +317,7 @@
 
 -(void)updateTextField:(id)sender{
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"MMM dd, yyyy"];
+    [dateFormat setDateFormat:@"MM/dd/yyyy"];
     //txtBday.text = [dateFormat stringFromDate:BdayPicker.date];
     //bdayString = BdayPicker.date;
     txtDOB.text = [dateFormat stringFromDate:BdayPicker.date];
@@ -217,7 +334,7 @@
     [bdayNameView.view addSubview:BdayPicker];
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"MMM dd, yyyy"];
+    [dateFormat setDateFormat:@"MM/dd/yyyy"];
 
     if (![txtDOB.text  isEqual: @""]){
         BdayPicker.date = [dateFormat dateFromString:txtDOB.text];

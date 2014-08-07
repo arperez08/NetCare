@@ -16,7 +16,15 @@
     IBOutlet UIButton *btnMenu;
     IBOutlet UILabel *lblTitle;
     IBOutlet UIImageView *imgTopBar;
+    IBOutlet UILabel *lblFullName;
+    IBOutlet UILabel *lblMemNbr;
+    IBOutlet UILabel *lblPlanName;
+    IBOutlet UILabel *lblMedical;
+    IBOutlet UILabel *lblDental;
+    IBOutlet UIImageView *imgWhitebox;
     
+    NSMutableDictionary *userData;
+    NSMutableDictionary *userInfo;
 }
 @property (nonatomic, retain) IBOutlet UIImageView *imgCard;
 @property (nonatomic, retain) IBOutlet UIImageView *imgCardBack;
@@ -26,6 +34,13 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnMenu;
 @property (strong, nonatomic) IBOutlet UILabel *lblTitle;
 @property (strong, nonatomic) IBOutlet UIImageView *imgTopBar;
+@property (strong, nonatomic) IBOutlet UIImageView *imgWhitebox;
+
+@property (strong, nonatomic) IBOutlet UILabel *lblFullName;
+@property (strong, nonatomic) IBOutlet UILabel *lblMemNbr;
+@property (strong, nonatomic) IBOutlet UILabel *lblPlanName;
+@property (strong, nonatomic) IBOutlet UILabel *lblMedical;
+@property (strong, nonatomic) IBOutlet UILabel *lblDental;
 
 - (IBAction)btnFlipImage:(id)sender;
 - (IBAction)btnShowMenu:(id)sender;

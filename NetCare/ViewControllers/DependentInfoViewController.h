@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
+#import "Reachability.h"
 
 @interface DependentInfoViewController : UIViewController
 {
-    
+    MBProgressHUD *HUB;
+    NSMutableDictionary *userData;
+    NSMutableDictionary *userInfo;
 }
 - (IBAction)btnShowMenu:(id)sender;
 @end

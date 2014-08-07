@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
+#import "Reachability.h"
 
 @interface LoginViewController : UIViewController{
-    
-    
+    MBProgressHUD *HUB;
+    BOOL loginSuccess;
+    NSMutableDictionary *userData;
 }
 - (IBAction)btnLogin:(id)sender;
 - (IBAction)btnRegister:(id)sender;

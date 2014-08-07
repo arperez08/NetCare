@@ -249,8 +249,9 @@
         NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
         //NSLog(@"responseData: %@",responseData);
         SBJsonParser *jsonParser = [SBJsonParser new];
-        NSMutableArray * arrayData = [[NSMutableArray alloc] init];
-        arrayData = (NSMutableArray *) [jsonParser objectWithString:responseData error:nil];
+        //NSMutableArray * arrayData = [[NSMutableArray alloc] init];
+        NSMutableArray * arrayData = nil;
+        arrayData = [jsonParser objectWithString:responseData error:nil];
         if ([arrayData count] > 0) {
             ProviderListViewController *plvc = [[ProviderListViewController alloc] initWithNibName:@"ProviderListViewController" bundle:[NSBundle mainBundle]];
             plvc.responseData = responseData;

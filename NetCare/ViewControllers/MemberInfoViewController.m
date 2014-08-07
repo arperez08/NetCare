@@ -15,7 +15,8 @@
 
 @implementation MemberInfoViewController
 @synthesize imgCard, imgCardBack, cardContainer,btnFlip,viewEligibility;
-@synthesize btnMenu, lblTitle, imgTopBar;
+@synthesize btnMenu, lblTitle, imgTopBar,imgWhitebox;
+@synthesize lblFullName,lblDental,lblMedical,lblPlanName, lblMemNbr;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,8 +35,48 @@
     self.title = @"Member Information";
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
+    NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
+    userData = [[NSMutableDictionary alloc] init];
+    userData = [userLogin objectForKey:@"userData"];
+    userInfo = [[NSMutableDictionary alloc] init];
+    userInfo = [userLogin objectForKey:@"userInfo"];
 
     [self.cardContainer addSubview:imgCardBack];
+    
+    NSLog(@"userData:%@ userInfo:%@",userData,userInfo);
+    
+    lblMemNbr.text = [userData objectForKey:@"strMemTinNbr"];
+    lblFullName.text = [userInfo objectForKey:@"strName"];
+    lblPlanName.text = [userInfo objectForKey:@"strPlanName"];
+    lblMedical.text = [userInfo objectForKey:@"strMedical"];
+    lblDental.text = [userInfo objectForKey:@"strDental"];
+    
+    NSString * status = [userInfo objectForKey:@"strStatus"];
+    if ([status isEqualToString:@"Eligible"]) {
+        UIImage* image = [UIImage imageNamed:@"whitebox"];
+        imgWhitebox.image = image;
+    }
+    UIImage *bgimg = [UIImage imageNamed:@"IDFront"];
+    UIImage *img = [self drawTextName:@"" inImage:bgimg atPoint:CGPointMake(0, 0)];
+    imgCardBack.image = img;
+}
+
+- (UIImage*) drawTextName:(NSString*) text inImage:(UIImage*) myImage atPoint:(CGPoint) point {
+    UIGraphicsBeginImageContext(myImage.size);
+    [myImage drawInRect:CGRectMake(1, 5, 575, 365)];
+    UITextView *myText = [[UITextView alloc] init];
+    myText.frame = CGRectMake(10,110,320,300);
+    //myText.text = text;
+    myText.text = [NSString stringWithFormat:@"%@\n\nMember#: %@\n\n%@", lblFullName.text, lblMemNbr.text,lblPlanName.text];
+    myText.font = [UIFont fontWithName:@"Arial" size:18.0f];
+    myText.textColor = [UIColor blackColor];
+    NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+    paragraphStyle.alignment = NSTextAlignmentLeft;
+    NSDictionary *attributes = @{NSFontAttributeName: myText.font,NSParagraphStyleAttributeName: paragraphStyle};
+    [myText.text drawInRect:myText.frame withAttributes:attributes];
+    UIImage *myNewImage = UIGraphicsGetImageFromCurrentImageContext();
+    return myNewImage;
 }
 
 - (IBAction)btnFlipImage:(id)sender {
@@ -72,10 +113,10 @@
     {
          tabBar.hidden = TRUE;
         if ([[UIScreen mainScreen] bounds].size.height == 568) {            // iPhone 5/5S
-            self.cardContainer.frame = CGRectMake(20.0, 20.0, 530, 290);
-            self.imgCard.frame = CGRectMake(0.0, 0.0, 530, 290);
-            self.imgCardBack.frame = CGRectMake(0.0, 0.0, 530, 290);
-            self.btnFlip.frame = CGRectMake(0.0, 0.0, 530, 290);
+            self.cardContainer.frame = CGRectMake(30.0, 20.0, 520, 290);
+            self.imgCard.frame = CGRectMake(0.0, 0.0, 510, 290);
+            self.imgCardBack.frame = CGRectMake(0.0, 0.0, 510, 290);
+            self.btnFlip.frame = CGRectMake(0.0, 0.0, 510, 290);
             viewEligibility.hidden = YES;
             btnMenu.hidden = YES;
             lblTitle.hidden = YES;
@@ -96,10 +137,10 @@
     {
         // Portrairt mode
         tabBar.hidden = FALSE;
-        self.cardContainer.frame = CGRectMake(12.0, 57.0, 300, 175);
-        self.imgCard.frame = CGRectMake(0.0, 0.0, 300, 175);
-        self.imgCardBack.frame = CGRectMake(0.0, 0.0, 300, 175);
-        self.btnFlip.frame = CGRectMake(0.0, 0.0, 280, 165);
+        self.cardContainer.frame = CGRectMake(1.0, 57.0, 320, 200);
+        self.imgCard.frame = CGRectMake(1.0, 5.0, 316, 185);
+        self.imgCardBack.frame = CGRectMake(1.0, 5.0, 316, 185);
+        self.btnFlip.frame = CGRectMake(1.0, 5.0, 316, 185);
         viewEligibility.hidden = NO;
         btnMenu.hidden = NO;
         lblTitle.hidden = NO;

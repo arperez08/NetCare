@@ -15,10 +15,10 @@
 @synthesize subtitle;
 @synthesize coordinate;
 
-- (void)dealloc 
-{
-	[super dealloc];
-	self.title = nil;
-	self.subtitle = nil;
-}
+//- (void)dealloc 
+//{
+//	[super dealloc];
+//	self.title = nil;
+//	self.subtitle = nil;
+//}
 @end

@@ -20,4 +20,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblContact;
 
 - (IBAction)btnBack:(id)sender;
+- (IBAction)btnMap:(id)sender;
+
 @end

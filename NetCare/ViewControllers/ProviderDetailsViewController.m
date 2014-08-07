@@ -7,7 +7,7 @@
 //
 
 #import "ProviderDetailsViewController.h"
-
+#import "LocationViewController.h"
 @interface ProviderDetailsViewController ()
 
 @end
@@ -22,6 +22,16 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void) alertStatus:(NSString *)msg :(NSString *)title
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                        message:msg
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil, nil];
+    [alertView performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
 }
 
 - (void)viewDidLoad
@@ -47,5 +57,20 @@
 
 - (IBAction)btnBack:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)btnMap:(id)sender {
+    
+    NSString *strXYLoc = [NSString stringWithFormat:@"%@",[jsonData objectForKey:@"strXYLoc"]];
+    
+    if (![strXYLoc isEqual:@"<null>"]) {
+        LocationViewController *lvc = [[LocationViewController alloc] initWithNibName:@"LocationViewController" bundle:[NSBundle mainBundle]];
+        lvc.jsonData = jsonData;
+        [self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController pushViewController:lvc animated:YES];
+    }
+    else{
+        [self alertStatus:@"Not Found" :@"Notification"];
+    }
 }
 @end
