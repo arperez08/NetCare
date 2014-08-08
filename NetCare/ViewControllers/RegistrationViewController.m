@@ -63,7 +63,7 @@
     termsCheckbox = NO;
     
     [self.navigationController setNavigationBarHidden:YES];
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 950);
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 1100);
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
 

@@ -22,7 +22,7 @@
 
 @implementation FindProviderMenuViewController
 @synthesize txtCity,txtCountry,txtSpecialization;
-@synthesize btnCountry,btnCity,btnSpecialization;
+@synthesize btnCountry,btnCity,btnSpecialization,maniScrollView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -76,6 +76,9 @@
     [btnCountry addTarget:self action:@selector(showCountry:forEvent:) forControlEvents:UIControlEventTouchUpInside];
     [btnCity addTarget:self action:@selector(showCity:forEvent:) forControlEvents:UIControlEventTouchUpInside];
     [btnSpecialization addTarget:self action:@selector(showSpecialization:forEvent:) forControlEvents:UIControlEventTouchUpInside];
+    
+    maniScrollView.contentSize = CGSizeMake(maniScrollView.frame.size.width, 800);
+    
 }
 
 - (void)didReceiveMemoryWarning

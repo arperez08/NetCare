@@ -13,4 +13,9 @@
     
 }
 - (IBAction)btnShowMenu:(id)sender;
+@property (nonatomic, retain) IBOutlet UIScrollView * scrollView;
+@property (strong, nonatomic) IBOutlet UITextField *txtEmail;
+@property (strong, nonatomic) IBOutlet UITextField *txtSubject;
+@property (strong, nonatomic) IBOutlet UITextView *txtComments;
+
 @end

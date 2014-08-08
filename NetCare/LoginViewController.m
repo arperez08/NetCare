@@ -159,6 +159,7 @@
                                              selector:@selector(keyboardWillHide)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+    [super viewWillAppear:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -171,6 +172,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIKeyboardWillHideNotification
                                                   object:nil];
+    [super viewWillDisappear:YES];
 }
 
 - (IBAction)btnLogin:(id)sender {

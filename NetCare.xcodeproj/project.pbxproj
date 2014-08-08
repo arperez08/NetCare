@@ -134,6 +134,8 @@
 		7CBC77211964DED7003987FA /* ProductListingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77131964DED7003987FA /* ProductListingViewController.xib */; };
 		7CBC77221964DED7003987FA /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77141964DED7003987FA /* SideMenuViewController.xib */; };
 		7CBC772C1964E704003987FA /* SideMenuiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CBC772A1964E704003987FA /* SideMenuiPadViewController.m */; };
+		7CC83AA01994AB2C0080C81C /* DependentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC83A9E1994AB2C0080C81C /* DependentsTableViewCell.m */; };
+		7CC83AA11994AB2C0080C81C /* DependentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CC83A9F1994AB2C0080C81C /* DependentsTableViewCell.xib */; };
 		7CC9A8421973628B00E89DD4 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8411973628B00E89DD4 /* home@2x.png */; };
 		7CC9A84F1973712300E89DD4 /* aboutNetcare.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8431973712300E89DD4 /* aboutNetcare.png */; };
 		7CC9A8501973712300E89DD4 /* aboutNetcare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8441973712300E89DD4 /* aboutNetcare@2x.png */; };
@@ -356,6 +358,9 @@
 		7CBC77141964DED7003987FA /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		7CBC77291964E704003987FA /* SideMenuiPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuiPadViewController.h; sourceTree = "<group>"; };
 		7CBC772A1964E704003987FA /* SideMenuiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuiPadViewController.m; sourceTree = "<group>"; };
+		7CC83A9D1994AB2C0080C81C /* DependentsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DependentsTableViewCell.h; sourceTree = "<group>"; };
+		7CC83A9E1994AB2C0080C81C /* DependentsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DependentsTableViewCell.m; sourceTree = "<group>"; };
+		7CC83A9F1994AB2C0080C81C /* DependentsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DependentsTableViewCell.xib; path = ../../ViewControllers/DependentsTableViewCell.xib; sourceTree = "<group>"; };
 		7CC9A8411973628B00E89DD4 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
 		7CC9A8431973712300E89DD4 /* aboutNetcare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutNetcare.png; sourceTree = "<group>"; };
 		7CC9A8441973712300E89DD4 /* aboutNetcare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aboutNetcare@2x.png"; sourceTree = "<group>"; };
@@ -718,6 +723,8 @@
 				7CA90C951963D12800E9545A /* DeductibleViewController.m */,
 				7CA90C42196385E400E9545A /* DependentInfoViewController.h */,
 				7CA90C43196385E400E9545A /* DependentInfoViewController.m */,
+				7CC83A9D1994AB2C0080C81C /* DependentsTableViewCell.h */,
+				7CC83A9E1994AB2C0080C81C /* DependentsTableViewCell.m */,
 				7CA90CBA1963D19E00E9545A /* EventsViewController.h */,
 				7CA90CBB1963D19E00E9545A /* EventsViewController.m */,
 				7CA90CA31963D15C00E9545A /* FAQViewController.h */,
@@ -764,25 +771,26 @@
 		7CBC77061964DED7003987FA /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
-				7C2B156E198B5DCC00F3C06B /* LocationViewController.xib */,
 				7CBC77071964DED7003987FA /* AboutViewController.xib */,
 				7CBC77081964DED7003987FA /* ClaimsViewController.xib */,
 				7CBC77091964DED7003987FA /* DeductibleViewController.xib */,
 				7CBC770A1964DED7003987FA /* DependentInfoViewController.xib */,
+				7CC83A9F1994AB2C0080C81C /* DependentsTableViewCell.xib */,
 				7CBC770C1964DED7003987FA /* EventsViewController.xib */,
 				7CBC770D1964DED7003987FA /* FAQViewController.xib */,
 				7C4261471988D820001D234A /* FindProviderMenuViewController.xib */,
 				7CBC770E1964DED7003987FA /* FindProviderViewController.xib */,
 				7CBC770F1964DED7003987FA /* GenSurveyViewController.xib */,
+				7C2B156E198B5DCC00F3C06B /* LocationViewController.xib */,
 				7CBC77101964DED7003987FA /* LoginViewController.xib */,
 				7CBC77111964DED7003987FA /* MainViewController.xib */,
 				7CBC77121964DED7003987FA /* MemberInfoViewController.xib */,
 				7CBC77131964DED7003987FA /* ProductListingViewController.xib */,
+				7C5363C61989C61B00DBF0DB /* ProviderDetailsViewController.xib */,
 				7C4261481988D820001D234A /* ProviderListTableViewCell.xib */,
 				7C4261491988D820001D234A /* ProviderListViewController.xib */,
 				7C2348C1196FD4A200C9F0A9 /* RegistrationViewController.xib */,
 				7CBC77141964DED7003987FA /* SideMenuViewController.xib */,
-				7C5363C61989C61B00DBF0DB /* ProviderDetailsViewController.xib */,
 			);
 			path = iPhone;
 			sourceTree = "<group>";
@@ -911,6 +919,7 @@
 				7C3CC49D196F62B100AB4EC6 /* whitebox_expired.png in Resources */,
 				7C3CC48A196F62B100AB4EC6 /* home.png in Resources */,
 				7C7D647F1974C5CB00AF246A /* dependent@2x.png in Resources */,
+				7CC83AA11994AB2C0080C81C /* DependentsTableViewCell.xib in Resources */,
 				7C3CC493196F62B100AB4EC6 /* Upcoming Events.png in Resources */,
 				7C3CC47B196F62B100AB4EC6 /* menuBG.png in Resources */,
 				7CC9A8531973712300E89DD4 /* events.png in Resources */,
@@ -963,6 +972,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CC83AA01994AB2C0080C81C /* DependentsTableViewCell.m in Sources */,
 				7CA90C971963D12800E9545A /* DeductibleViewController.m in Sources */,
 				7CAD29531990BFAF00746285 /* ASIAuthenticationDialog.m in Sources */,
 				7C2B156F198B5DCC00F3C06B /* LocationViewController.m in Sources */,
@@ -1139,7 +1149,7 @@
 				INFOPLIST_FILE = "NetCare/NetCare-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "BD0EFD71-3FB4-42E4-A358-2F70F53FDA15";
+				PROVISIONING_PROFILE = "AE9F7B43-0411-4B86-9781-E5811F2FFC33";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1154,7 +1164,7 @@
 				INFOPLIST_FILE = "NetCare/NetCare-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "BD0EFD71-3FB4-42E4-A358-2F70F53FDA15";
+				PROVISIONING_PROFILE = "AE9F7B43-0411-4B86-9781-E5811F2FFC33";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

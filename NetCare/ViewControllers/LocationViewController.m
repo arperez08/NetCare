@@ -104,7 +104,12 @@ MKRoute *routeDetails;
     self.mapView.delegate = self;
     
     if (!smallMap) {
-        self.mapView.frame = CGRectMake(0, 0, 320, 335);
+        if ([[UIScreen mainScreen] bounds].size.height == 568) {
+            self.mapView.frame = CGRectMake(0, 0, 320, 335);
+        }
+        else{
+            self.mapView.frame = CGRectMake(0, 0, 320, 272);
+        }
         smallMap = YES;
     }
     else{
@@ -260,6 +265,7 @@ MKRoute *routeDetails;
 - (void)viewDidUnload {
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
+    [super viewDidUnload];
 }
 
 @end

@@ -59,6 +59,47 @@
     UIImage *bgimg = [UIImage imageNamed:@"IDFront"];
     UIImage *img = [self drawTextName:@"" inImage:bgimg atPoint:CGPointMake(0, 0)];
     imgCardBack.image = img;
+    
+    [self checkInterface];
+}
+
+-(void) checkInterface{
+    UIView *tabBar = [self.tabBarController.view.subviews objectAtIndex:1];
+    if([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait || [UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortraitUpsideDown) {
+        // Portrairt mode
+        tabBar.hidden = FALSE;
+        self.cardContainer.frame = CGRectMake(1.0, 57.0, 320, 200);
+        self.imgCard.frame = CGRectMake(1.0, 5.0, 316, 185);
+        self.imgCardBack.frame = CGRectMake(1.0, 5.0, 316, 185);
+        self.btnFlip.frame = CGRectMake(1.0, 5.0, 316, 185);
+        viewEligibility.hidden = NO;
+        btnMenu.hidden = NO;
+        lblTitle.hidden = NO;
+        imgTopBar.hidden = NO;
+    }
+    else{
+        tabBar.hidden = TRUE;
+        if ([[UIScreen mainScreen] bounds].size.height == 568) {            // iPhone 5/5S
+            self.cardContainer.frame = CGRectMake(30.0, 20.0, 520, 290);
+            self.imgCard.frame = CGRectMake(0.0, 0.0, 510, 290);
+            self.imgCardBack.frame = CGRectMake(0.0, 0.0, 510, 290);
+            self.btnFlip.frame = CGRectMake(0.0, 0.0, 510, 290);
+            viewEligibility.hidden = YES;
+            btnMenu.hidden = YES;
+            lblTitle.hidden = YES;
+            imgTopBar.hidden = YES;
+        }
+        else{                                                               // iPhone 4/4S
+            self.cardContainer.frame = CGRectMake(20.0, 20.0, 450, 290);
+            self.imgCard.frame = CGRectMake(0.0, 0.0, 450, 290);
+            self.imgCardBack.frame = CGRectMake(0.0, 0.0, 450, 290);
+            self.btnFlip.frame = CGRectMake(0.0, 0.0, 450, 290);
+            viewEligibility.hidden = YES;
+            btnMenu.hidden = YES;
+            lblTitle.hidden = YES;
+            imgTopBar.hidden = YES;
+        }
+    }
 }
 
 - (UIImage*) drawTextName:(NSString*) text inImage:(UIImage*) myImage atPoint:(CGPoint) point {

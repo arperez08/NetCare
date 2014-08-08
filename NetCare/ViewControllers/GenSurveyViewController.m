@@ -14,6 +14,7 @@
 @end
 
 @implementation GenSurveyViewController
+@synthesize scrollView,txtEmail,txtSubject,txtComments;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,9 +32,20 @@
     
     self.title = @"Contact Us";
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 900);
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
 
 }
+
+
+-(void)dismissKeyboard {
+    [txtEmail resignFirstResponder];
+    [txtSubject resignFirstResponder];
+    [txtComments resignFirstResponder];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

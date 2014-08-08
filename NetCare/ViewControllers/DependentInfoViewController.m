@@ -7,18 +7,19 @@
 //
 
 #import "DependentInfoViewController.h"
+#import "DependentsTableViewCell.h"
 #import "PKRevealController.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "Constants.h"
 #import "SBJson.h"
 
-
 @interface DependentInfoViewController ()
 
 @end
 
 @implementation DependentInfoViewController
+@synthesize MIMtableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -73,12 +74,62 @@
     NSError *error = [request error];
     if (!error) {
         NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
-        NSLog(@"responseData DependentsInfo: %@",responseData);
         SBJsonParser *jsonParser = [SBJsonParser new];
-        NSMutableArray *arrayData = (NSMutableArray *) [jsonParser objectWithString:responseData error:nil];
-        NSMutableDictionary *dictData = [arrayData objectAtIndex:0];
+        arrayData = [[NSMutableArray alloc] init];
+        arrayData = (NSMutableArray *) [jsonParser objectWithString:responseData error:nil];
+        //NSLog(@"responseData DependentsInfo: %@",arrayData);
     }
+    MIMtableView.backgroundColor = [UIColor clearColor];
+    [MIMtableView reloadData];
+}
 
+//datasource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return [arrayData count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
+    return nil;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return  1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *jsonData = [arrayData objectAtIndex:indexPath.section];
+    
+    static NSString *simpleTableIdentifier = @"Cell";
+    DependentsTableViewCell *cell = (DependentsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil){
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DependentsTableViewCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    cell.lblName.text = [jsonData objectForKey:@"strName"];
+    cell.lblMemberNum.text = [jsonData objectForKey:@"strMemNbr"];
+    cell.lblPlan.text = [jsonData objectForKey:@"strPlanName"];
+    cell.lblCoverage.text = @"";
+    
+    cell.backgroundColor = [UIColor clearColor];
+    cell.backgroundView = [[UIView alloc] init];
+    cell.selectedBackgroundView = [[UIView alloc] init];
+    
+    return  cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //NSMutableDictionary *jsonData = [arrayData objectAtIndex:indexPath.section];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return NO;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath{
+    return  NO;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
 }
 
 #pragma mark - Actions

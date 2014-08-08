@@ -34,6 +34,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnCountry;
 @property (strong, nonatomic) IBOutlet UIButton *btnCity;
 @property (strong, nonatomic) IBOutlet UIButton *btnSpecialization;
+@property (strong, nonatomic) IBOutlet UIScrollView *maniScrollView;
 
 - (IBAction)btnShowMenu:(id)sender;
 - (IBAction)btnSearch:(id)sender;

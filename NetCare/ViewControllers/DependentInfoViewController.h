@@ -10,11 +10,14 @@
 #import "MBProgressHUD.h"
 #import "Reachability.h"
 
-@interface DependentInfoViewController : UIViewController
+@interface DependentInfoViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 {
     MBProgressHUD *HUB;
     NSMutableDictionary *userData;
     NSMutableDictionary *userInfo;
+    NSMutableArray *arrayData;
 }
+@property(nonatomic,retain)IBOutlet UITableView *MIMtableView;
 - (IBAction)btnShowMenu:(id)sender;
+
 @end
