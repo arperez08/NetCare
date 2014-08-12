@@ -10,10 +10,10 @@
 
 @interface ProviderListViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 {
-    NSString *responseData;
+    NSData *responseData;
     NSMutableArray *arrayData;
 }
-@property (strong, nonatomic) NSString *responseData;
+@property (strong, nonatomic) NSData *responseData;
 @property(nonatomic,retain)IBOutlet UITableView *MIMtableView;
 - (IBAction)btnBack:(id)sender;
 @end

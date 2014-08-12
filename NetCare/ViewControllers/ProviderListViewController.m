@@ -9,7 +9,6 @@
 #import "ProviderListViewController.h"
 #import "ProviderListTableViewCell.h"
 #import "ProviderDetailsViewController.h"
-#import "SBJson.h"
 
 @interface ProviderListViewController ()
 
@@ -32,9 +31,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     //NSLog(@"%@",responseData);
-    SBJsonParser *jsonParser = [SBJsonParser new];
     arrayData = [[NSMutableArray alloc] init];
-    arrayData = (NSMutableArray *) [jsonParser objectWithString:responseData error:nil];
+    arrayData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
 }
 
 - (void)didReceiveMemoryWarning

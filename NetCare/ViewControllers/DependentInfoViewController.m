@@ -12,7 +12,6 @@
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "Constants.h"
-#import "SBJson.h"
 
 @interface DependentInfoViewController ()
 
@@ -73,10 +72,9 @@
     NSData *urlData = [request responseData];
     NSError *error = [request error];
     if (!error) {
-        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
-        SBJsonParser *jsonParser = [SBJsonParser new];
+        //NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
         arrayData = [[NSMutableArray alloc] init];
-        arrayData = (NSMutableArray *) [jsonParser objectWithString:responseData error:nil];
+        arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
         //NSLog(@"responseData DependentsInfo: %@",arrayData);
     }
     MIMtableView.backgroundColor = [UIColor clearColor];

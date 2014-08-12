@@ -12,7 +12,6 @@
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "Constants.h"
-#import "SBJson.h"
 #import "LoginViewController.h"
 
 @interface RegistrationViewController ()
@@ -251,8 +250,7 @@
     if (!error) {
         NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
         NSLog(@"responseData: %@",responseData);
-        SBJsonParser *jsonParser = [SBJsonParser new];
-        NSMutableArray *arrayData = (NSMutableArray *) [jsonParser objectWithString:responseData error:nil];
+        NSMutableArray *arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
         NSMutableDictionary *dictData = [arrayData objectAtIndex:0];
         NSString *strStatus = [NSString stringWithFormat:@"%@",[dictData objectForKey:@"strStatus"]];
         if ([strStatus isEqualToString:@"Success"]) {

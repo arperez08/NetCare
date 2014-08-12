@@ -14,7 +14,6 @@
 #import "ASIFormDataRequest.h"
 #import "Constants.h"
 #import "ProviderListViewController.h"
-#import "SBJson.h"
 
 @interface FindProviderMenuViewController ()
 
@@ -122,10 +121,8 @@
     NSData *urlData = [request responseData];
     NSError *error = [request error];
     if (!error) {
-        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
-        SBJsonParser *jsonParser = [SBJsonParser new];
         arrayItemsSpecialization = [[NSMutableArray alloc] init];
-        arrayItemsSpecialization = (NSMutableArray *) [jsonParser objectWithString:responseData error:nil];
+        arrayItemsSpecialization = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
     }
     [SpecializationPicker reloadAllComponents];
 }
@@ -185,10 +182,8 @@
     NSData *urlData = [request responseData];
     NSError *error = [request error];
     if (!error) {
-        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
-        SBJsonParser *jsonParser = [SBJsonParser new];
         arrayItemsCity = [[NSMutableArray alloc] init];
-        arrayItemsCity = (NSMutableArray *) [jsonParser objectWithString:responseData error:nil];
+        arrayItemsCity = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
     }
     [cityPicker reloadAllComponents];
 }
@@ -249,15 +244,13 @@
     NSData *urlData = [request responseData];
     NSError *error = [request error];
     if (!error) {
-        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+        //NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
         //NSLog(@"responseData: %@",responseData);
-        SBJsonParser *jsonParser = [SBJsonParser new];
-        //NSMutableArray * arrayData = [[NSMutableArray alloc] init];
         NSMutableArray * arrayData = nil;
-        arrayData = [jsonParser objectWithString:responseData error:nil];
+        arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
         if ([arrayData count] > 0) {
             ProviderListViewController *plvc = [[ProviderListViewController alloc] initWithNibName:@"ProviderListViewController" bundle:[NSBundle mainBundle]];
-            plvc.responseData = responseData;
+            plvc.responseData = urlData;
             [self.navigationController setNavigationBarHidden:YES];
             [self.navigationController pushViewController:plvc animated:YES];
         }
