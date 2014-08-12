@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
+#import "Reachability.h"
 
-@interface ProductListingViewController : UIViewController
+@interface ProductListingViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 {
-    
+    MBProgressHUD *HUB;
+    IBOutlet UITableView *MIMtableView;
+    NSMutableArray *sectionArray;
+    NSMutableArray *cellArray;
+    NSMutableArray *cellCount;
 }
-@property (nonatomic, strong) UIDocumentInteractionController *controller;
+@property(nonatomic,retain)IBOutlet UITableView *MIMtableView;
 - (IBAction)btnShowMenu:(id)sender;
 @end

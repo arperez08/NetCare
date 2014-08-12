@@ -62,6 +62,8 @@
 		7C7D648919750F4D00AF246A /* arrowleft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D648719750F4D00AF246A /* arrowleft@2x.png */; };
 		7C8053191988CA0E00FB6243 /* ProviderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8053171988CA0E00FB6243 /* ProviderListViewController.m */; };
 		7C8053441988D23C00FB6243 /* ProviderListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8053421988D23C00FB6243 /* ProviderListTableViewCell.m */; };
+		7C84FF451999A51200ED76CA /* disclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C84FF441999A51200ED76CA /* disclosure.png */; };
+		7C84FF471999A60700ED76CA /* shirnk.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C84FF461999A60700ED76CA /* shirnk.png */; };
 		7CA90C3E196382E900E9545A /* MemberInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C3C196382E900E9545A /* MemberInfoViewController.m */; };
 		7CA90C45196385E400E9545A /* DependentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C43196385E400E9545A /* DependentInfoViewController.m */; };
 		7CA90C881963CDD400E9545A /* ProductListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C861963CDD400E9545A /* ProductListingViewController.m */; };
@@ -231,6 +233,8 @@
 		7C8053171988CA0E00FB6243 /* ProviderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderListViewController.m; sourceTree = "<group>"; };
 		7C8053411988D23C00FB6243 /* ProviderListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviderListTableViewCell.h; sourceTree = "<group>"; };
 		7C8053421988D23C00FB6243 /* ProviderListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderListTableViewCell.m; sourceTree = "<group>"; };
+		7C84FF441999A51200ED76CA /* disclosure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disclosure.png; sourceTree = "<group>"; };
+		7C84FF461999A60700ED76CA /* shirnk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shirnk.png; sourceTree = "<group>"; };
 		7CA90C3B196382E900E9545A /* MemberInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberInfoViewController.h; sourceTree = "<group>"; };
 		7CA90C3C196382E900E9545A /* MemberInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberInfoViewController.m; sourceTree = "<group>"; };
 		7CA90C42196385E400E9545A /* DependentInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DependentInfoViewController.h; sourceTree = "<group>"; };
@@ -412,6 +416,8 @@
 		7C3CC44E196F62B100AB4EC6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7C84FF461999A60700ED76CA /* shirnk.png */,
+				7C84FF441999A51200ED76CA /* disclosure.png */,
 				7CD142611993504500DBE77A /* IDBack.png */,
 				7CD142621993504500DBE77A /* IDFront.png */,
 				7CC9A8671973A6BA00E89DD4 /* shadowline.png */,
@@ -898,6 +904,7 @@
 				7C3CC47C196F62B100AB4EC6 /* nav bar.png in Resources */,
 				7CC9A8661973785100E89DD4 /* checkbox@2x.png in Resources */,
 				7CC9A8501973712300E89DD4 /* aboutNetcare@2x.png in Resources */,
+				7C84FF471999A60700ED76CA /* shirnk.png in Resources */,
 				7C7D64661974BEFB00AF246A /* about.png in Resources */,
 				7CBC77201964DED7003987FA /* MemberInfoViewController.xib in Resources */,
 				7C3CC4A7196F66F200AB4EC6 /* Default-568h@2x.png in Resources */,
@@ -910,6 +917,7 @@
 				7C7D64851974EF6600AF246A /* providerbox.png in Resources */,
 				7CC9A84F1973712300E89DD4 /* aboutNetcare.png in Resources */,
 				7CC9A8581973712300E89DD4 /* productlisting@2x.png in Resources */,
+				7C84FF451999A51200ED76CA /* disclosure.png in Resources */,
 				7C3CC48D196F62B100AB4EC6 /* logout.png in Resources */,
 				7C3CC491196F62B100AB4EC6 /* menubtn.png in Resources */,
 				7C7D646A1974BEFB00AF246A /* survey@2x.png in Resources */,
@@ -1149,7 +1157,7 @@
 				INFOPLIST_FILE = "NetCare/NetCare-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "AE9F7B43-0411-4B86-9781-E5811F2FFC33";
+				PROVISIONING_PROFILE = "DF8E82C5-DF08-4DCB-9CC7-C7EF79D958CF";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1164,7 +1172,7 @@
 				INFOPLIST_FILE = "NetCare/NetCare-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "AE9F7B43-0411-4B86-9781-E5811F2FFC33";
+				PROVISIONING_PROFILE = "DF8E82C5-DF08-4DCB-9CC7-C7EF79D958CF";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

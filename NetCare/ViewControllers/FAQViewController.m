@@ -112,7 +112,7 @@
     button.frame=CGRectMake(2, 2, 280, 44);
     button.tag=section+1;
     [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    //[button setImage:[UIImage imageNamed:@"shrink.png"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"shirnk.png"] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:@"disclosure.png"] forState:UIControlStateSelected];
     if([[cellCount objectAtIndex:section] intValue]==0)
         button.selected=YES;
