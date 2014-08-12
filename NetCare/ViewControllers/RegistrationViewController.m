@@ -249,8 +249,9 @@
     NSError *error = [request error];
     if (!error) {
         NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
-        NSLog(@"responseData: %@",responseData);
+        NSLog(@"responseData: %@",responseData);        
         NSMutableArray *arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
+        
         NSMutableDictionary *dictData = [arrayData objectAtIndex:0];
         NSString *strStatus = [NSString stringWithFormat:@"%@",[dictData objectForKey:@"strStatus"]];
         if ([strStatus isEqualToString:@"Success"]) {

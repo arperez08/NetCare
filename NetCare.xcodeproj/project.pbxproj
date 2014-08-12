@@ -64,6 +64,8 @@
 		7C8053441988D23C00FB6243 /* ProviderListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8053421988D23C00FB6243 /* ProviderListTableViewCell.m */; };
 		7C84FF451999A51200ED76CA /* disclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C84FF441999A51200ED76CA /* disclosure.png */; };
 		7C84FF471999A60700ED76CA /* shirnk.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C84FF461999A60700ED76CA /* shirnk.png */; };
+		7C84FF4B199A015800ED76CA /* ClaimsListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C84FF49199A015800ED76CA /* ClaimsListTableViewCell.m */; };
+		7C84FF4C199A015800ED76CA /* ClaimsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C84FF4A199A015800ED76CA /* ClaimsListTableViewCell.xib */; };
 		7CA90C3E196382E900E9545A /* MemberInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C3C196382E900E9545A /* MemberInfoViewController.m */; };
 		7CA90C45196385E400E9545A /* DependentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C43196385E400E9545A /* DependentInfoViewController.m */; };
 		7CA90C881963CDD400E9545A /* ProductListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C861963CDD400E9545A /* ProductListingViewController.m */; };
@@ -223,6 +225,9 @@
 		7C8053421988D23C00FB6243 /* ProviderListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderListTableViewCell.m; sourceTree = "<group>"; };
 		7C84FF441999A51200ED76CA /* disclosure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disclosure.png; sourceTree = "<group>"; };
 		7C84FF461999A60700ED76CA /* shirnk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shirnk.png; sourceTree = "<group>"; };
+		7C84FF48199A015800ED76CA /* ClaimsListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClaimsListTableViewCell.h; sourceTree = "<group>"; };
+		7C84FF49199A015800ED76CA /* ClaimsListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClaimsListTableViewCell.m; sourceTree = "<group>"; };
+		7C84FF4A199A015800ED76CA /* ClaimsListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClaimsListTableViewCell.xib; path = ../../ViewControllers/ClaimsListTableViewCell.xib; sourceTree = "<group>"; };
 		7CA90C3B196382E900E9545A /* MemberInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberInfoViewController.h; sourceTree = "<group>"; };
 		7CA90C3C196382E900E9545A /* MemberInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberInfoViewController.m; sourceTree = "<group>"; };
 		7CA90C42196385E400E9545A /* DependentInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DependentInfoViewController.h; sourceTree = "<group>"; };
@@ -655,6 +660,8 @@
 				7CB365EF196290E3003E216F /* AboutViewController.m */,
 				7CA90C8F1963D11000E9545A /* ClaimsViewController.h */,
 				7CA90C901963D11000E9545A /* ClaimsViewController.m */,
+				7C84FF48199A015800ED76CA /* ClaimsListTableViewCell.h */,
+				7C84FF49199A015800ED76CA /* ClaimsListTableViewCell.m */,
 				7CA90C941963D12800E9545A /* DeductibleViewController.h */,
 				7CA90C951963D12800E9545A /* DeductibleViewController.m */,
 				7CA90C42196385E400E9545A /* DependentInfoViewController.h */,
@@ -709,6 +716,7 @@
 			children = (
 				7CBC77071964DED7003987FA /* AboutViewController.xib */,
 				7CBC77081964DED7003987FA /* ClaimsViewController.xib */,
+				7C84FF4A199A015800ED76CA /* ClaimsListTableViewCell.xib */,
 				7CBC77091964DED7003987FA /* DeductibleViewController.xib */,
 				7CBC770A1964DED7003987FA /* DependentInfoViewController.xib */,
 				7CC83A9F1994AB2C0080C81C /* DependentsTableViewCell.xib */,
@@ -836,6 +844,7 @@
 				7CC9A8501973712300E89DD4 /* aboutNetcare@2x.png in Resources */,
 				7C84FF471999A60700ED76CA /* shirnk.png in Resources */,
 				7C7D64661974BEFB00AF246A /* about.png in Resources */,
+				7C84FF4C199A015800ED76CA /* ClaimsListTableViewCell.xib in Resources */,
 				7CBC77201964DED7003987FA /* MemberInfoViewController.xib in Resources */,
 				7C3CC4A7196F66F200AB4EC6 /* Default-568h@2x.png in Resources */,
 				7C4CCDD1198F493400F6043E /* bg_box.png in Resources */,
@@ -942,6 +951,7 @@
 				7CB365E619628A98003E216F /* FindProviderViewController.m in Sources */,
 				7C7D64721974C1A800AF246A /* FindProviderMenuViewController.m in Sources */,
 				7CB3653119627C28003E216F /* main.m in Sources */,
+				7C84FF4B199A015800ED76CA /* ClaimsListTableViewCell.m in Sources */,
 				7CAD295E1990BFAF00746285 /* PKRevealControllerContainerView.m in Sources */,
 				7C8053191988CA0E00FB6243 /* ProviderListViewController.m in Sources */,
 				7CB365F1196290E3003E216F /* AboutViewController.m in Sources */,
