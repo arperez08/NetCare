@@ -8,13 +8,14 @@
 
 #import "MemberInfoViewController.h"
 #import "PKRevealController.h"
+#import "UIImage+MDQRCode.h"
 
 @interface MemberInfoViewController ()
 
 @end
 
 @implementation MemberInfoViewController
-@synthesize imgCard, imgCardBack, cardContainer,btnFlip,viewEligibility;
+@synthesize imgCard, imgCardBack, cardContainer,btnFlip,viewEligibility,imgQRCode;
 @synthesize btnMenu, lblTitle, imgTopBar,imgWhitebox;
 @synthesize lblFullName,lblDental,lblMedical,lblPlanName, lblMemNbr;
 
@@ -41,8 +42,6 @@
     userInfo = [[NSMutableDictionary alloc] init];
     userInfo = [userLogin objectForKey:@"userInfo"];
 
-    [self.cardContainer addSubview:imgCardBack];
-    
     NSLog(@"userData:%@ userInfo:%@",userData,userInfo);
     
     lblMemNbr.text = [userData objectForKey:@"strMemTinNbr"];
@@ -56,11 +55,23 @@
         UIImage* image = [UIImage imageNamed:@"whitebox"];
         imgWhitebox.image = image;
     }
+
+    [self.cardContainer addSubview:imgCardBack];
+
     UIImage *bgimg = [UIImage imageNamed:@"IDFront"];
     UIImage *img = [self drawTextName:@"" inImage:bgimg atPoint:CGPointMake(0, 0)];
     imgCardBack.image = img;
     
+    NSString *strMemTinNbr = [userData objectForKey:@"strMemTinNbr"];
+    imgQRCode.image = [self generateQRCode:strMemTinNbr];
+
     [self checkInterface];
+}
+
+-(UIImage *) generateQRCode:(NSString*) userMemberNumber {
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0,0.0,320.0,320.0)];
+	imageView.image = [UIImage mdQRCodeForString:userMemberNumber size:imageView.bounds.size.width fillColor:[UIColor blackColor]];
+    return imageView.image;
 }
 
 -(void) checkInterface{
@@ -69,9 +80,9 @@
         // Portrairt mode
         tabBar.hidden = FALSE;
         self.cardContainer.frame = CGRectMake(1.0, 57.0, 320, 200);
-        self.imgCard.frame = CGRectMake(1.0, 5.0, 316, 185);
-        self.imgCardBack.frame = CGRectMake(1.0, 5.0, 316, 185);
-        self.btnFlip.frame = CGRectMake(1.0, 5.0, 316, 185);
+        self.imgCard.frame = CGRectMake(1.0, 1.0, 316, 195);
+        self.imgCardBack.frame = CGRectMake(1.0, 1.0, 316, 195);
+        self.btnFlip.frame = CGRectMake(1.0, 1.0, 316, 195);
         viewEligibility.hidden = NO;
         btnMenu.hidden = NO;
         lblTitle.hidden = NO;
@@ -127,11 +138,14 @@
 	[UIView setAnimationTransition:([self.imgCard superview] ?
 									UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromRight)
 						   forView:self.cardContainer cache:YES];
-	if ([imgCardBack superview]){
+
+	if ([imgCardBack superview])
+    {
 		[self.imgCardBack removeFromSuperview];
-		[self.cardContainer addSubview:imgCard];
+ 		[self.cardContainer addSubview:imgCard];
 	}
-	else{
+	else
+    {
 		[self.imgCard removeFromSuperview];
 		[self.cardContainer addSubview:imgCardBack];
 	}
@@ -152,7 +166,7 @@
     UIView *tabBar = [self.tabBarController.view.subviews objectAtIndex:1];
     if(toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
     {
-         tabBar.hidden = TRUE;
+        tabBar.hidden = TRUE;
         if ([[UIScreen mainScreen] bounds].size.height == 568) {            // iPhone 5/5S
             self.cardContainer.frame = CGRectMake(30.0, 20.0, 520, 290);
             self.imgCard.frame = CGRectMake(0.0, 0.0, 510, 290);
@@ -179,9 +193,9 @@
         // Portrairt mode
         tabBar.hidden = FALSE;
         self.cardContainer.frame = CGRectMake(1.0, 57.0, 320, 200);
-        self.imgCard.frame = CGRectMake(1.0, 5.0, 316, 185);
-        self.imgCardBack.frame = CGRectMake(1.0, 5.0, 316, 185);
-        self.btnFlip.frame = CGRectMake(1.0, 5.0, 316, 185);
+        self.imgCard.frame = CGRectMake(1.0, 1.0, 316, 195);
+        self.imgCardBack.frame = CGRectMake(1.0, 1.0, 316, 195);
+        self.btnFlip.frame = CGRectMake(1.0, 1.0, 316, 195);
         viewEligibility.hidden = NO;
         btnMenu.hidden = NO;
         lblTitle.hidden = NO;

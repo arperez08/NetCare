@@ -146,7 +146,6 @@
                                                                                                    options:nil];
         [self.navigationController pushViewController:revealController animated:YES];
     }
-
 }
 
 - (IBAction)btnEligibility:(id)sender {

@@ -10,7 +10,7 @@
 #import "MBProgressHUD.h"
 #import "Reachability.h"
 
-@interface RegistrationViewController : UIViewController 
+@interface RegistrationViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 {
     MBProgressHUD *HUB;
     
@@ -26,12 +26,19 @@
     UIDatePicker *BdayPicker;
     IBOutlet UIButton *btnBday;
     
+    UIPickerView *securityQuestion;
+    IBOutlet UIButton *btnSecurity;
+    NSMutableArray *arrayQuestions;
 }
 - (IBAction)btnBack:(id)sender;
 - (IBAction)btnMember:(id)sender;
 - (IBAction)btnProvider:(id)sender;
 - (IBAction)btnTerms:(id)sender;
 - (IBAction)btnSubmit:(id)sender;
+
+
+@property (strong, nonatomic) IBOutlet UITextField *txtSecQuestion;
+@property (strong, nonatomic) IBOutlet UITextField *txtAnswer;
 
 @property (nonatomic, retain) IBOutlet UIScrollView * scrollView;
 @property (strong, nonatomic) IBOutlet UITextField *txtTINNum;

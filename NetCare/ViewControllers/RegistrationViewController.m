@@ -21,7 +21,7 @@
 @implementation RegistrationViewController
 @synthesize scrollView;
 @synthesize txtTINNum, txtSSN, txtMemberNum, txtLastName, txtFirstName,txtMiddle, txtDOB, txtEmail, txtUserName,txtPasswrod, txtRePassword;
-@synthesize btnTems,btnMember,btnProvider;
+@synthesize btnTems,btnMember,btnProvider,txtSecQuestion,txtAnswer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -62,11 +62,12 @@
     termsCheckbox = NO;
     
     [self.navigationController setNavigationBarHidden:YES];
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 1100);
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 1200);
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
 
     [btnBday addTarget:self action:@selector(showBDay:forEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [btnSecurity addTarget:self action:@selector(showSecQuestions:forEvent:) forControlEvents:UIControlEventTouchUpInside];
     
     txtTINNum.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"TIN" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
     txtSSN.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"SSN" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
@@ -79,6 +80,27 @@
     txtUserName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"User Name" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
     txtPasswrod.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
     txtRePassword.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Re-Enter Password" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+    txtSecQuestion.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Select Question" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+    txtAnswer.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Answer" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+    
+    arrayQuestions=[[NSMutableArray alloc]initWithObjects:
+                    @"Select Question",
+                    @"Who is your favorite actor, musician, or artist?",
+                    @"What is the name of your favorite pet?",
+                    @"In what city were you born?",
+                    @"What high school did you attend?",
+                    @"What is the name of your first school?",
+                    @"What is your favorite movie?",
+                    @"What is your mother's maiden name?",
+                    @"What street did you grow up on?",
+                    @"What was the make of your first car?",
+                    @"When is your anniversary?",
+                    @"What is your favorite color?",
+                    @"What is your father's middle name?",
+                    @"What is the name of your first grade teacher?",
+                    @"What was your high school mascot?",
+                    @"Which is your favorite web browser?",
+                    nil];
 }
 
 -(void)dismissKeyboard {
@@ -93,6 +115,7 @@
     [txtUserName resignFirstResponder];
     [txtPasswrod resignFirstResponder];
     [txtRePassword resignFirstResponder];
+    [txtAnswer resignFirstResponder];
 }
 
 -(BOOL) NSStringIsValidEmail:(NSString *)checkString {
@@ -178,7 +201,7 @@
             [self alertStatus:@"TIN number is required" :@"Error"];
         }
         else{
-            if (([txtLastName.text isEqualToString:@""]) || ([txtFirstName.text isEqualToString:@""]) || ([txtDOB.text isEqualToString:@""]) || ([txtEmail.text isEqualToString:@""]) || ([txtUserName.text isEqualToString:@""]) || ([txtPasswrod.text isEqualToString:@""])) {
+            if (([txtLastName.text isEqualToString:@""]) || ([txtFirstName.text isEqualToString:@""]) || ([txtDOB.text isEqualToString:@""]) || ([txtEmail.text isEqualToString:@""]) || ([txtUserName.text isEqualToString:@""]) || ([txtPasswrod.text isEqualToString:@""])|| ([txtSecQuestion.text isEqualToString:@""]) || ([txtAnswer.text isEqualToString:@""])) {
                 
                 if ([txtLastName.text isEqualToString:@""]) {
                     [self alertStatus:@"Last Name is required." :@"Error"];
@@ -197,6 +220,12 @@
                 }
                 else if ([txtPasswrod.text isEqualToString:@""]) {
                     [self alertStatus:@"Password is required." :@"Error"];
+                }
+                else if ([txtSecQuestion.text isEqualToString:@""]) {
+                    [self alertStatus:@"Please select security question." :@"Error"];
+                }
+                else if ([txtPasswrod.text isEqualToString:@""]) {
+                    [self alertStatus:@"Answer is required." :@"Error"];
                 }
             }
             else{
@@ -244,6 +273,8 @@
     [request setPostValue:txtUserName.text forKey:@"strUserName"];
     [request setPostValue:txtPasswrod.text forKey:@"strPassword"];
     [request setPostValue:strIDType forKey:@"intUserType"];
+    [request setPostValue:txtSecQuestion.text forKey:@"strSecQstion"];
+    [request setPostValue:txtAnswer.text forKey:@"strSecAns"];
     [request startSynchronous];
     NSData *urlData = [request responseData];
     NSError *error = [request error];
@@ -251,7 +282,6 @@
         NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
         NSLog(@"responseData: %@",responseData);        
         NSMutableArray *arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
-        
         NSMutableDictionary *dictData = [arrayData objectAtIndex:0];
         NSString *strStatus = [NSString stringWithFormat:@"%@",[dictData objectForKey:@"strStatus"]];
         if ([strStatus isEqualToString:@"Success"]) {
@@ -348,6 +378,56 @@
     popoverController.popoverBaseColor = [UIColor whiteColor];
     popoverController.popoverGradient= NO;
     [popoverController showPopoverWithTouch:event];
+}
+
+-(void)showSecQuestions:(id)sender forEvent:(UIEvent*)event{
+    [self dismissKeyboard];
+    UIViewController *prodNameView = [[UIViewController alloc]init];
+    prodNameView.view.frame = CGRectMake(0,0, 320, 162);
+    securityQuestion = [[UIPickerView alloc] init];
+    securityQuestion.frame  = CGRectMake(0,0, 320, 162);
+    securityQuestion.showsSelectionIndicator = YES;
+    securityQuestion.delegate = self;
+    securityQuestion.dataSource = self;
+    [prodNameView.view addSubview:securityQuestion];
+    TSPopoverController *popoverController = [[TSPopoverController alloc] initWithContentViewController:prodNameView];
+    popoverController.cornerRadius = 0;
+    popoverController.popoverBaseColor = [UIColor whiteColor];
+    popoverController.popoverGradient= YES;
+    [popoverController showPopoverWithTouch:event];
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
+	return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
+    return [arrayQuestions count];
+}
+
+- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    if (thePickerView == securityQuestion) {
+        NSString* questions = [arrayQuestions objectAtIndex:row];
+        if ((![questions  isEqual: @"Select Question"]) || !questions) {
+            [txtSecQuestion setText:questions];
+        }
+    }
+}
+
+- (UIView *)pickerView:(UIPickerView *)thePickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    UILabel* tView = (UILabel*)view;
+    if (!tView){
+        tView = [[UILabel alloc] init];
+        [tView setTextAlignment:NSTextAlignmentCenter];
+        [tView setLineBreakMode:0];
+    }
+    if (thePickerView == securityQuestion) {
+        [tView setFont:[UIFont fontWithName:@"Helvetica" size:14]];
+        NSString* countryName = [arrayQuestions objectAtIndex:row];
+        tView.text=countryName;
+    }
+    return tView;
 }
 
 

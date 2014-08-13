@@ -23,7 +23,6 @@
 		7C3CC490196F62B100AB4EC6 /* memberbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC469196F62B100AB4EC6 /* memberbtn.png */; };
 		7C3CC491196F62B100AB4EC6 /* menubtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC46A196F62B100AB4EC6 /* menubtn.png */; };
 		7C3CC493196F62B100AB4EC6 /* Upcoming Events.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC46C196F62B100AB4EC6 /* Upcoming Events.png */; };
-		7C3CC494196F62B100AB4EC6 /* FindProvider.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC46D196F62B100AB4EC6 /* FindProvider.jpg */; };
 		7C3CC496196F62B100AB4EC6 /* Netcare logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC46F196F62B100AB4EC6 /* Netcare logo.png */; };
 		7C3CC49C196F62B100AB4EC6 /* whitebox.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC476196F62B100AB4EC6 /* whitebox.png */; };
 		7C3CC49D196F62B100AB4EC6 /* whitebox_expired.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC477196F62B100AB4EC6 /* whitebox_expired.png */; };
@@ -112,6 +111,17 @@
 		7CB365DA19627F37003E216F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB365D819627F37003E216F /* LoginViewController.m */; };
 		7CB365E619628A98003E216F /* FindProviderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB365E419628A98003E216F /* FindProviderViewController.m */; };
 		7CB365F1196290E3003E216F /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB365EF196290E3003E216F /* AboutViewController.m */; };
+		7CB961E9199B0F270084AFD5 /* bitstream.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CB961D9199B0F270084AFD5 /* bitstream.c */; };
+		7CB961EA199B0F270084AFD5 /* mask.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CB961DB199B0F270084AFD5 /* mask.c */; };
+		7CB961EB199B0F270084AFD5 /* qrencode.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CB961DD199B0F270084AFD5 /* qrencode.c */; };
+		7CB961EC199B0F270084AFD5 /* qrinput.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CB961DF199B0F270084AFD5 /* qrinput.c */; };
+		7CB961ED199B0F270084AFD5 /* qrspec.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CB961E1199B0F270084AFD5 /* qrspec.c */; };
+		7CB961EE199B0F270084AFD5 /* rscode.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CB961E3199B0F270084AFD5 /* rscode.c */; };
+		7CB961EF199B0F270084AFD5 /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CB961E5199B0F270084AFD5 /* split.c */; };
+		7CB961F0199B0F270084AFD5 /* UIImage+MDQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB961E8199B0F270084AFD5 /* UIImage+MDQRCode.m */; };
+		7CB961F5199B2B750084AFD5 /* Member.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CB961F2199B2B750084AFD5 /* Member.png */; };
+		7CB961F6199B2B750084AFD5 /* MemberInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CB961F3199B2B750084AFD5 /* MemberInfo.png */; };
+		7CB961F9199B2D110084AFD5 /* FindProvider.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CB961F8199B2D110084AFD5 /* FindProvider.png */; };
 		7CBC77151964DED7003987FA /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77071964DED7003987FA /* AboutViewController.xib */; };
 		7CBC77161964DED7003987FA /* ClaimsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77081964DED7003987FA /* ClaimsViewController.xib */; };
 		7CBC77171964DED7003987FA /* DeductibleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77091964DED7003987FA /* DeductibleViewController.xib */; };
@@ -179,7 +189,6 @@
 		7C3CC469196F62B100AB4EC6 /* memberbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = memberbtn.png; sourceTree = "<group>"; };
 		7C3CC46A196F62B100AB4EC6 /* menubtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubtn.png; sourceTree = "<group>"; };
 		7C3CC46C196F62B100AB4EC6 /* Upcoming Events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Upcoming Events.png"; sourceTree = "<group>"; };
-		7C3CC46D196F62B100AB4EC6 /* FindProvider.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FindProvider.jpg; sourceTree = "<group>"; };
 		7C3CC46F196F62B100AB4EC6 /* Netcare logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Netcare logo.png"; sourceTree = "<group>"; };
 		7C3CC476196F62B100AB4EC6 /* whitebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whitebox.png; sourceTree = "<group>"; };
 		7C3CC477196F62B100AB4EC6 /* whitebox_expired.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whitebox_expired.png; sourceTree = "<group>"; };
@@ -315,6 +324,25 @@
 		7CB365E419628A98003E216F /* FindProviderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindProviderViewController.m; sourceTree = "<group>"; };
 		7CB365EE196290E3003E216F /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		7CB365EF196290E3003E216F /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		7CB961D9199B0F270084AFD5 /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
+		7CB961DA199B0F270084AFD5 /* bitstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitstream.h; sourceTree = "<group>"; };
+		7CB961DB199B0F270084AFD5 /* mask.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mask.c; sourceTree = "<group>"; };
+		7CB961DC199B0F270084AFD5 /* mask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mask.h; sourceTree = "<group>"; };
+		7CB961DD199B0F270084AFD5 /* qrencode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrencode.c; sourceTree = "<group>"; };
+		7CB961DE199B0F270084AFD5 /* qrencode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrencode.h; sourceTree = "<group>"; };
+		7CB961DF199B0F270084AFD5 /* qrinput.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrinput.c; sourceTree = "<group>"; };
+		7CB961E0199B0F270084AFD5 /* qrinput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrinput.h; sourceTree = "<group>"; };
+		7CB961E1199B0F270084AFD5 /* qrspec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrspec.c; sourceTree = "<group>"; };
+		7CB961E2199B0F270084AFD5 /* qrspec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrspec.h; sourceTree = "<group>"; };
+		7CB961E3199B0F270084AFD5 /* rscode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rscode.c; sourceTree = "<group>"; };
+		7CB961E4199B0F270084AFD5 /* rscode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rscode.h; sourceTree = "<group>"; };
+		7CB961E5199B0F270084AFD5 /* split.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = split.c; sourceTree = "<group>"; };
+		7CB961E6199B0F270084AFD5 /* split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
+		7CB961E7199B0F270084AFD5 /* UIImage+MDQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MDQRCode.h"; sourceTree = "<group>"; };
+		7CB961E8199B0F270084AFD5 /* UIImage+MDQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MDQRCode.m"; sourceTree = "<group>"; };
+		7CB961F2199B2B750084AFD5 /* Member.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Member.png; sourceTree = "<group>"; };
+		7CB961F3199B2B750084AFD5 /* MemberInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MemberInfo.png; sourceTree = "<group>"; };
+		7CB961F8199B2D110084AFD5 /* FindProvider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FindProvider.png; sourceTree = "<group>"; };
 		7CBC77071964DED7003987FA /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		7CBC77081964DED7003987FA /* ClaimsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClaimsViewController.xib; sourceTree = "<group>"; };
 		7CBC77091964DED7003987FA /* DeductibleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeductibleViewController.xib; sourceTree = "<group>"; };
@@ -384,12 +412,12 @@
 		7C3CC44E196F62B100AB4EC6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7CB961F1199B2B750084AFD5 /* HomeImages */,
 				7C84FF461999A60700ED76CA /* shirnk.png */,
 				7C84FF441999A51200ED76CA /* disclosure.png */,
 				7CD142611993504500DBE77A /* IDBack.png */,
 				7CD142621993504500DBE77A /* IDFront.png */,
 				7CC9A8671973A6BA00E89DD4 /* shadowline.png */,
-				7C3CC46D196F62B100AB4EC6 /* FindProvider.jpg */,
 				7C3CC4A4196F647400AB4EC6 /* LaunchImg_568hRetina.png */,
 				7C3CC46F196F62B100AB4EC6 /* Netcare logo.png */,
 				7C3CC477196F62B100AB4EC6 /* whitebox_expired.png */,
@@ -476,6 +504,7 @@
 				7CAD29221990BFAF00746285 /* MyAnnotation.h */,
 				7CAD29231990BFAF00746285 /* MyAnnotation.m */,
 				7CAD29241990BFAF00746285 /* PKRevealController */,
+				7CB961D7199B0F270084AFD5 /* QR */,
 				7CAD292B1990BFAF00746285 /* Reachability.h */,
 				7CAD292C1990BFAF00746285 /* Reachability.m */,
 				7CAD29471990BFAF00746285 /* TSPopover */,
@@ -704,6 +733,47 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		7CB961D7199B0F270084AFD5 /* QR */ = {
+			isa = PBXGroup;
+			children = (
+				7CB961D8199B0F270084AFD5 /* libqrencode */,
+				7CB961E7199B0F270084AFD5 /* UIImage+MDQRCode.h */,
+				7CB961E8199B0F270084AFD5 /* UIImage+MDQRCode.m */,
+			);
+			path = QR;
+			sourceTree = "<group>";
+		};
+		7CB961D8199B0F270084AFD5 /* libqrencode */ = {
+			isa = PBXGroup;
+			children = (
+				7CB961D9199B0F270084AFD5 /* bitstream.c */,
+				7CB961DA199B0F270084AFD5 /* bitstream.h */,
+				7CB961DB199B0F270084AFD5 /* mask.c */,
+				7CB961DC199B0F270084AFD5 /* mask.h */,
+				7CB961DD199B0F270084AFD5 /* qrencode.c */,
+				7CB961DE199B0F270084AFD5 /* qrencode.h */,
+				7CB961DF199B0F270084AFD5 /* qrinput.c */,
+				7CB961E0199B0F270084AFD5 /* qrinput.h */,
+				7CB961E1199B0F270084AFD5 /* qrspec.c */,
+				7CB961E2199B0F270084AFD5 /* qrspec.h */,
+				7CB961E3199B0F270084AFD5 /* rscode.c */,
+				7CB961E4199B0F270084AFD5 /* rscode.h */,
+				7CB961E5199B0F270084AFD5 /* split.c */,
+				7CB961E6199B0F270084AFD5 /* split.h */,
+			);
+			path = libqrencode;
+			sourceTree = "<group>";
+		};
+		7CB961F1199B2B750084AFD5 /* HomeImages */ = {
+			isa = PBXGroup;
+			children = (
+				7CB961F8199B2D110084AFD5 /* FindProvider.png */,
+				7CB961F2199B2B750084AFD5 /* Member.png */,
+				7CB961F3199B2B750084AFD5 /* MemberInfo.png */,
+			);
+			path = HomeImages;
+			sourceTree = "<group>";
+		};
 		7CBC77051964DED7003987FA /* iPad */ = {
 			isa = PBXGroup;
 			children = (
@@ -817,16 +887,18 @@
 				7C7D645F1974BABB00AF246A /* BG.png in Resources */,
 				7CBC771B1964DED7003987FA /* FAQViewController.xib in Resources */,
 				7CBC771C1964DED7003987FA /* FindProviderViewController.xib in Resources */,
+				7CB961F6199B2B750084AFD5 /* MemberInfo.png in Resources */,
 				7C7D64671974BEFB00AF246A /* about@2x.png in Resources */,
 				7C7D64681974BEFB00AF246A /* menubtn@2x.png in Resources */,
 				7C42614B1988D820001D234A /* ProviderListTableViewCell.xib in Resources */,
+				7CB961F9199B2D110084AFD5 /* FindProvider.png in Resources */,
 				7C4261501988DB0D001D234A /* arrowright@2x.png in Resources */,
-				7C3CC494196F62B100AB4EC6 /* FindProvider.jpg in Resources */,
 				7CBC77211964DED7003987FA /* ProductListingViewController.xib in Resources */,
 				7C7D647E1974C5CB00AF246A /* dependent.png in Resources */,
 				7CC9A8571973712300E89DD4 /* productlisting.png in Resources */,
 				7C7D64831974CF8A00AF246A /* textwhitebox.png in Resources */,
 				7C7D646D1974BF5000AF246A /* FAQs.png in Resources */,
+				7CB961F5199B2B750084AFD5 /* Member.png in Resources */,
 				7C3CC4A0196F637300AB4EC6 /* checkbox_empty.png in Resources */,
 				7C5363C81989C61B00DBF0DB /* ProviderDetailsViewController.xib in Resources */,
 				7C3CC496196F62B100AB4EC6 /* Netcare logo.png in Resources */,
@@ -924,6 +996,7 @@
 				7CAD29531990BFAF00746285 /* ASIAuthenticationDialog.m in Sources */,
 				7C2B156F198B5DCC00F3C06B /* LocationViewController.m in Sources */,
 				7CB3653519627C28003E216F /* AppDelegate.m in Sources */,
+				7CB961EA199B0F270084AFD5 /* mask.c in Sources */,
 				7CAD29701990BFAF00746285 /* TSPopoverTouchView.m in Sources */,
 				7CAD29581990BFAF00746285 /* ASIHTTPRequest.m in Sources */,
 				7CAD295D1990BFAF00746285 /* PKRevealController.m in Sources */,
@@ -933,8 +1006,10 @@
 				7CBC772C1964E704003987FA /* SideMenuiPadViewController.m in Sources */,
 				7CAD29571990BFAF00746285 /* ASIFormDataRequest.m in Sources */,
 				7CAD29711990BFAF00746285 /* UIBarButtonItem+WEPopover.m in Sources */,
+				7CB961EB199B0F270084AFD5 /* qrencode.c in Sources */,
 				7C5363C71989C61B00DBF0DB /* ProviderDetailsViewController.m in Sources */,
 				7CB365D519627EFF003E216F /* SideMenuViewController.m in Sources */,
+				7CB961E9199B0F270084AFD5 /* bitstream.c in Sources */,
 				7CA90C45196385E400E9545A /* DependentInfoViewController.m in Sources */,
 				7CA90C3E196382E900E9545A /* MemberInfoViewController.m in Sources */,
 				7CA90CA61963D15C00E9545A /* FAQViewController.m in Sources */,
@@ -945,6 +1020,7 @@
 				7CAD295A1990BFAF00746285 /* ASINetworkQueue.m in Sources */,
 				7C3CC4AB196F67AE00AB4EC6 /* RegistrationViewController.m in Sources */,
 				7CAD29551990BFAF00746285 /* ASIDataDecompressor.m in Sources */,
+				7CB961EC199B0F270084AFD5 /* qrinput.c in Sources */,
 				7CAD296F1990BFAF00746285 /* TSPopoverPopoverView.m in Sources */,
 				7CAD29541990BFAF00746285 /* ASIDataCompressor.m in Sources */,
 				7CA90CA11963D14E00E9545A /* GenSurveyViewController.m in Sources */,
@@ -954,10 +1030,14 @@
 				7C84FF4B199A015800ED76CA /* ClaimsListTableViewCell.m in Sources */,
 				7CAD295E1990BFAF00746285 /* PKRevealControllerContainerView.m in Sources */,
 				7C8053191988CA0E00FB6243 /* ProviderListViewController.m in Sources */,
+				7CB961ED199B0F270084AFD5 /* qrspec.c in Sources */,
 				7CB365F1196290E3003E216F /* AboutViewController.m in Sources */,
 				7CAD29591990BFAF00746285 /* ASIInputStream.m in Sources */,
 				7CAD296E1990BFAF00746285 /* TSPopoverController.m in Sources */,
+				7CB961EE199B0F270084AFD5 /* rscode.c in Sources */,
+				7CB961F0199B0F270084AFD5 /* UIImage+MDQRCode.m in Sources */,
 				7CAD296D1990BFAF00746285 /* TSActionSheet.m in Sources */,
+				7CB961EF199B0F270084AFD5 /* split.c in Sources */,
 				7C8053441988D23C00FB6243 /* ProviderListTableViewCell.m in Sources */,
 				7CA90C881963CDD400E9545A /* ProductListingViewController.m in Sources */,
 				7C36C2D31982098F009E3163 /* Constants.m in Sources */,

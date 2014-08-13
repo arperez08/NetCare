@@ -9,8 +9,10 @@
                 <outlet property="btnBday" destination="F7q-8I-vvu" id="veh-Ff-DiA"/>
                 <outlet property="btnMember" destination="Jyy-J8-DDc" id="pcL-h3-l3P"/>
                 <outlet property="btnProvider" destination="WBG-Wv-nQa" id="ulp-2M-6dp"/>
+                <outlet property="btnSecurity" destination="6b5-mk-xEv" id="5lp-Hv-GhK"/>
                 <outlet property="btnTems" destination="ERo-Lw-w6A" id="Dnj-9j-QCp"/>
                 <outlet property="scrollView" destination="1kt-iT-bOe" id="w7f-dR-5Z4"/>
+                <outlet property="txtAnswer" destination="qNX-Xg-F70" id="1y5-Yb-bH3"/>
                 <outlet property="txtDOB" destination="rry-0i-MiL" id="Npt-28-kso"/>
                 <outlet property="txtEmail" destination="LXy-p6-8e4" id="0Q7-lX-IVn"/>
                 <outlet property="txtFirstName" destination="qpa-AB-0OE" id="XBb-j6-OuV"/>
@@ -20,6 +22,7 @@
                 <outlet property="txtPasswrod" destination="cDB-jv-ObX" id="96D-aS-yxy"/>
                 <outlet property="txtRePassword" destination="8b7-lc-Vat" id="hyH-Dd-6Aw"/>
                 <outlet property="txtSSN" destination="Q8t-dZ-yyg" id="l8H-QG-Cua"/>
+                <outlet property="txtSecQuestion" destination="2vX-6r-26D" id="gcX-dD-rcv"/>
                 <outlet property="txtTINNum" destination="GvT-tB-oUb" id="jlK-qa-rfE"/>
                 <outlet property="txtUserName" destination="C2y-2c-obx" id="CJN-xl-kYi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -56,15 +59,15 @@
                     </connections>
                 </button>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1kt-iT-bOe">
-                    <rect key="frame" x="0.0" y="53" width="320" height="621"/>
+                    <rect key="frame" x="0.0" y="54" width="320" height="693"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="registrationbox.png" id="dGU-ht-tg6">
-                            <rect key="frame" x="-14" y="-3" width="343" height="612"/>
+                        <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="registrationbox.png" id="dGU-ht-tg6">
+                            <rect key="frame" x="-18" y="-5" width="352" height="698"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <textField clipsSubviews="YES" alpha="0.29999999999999999" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TIN Number" minimumFontSize="17" id="GvT-tB-oUb">
-                            <rect key="frame" x="32" y="154" width="240" height="30"/>
+                            <rect key="frame" x="20" y="177" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -72,7 +75,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                         <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SSN*" minimumFontSize="17" id="Q8t-dZ-yyg">
-                            <rect key="frame" x="32" y="192" width="240" height="30"/>
+                            <rect key="frame" x="20" y="215" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -80,7 +83,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                         <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Member Number*" minimumFontSize="17" id="uq9-w0-jvT">
-                            <rect key="frame" x="32" y="225" width="240" height="30"/>
+                            <rect key="frame" x="19" y="253" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -88,7 +91,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                         <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name*" minimumFontSize="17" id="isa-MI-xTN">
-                            <rect key="frame" x="32" y="258" width="240" height="30"/>
+                            <rect key="frame" x="20" y="291" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,7 +99,7 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                         </textField>
                         <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Middle Name" minimumFontSize="17" id="ihU-7x-hmm">
-                            <rect key="frame" x="32" y="325" width="240" height="30"/>
+                            <rect key="frame" x="19" y="368" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -104,7 +107,7 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                         </textField>
                         <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name*" minimumFontSize="17" id="qpa-AB-0OE">
-                            <rect key="frame" x="32" y="290" width="240" height="30"/>
+                            <rect key="frame" x="19" y="330" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -112,7 +115,7 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                         </textField>
                         <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address*" minimumFontSize="17" id="LXy-p6-8e4">
-                            <rect key="frame" x="32" y="390" width="240" height="30"/>
+                            <rect key="frame" x="20" y="444" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -120,7 +123,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                         </textField>
                         <textField clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth*" minimumFontSize="17" id="rry-0i-MiL">
-                            <rect key="frame" x="32" y="358" width="240" height="30"/>
+                            <rect key="frame" x="20" y="406" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -128,15 +131,31 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User Name*" minimumFontSize="17" id="C2y-2c-obx">
-                            <rect key="frame" x="32" y="422" width="240" height="30"/>
+                            <rect key="frame" x="20" y="482" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <textField clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Security Question:" minimumFontSize="17" id="2vX-6r-26D">
+                            <rect key="frame" x="19" y="558" width="135" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Answer" textAlignment="center" minimumFontSize="17" id="qNX-Xg-F70">
+                            <rect key="frame" x="162" y="558" width="147" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                        </textField>
                         <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password*" minimumFontSize="17" id="cDB-jv-ObX">
-                            <rect key="frame" x="32" y="455" width="240" height="30"/>
+                            <rect key="frame" x="19" y="520" width="140" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -144,7 +163,7 @@
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                         <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-Enter Password*" minimumFontSize="17" id="8b7-lc-Vat">
-                            <rect key="frame" x="32" y="486" width="240" height="30"/>
+                            <rect key="frame" x="162" y="520" width="147" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -152,28 +171,28 @@
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Member" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AVr-uk-ZBI">
-                            <rect key="frame" x="70" y="120" width="68" height="21"/>
+                            <rect key="frame" x="58" y="130" width="68" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provider" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lqq-jS-vkT">
-                            <rect key="frame" x="227" y="120" width="66" height="21"/>
+                            <rect key="frame" x="227" y="130" width="66" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accept Terms of User. Privacy Policy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SGh-QQ-D5W">
-                            <rect key="frame" x="74" y="531" width="226" height="16"/>
+                            <rect key="frame" x="74" y="614" width="226" height="16"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Jyy-J8-DDc">
-                            <rect key="frame" x="32" y="116" width="30" height="30"/>
+                            <rect key="frame" x="20" y="126" width="30" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             <state key="normal" image="check.png" backgroundImage="checkbox.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -183,7 +202,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WBG-Wv-nQa">
-                            <rect key="frame" x="189" y="116" width="30" height="30"/>
+                            <rect key="frame" x="189" y="126" width="30" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             <state key="normal" backgroundImage="checkbox.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -193,7 +212,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ERo-Lw-w6A">
-                            <rect key="frame" x="32" y="524" width="30" height="30"/>
+                            <rect key="frame" x="29" y="607" width="30" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             <state key="normal" backgroundImage="checkbox.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -203,14 +222,14 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="F7q-8I-vvu">
-                            <rect key="frame" x="32" y="358" width="247" height="30"/>
+                            <rect key="frame" x="20" y="406" width="247" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             <state key="normal">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="aYn-mf-z4g">
-                            <rect key="frame" x="97" y="555" width="126" height="46"/>
+                            <rect key="frame" x="97" y="638" width="126" height="46"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Submit" backgroundImage="signin bar.png">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -219,6 +238,13 @@
                             <connections>
                                 <action selector="btnSubmit:" destination="-1" eventType="touchUpInside" id="n9u-gl-e5y"/>
                             </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6b5-mk-xEv">
+                            <rect key="frame" x="25" y="558" width="134" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
                         </button>
                     </subviews>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

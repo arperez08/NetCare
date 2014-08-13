@@ -49,7 +49,7 @@
     
     HUB = [[MBProgressHUD alloc]initWithView:self.view];
     [self.view addSubview:HUB];
-    HUB.labelText = @"Getting your dependents information.";
+    HUB.labelText = @"Getting dependents information.";
     [HUB showWhileExecuting:@selector(getDependentsInfo) onTarget:self withObject:nil animated:YES];
 }
 
