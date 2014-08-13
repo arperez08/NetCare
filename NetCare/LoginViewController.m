@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "PKRevealController.h"
 #import "MainViewController.h"
+#import "ForgotPassViewController.h"
 #import "SideMenuViewController.h"
 #import "SideMenuiPadViewController.h"
 #import "RegistrationViewController.h"
@@ -327,7 +328,12 @@
     RegistrationViewController *rvc = [[RegistrationViewController alloc] initWithNibName:@"RegistrationViewController" bundle:[NSBundle mainBundle]];
     [self.navigationController setNavigationBarHidden:YES];
     [self.navigationController pushViewController:rvc animated:YES];
-    
+}
+
+- (IBAction)btnForgot:(id)sender {
+    ForgotPassViewController *rvc = [[ForgotPassViewController alloc] initWithNibName:@"ForgotPassViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController pushViewController:rvc animated:YES];
 }
 
 

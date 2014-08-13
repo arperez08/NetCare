@@ -17,6 +17,8 @@
 }
 - (IBAction)btnLogin:(id)sender;
 - (IBAction)btnRegister:(id)sender;
+- (IBAction)btnForgot:(id)sender;
+
 
 @property (strong, nonatomic) IBOutlet UITextField *txtUser;
 @property (strong, nonatomic) IBOutlet UITextField *txtPassword;

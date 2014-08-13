@@ -136,6 +136,10 @@
 		7CBC77211964DED7003987FA /* ProductListingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77131964DED7003987FA /* ProductListingViewController.xib */; };
 		7CBC77221964DED7003987FA /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77141964DED7003987FA /* SideMenuViewController.xib */; };
 		7CBC772C1964E704003987FA /* SideMenuiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CBC772A1964E704003987FA /* SideMenuiPadViewController.m */; };
+		7CC6CA02199B4298003A179C /* ForgotPassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC6CA00199B4298003A179C /* ForgotPassViewController.m */; };
+		7CC6CA03199B4298003A179C /* ForgotPassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CC6CA01199B4298003A179C /* ForgotPassViewController.xib */; };
+		7CC6CA07199B4B0B003A179C /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC6CA05199B4B0B003A179C /* ChangePasswordViewController.m */; };
+		7CC6CA08199B4B0B003A179C /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CC6CA06199B4B0B003A179C /* ChangePasswordViewController.xib */; };
 		7CC83AA01994AB2C0080C81C /* DependentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC83A9E1994AB2C0080C81C /* DependentsTableViewCell.m */; };
 		7CC83AA11994AB2C0080C81C /* DependentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CC83A9F1994AB2C0080C81C /* DependentsTableViewCell.xib */; };
 		7CC9A8421973628B00E89DD4 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8411973628B00E89DD4 /* home@2x.png */; };
@@ -358,6 +362,12 @@
 		7CBC77141964DED7003987FA /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		7CBC77291964E704003987FA /* SideMenuiPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuiPadViewController.h; sourceTree = "<group>"; };
 		7CBC772A1964E704003987FA /* SideMenuiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuiPadViewController.m; sourceTree = "<group>"; };
+		7CC6C9FF199B4298003A179C /* ForgotPassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPassViewController.h; sourceTree = "<group>"; };
+		7CC6CA00199B4298003A179C /* ForgotPassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPassViewController.m; sourceTree = "<group>"; };
+		7CC6CA01199B4298003A179C /* ForgotPassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPassViewController.xib; sourceTree = "<group>"; };
+		7CC6CA04199B4B0B003A179C /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
+		7CC6CA05199B4B0B003A179C /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
+		7CC6CA06199B4B0B003A179C /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
 		7CC83A9D1994AB2C0080C81C /* DependentsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DependentsTableViewCell.h; sourceTree = "<group>"; };
 		7CC83A9E1994AB2C0080C81C /* DependentsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DependentsTableViewCell.m; sourceTree = "<group>"; };
 		7CC83A9F1994AB2C0080C81C /* DependentsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DependentsTableViewCell.xib; path = ../../ViewControllers/DependentsTableViewCell.xib; sourceTree = "<group>"; };
@@ -729,6 +739,12 @@
 				7CBC772A1964E704003987FA /* SideMenuiPadViewController.m */,
 				7CB365D219627EFF003E216F /* SideMenuViewController.h */,
 				7CB365D319627EFF003E216F /* SideMenuViewController.m */,
+				7CC6C9FF199B4298003A179C /* ForgotPassViewController.h */,
+				7CC6CA00199B4298003A179C /* ForgotPassViewController.m */,
+				7CC6CA01199B4298003A179C /* ForgotPassViewController.xib */,
+				7CC6CA04199B4B0B003A179C /* ChangePasswordViewController.h */,
+				7CC6CA05199B4B0B003A179C /* ChangePasswordViewController.m */,
+				7CC6CA06199B4B0B003A179C /* ChangePasswordViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -898,6 +914,7 @@
 				7CC9A8571973712300E89DD4 /* productlisting.png in Resources */,
 				7C7D64831974CF8A00AF246A /* textwhitebox.png in Resources */,
 				7C7D646D1974BF5000AF246A /* FAQs.png in Resources */,
+				7CC6CA08199B4B0B003A179C /* ChangePasswordViewController.xib in Resources */,
 				7CB961F5199B2B750084AFD5 /* Member.png in Resources */,
 				7C3CC4A0196F637300AB4EC6 /* checkbox_empty.png in Resources */,
 				7C5363C81989C61B00DBF0DB /* ProviderDetailsViewController.xib in Resources */,
@@ -944,6 +961,7 @@
 				7CC9A8531973712300E89DD4 /* events.png in Resources */,
 				7C2348C2196FD4A200C9F0A9 /* RegistrationViewController.xib in Resources */,
 				7C3CC47E196F62B100AB4EC6 /* signin bar.png in Resources */,
+				7CC6CA03199B4298003A179C /* ForgotPassViewController.xib in Resources */,
 				7C42614A1988D820001D234A /* FindProviderMenuViewController.xib in Resources */,
 				7CC9A85C197371E600E89DD4 /* claims.png in Resources */,
 				7CC9A8541973712300E89DD4 /* events@2x.png in Resources */,
@@ -998,6 +1016,7 @@
 				7CB3653519627C28003E216F /* AppDelegate.m in Sources */,
 				7CB961EA199B0F270084AFD5 /* mask.c in Sources */,
 				7CAD29701990BFAF00746285 /* TSPopoverTouchView.m in Sources */,
+				7CC6CA07199B4B0B003A179C /* ChangePasswordViewController.m in Sources */,
 				7CAD29581990BFAF00746285 /* ASIHTTPRequest.m in Sources */,
 				7CAD295D1990BFAF00746285 /* PKRevealController.m in Sources */,
 				7CAD29601990BFAF00746285 /* Reachability.m in Sources */,
@@ -1035,6 +1054,7 @@
 				7CAD29591990BFAF00746285 /* ASIInputStream.m in Sources */,
 				7CAD296E1990BFAF00746285 /* TSPopoverController.m in Sources */,
 				7CB961EE199B0F270084AFD5 /* rscode.c in Sources */,
+				7CC6CA02199B4298003A179C /* ForgotPassViewController.m in Sources */,
 				7CB961F0199B0F270084AFD5 /* UIImage+MDQRCode.m in Sources */,
 				7CAD296D1990BFAF00746285 /* TSActionSheet.m in Sources */,
 				7CB961EF199B0F270084AFD5 /* split.c in Sources */,
