@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
+#import "Reachability.h"
 
-@interface EventsViewController : UIViewController
+@interface EventsViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 {
-    
+    MBProgressHUD *HUB;
+    IBOutlet UITableView *MIMtableView;
+    NSMutableArray *sectionArray;
+    NSMutableArray *cellArray;
+    NSMutableArray *cellCount;
 }
+@property(nonatomic,retain)IBOutlet UITableView *MIMtableView;
 - (IBAction)btnShowMenu:(id)sender;
 @end

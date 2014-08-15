@@ -53,6 +53,7 @@
     [txtAnswer resignFirstResponder];
 }
 
+
 #define kOFFSET_FOR_KEYBOARD 60.0
 
 -(void)keyboardWillShow {
@@ -170,11 +171,18 @@
         NSLog(@"Data: %@",responseData);
         NSMutableArray *arrayData = [[NSMutableArray alloc]init];
         arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
-        NSMutableDictionary *jsonData = [arrayData objectAtIndex:0];
-        txtSecretQuestion.text = [jsonData objectForKey:@"strSecQstion"];
-        viewQuestion.hidden = NO;
-        btnNext.hidden = YES;
-        [self dismissKeyboard];
+        
+        NSString *strArrayCount = [NSString stringWithFormat:@"%d",[arrayData count]];
+
+        if (![strArrayCount isEqualToString:@"0"]) {
+            NSMutableDictionary *jsonData = [arrayData objectAtIndex:0];
+            txtSecretQuestion.text = [jsonData objectForKey:@"strSecQstion"];
+            viewQuestion.hidden = NO;
+            btnNext.hidden = YES;
+        }
+        else{
+            [self alertStatus:@"Can't retrieved data using your Member Number and Username, please check." :@"Error"];
+        }
     }
 }
 
@@ -201,6 +209,8 @@
         
         if ([status isEqualToString:@"Success"]) {
             ChangePasswordViewController *rvc = [[ChangePasswordViewController alloc] initWithNibName:@"ChangePasswordViewController" bundle:[NSBundle mainBundle]];
+            rvc.userName = txtUsername.text;
+            rvc.memberNumber = txtMemberNum.text;
             [self.navigationController setNavigationBarHidden:YES];
             [self.navigationController pushViewController:rvc animated:YES];
         }
@@ -229,8 +239,9 @@
 }
 
 - (IBAction)btnSubmit:(id)sender {
-    HUB = [[MBProgressHUD alloc]initWithView:self.view];
-    [self.view addSubview:HUB];
-    [HUB showWhileExecuting:@selector(getResult) onTarget:self withObject:nil animated:YES];
+//    HUB = [[MBProgressHUD alloc]initWithView:self.view];
+//    [self.view addSubview:HUB];
+//    [HUB showWhileExecuting:@selector(getResult) onTarget:self withObject:nil animated:YES];
+    [self getResult];
 }
 @end

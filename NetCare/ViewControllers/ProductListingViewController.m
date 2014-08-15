@@ -12,7 +12,6 @@
 #import "ASIFormDataRequest.h"
 #import "Constants.h"
 
-
 @interface ProductListingViewController () <UIDocumentInteractionControllerDelegate>
 
 @end
@@ -74,7 +73,11 @@
             NSString *strCountryName = [NSString stringWithFormat:@"%@",[json objectForKey:@"strCountryName"]];
             if ([countryName isEqualToString:strCountryName]) {
                 NSString *strProdName = [json objectForKey:@"strProdName"];
-                countryData = [NSString stringWithFormat:@"%@ \n \u2022 %@",countryData,strProdName];
+                NSString *strFileLink = [NSString stringWithFormat:@"%@",[json objectForKey:@"strFileLink"]];
+                if ([strFileLink isEqualToString:@"<null>"])
+                    countryData = [NSString stringWithFormat:@"%@ \n\u2022 %@",countryData,strProdName];
+                else
+                    countryData = [NSString stringWithFormat:@"%@ \n\u2022 %@\n  %@",countryData,strProdName,strFileLink];
             }
         }
         [cellArrayValue addObject:countryData];
@@ -175,13 +178,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell=[[UITableViewCell alloc]  initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     //Add the Label
-    UILabel *cellTitle=[[UILabel alloc]initWithFrame:CGRectMake(15, 5, 300, 350)];
+    //UILabel *cellTitle=[[UILabel alloc]initWithFrame:CGRectMake(15, 5, 300, 350)];
+    
+    UITextView *cellTitle=[[UITextView alloc]initWithFrame:CGRectMake(15, 5, 300, 300)];
+    cellTitle.scrollEnabled = NO;
+    cellTitle.editable = NO;
+    cellTitle.selectable = YES;
+    cellTitle.dataDetectorTypes = UIDataDetectorTypeLink;
+
     [cellTitle setBackgroundColor:[UIColor clearColor]];
     [cellTitle setFont:[UIFont fontWithName:@"Helvetica" size:14]];
     [cellTitle setTextColor:[UIColor blackColor]];
     [cellTitle setText:[[cellArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
-    cellTitle.lineBreakMode = NSLineBreakByWordWrapping;
-    cellTitle.numberOfLines = 0;
+    //cellTitle.lineBreakMode = NSLineBreakByWordWrapping;
+    //cellTitle.numberOfLines = 0;
     [cellTitle sizeToFit];
     [cell.contentView addSubview:cellTitle];
     return  cell;

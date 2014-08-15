@@ -18,9 +18,11 @@
 - (IBAction)btnLogin:(id)sender;
 - (IBAction)btnRegister:(id)sender;
 - (IBAction)btnForgot:(id)sender;
+- (IBAction)btnShowPassword:(id)sender;
 
 
 @property (strong, nonatomic) IBOutlet UITextField *txtUser;
 @property (strong, nonatomic) IBOutlet UITextField *txtPassword;
+@property (nonatomic,strong) UILongPressGestureRecognizer *lpgr;
 
 @end

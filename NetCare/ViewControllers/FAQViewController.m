@@ -40,6 +40,19 @@
                   @"Do I need a referral for labs, x-rays and annual eye exams?",
                   @"Do I need a referral for medical treatment off-island?",
                   @"Do I need a referral to see a Specialist?",
+                  @"Do I need to notify NetCare if I am going off-island?",
+                  @"How can I determine if a doctor or hospital is a participating provider?",
+                  @"How can I file a request for reimbursement?",
+                  @"I received a statement in the mail. How do I know if NetCare paid my claim(s)",
+                  @"Up to what age may I cover my dependent children?",
+                  @"What do I do if I have a baby and would like to add the baby to my health insurance?",
+                  @"What do I do if I have an emergency (on or off-island)?",
+                  @"What do I do if my name or address changes?",
+                  @"What if my Membership I.D. Card is lost or stolen?",
+                  @"What is a pre-certification and when is one required?",
+                  @"When will I receive my Membership I.D. Card?",
+                  @"Will NetCare pay for my airfare for off-island medical treatment?",
+                  @"Do I need to choose a Primary Care Physician (PCP)?",
                   nil];
     
     
@@ -49,6 +62,19 @@
                                     @"No. Referrals are not required for labs, x-rays, annual eye exams performed by an Optometrist (for refraction/eye glasses/contact lenses).",
                                     @"This would depend on the type of Plan you are enrolled under. Please call our customer service department for assistance as some Plans require an approved referral from NetCare before accessing medical providers off-island.",
                                     @"If you are enrolled under the Advantage Plan, you must have a referral to see a Specialist outside of Guam. On Guam you may self-refer to a participating Specialist. \n\nIf you are enrolled under the Continental or Kmart HMO Plan, you must have a referral to see a Specialist both on and outside of Guam.",
+                                    @"NetCare’s residency requirement stipulates that members must reside within the service area for a minimum of 9 months out of the contract period. If you are moving outside of your service area, you can not continue to be covered under the policy. If you are off-island for medical treatment, your treatment will be covered for a maximum of 90 days.\n\nIf you elect COBRA coverage and you are moving off-island, you will be covered for a maximum of 90 days.",
+                                    @"You may request a copy of our printed Participating Healthcare Provider Directory, or you may view our list of participating providers on this website. To locate a participating provider in Micronesia, Philippines, Asia, Hawaii and the Continental United States, please:\n\nCall our customer service department at (671) 472-3610\nLog on to www.firsthealth.com to locate participating medical providers in the Continental United States (does not apply to providers in Hawaii)\nLog on to www.prescriptionsolutions.com to view participating pharmacy providers in the Continental United States and Hawaii.",
+                                    @"You must complete a request for reimbursement form and submit all supporting documents including a claim form completed by your physician’s office and original receipts showing proof of payment. All non-English claims must be translated into English (detailed, indicating all services rendered). Requests for reimbursement for prescription drugs must include the label issued by the pharmacy and medical notes.\n\nDental claims must include a claim form (or detailed medical notes and tooth chart if services were rendered in the Philippines). Claims must be submitted to the NetCare office within 90 days of the date of service with all required documents. NetCare will not request documents for members. Reimbursements will be paid within 45 business days.",
+                                    @"You can view your paid claims on the NetCare website. Click on'Member', 'Member' again, then you will be asked to enter or create your ‘User Name’ and ‘Password’. Once in your eligibility screen you can view your paid claims.",
+                                    @" \u2022Eligible children may be covered up to age 25.\n \u2022Eligible children ages 19 - 25 who reside outside the service area for secondary schooling may be covered up to the attainment of age 25. A Student Verification must be submitted every semester to maintain coverage outside the service area.\n \u2022If you have been granted legal guardianship of a minor child, that child may be covered up to the attainment of age 18.\n \u2022Eligible children who have been certified as disabled by a physician may be covered past the age of 19.",
+                                    @"A newborn baby is NOT automatically added to your policy. You will need to submit a Change of Status Form along with a copy of the Birth Certificate (from the hospital or from Public Health) to your Human Resources office as soon as possible, but no later than 30 days from the baby’s date of birth. ",
+                                    @"Please proceed to the nearest hospital emergency room or urgent care center. Bonafied emergencies (the sudden and unexpected onset of a severe medical condition, which if not treated immediately would be life threatening or result in permanent disability) are covered at any medical facility (subject to the emergency co-payment and limitations of your Plan). ",
+                                    @"You will need to submit a Change of Status From (and supporting documentation for name changes such as a Marriage Certificate) to your Human Resources Office. Once NetCare has received a copy of the Change of Status Form we will update your information in our system. It is very important to keep NetCare informed of any address changes as periodically we mail important information to members about their health benefits.",
+                                    @"Please call the NetCare customer service department to request replacement cards. You will be charged $2.00 per card.",
+                                    @"Pre-certification is the review and approval process by NetCare for certain procedures. The following procedures require pre-certification from NetCare:\n \u2022Inpatient confinements\n \u2022Skilled Nursing Admissions\n \u2022Outpatient elective surgery, including circumcision and sterilization procedures\n \u2022Major Diagnostic Procedures such as MRI, CT Scan, Ultrasound, Cardiac Catheterization, Cardiac Angioplasty, Cardiac Stress Test, Biopsy, Bone Scan, etc.\n \u2022Home Health Care\n \u2022Durable Medical Equipment",
+                                    @"You should receive your NetCare Membership I.D. card within 10 working days from the date your Enrollment or Change of Status Form was submitted. If you have not received your card, please call the NetCare customer service department at 472-3610. ",
+                                    @"ou may qualify for the NetCare airfare benefit if you meet the following criteria:\n \u2022You must have a written referral from a participating physician and subsequent approval from NetCare\n \u2022The referral must be for a procedure meeting the criteria as set forth by NetCare. Procedures that may qualify for airfare include: Cardiac Surgery, Cardiac Catheterization, Cardiac Angioplasty, Cancer Surgery, Neurosurgery, Gamma Knife Surgery and Radiation Therapy. (Subject to Plan review).\n \u2022Treatment/services are rendered at a designated NetCare Center of Care, including: St. Luke's Medical Center, Makati Medical Center, Philippine Heart Center and The Medical City Medical Center in the Philippines, or Anaheim Memorial Medical Center, Good Samaritan Hospital or White Memorial Medical Center in Los Angeles, California.\n \u2022Group Premium payments must be current",
+                                    @"This would depend on the type of Plan you are enrolled under. If you are enrolled under the Advantage Plan, Continental HMO Plan or Kmart HMO Plan, you are required to choose a primary care physician for each family member enrolled in the Plan. You may change your PCP by calling the NetCare customer service department at (671) 472-3610. You may also email your request to tvillagomez@netcarelifeandhealth.com or vfarnum@netcarelifeandhealth.com. (Please include your daytime contact number in the email.",
                                     nil];
     cellArray=[[NSMutableArray alloc]init];
     cellCount=[[NSMutableArray alloc]init];
@@ -83,7 +109,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  200;
+    return  320;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 46;

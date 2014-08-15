@@ -21,6 +21,10 @@
 #import "FAQViewController.h"
 #import "AboutViewController.h"
 #import "FindProviderMenuViewController.h"
+#import "SettingsViewController.h"
+#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
+#import "Constants.h"
 
 @interface SideMenuViewController ()
 
@@ -46,6 +50,7 @@
     // Do any additional setup after loading the view from its nib.
     [self.navigationController setNavigationBarHidden:YES];
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 800);
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,6 +58,39 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void) sendAudit: (NSString *) moduleName {
+    NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
+    NSString *userName = [userLogin objectForKey:@"Username"];
+    NSMutableDictionary *userData = [[NSMutableDictionary alloc] init];
+    userData = [userLogin objectForKey:@"userData"];
+    NSString *strMemTinNbr = [userData objectForKey:@"strMemTinNbr"];
+    
+    NSDate *now = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"MM/dd/yyyy HH:mm:ss"];
+    NSString *dateNow = [dateFormat stringFromDate:now];
+    
+    NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"RegisterAudit"];
+    NSLog(@"strURL: %@",strPortalURL);
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
+    [request setRequestMethod:@"POST"];
+    [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
+    [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
+    [request setPostValue:moduleName forKey:@"strModule"];
+    [request setPostValue:strMemTinNbr forKey:@"strMemTINNbr"];
+    [request setPostValue:userName forKey:@"strUserName"];
+    [request setPostValue:dateNow forKey:@"strEntryDTime"];
+    [request startSynchronous];
+    NSData *urlData = [request responseData];
+    NSError *error = [request error];
+    if (!error) {
+        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+        NSLog(@"RegisterAudit: %@",responseData);
+    }
+}
+
+
 
 
 - (UIColor *)colorFromHexString:(NSString *)hexString {
@@ -65,6 +103,7 @@
 
 
 - (IBAction)btnHome:(id)sender {
+    [self sendAudit:@"Home"];
     MainViewController *mvc = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:[NSBundle mainBundle]];
     SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
     UINavigationController *navigateVC = [[UINavigationController alloc] initWithRootViewController:mvc];
@@ -78,6 +117,7 @@
 }
 
 - (IBAction)btnAbout:(id)sender {
+    [self sendAudit:@"About"];
     AboutViewController *avc = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:[NSBundle mainBundle]];
     GenSurveyViewController *gsvc = [[GenSurveyViewController alloc] initWithNibName:@"GenSurveyViewController" bundle:[NSBundle mainBundle]];
     FAQViewController *faqvc = [[FAQViewController alloc] initWithNibName:@"FAQViewController" bundle:[NSBundle mainBundle]];
@@ -108,6 +148,7 @@
 }
 
 - (IBAction)btnMemberInfo:(id)sender {
+    [self sendAudit:@"Member Information"];
     NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary *userData = [userLogin objectForKey:@"userData"];
     int userType = [[userData objectForKey:@"strUserTyp"]intValue];
@@ -153,6 +194,7 @@
 }
 
 - (IBAction)btnClaims:(id)sender {
+    [self sendAudit:@"Claims"];
     ClaimsViewController *hvc = [[ClaimsViewController alloc] initWithNibName:@"ClaimsViewController" bundle:[NSBundle mainBundle]];
     SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
     UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
@@ -165,6 +207,7 @@
 }
 
 - (IBAction)btnDeductable:(id)sender {
+    [self sendAudit:@"Duductible"];
     DeductibleViewController *hvc = [[DeductibleViewController alloc] initWithNibName:@"DeductibleViewController" bundle:[NSBundle mainBundle]];
     SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
     UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
@@ -177,11 +220,28 @@
 }
 
 - (IBAction)btnLogout:(id)sender {
+    [self sendAudit:@"Logout"];
     LoginViewController *mvc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:[NSBundle mainBundle]];
     [self.navigationController pushViewController:mvc animated:YES];
 }
 
+- (IBAction)btnSettings:(id)sender {
+    [self sendAudit:@"Settings"];
+    SettingsViewController *hvc = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:[NSBundle mainBundle]];
+    SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
+    UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
+    UIViewController *leftViewController = smvc;
+    PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:homeVC
+                                                                                    leftViewController:leftViewController
+                                                                                   rightViewController:nil
+                                                                                               options:nil];
+    [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController pushViewController:revealController animated:YES];
+
+}
+
 - (IBAction)btnProduct:(id)sender {
+    [self sendAudit:@"Product"];
     ProductListingViewController *hvc = [[ProductListingViewController alloc] initWithNibName:@"ProductListingViewController" bundle:[NSBundle mainBundle]];
     SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
     UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
@@ -194,6 +254,7 @@
 }
 
 - (IBAction)btnEvents:(id)sender {
+    [self sendAudit:@"Events"];
     EventsViewController *hvc = [[EventsViewController alloc] initWithNibName:@"EventsViewController" bundle:[NSBundle mainBundle]];
     SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
     UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
@@ -230,6 +291,7 @@
 }
 
 - (IBAction)btnFindProvider:(id)sender {
+    [self sendAudit:@"Find Provider"];
     FindProviderMenuViewController *hvc = [[FindProviderMenuViewController alloc] initWithNibName:@"FindProviderMenuViewController" bundle:[NSBundle mainBundle]];
     SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
     UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];

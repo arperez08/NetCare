@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7C2348C2196FD4A200C9F0A9 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2348C1196FD4A200C9F0A9 /* RegistrationViewController.xib */; };
 		7C2B156F198B5DCC00F3C06B /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2B156D198B5DCC00F3C06B /* LocationViewController.m */; };
-		7C2B1570198B5DCC00F3C06B /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2B156E198B5DCC00F3C06B /* LocationViewController.xib */; };
 		7C36C2D31982098F009E3163 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C36C2D21982098F009E3163 /* Constants.m */; };
 		7C3CC478196F62B100AB4EC6 /* background-tablecell.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC450196F62B100AB4EC6 /* background-tablecell.png */; };
 		7C3CC47B196F62B100AB4EC6 /* menuBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CC453196F62B100AB4EC6 /* menuBG.png */; };
@@ -39,7 +38,6 @@
 		7C4261501988DB0D001D234A /* arrowright@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C42614E1988DB0D001D234A /* arrowright@2x.png */; };
 		7C4CCDD1198F493400F6043E /* bg_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C4CCDD0198F493400F6043E /* bg_box.png */; };
 		7C5363C71989C61B00DBF0DB /* ProviderDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C5363C51989C61B00DBF0DB /* ProviderDetailsViewController.m */; };
-		7C5363C81989C61B00DBF0DB /* ProviderDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C5363C61989C61B00DBF0DB /* ProviderDetailsViewController.xib */; };
 		7C7D645F1974BABB00AF246A /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D645D1974BABB00AF246A /* BG.png */; };
 		7C7D64601974BABB00AF246A /* loginbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D645E1974BABB00AF246A /* loginbar.png */; };
 		7C7D64661974BEFB00AF246A /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D64611974BEFB00AF246A /* about.png */; };
@@ -64,7 +62,14 @@
 		7C84FF451999A51200ED76CA /* disclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C84FF441999A51200ED76CA /* disclosure.png */; };
 		7C84FF471999A60700ED76CA /* shirnk.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C84FF461999A60700ED76CA /* shirnk.png */; };
 		7C84FF4B199A015800ED76CA /* ClaimsListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C84FF49199A015800ED76CA /* ClaimsListTableViewCell.m */; };
-		7C84FF4C199A015800ED76CA /* ClaimsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C84FF4A199A015800ED76CA /* ClaimsListTableViewCell.xib */; };
+		7CA2EEC3199D8D1E0033ED6D /* imgSettings.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2EEC1199D8D1E0033ED6D /* imgSettings.png */; };
+		7CA2EEC4199D8D1E0033ED6D /* imgSettings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2EEC2199D8D1E0033ED6D /* imgSettings@2x.png */; };
+		7CA2EEC8199D938F0033ED6D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2EEC6199D938F0033ED6D /* SettingsViewController.m */; };
+		7CA2EEC9199D938F0033ED6D /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2EEC7199D938F0033ED6D /* SettingsViewController.xib */; };
+		7CA2EECC199D94AE0033ED6D /* imgProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2EECA199D94AE0033ED6D /* imgProfile.png */; };
+		7CA2EECD199D94AE0033ED6D /* imgProfile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2EECB199D94AE0033ED6D /* imgProfile@2x.png */; };
+		7CA2EED1199D99A60033ED6D /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2EECF199D99A60033ED6D /* ProfileViewController.m */; };
+		7CA2EED2199D99A60033ED6D /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2EED0199D99A60033ED6D /* ProfileViewController.xib */; };
 		7CA90C3E196382E900E9545A /* MemberInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C3C196382E900E9545A /* MemberInfoViewController.m */; };
 		7CA90C45196385E400E9545A /* DependentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C43196385E400E9545A /* DependentInfoViewController.m */; };
 		7CA90C881963CDD400E9545A /* ProductListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C861963CDD400E9545A /* ProductListingViewController.m */; };
@@ -137,11 +142,8 @@
 		7CBC77221964DED7003987FA /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77141964DED7003987FA /* SideMenuViewController.xib */; };
 		7CBC772C1964E704003987FA /* SideMenuiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CBC772A1964E704003987FA /* SideMenuiPadViewController.m */; };
 		7CC6CA02199B4298003A179C /* ForgotPassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC6CA00199B4298003A179C /* ForgotPassViewController.m */; };
-		7CC6CA03199B4298003A179C /* ForgotPassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CC6CA01199B4298003A179C /* ForgotPassViewController.xib */; };
 		7CC6CA07199B4B0B003A179C /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC6CA05199B4B0B003A179C /* ChangePasswordViewController.m */; };
-		7CC6CA08199B4B0B003A179C /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CC6CA06199B4B0B003A179C /* ChangePasswordViewController.xib */; };
 		7CC83AA01994AB2C0080C81C /* DependentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC83A9E1994AB2C0080C81C /* DependentsTableViewCell.m */; };
-		7CC83AA11994AB2C0080C81C /* DependentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CC83A9F1994AB2C0080C81C /* DependentsTableViewCell.xib */; };
 		7CC9A8421973628B00E89DD4 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8411973628B00E89DD4 /* home@2x.png */; };
 		7CC9A84F1973712300E89DD4 /* aboutNetcare.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8431973712300E89DD4 /* aboutNetcare.png */; };
 		7CC9A8501973712300E89DD4 /* aboutNetcare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8441973712300E89DD4 /* aboutNetcare@2x.png */; };
@@ -162,6 +164,12 @@
 		7CC9A8681973A6BA00E89DD4 /* shadowline.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8671973A6BA00E89DD4 /* shadowline.png */; };
 		7CD142631993504500DBE77A /* IDBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD142611993504500DBE77A /* IDBack.png */; };
 		7CD142641993504500DBE77A /* IDFront.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD142621993504500DBE77A /* IDFront.png */; };
+		7CE794E9199C4EF20096772C /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE794E3199C4EF20096772C /* ChangePasswordViewController.xib */; };
+		7CE794EA199C4EF20096772C /* ClaimsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE794E4199C4EF20096772C /* ClaimsListTableViewCell.xib */; };
+		7CE794EB199C4EF20096772C /* DependentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE794E5199C4EF20096772C /* DependentsTableViewCell.xib */; };
+		7CE794EC199C4EF20096772C /* ForgotPassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE794E6199C4EF20096772C /* ForgotPassViewController.xib */; };
+		7CE794ED199C4EF20096772C /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE794E7199C4EF20096772C /* LocationViewController.xib */; };
+		7CE794EE199C4EF20096772C /* ProviderDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE794E8199C4EF20096772C /* ProviderDetailsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,7 +186,6 @@
 		7C2348C1196FD4A200C9F0A9 /* RegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		7C2B156C198B5DCC00F3C06B /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		7C2B156D198B5DCC00F3C06B /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
-		7C2B156E198B5DCC00F3C06B /* LocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationViewController.xib; path = ../../ViewControllers/LocationViewController.xib; sourceTree = "<group>"; };
 		7C36C2D11982098F009E3163 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		7C36C2D21982098F009E3163 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		7C3CC450196F62B100AB4EC6 /* background-tablecell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-tablecell.png"; sourceTree = "<group>"; };
@@ -211,7 +218,6 @@
 		7C4CCDD0198F493400F6043E /* bg_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_box.png; sourceTree = "<group>"; };
 		7C5363C41989C61B00DBF0DB /* ProviderDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviderDetailsViewController.h; sourceTree = "<group>"; };
 		7C5363C51989C61B00DBF0DB /* ProviderDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderDetailsViewController.m; sourceTree = "<group>"; };
-		7C5363C61989C61B00DBF0DB /* ProviderDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProviderDetailsViewController.xib; path = ../../ViewControllers/ProviderDetailsViewController.xib; sourceTree = "<group>"; };
 		7C7D645D1974BABB00AF246A /* BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG.png; sourceTree = "<group>"; };
 		7C7D645E1974BABB00AF246A /* loginbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginbar.png; sourceTree = "<group>"; };
 		7C7D64611974BEFB00AF246A /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
@@ -240,7 +246,16 @@
 		7C84FF461999A60700ED76CA /* shirnk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shirnk.png; sourceTree = "<group>"; };
 		7C84FF48199A015800ED76CA /* ClaimsListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClaimsListTableViewCell.h; sourceTree = "<group>"; };
 		7C84FF49199A015800ED76CA /* ClaimsListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClaimsListTableViewCell.m; sourceTree = "<group>"; };
-		7C84FF4A199A015800ED76CA /* ClaimsListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClaimsListTableViewCell.xib; path = ../../ViewControllers/ClaimsListTableViewCell.xib; sourceTree = "<group>"; };
+		7CA2EEC1199D8D1E0033ED6D /* imgSettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgSettings.png; sourceTree = "<group>"; };
+		7CA2EEC2199D8D1E0033ED6D /* imgSettings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgSettings@2x.png"; sourceTree = "<group>"; };
+		7CA2EEC5199D938F0033ED6D /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		7CA2EEC6199D938F0033ED6D /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		7CA2EEC7199D938F0033ED6D /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = ../../ViewControllers/SettingsViewController.xib; sourceTree = "<group>"; };
+		7CA2EECA199D94AE0033ED6D /* imgProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgProfile.png; sourceTree = "<group>"; };
+		7CA2EECB199D94AE0033ED6D /* imgProfile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgProfile@2x.png"; sourceTree = "<group>"; };
+		7CA2EECE199D99A60033ED6D /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		7CA2EECF199D99A60033ED6D /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		7CA2EED0199D99A60033ED6D /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = ../../ViewControllers/ProfileViewController.xib; sourceTree = "<group>"; };
 		7CA90C3B196382E900E9545A /* MemberInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberInfoViewController.h; sourceTree = "<group>"; };
 		7CA90C3C196382E900E9545A /* MemberInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberInfoViewController.m; sourceTree = "<group>"; };
 		7CA90C42196385E400E9545A /* DependentInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DependentInfoViewController.h; sourceTree = "<group>"; };
@@ -364,13 +379,10 @@
 		7CBC772A1964E704003987FA /* SideMenuiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuiPadViewController.m; sourceTree = "<group>"; };
 		7CC6C9FF199B4298003A179C /* ForgotPassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPassViewController.h; sourceTree = "<group>"; };
 		7CC6CA00199B4298003A179C /* ForgotPassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPassViewController.m; sourceTree = "<group>"; };
-		7CC6CA01199B4298003A179C /* ForgotPassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPassViewController.xib; sourceTree = "<group>"; };
 		7CC6CA04199B4B0B003A179C /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
 		7CC6CA05199B4B0B003A179C /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
-		7CC6CA06199B4B0B003A179C /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
 		7CC83A9D1994AB2C0080C81C /* DependentsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DependentsTableViewCell.h; sourceTree = "<group>"; };
 		7CC83A9E1994AB2C0080C81C /* DependentsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DependentsTableViewCell.m; sourceTree = "<group>"; };
-		7CC83A9F1994AB2C0080C81C /* DependentsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DependentsTableViewCell.xib; path = ../../ViewControllers/DependentsTableViewCell.xib; sourceTree = "<group>"; };
 		7CC9A8411973628B00E89DD4 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
 		7CC9A8431973712300E89DD4 /* aboutNetcare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutNetcare.png; sourceTree = "<group>"; };
 		7CC9A8441973712300E89DD4 /* aboutNetcare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aboutNetcare@2x.png"; sourceTree = "<group>"; };
@@ -391,6 +403,12 @@
 		7CC9A8671973A6BA00E89DD4 /* shadowline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadowline.png; sourceTree = "<group>"; };
 		7CD142611993504500DBE77A /* IDBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IDBack.png; sourceTree = "<group>"; };
 		7CD142621993504500DBE77A /* IDFront.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IDFront.png; sourceTree = "<group>"; };
+		7CE794E3199C4EF20096772C /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
+		7CE794E4199C4EF20096772C /* ClaimsListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClaimsListTableViewCell.xib; sourceTree = "<group>"; };
+		7CE794E5199C4EF20096772C /* DependentsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DependentsTableViewCell.xib; sourceTree = "<group>"; };
+		7CE794E6199C4EF20096772C /* ForgotPassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPassViewController.xib; sourceTree = "<group>"; };
+		7CE794E7199C4EF20096772C /* LocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationViewController.xib; sourceTree = "<group>"; };
+		7CE794E8199C4EF20096772C /* ProviderDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProviderDetailsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -459,6 +477,10 @@
 		7C3CC457196F62B100AB4EC6 /* btn_icons */ = {
 			isa = PBXGroup;
 			children = (
+				7CA2EECA199D94AE0033ED6D /* imgProfile.png */,
+				7CA2EECB199D94AE0033ED6D /* imgProfile@2x.png */,
+				7CA2EEC1199D8D1E0033ED6D /* imgSettings.png */,
+				7CA2EEC2199D8D1E0033ED6D /* imgSettings@2x.png */,
 				7C42614D1988DB0D001D234A /* arrowright.png */,
 				7C42614E1988DB0D001D234A /* arrowright@2x.png */,
 				7C7D648619750F4D00AF246A /* arrowleft.png */,
@@ -697,10 +719,12 @@
 			children = (
 				7CB365EE196290E3003E216F /* AboutViewController.h */,
 				7CB365EF196290E3003E216F /* AboutViewController.m */,
-				7CA90C8F1963D11000E9545A /* ClaimsViewController.h */,
-				7CA90C901963D11000E9545A /* ClaimsViewController.m */,
+				7CC6CA04199B4B0B003A179C /* ChangePasswordViewController.h */,
+				7CC6CA05199B4B0B003A179C /* ChangePasswordViewController.m */,
 				7C84FF48199A015800ED76CA /* ClaimsListTableViewCell.h */,
 				7C84FF49199A015800ED76CA /* ClaimsListTableViewCell.m */,
+				7CA90C8F1963D11000E9545A /* ClaimsViewController.h */,
+				7CA90C901963D11000E9545A /* ClaimsViewController.m */,
 				7CA90C941963D12800E9545A /* DeductibleViewController.h */,
 				7CA90C951963D12800E9545A /* DeductibleViewController.m */,
 				7CA90C42196385E400E9545A /* DependentInfoViewController.h */,
@@ -715,6 +739,8 @@
 				7C7D64701974C1A800AF246A /* FindProviderMenuViewController.m */,
 				7CB365E319628A98003E216F /* FindProviderViewController.h */,
 				7CB365E419628A98003E216F /* FindProviderViewController.m */,
+				7CC6C9FF199B4298003A179C /* ForgotPassViewController.h */,
+				7CC6CA00199B4298003A179C /* ForgotPassViewController.m */,
 				7CA90C9E1963D14E00E9545A /* GenSurveyViewController.h */,
 				7CA90C9F1963D14E00E9545A /* GenSurveyViewController.m */,
 				7C2B156C198B5DCC00F3C06B /* LocationViewController.h */,
@@ -727,6 +753,8 @@
 				7CA90C3C196382E900E9545A /* MemberInfoViewController.m */,
 				7CA90C851963CDD400E9545A /* ProductListingViewController.h */,
 				7CA90C861963CDD400E9545A /* ProductListingViewController.m */,
+				7CA2EECE199D99A60033ED6D /* ProfileViewController.h */,
+				7CA2EECF199D99A60033ED6D /* ProfileViewController.m */,
 				7C5363C41989C61B00DBF0DB /* ProviderDetailsViewController.h */,
 				7C5363C51989C61B00DBF0DB /* ProviderDetailsViewController.m */,
 				7C8053411988D23C00FB6243 /* ProviderListTableViewCell.h */,
@@ -735,16 +763,12 @@
 				7C8053171988CA0E00FB6243 /* ProviderListViewController.m */,
 				7C3CC4A8196F67AE00AB4EC6 /* RegistrationViewController.h */,
 				7C3CC4A9196F67AE00AB4EC6 /* RegistrationViewController.m */,
+				7CA2EEC5199D938F0033ED6D /* SettingsViewController.h */,
+				7CA2EEC6199D938F0033ED6D /* SettingsViewController.m */,
 				7CBC77291964E704003987FA /* SideMenuiPadViewController.h */,
 				7CBC772A1964E704003987FA /* SideMenuiPadViewController.m */,
 				7CB365D219627EFF003E216F /* SideMenuViewController.h */,
 				7CB365D319627EFF003E216F /* SideMenuViewController.m */,
-				7CC6C9FF199B4298003A179C /* ForgotPassViewController.h */,
-				7CC6CA00199B4298003A179C /* ForgotPassViewController.m */,
-				7CC6CA01199B4298003A179C /* ForgotPassViewController.xib */,
-				7CC6CA04199B4B0B003A179C /* ChangePasswordViewController.h */,
-				7CC6CA05199B4B0B003A179C /* ChangePasswordViewController.m */,
-				7CC6CA06199B4B0B003A179C /* ChangePasswordViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -801,25 +825,29 @@
 			isa = PBXGroup;
 			children = (
 				7CBC77071964DED7003987FA /* AboutViewController.xib */,
+				7CE794E3199C4EF20096772C /* ChangePasswordViewController.xib */,
+				7CE794E4199C4EF20096772C /* ClaimsListTableViewCell.xib */,
 				7CBC77081964DED7003987FA /* ClaimsViewController.xib */,
-				7C84FF4A199A015800ED76CA /* ClaimsListTableViewCell.xib */,
 				7CBC77091964DED7003987FA /* DeductibleViewController.xib */,
 				7CBC770A1964DED7003987FA /* DependentInfoViewController.xib */,
-				7CC83A9F1994AB2C0080C81C /* DependentsTableViewCell.xib */,
+				7CE794E5199C4EF20096772C /* DependentsTableViewCell.xib */,
 				7CBC770C1964DED7003987FA /* EventsViewController.xib */,
 				7CBC770D1964DED7003987FA /* FAQViewController.xib */,
 				7C4261471988D820001D234A /* FindProviderMenuViewController.xib */,
 				7CBC770E1964DED7003987FA /* FindProviderViewController.xib */,
+				7CE794E6199C4EF20096772C /* ForgotPassViewController.xib */,
 				7CBC770F1964DED7003987FA /* GenSurveyViewController.xib */,
-				7C2B156E198B5DCC00F3C06B /* LocationViewController.xib */,
+				7CE794E7199C4EF20096772C /* LocationViewController.xib */,
 				7CBC77101964DED7003987FA /* LoginViewController.xib */,
 				7CBC77111964DED7003987FA /* MainViewController.xib */,
 				7CBC77121964DED7003987FA /* MemberInfoViewController.xib */,
 				7CBC77131964DED7003987FA /* ProductListingViewController.xib */,
-				7C5363C61989C61B00DBF0DB /* ProviderDetailsViewController.xib */,
+				7CA2EED0199D99A60033ED6D /* ProfileViewController.xib */,
+				7CE794E8199C4EF20096772C /* ProviderDetailsViewController.xib */,
 				7C4261481988D820001D234A /* ProviderListTableViewCell.xib */,
 				7C4261491988D820001D234A /* ProviderListViewController.xib */,
 				7C2348C1196FD4A200C9F0A9 /* RegistrationViewController.xib */,
+				7CA2EEC7199D938F0033ED6D /* SettingsViewController.xib */,
 				7CBC77141964DED7003987FA /* SideMenuViewController.xib */,
 			);
 			path = iPhone;
@@ -908,16 +936,18 @@
 				7C7D64681974BEFB00AF246A /* menubtn@2x.png in Resources */,
 				7C42614B1988D820001D234A /* ProviderListTableViewCell.xib in Resources */,
 				7CB961F9199B2D110084AFD5 /* FindProvider.png in Resources */,
+				7CA2EEC3199D8D1E0033ED6D /* imgSettings.png in Resources */,
 				7C4261501988DB0D001D234A /* arrowright@2x.png in Resources */,
 				7CBC77211964DED7003987FA /* ProductListingViewController.xib in Resources */,
 				7C7D647E1974C5CB00AF246A /* dependent.png in Resources */,
+				7CA2EEC4199D8D1E0033ED6D /* imgSettings@2x.png in Resources */,
 				7CC9A8571973712300E89DD4 /* productlisting.png in Resources */,
 				7C7D64831974CF8A00AF246A /* textwhitebox.png in Resources */,
+				7CE794EE199C4EF20096772C /* ProviderDetailsViewController.xib in Resources */,
 				7C7D646D1974BF5000AF246A /* FAQs.png in Resources */,
-				7CC6CA08199B4B0B003A179C /* ChangePasswordViewController.xib in Resources */,
+				7CE794EC199C4EF20096772C /* ForgotPassViewController.xib in Resources */,
 				7CB961F5199B2B750084AFD5 /* Member.png in Resources */,
 				7C3CC4A0196F637300AB4EC6 /* checkbox_empty.png in Resources */,
-				7C5363C81989C61B00DBF0DB /* ProviderDetailsViewController.xib in Resources */,
 				7C3CC496196F62B100AB4EC6 /* Netcare logo.png in Resources */,
 				7CC9A8641973785100E89DD4 /* check@2x.png in Resources */,
 				7C3CC4A3196F639000AB4EC6 /* registrationbox.png in Resources */,
@@ -932,8 +962,8 @@
 				7CC9A8661973785100E89DD4 /* checkbox@2x.png in Resources */,
 				7CC9A8501973712300E89DD4 /* aboutNetcare@2x.png in Resources */,
 				7C84FF471999A60700ED76CA /* shirnk.png in Resources */,
+				7CE794EA199C4EF20096772C /* ClaimsListTableViewCell.xib in Resources */,
 				7C7D64661974BEFB00AF246A /* about.png in Resources */,
-				7C84FF4C199A015800ED76CA /* ClaimsListTableViewCell.xib in Resources */,
 				7CBC77201964DED7003987FA /* MemberInfoViewController.xib in Resources */,
 				7C3CC4A7196F66F200AB4EC6 /* Default-568h@2x.png in Resources */,
 				7C4CCDD1198F493400F6043E /* bg_box.png in Resources */,
@@ -943,6 +973,8 @@
 				7CC9A8651973785100E89DD4 /* checkbox.png in Resources */,
 				7C7D646E1974BF5000AF246A /* FAQs@2x.png in Resources */,
 				7C7D64851974EF6600AF246A /* providerbox.png in Resources */,
+				7CE794EB199C4EF20096772C /* DependentsTableViewCell.xib in Resources */,
+				7CE794ED199C4EF20096772C /* LocationViewController.xib in Resources */,
 				7CC9A84F1973712300E89DD4 /* aboutNetcare.png in Resources */,
 				7CC9A8581973712300E89DD4 /* productlisting@2x.png in Resources */,
 				7C84FF451999A51200ED76CA /* disclosure.png in Resources */,
@@ -955,18 +987,18 @@
 				7C3CC49D196F62B100AB4EC6 /* whitebox_expired.png in Resources */,
 				7C3CC48A196F62B100AB4EC6 /* home.png in Resources */,
 				7C7D647F1974C5CB00AF246A /* dependent@2x.png in Resources */,
-				7CC83AA11994AB2C0080C81C /* DependentsTableViewCell.xib in Resources */,
 				7C3CC493196F62B100AB4EC6 /* Upcoming Events.png in Resources */,
+				7CA2EECD199D94AE0033ED6D /* imgProfile@2x.png in Resources */,
 				7C3CC47B196F62B100AB4EC6 /* menuBG.png in Resources */,
 				7CC9A8531973712300E89DD4 /* events.png in Resources */,
 				7C2348C2196FD4A200C9F0A9 /* RegistrationViewController.xib in Resources */,
 				7C3CC47E196F62B100AB4EC6 /* signin bar.png in Resources */,
-				7CC6CA03199B4298003A179C /* ForgotPassViewController.xib in Resources */,
 				7C42614A1988D820001D234A /* FindProviderMenuViewController.xib in Resources */,
 				7CC9A85C197371E600E89DD4 /* claims.png in Resources */,
 				7CC9A8541973712300E89DD4 /* events@2x.png in Resources */,
 				7C3CC484196F62B100AB4EC6 /* dependentbtn.png in Resources */,
 				7CC9A8511973712300E89DD4 /* claims@2x.png in Resources */,
+				7CA2EED2199D99A60033ED6D /* ProfileViewController.xib in Resources */,
 				7CBC771D1964DED7003987FA /* GenSurveyViewController.xib in Resources */,
 				7C7D64601974BABB00AF246A /* loginbar.png in Resources */,
 				7C3CC48C196F62B100AB4EC6 /* icon.png in Resources */,
@@ -975,6 +1007,7 @@
 				7C3CC4A5196F647400AB4EC6 /* LaunchImg_568hRetina.png in Resources */,
 				7CC9A8421973628B00E89DD4 /* home@2x.png in Resources */,
 				7CD142631993504500DBE77A /* IDBack.png in Resources */,
+				7CA2EECC199D94AE0033ED6D /* imgProfile.png in Resources */,
 				7C7D648919750F4D00AF246A /* arrowleft@2x.png in Resources */,
 				7C42614F1988DB0D001D234A /* arrowright.png in Resources */,
 				7CC9A8551973712300E89DD4 /* logout@2x.png in Resources */,
@@ -982,12 +1015,13 @@
 				7C3CC478196F62B100AB4EC6 /* background-tablecell.png in Resources */,
 				7CBC771E1964DED7003987FA /* LoginViewController.xib in Resources */,
 				7C3CC4A1196F637300AB4EC6 /* checkbox_selected.png in Resources */,
-				7C2B1570198B5DCC00F3C06B /* LocationViewController.xib in Resources */,
 				7CB3653719627C28003E216F /* Images.xcassets in Resources */,
 				7CC9A8591973712300E89DD4 /* provider.png in Resources */,
 				7CC9A8631973785100E89DD4 /* check.png in Resources */,
 				7C42614C1988D820001D234A /* ProviderListViewController.xib in Resources */,
 				7CBC771F1964DED7003987FA /* MainViewController.xib in Resources */,
+				7CA2EEC9199D938F0033ED6D /* SettingsViewController.xib in Resources */,
+				7CE794E9199C4EF20096772C /* ChangePasswordViewController.xib in Resources */,
 				7CBC77221964DED7003987FA /* SideMenuViewController.xib in Resources */,
 				7CBC77151964DED7003987FA /* AboutViewController.xib in Resources */,
 				7CC9A85A1973712300E89DD4 /* provider@2x.png in Resources */,
@@ -1027,6 +1061,7 @@
 				7CAD29711990BFAF00746285 /* UIBarButtonItem+WEPopover.m in Sources */,
 				7CB961EB199B0F270084AFD5 /* qrencode.c in Sources */,
 				7C5363C71989C61B00DBF0DB /* ProviderDetailsViewController.m in Sources */,
+				7CA2EED1199D99A60033ED6D /* ProfileViewController.m in Sources */,
 				7CB365D519627EFF003E216F /* SideMenuViewController.m in Sources */,
 				7CB961E9199B0F270084AFD5 /* bitstream.c in Sources */,
 				7CA90C45196385E400E9545A /* DependentInfoViewController.m in Sources */,
@@ -1061,6 +1096,7 @@
 				7C8053441988D23C00FB6243 /* ProviderListTableViewCell.m in Sources */,
 				7CA90C881963CDD400E9545A /* ProductListingViewController.m in Sources */,
 				7C36C2D31982098F009E3163 /* Constants.m in Sources */,
+				7CA2EEC8199D938F0033ED6D /* SettingsViewController.m in Sources */,
 				7CAD295F1990BFAF00746285 /* UIViewController+PKRevealController.m in Sources */,
 				7CAD295C1990BFAF00746285 /* MyAnnotation.m in Sources */,
 			);

@@ -25,6 +25,8 @@
 - (IBAction)btnFAQ:(id)sender;
 - (IBAction)btnAbout:(id)sender;
 - (IBAction)btnLogout:(id)sender;
+- (IBAction)btnSettings:(id)sender;
+
 
 
 @end

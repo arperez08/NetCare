@@ -159,7 +159,10 @@
 }
 
 - (IBAction)btnSubmit:(id)sender {
-    [self getClaimsData];
+    HUB = [[MBProgressHUD alloc]initWithView:self.view];
+    [self.view addSubview:HUB];
+    [HUB showWhileExecuting:@selector(getClaimsData) onTarget:self withObject:nil animated:YES];
+    //[self getClaimsData];
 }
 
 - (IBAction)btnFrom:(id)sender {
@@ -191,10 +194,13 @@
     
     NSString *ServiceDate = [jsonData objectForKey:@"strServiceDate"];
     NSArray *components = [ServiceDate componentsSeparatedByString:@" "];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"MM/dd/yyyy"];
+    NSDate * dateDOB = [dateFormat dateFromString:components[0]];
+    cell.lblDate.text = [dateFormat stringFromDate:dateDOB];
     
     cell.lblProvider.text = [NSString stringWithFormat:@"%@",[jsonData objectForKey:@"strProvName"]];
     cell.lblAmount.text = [NSString stringWithFormat:@"%@",[jsonData objectForKey:@"strChgAmt"]];
-    cell.lblDate.text = components[0];
     
     cell.backgroundColor = [UIColor clearColor];
     cell.backgroundView = [[UIView alloc] init];

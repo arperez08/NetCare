@@ -70,7 +70,26 @@
         txtUser.text = [userLogin objectForKey:@"Username"];
         //txtPassword.text = [userLogin objectForKey:@"Password"];
     }
+    
+    self.lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGestures:)];
+    self.lpgr.minimumPressDuration = 1.0f;
+    self.lpgr.allowableMovement = 100.0f;
+    [self.view addGestureRecognizer:self.lpgr];
 }
+
+- (void)handleLongPressGestures:(UILongPressGestureRecognizer *)sender
+{
+    if ([sender isEqual:self.lpgr]) {
+        if (sender.state == UIGestureRecognizerStateBegan)
+        {
+            if (txtPassword.secureTextEntry == NO)
+                txtPassword.secureTextEntry = YES;
+            else
+                txtPassword.secureTextEntry = NO;
+        }
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -202,28 +221,31 @@
 //        [self.navigationController setNavigationBarHidden:YES];
 //        [self.navigationController pushViewController:revealController animated:YES];
 //    }
-
+    
     if ([txtUser.text isEqualToString:@""]) {
-         [self alertStatus:@"Please input your Username." :@"Error"];
+        [self alertStatus:@"Please input your Username." :@"Error"];
+        [self sendAudit:@"LoginFailed"];
     }
     else if ([txtPassword.text isEqualToString:@""]){
         [self alertStatus:@"Please input your Password." :@"Error"];
+        [self sendAudit:@"LoginFailed"];
     }
     else {
         if ([self connected] == NotReachable){
             [self alertStatus:@"No Network Connection" :@"Notification"];
         }
         else{
-//            HUB = [[MBProgressHUD alloc]initWithView:self.view];
-//            [self.view addSubview:HUB];
-//            [HUB showWhileExecuting:@selector(userLogin) onTarget:self withObject:nil animated:YES];
+            //HUB = [[MBProgressHUD alloc]initWithView:self.view];
+            //[self.view addSubview:HUB];
+            //[HUB showWhileExecuting:@selector(userLogin) onTarget:self withObject:nil animated:YES];
             [self userLogin];
+            
         }
     }
 }
 
 - (void) userLogin{
-    [self dismissKeyboard];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"AuthenGetUser"];
     NSLog(@"strURL: %@",strPortalURL);
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
@@ -264,6 +286,36 @@
     }
 }
 
+-(void) sendAudit: (NSString *) moduleName {
+    NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
+    NSString *userName = [userLogin objectForKey:@"Username"];
+    userData = [userLogin objectForKey:@"userData"];
+    NSString *strMemTinNbr = [userData objectForKey:@"strMemTinNbr"];
+    
+    NSDate *now = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"MM/dd/yyyy HH:mm:ss"];
+    NSString *dateNow = [dateFormat stringFromDate:now];
+    
+    NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"RegisterAudit"];
+    NSLog(@"strURL: %@",strPortalURL);
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
+    [request setRequestMethod:@"POST"];
+    [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
+    [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
+    [request setPostValue:moduleName forKey:@"strModule"];
+    [request setPostValue:strMemTinNbr forKey:@"strMemTINNbr"];
+    [request setPostValue:userName forKey:@"strUserName"];
+    [request setPostValue:dateNow forKey:@"strEntryDTime"];
+    [request startSynchronous];
+    NSData *urlData = [request responseData];
+    NSError *error = [request error];
+    if (!error) {
+        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+        NSLog(@"RegisterAudit: %@",responseData);
+    }
+}
+
 - (void) getUserData{
     NSString *strMemTINNbr=@"";
     NSString *strDOB=@"";
@@ -281,12 +333,18 @@
     NSData *urlData = [request responseData];
     NSError *error = [request error];
     if (!error) {
+        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+        NSLog(@"responseData UserData: %@",responseData);
         NSMutableArray *arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
         NSMutableDictionary *dictData = [arrayData objectAtIndex:0];
         strMemTINNbr = [dictData objectForKey:@"strMemTinNbr"];
         NSString *dtDOB = [dictData objectForKey:@"dtDOB"];
         NSArray *components = [dtDOB componentsSeparatedByString:@" "];
-        strDOB = components[0];
+        
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"MM/dd/yyyy"];
+        NSDate * dateDOB = [dateFormat dateFromString:components[0]];
+        strDOB = [dateFormat stringFromDate:dateDOB];
         
         NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
         [userLogin setObject:dictData forKey:@"userData"];
@@ -304,12 +362,15 @@
     urlData = [request responseData];
     error = [request error];
     if (!error) {
+        [self sendAudit:@"Login"];
         NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
         NSLog(@"responseData UserInfo: %@",responseData);
         NSMutableArray *arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
         NSMutableDictionary *dictData = [arrayData objectAtIndex:0];
         NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
         [userLogin setObject:dictData forKey:@"userInfo"];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         
         MainViewController *mvc = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:[NSBundle mainBundle]];
         SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
@@ -334,6 +395,15 @@
     ForgotPassViewController *rvc = [[ForgotPassViewController alloc] initWithNibName:@"ForgotPassViewController" bundle:[NSBundle mainBundle]];
     [self.navigationController setNavigationBarHidden:YES];
     [self.navigationController pushViewController:rvc animated:YES];
+}
+
+- (IBAction)btnShowPassword:(id)sender {
+    if (txtPassword.secureTextEntry == NO) {
+        txtPassword.secureTextEntry = YES;
+    }
+    else{
+        txtPassword.secureTextEntry = NO;
+    }
 }
 
 

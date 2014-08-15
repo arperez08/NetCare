@@ -62,22 +62,45 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
     
-    arrayItemsCountry = [[NSMutableArray alloc] init];
-    [arrayItemsCountry addObject:@"Select Country"];
-    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier: @"en_US"];
-    NSArray *countryArray = [NSLocale ISOCountryCodes];
-    for (NSString *countryCode in countryArray)
-    {
-        NSString *displayNameString = [locale displayNameForKey:NSLocaleCountryCode value:countryCode];
-        [arrayItemsCountry addObject:displayNameString];
-    }
-    arrayItemsCountry = [arrayItemsCountry sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+//    arrayItemsCountry = [[NSMutableArray alloc] init];
+//    [arrayItemsCountry addObject:@"Select Country"];
+//    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier: @"en_US"];
+//    NSArray *countryArray = [NSLocale ISOCountryCodes];
+//    for (NSString *countryCode in countryArray)
+//    {
+//        NSString *displayNameString = [locale displayNameForKey:NSLocaleCountryCode value:countryCode];
+//        [arrayItemsCountry addObject:displayNameString];
+//    }
+//    arrayItemsCountry = [arrayItemsCountry sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    
     [btnCountry addTarget:self action:@selector(showCountry:forEvent:) forControlEvents:UIControlEventTouchUpInside];
     [btnCity addTarget:self action:@selector(showCity:forEvent:) forControlEvents:UIControlEventTouchUpInside];
     [btnSpecialization addTarget:self action:@selector(showSpecialization:forEvent:) forControlEvents:UIControlEventTouchUpInside];
     
     maniScrollView.contentSize = CGSizeMake(maniScrollView.frame.size.width, 800);
     
+    HUB = [[MBProgressHUD alloc]initWithView:self.view];
+    [self.view addSubview:HUB];
+    [HUB showWhileExecuting:@selector(getCountryList) onTarget:self withObject:nil animated:YES];
+    
+}
+
+- (void) getCountryList {
+    NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"GetCountry"];
+    NSURL *url = [NSURL URLWithString:strPortalURL];
+    NSMutableURLRequest * rurl = [NSMutableURLRequest requestWithURL:url];
+    [rurl setHTTPMethod:@"POST"];
+    NSURLResponse *response;
+    NSError *error;
+    NSData *data = [NSURLConnection sendSynchronousRequest:rurl returningResponse:&response error:&error];
+    NSMutableArray *arrayData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    arrayItemsCountry = [[NSMutableArray alloc] init];
+    [arrayItemsCountry addObject:@"Select Country"];
+    for (int i=0; i < [arrayData count]; i++) {
+        NSMutableDictionary *json = [arrayData objectAtIndex:i];
+        NSString *strCountry = [NSString stringWithFormat:@"%@",[json objectForKey:@"strCountry"]];
+        [arrayItemsCountry addObject:strCountry];
+    }
 }
 
 - (void)didReceiveMemoryWarning

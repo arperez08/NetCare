@@ -51,6 +51,37 @@
     [self.view addSubview:HUB];
     HUB.labelText = @"Getting dependents information.";
     [HUB showWhileExecuting:@selector(getDependentsInfo) onTarget:self withObject:nil animated:YES];
+    [self sendAudit:@"Dependents Information"];
+}
+
+-(void) sendAudit: (NSString *) moduleName {
+    NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
+    NSString *userName = [userLogin objectForKey:@"Username"];
+    userData = [userLogin objectForKey:@"userData"];
+    NSString *strMemTinNbr = [userData objectForKey:@"strMemTinNbr"];
+    
+    NSDate *now = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"MM/dd/yyyy HH:mm:ss"];
+    NSString *dateNow = [dateFormat stringFromDate:now];
+    
+    NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"RegisterAudit"];
+    NSLog(@"strURL: %@",strPortalURL);
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
+    [request setRequestMethod:@"POST"];
+    [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
+    [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
+    [request setPostValue:moduleName forKey:@"strModule"];
+    [request setPostValue:strMemTinNbr forKey:@"strMemTINNbr"];
+    [request setPostValue:userName forKey:@"strUserName"];
+    [request setPostValue:dateNow forKey:@"strEntryDTime"];
+    [request startSynchronous];
+    NSData *urlData = [request responseData];
+    NSError *error = [request error];
+    if (!error) {
+        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+        NSLog(@"RegisterAudit: %@",responseData);
+    }
 }
 
 - (void) getDependentsInfo {
@@ -58,6 +89,12 @@
     NSString *dtDOB = [userData objectForKey:@"dtDOB"];
     NSArray *components = [dtDOB componentsSeparatedByString:@" "];
     NSString *strDOB = components[0];
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"MM/dd/yyyy"];
+    NSDate * dateDOB = [dateFormat dateFromString:components[0]];
+    strDOB = [dateFormat stringFromDate:dateDOB];
+    
     
     NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"GetUserIDInfo"];
     NSLog(@"strURL: %@",strPortalURL);
@@ -72,13 +109,17 @@
     NSData *urlData = [request responseData];
     NSError *error = [request error];
     if (!error) {
-        //NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
-        arrayData = [[NSMutableArray alloc] init];
-        arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
-        //NSLog(@"responseData DependentsInfo: %@",arrayData);
+        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+        if ([responseData isEqual:@"[null]"]) {
+            NSLog(@"responseData: NULL");
+        }
+        else{
+            arrayData = [[NSMutableArray alloc] init];
+            arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
+            MIMtableView.backgroundColor = [UIColor clearColor];
+            [MIMtableView reloadData];
+        }
     }
-    MIMtableView.backgroundColor = [UIColor clearColor];
-    [MIMtableView reloadData];
 }
 
 //datasource
@@ -103,6 +144,7 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DependentsTableViewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    
     cell.lblName.text = [jsonData objectForKey:@"strName"];
     cell.lblMemberNum.text = [jsonData objectForKey:@"strMemNbr"];
     cell.lblPlan.text = [jsonData objectForKey:@"strPlanName"];

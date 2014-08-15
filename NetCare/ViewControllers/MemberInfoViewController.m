@@ -47,8 +47,10 @@
     lblMemNbr.text = [userData objectForKey:@"strMemTinNbr"];
     lblFullName.text = [userInfo objectForKey:@"strName"];
     lblPlanName.text = [userInfo objectForKey:@"strPlanName"];
-    lblMedical.text = [userInfo objectForKey:@"strMedical"];
-    lblDental.text = [userInfo objectForKey:@"strDental"];
+
+    
+    
+    
     
     NSString * status = [userInfo objectForKey:@"strStatus"];
     if ([status isEqualToString:@"Eligible"]) {
@@ -114,12 +116,44 @@
 }
 
 - (UIImage*) drawTextName:(NSString*) text inImage:(UIImage*) myImage atPoint:(CGPoint) point {
+    NSString *strCoverage =@"";
+    
+    NSString *strMedical = [userInfo objectForKey:@"strMedical"];
+    NSString *strDental = [userInfo objectForKey:@"strDental"];
+    NSString *strVision = [userInfo objectForKey:@"strVision"];
+    NSString *strDrugs = [userInfo objectForKey:@"strDrugs"];
+    
+    if ([strMedical isEqualToString:@"T"]) {
+        if ([strCoverage  isEqualToString: @""])
+            strCoverage = [NSString stringWithFormat:@"%@ %@",strCoverage,@"MEDICAL"];
+        else
+            strCoverage = [NSString stringWithFormat:@"%@/ %@",strCoverage,@"MEDICAL"];
+    }
+    if ([strDental isEqualToString:@"T"]) {
+        if ([strCoverage  isEqualToString: @""])
+            strCoverage = [NSString stringWithFormat:@"%@ %@",strCoverage,@"DENTAL"];
+        else
+            strCoverage = [NSString stringWithFormat:@"%@/ %@",strCoverage,@"DENTAL"];
+    }
+    if ([strVision isEqualToString:@"T"]) {
+        if ([strCoverage  isEqualToString: @""])
+            strCoverage = [NSString stringWithFormat:@"%@ %@",strCoverage,@"VISION"];
+        else
+            strCoverage = [NSString stringWithFormat:@"%@/ %@",strCoverage,@"VISION"];
+    }
+    if ([strDrugs isEqualToString:@"T"]) {
+        if ([strCoverage  isEqualToString: @""])
+            strCoverage = [NSString stringWithFormat:@"%@ %@",strCoverage,@"DRUGS"];
+        else
+            strCoverage = [NSString stringWithFormat:@"%@/ %@",strCoverage,@"DRUGS"];
+    }
+    
     UIGraphicsBeginImageContext(myImage.size);
     [myImage drawInRect:CGRectMake(1, 5, 575, 365)];
     UITextView *myText = [[UITextView alloc] init];
     myText.frame = CGRectMake(10,110,320,300);
     //myText.text = text;
-    myText.text = [NSString stringWithFormat:@"%@\n\nMember#: %@\n\n%@", lblFullName.text, lblMemNbr.text,lblPlanName.text];
+    myText.text = [NSString stringWithFormat:@"%@\nMember#: %@\n\n%@\n\n%@", lblFullName.text, lblMemNbr.text,lblPlanName.text,strCoverage];
     myText.font = [UIFont fontWithName:@"Arial" size:18.0f];
     myText.textColor = [UIColor blackColor];
     NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];

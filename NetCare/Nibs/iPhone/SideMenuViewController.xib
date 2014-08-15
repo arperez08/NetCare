@@ -20,7 +20,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" id="yhC-nC-GNw">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="648"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" alpha="0.49999999999999961" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Netcare logo.png" id="5bZ-JD-Kyl">
@@ -28,47 +28,47 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadowline.png" id="V0c-GH-542" userLabel="Image Views">
-                            <rect key="frame" x="15" y="55" width="225" height="4"/>
+                            <rect key="frame" x="15" y="27" width="225" height="4"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadowline.png" id="f2C-1C-TJe" userLabel="Image Views">
-                            <rect key="frame" x="15" y="112" width="225" height="4"/>
+                            <rect key="frame" x="15" y="84" width="225" height="4"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadowline.png" id="Ic6-4Z-qrR" userLabel="Image Views">
-                            <rect key="frame" x="15" y="169" width="225" height="4"/>
+                            <rect key="frame" x="15" y="141" width="225" height="4"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadowline.png" id="IdZ-nX-7r0" userLabel="Image Views">
-                            <rect key="frame" x="15" y="226" width="225" height="4"/>
+                            <rect key="frame" x="15" y="198" width="225" height="4"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadowline.png" id="ejZ-pn-3ab" userLabel="Image Views">
-                            <rect key="frame" x="15" y="283" width="225" height="4"/>
+                            <rect key="frame" x="15" y="255" width="225" height="4"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadowline.png" id="OcD-ML-hGK" userLabel="Image Views">
-                            <rect key="frame" x="15" y="340" width="225" height="4"/>
+                            <rect key="frame" x="15" y="312" width="225" height="4"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadowline.png" id="6VE-EJ-Dmn" userLabel="Image Views">
-                            <rect key="frame" x="15" y="397" width="225" height="4"/>
+                            <rect key="frame" x="15" y="369" width="225" height="4"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadowline.png" id="3F3-4s-UgA" userLabel="Image Views">
-                            <rect key="frame" x="15" y="454" width="225" height="4"/>
+                            <rect key="frame" x="15" y="426" width="225" height="4"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadowline.png" id="iOw-IC-Qj2" userLabel="Image Views">
-                            <rect key="frame" x="15" y="511" width="225" height="4"/>
+                            <rect key="frame" x="15" y="483" width="225" height="4"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadowline.png" id="342-wI-I0h" userLabel="Image Views">
-                            <rect key="frame" x="15" y="568" width="225" height="4"/>
+                            <rect key="frame" x="15" y="540" width="225" height="4"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="DMq-ba-f8F">
-                            <rect key="frame" x="10" y="67" width="300" height="33"/>
+                            <rect key="frame" x="10" y="39" width="300" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -81,7 +81,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4Pu-T8-NVz">
-                            <rect key="frame" x="10" y="125" width="300" height="33"/>
+                            <rect key="frame" x="10" y="97" width="300" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="  Member Information" image="dependent.png">
@@ -93,7 +93,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xp8-nA-2DM">
-                            <rect key="frame" x="10" y="180" width="300" height="33"/>
+                            <rect key="frame" x="10" y="152" width="300" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="  Claims Update" image="claims.png">
@@ -105,7 +105,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CXX-r6-9PS">
-                            <rect key="frame" x="10" y="238" width="300" height="33"/>
+                            <rect key="frame" x="10" y="210" width="300" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="  Deductible" image="deductible.png">
@@ -117,7 +117,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="h6o-LD-3J8">
-                            <rect key="frame" x="10" y="295" width="300" height="33"/>
+                            <rect key="frame" x="10" y="267" width="300" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="  Find Provider" image="provider.png">
@@ -129,7 +129,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7Ck-1L-wZ8">
-                            <rect key="frame" x="10" y="350" width="300" height="33"/>
+                            <rect key="frame" x="10" y="322" width="300" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="  Product Listing" image="productlisting.png">
@@ -141,7 +141,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8fF-rp-SoY">
-                            <rect key="frame" x="10" y="409" width="300" height="33"/>
+                            <rect key="frame" x="10" y="381" width="300" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="  Upcoming Events" image="events.png">
@@ -153,7 +153,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rvt-8f-yGM">
-                            <rect key="frame" x="10" y="465" width="300" height="33"/>
+                            <rect key="frame" x="10" y="437" width="300" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="  About NetCare" image="aboutNetcare.png">
@@ -165,7 +165,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="539-MU-CZi">
-                            <rect key="frame" x="10" y="523" width="300" height="33"/>
+                            <rect key="frame" x="10" y="556" width="300" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="  Logout" image="logout.png">
@@ -174,6 +174,18 @@
                             </state>
                             <connections>
                                 <action selector="btnLogout:" destination="-1" eventType="touchUpInside" id="h67-CE-zo1"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tzo-JN-UUN">
+                            <rect key="frame" x="0.0" y="487" width="299" height="52"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Settings" image="imgSettings.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnSettings:" destination="-1" eventType="touchUpInside" id="ytb-jn-ZOw"/>
                             </connections>
                         </button>
                     </subviews>
@@ -192,6 +204,7 @@
         <image name="dependent.png" width="33" height="33"/>
         <image name="events.png" width="33" height="33"/>
         <image name="home.png" width="33" height="33"/>
+        <image name="imgSettings.png" width="57" height="57"/>
         <image name="logout.png" width="33" height="33"/>
         <image name="menuBG.png" width="640" height="1136"/>
         <image name="productlisting.png" width="33" height="33"/>
