@@ -217,25 +217,32 @@
     //Add the Label
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        UILabel *cellTitle=[[UILabel alloc]initWithFrame:CGRectMake(15, 5, 280, 350)];
+        //UILabel *cellTitle=[[UILabel alloc]initWithFrame:CGRectMake(15, 5, 280, 350)];
+        UITextView *cellTitle=[[UITextView alloc]initWithFrame:CGRectMake(15, 5, 280, 350)];
         [cellTitle setBackgroundColor:[UIColor clearColor]];
         [cellTitle setFont:[UIFont fontWithName:@"Helvetica" size:12]];
         [cellTitle setTextColor:[UIColor blackColor]];
         [cellTitle setText:[[cellArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
-        cellTitle.lineBreakMode = NSLineBreakByWordWrapping;
-        cellTitle.numberOfLines = 0;
+        //cellTitle.lineBreakMode = NSLineBreakByWordWrapping;
+        //cellTitle.numberOfLines = 0;
+        cellTitle.scrollEnabled = YES;
+        cellTitle.editable = NO;
+        cellTitle.selectable = YES;
+        cellTitle.dataDetectorTypes = UIDataDetectorTypeLink;
         [cellTitle sizeToFit];
         [cell.contentView addSubview:cellTitle];
         return  cell;
     }
     else{
-        UILabel *cellTitle=[[UILabel alloc]initWithFrame:CGRectMake(15, 5, 700, 350)];
+        UITextView *cellTitle=[[UITextView alloc]initWithFrame:CGRectMake(15, 5, 700, 350)];
         [cellTitle setBackgroundColor:[UIColor clearColor]];
-        [cellTitle setFont:[UIFont fontWithName:@"Helvetica" size:18]];
+        [cellTitle setFont:[UIFont fontWithName:@"Helvetica" size:14]];
         [cellTitle setTextColor:[UIColor blackColor]];
         [cellTitle setText:[[cellArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
-        cellTitle.lineBreakMode = NSLineBreakByWordWrapping;
-        cellTitle.numberOfLines = 0;
+        cellTitle.scrollEnabled = YES;
+        cellTitle.editable = NO;
+        cellTitle.selectable = YES;
+        cellTitle.dataDetectorTypes = UIDataDetectorTypeLink;
         [cellTitle sizeToFit];
         [cell.contentView addSubview:cellTitle];
         return  cell;
