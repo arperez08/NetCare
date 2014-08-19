@@ -59,17 +59,38 @@
 		7C7D648919750F4D00AF246A /* arrowleft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D648719750F4D00AF246A /* arrowleft@2x.png */; };
 		7C8053191988CA0E00FB6243 /* ProviderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8053171988CA0E00FB6243 /* ProviderListViewController.m */; };
 		7C8053441988D23C00FB6243 /* ProviderListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8053421988D23C00FB6243 /* ProviderListTableViewCell.m */; };
+		7C81C44419A19D1300AFAF98 /* AboutViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C42D19A19D1300AFAF98 /* AboutViewController_iPad.xib */; };
+		7C81C44519A19D1300AFAF98 /* ChangePasswordViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C42E19A19D1300AFAF98 /* ChangePasswordViewController_iPad.xib */; };
+		7C81C44619A19D1300AFAF98 /* ClaimsListTableViewCell_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C42F19A19D1300AFAF98 /* ClaimsListTableViewCell_iPad.xib */; };
+		7C81C44719A19D1300AFAF98 /* ClaimsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C43019A19D1300AFAF98 /* ClaimsViewController_iPad.xib */; };
+		7C81C44819A19D1300AFAF98 /* DeductibleViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C43119A19D1300AFAF98 /* DeductibleViewController_iPad.xib */; };
+		7C81C44919A19D1300AFAF98 /* DependentInfoViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C43219A19D1300AFAF98 /* DependentInfoViewController_iPad.xib */; };
+		7C81C44A19A19D1300AFAF98 /* DependentsTableViewCell_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C43319A19D1300AFAF98 /* DependentsTableViewCell_iPad.xib */; };
+		7C81C44B19A19D1300AFAF98 /* EventsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C43419A19D1300AFAF98 /* EventsViewController_iPad.xib */; };
+		7C81C44C19A19D1300AFAF98 /* FAQViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C43519A19D1300AFAF98 /* FAQViewController_iPad.xib */; };
+		7C81C44D19A19D1300AFAF98 /* FindProviderMenuViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C43619A19D1300AFAF98 /* FindProviderMenuViewController_iPad.xib */; };
+		7C81C44F19A19D1300AFAF98 /* ForgotPassViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C43819A19D1300AFAF98 /* ForgotPassViewController_iPad.xib */; };
+		7C81C45019A19D1300AFAF98 /* GenSurveyViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C43919A19D1300AFAF98 /* GenSurveyViewController_iPad.xib */; };
+		7C81C45119A19D1300AFAF98 /* LocationViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C43A19A19D1300AFAF98 /* LocationViewController_iPad.xib */; };
+		7C81C45219A19D1300AFAF98 /* LoginViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C43B19A19D1300AFAF98 /* LoginViewController_iPad.xib */; };
+		7C81C45319A19D1300AFAF98 /* MainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C43C19A19D1300AFAF98 /* MainViewController_iPad.xib */; };
+		7C81C45419A19D1300AFAF98 /* MemberInfoViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C43D19A19D1300AFAF98 /* MemberInfoViewController_iPad.xib */; };
+		7C81C45519A19D1300AFAF98 /* ProductListingViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C43E19A19D1300AFAF98 /* ProductListingViewController_iPad.xib */; };
+		7C81C45619A19D1300AFAF98 /* ProviderDetailsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C43F19A19D1300AFAF98 /* ProviderDetailsViewController_iPad.xib */; };
+		7C81C45719A19D1300AFAF98 /* ProviderListTableViewCell_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C44019A19D1300AFAF98 /* ProviderListTableViewCell_iPad.xib */; };
+		7C81C45819A19D1300AFAF98 /* ProviderListViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C44119A19D1300AFAF98 /* ProviderListViewController_iPad.xib */; };
+		7C81C45919A19D1300AFAF98 /* RegistrationViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C44219A19D1300AFAF98 /* RegistrationViewController_iPad.xib */; };
+		7C81C45E19A1A73900AFAF98 /* SideMenuiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C81C45C19A1A73900AFAF98 /* SideMenuiPadViewController.m */; };
+		7C81C46119A1B1A000AFAF98 /* expired.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C81C46019A1B1A000AFAF98 /* expired.png */; };
 		7C84FF451999A51200ED76CA /* disclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C84FF441999A51200ED76CA /* disclosure.png */; };
 		7C84FF471999A60700ED76CA /* shirnk.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C84FF461999A60700ED76CA /* shirnk.png */; };
 		7C84FF4B199A015800ED76CA /* ClaimsListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C84FF49199A015800ED76CA /* ClaimsListTableViewCell.m */; };
 		7CA2EEC3199D8D1E0033ED6D /* imgSettings.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2EEC1199D8D1E0033ED6D /* imgSettings.png */; };
 		7CA2EEC4199D8D1E0033ED6D /* imgSettings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2EEC2199D8D1E0033ED6D /* imgSettings@2x.png */; };
 		7CA2EEC8199D938F0033ED6D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2EEC6199D938F0033ED6D /* SettingsViewController.m */; };
-		7CA2EEC9199D938F0033ED6D /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2EEC7199D938F0033ED6D /* SettingsViewController.xib */; };
 		7CA2EECC199D94AE0033ED6D /* imgProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2EECA199D94AE0033ED6D /* imgProfile.png */; };
 		7CA2EECD199D94AE0033ED6D /* imgProfile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2EECB199D94AE0033ED6D /* imgProfile@2x.png */; };
 		7CA2EED1199D99A60033ED6D /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2EECF199D99A60033ED6D /* ProfileViewController.m */; };
-		7CA2EED2199D99A60033ED6D /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2EED0199D99A60033ED6D /* ProfileViewController.xib */; };
 		7CA90C3E196382E900E9545A /* MemberInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C3C196382E900E9545A /* MemberInfoViewController.m */; };
 		7CA90C45196385E400E9545A /* DependentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C43196385E400E9545A /* DependentInfoViewController.m */; };
 		7CA90C881963CDD400E9545A /* ProductListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA90C861963CDD400E9545A /* ProductListingViewController.m */; };
@@ -140,7 +161,6 @@
 		7CBC77201964DED7003987FA /* MemberInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77121964DED7003987FA /* MemberInfoViewController.xib */; };
 		7CBC77211964DED7003987FA /* ProductListingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77131964DED7003987FA /* ProductListingViewController.xib */; };
 		7CBC77221964DED7003987FA /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77141964DED7003987FA /* SideMenuViewController.xib */; };
-		7CBC772C1964E704003987FA /* SideMenuiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CBC772A1964E704003987FA /* SideMenuiPadViewController.m */; };
 		7CC6CA02199B4298003A179C /* ForgotPassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC6CA00199B4298003A179C /* ForgotPassViewController.m */; };
 		7CC6CA07199B4B0B003A179C /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC6CA05199B4B0B003A179C /* ChangePasswordViewController.m */; };
 		7CC83AA01994AB2C0080C81C /* DependentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC83A9E1994AB2C0080C81C /* DependentsTableViewCell.m */; };
@@ -170,6 +190,11 @@
 		7CE794EC199C4EF20096772C /* ForgotPassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE794E6199C4EF20096772C /* ForgotPassViewController.xib */; };
 		7CE794ED199C4EF20096772C /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE794E7199C4EF20096772C /* LocationViewController.xib */; };
 		7CE794EE199C4EF20096772C /* ProviderDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE794E8199C4EF20096772C /* ProviderDetailsViewController.xib */; };
+		7CF47DD519A3297A001552E3 /* SideMenuiPadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CF47DD219A3297A001552E3 /* SideMenuiPadViewController.xib */; };
+		7CF47DD819A32986001552E3 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CF47DD619A32986001552E3 /* ProfileViewController.xib */; };
+		7CF47DD919A32986001552E3 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CF47DD719A32986001552E3 /* SettingsViewController.xib */; };
+		7CF47DDC19A329A5001552E3 /* ProfileViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CF47DDA19A329A5001552E3 /* ProfileViewController_iPad.xib */; };
+		7CF47DDD19A329A5001552E3 /* SettingsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CF47DDB19A329A5001552E3 /* SettingsViewController_iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -242,6 +267,30 @@
 		7C8053171988CA0E00FB6243 /* ProviderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderListViewController.m; sourceTree = "<group>"; };
 		7C8053411988D23C00FB6243 /* ProviderListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviderListTableViewCell.h; sourceTree = "<group>"; };
 		7C8053421988D23C00FB6243 /* ProviderListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderListTableViewCell.m; sourceTree = "<group>"; };
+		7C81C42D19A19D1300AFAF98 /* AboutViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController_iPad.xib; sourceTree = "<group>"; };
+		7C81C42E19A19D1300AFAF98 /* ChangePasswordViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController_iPad.xib; sourceTree = "<group>"; };
+		7C81C42F19A19D1300AFAF98 /* ClaimsListTableViewCell_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClaimsListTableViewCell_iPad.xib; sourceTree = "<group>"; };
+		7C81C43019A19D1300AFAF98 /* ClaimsViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClaimsViewController_iPad.xib; sourceTree = "<group>"; };
+		7C81C43119A19D1300AFAF98 /* DeductibleViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeductibleViewController_iPad.xib; sourceTree = "<group>"; };
+		7C81C43219A19D1300AFAF98 /* DependentInfoViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DependentInfoViewController_iPad.xib; sourceTree = "<group>"; };
+		7C81C43319A19D1300AFAF98 /* DependentsTableViewCell_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DependentsTableViewCell_iPad.xib; sourceTree = "<group>"; };
+		7C81C43419A19D1300AFAF98 /* EventsViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsViewController_iPad.xib; sourceTree = "<group>"; };
+		7C81C43519A19D1300AFAF98 /* FAQViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FAQViewController_iPad.xib; sourceTree = "<group>"; };
+		7C81C43619A19D1300AFAF98 /* FindProviderMenuViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindProviderMenuViewController_iPad.xib; sourceTree = "<group>"; };
+		7C81C43819A19D1300AFAF98 /* ForgotPassViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPassViewController_iPad.xib; sourceTree = "<group>"; };
+		7C81C43919A19D1300AFAF98 /* GenSurveyViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GenSurveyViewController_iPad.xib; sourceTree = "<group>"; };
+		7C81C43A19A19D1300AFAF98 /* LocationViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationViewController_iPad.xib; sourceTree = "<group>"; };
+		7C81C43B19A19D1300AFAF98 /* LoginViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController_iPad.xib; sourceTree = "<group>"; };
+		7C81C43C19A19D1300AFAF98 /* MainViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController_iPad.xib; sourceTree = "<group>"; };
+		7C81C43D19A19D1300AFAF98 /* MemberInfoViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberInfoViewController_iPad.xib; sourceTree = "<group>"; };
+		7C81C43E19A19D1300AFAF98 /* ProductListingViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductListingViewController_iPad.xib; sourceTree = "<group>"; };
+		7C81C43F19A19D1300AFAF98 /* ProviderDetailsViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProviderDetailsViewController_iPad.xib; sourceTree = "<group>"; };
+		7C81C44019A19D1300AFAF98 /* ProviderListTableViewCell_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProviderListTableViewCell_iPad.xib; sourceTree = "<group>"; };
+		7C81C44119A19D1300AFAF98 /* ProviderListViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProviderListViewController_iPad.xib; sourceTree = "<group>"; };
+		7C81C44219A19D1300AFAF98 /* RegistrationViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationViewController_iPad.xib; sourceTree = "<group>"; };
+		7C81C45B19A1A73900AFAF98 /* SideMenuiPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuiPadViewController.h; sourceTree = "<group>"; };
+		7C81C45C19A1A73900AFAF98 /* SideMenuiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuiPadViewController.m; sourceTree = "<group>"; };
+		7C81C46019A1B1A000AFAF98 /* expired.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expired.png; sourceTree = "<group>"; };
 		7C84FF441999A51200ED76CA /* disclosure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disclosure.png; sourceTree = "<group>"; };
 		7C84FF461999A60700ED76CA /* shirnk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shirnk.png; sourceTree = "<group>"; };
 		7C84FF48199A015800ED76CA /* ClaimsListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClaimsListTableViewCell.h; sourceTree = "<group>"; };
@@ -250,12 +299,10 @@
 		7CA2EEC2199D8D1E0033ED6D /* imgSettings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgSettings@2x.png"; sourceTree = "<group>"; };
 		7CA2EEC5199D938F0033ED6D /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		7CA2EEC6199D938F0033ED6D /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		7CA2EEC7199D938F0033ED6D /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = ../../ViewControllers/SettingsViewController.xib; sourceTree = "<group>"; };
 		7CA2EECA199D94AE0033ED6D /* imgProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgProfile.png; sourceTree = "<group>"; };
 		7CA2EECB199D94AE0033ED6D /* imgProfile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgProfile@2x.png"; sourceTree = "<group>"; };
 		7CA2EECE199D99A60033ED6D /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		7CA2EECF199D99A60033ED6D /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		7CA2EED0199D99A60033ED6D /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = ../../ViewControllers/ProfileViewController.xib; sourceTree = "<group>"; };
 		7CA90C3B196382E900E9545A /* MemberInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberInfoViewController.h; sourceTree = "<group>"; };
 		7CA90C3C196382E900E9545A /* MemberInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberInfoViewController.m; sourceTree = "<group>"; };
 		7CA90C42196385E400E9545A /* DependentInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DependentInfoViewController.h; sourceTree = "<group>"; };
@@ -375,8 +422,6 @@
 		7CBC77121964DED7003987FA /* MemberInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberInfoViewController.xib; sourceTree = "<group>"; };
 		7CBC77131964DED7003987FA /* ProductListingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductListingViewController.xib; sourceTree = "<group>"; };
 		7CBC77141964DED7003987FA /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
-		7CBC77291964E704003987FA /* SideMenuiPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuiPadViewController.h; sourceTree = "<group>"; };
-		7CBC772A1964E704003987FA /* SideMenuiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuiPadViewController.m; sourceTree = "<group>"; };
 		7CC6C9FF199B4298003A179C /* ForgotPassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPassViewController.h; sourceTree = "<group>"; };
 		7CC6CA00199B4298003A179C /* ForgotPassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPassViewController.m; sourceTree = "<group>"; };
 		7CC6CA04199B4B0B003A179C /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
@@ -409,6 +454,11 @@
 		7CE794E6199C4EF20096772C /* ForgotPassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPassViewController.xib; sourceTree = "<group>"; };
 		7CE794E7199C4EF20096772C /* LocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationViewController.xib; sourceTree = "<group>"; };
 		7CE794E8199C4EF20096772C /* ProviderDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProviderDetailsViewController.xib; sourceTree = "<group>"; };
+		7CF47DD219A3297A001552E3 /* SideMenuiPadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuiPadViewController.xib; sourceTree = "<group>"; };
+		7CF47DD619A32986001552E3 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		7CF47DD719A32986001552E3 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		7CF47DDA19A329A5001552E3 /* ProfileViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController_iPad.xib; sourceTree = "<group>"; };
+		7CF47DDB19A329A5001552E3 /* SettingsViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,6 +490,7 @@
 		7C3CC44E196F62B100AB4EC6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7C81C46019A1B1A000AFAF98 /* expired.png */,
 				7CB961F1199B2B750084AFD5 /* HomeImages */,
 				7C84FF461999A60700ED76CA /* shirnk.png */,
 				7C84FF441999A51200ED76CA /* disclosure.png */,
@@ -765,10 +816,10 @@
 				7C3CC4A9196F67AE00AB4EC6 /* RegistrationViewController.m */,
 				7CA2EEC5199D938F0033ED6D /* SettingsViewController.h */,
 				7CA2EEC6199D938F0033ED6D /* SettingsViewController.m */,
-				7CBC77291964E704003987FA /* SideMenuiPadViewController.h */,
-				7CBC772A1964E704003987FA /* SideMenuiPadViewController.m */,
 				7CB365D219627EFF003E216F /* SideMenuViewController.h */,
 				7CB365D319627EFF003E216F /* SideMenuViewController.m */,
+				7C81C45B19A1A73900AFAF98 /* SideMenuiPadViewController.h */,
+				7C81C45C19A1A73900AFAF98 /* SideMenuiPadViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -817,6 +868,30 @@
 		7CBC77051964DED7003987FA /* iPad */ = {
 			isa = PBXGroup;
 			children = (
+				7CF47DDA19A329A5001552E3 /* ProfileViewController_iPad.xib */,
+				7CF47DDB19A329A5001552E3 /* SettingsViewController_iPad.xib */,
+				7CF47DD219A3297A001552E3 /* SideMenuiPadViewController.xib */,
+				7C81C42D19A19D1300AFAF98 /* AboutViewController_iPad.xib */,
+				7C81C42E19A19D1300AFAF98 /* ChangePasswordViewController_iPad.xib */,
+				7C81C42F19A19D1300AFAF98 /* ClaimsListTableViewCell_iPad.xib */,
+				7C81C43019A19D1300AFAF98 /* ClaimsViewController_iPad.xib */,
+				7C81C43119A19D1300AFAF98 /* DeductibleViewController_iPad.xib */,
+				7C81C43219A19D1300AFAF98 /* DependentInfoViewController_iPad.xib */,
+				7C81C43319A19D1300AFAF98 /* DependentsTableViewCell_iPad.xib */,
+				7C81C43419A19D1300AFAF98 /* EventsViewController_iPad.xib */,
+				7C81C43519A19D1300AFAF98 /* FAQViewController_iPad.xib */,
+				7C81C43619A19D1300AFAF98 /* FindProviderMenuViewController_iPad.xib */,
+				7C81C43819A19D1300AFAF98 /* ForgotPassViewController_iPad.xib */,
+				7C81C43919A19D1300AFAF98 /* GenSurveyViewController_iPad.xib */,
+				7C81C43A19A19D1300AFAF98 /* LocationViewController_iPad.xib */,
+				7C81C43B19A19D1300AFAF98 /* LoginViewController_iPad.xib */,
+				7C81C43C19A19D1300AFAF98 /* MainViewController_iPad.xib */,
+				7C81C43D19A19D1300AFAF98 /* MemberInfoViewController_iPad.xib */,
+				7C81C43E19A19D1300AFAF98 /* ProductListingViewController_iPad.xib */,
+				7C81C43F19A19D1300AFAF98 /* ProviderDetailsViewController_iPad.xib */,
+				7C81C44019A19D1300AFAF98 /* ProviderListTableViewCell_iPad.xib */,
+				7C81C44119A19D1300AFAF98 /* ProviderListViewController_iPad.xib */,
+				7C81C44219A19D1300AFAF98 /* RegistrationViewController_iPad.xib */,
 			);
 			path = iPad;
 			sourceTree = "<group>";
@@ -824,6 +899,8 @@
 		7CBC77061964DED7003987FA /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				7CF47DD619A32986001552E3 /* ProfileViewController.xib */,
+				7CF47DD719A32986001552E3 /* SettingsViewController.xib */,
 				7CBC77071964DED7003987FA /* AboutViewController.xib */,
 				7CE794E3199C4EF20096772C /* ChangePasswordViewController.xib */,
 				7CE794E4199C4EF20096772C /* ClaimsListTableViewCell.xib */,
@@ -842,12 +919,10 @@
 				7CBC77111964DED7003987FA /* MainViewController.xib */,
 				7CBC77121964DED7003987FA /* MemberInfoViewController.xib */,
 				7CBC77131964DED7003987FA /* ProductListingViewController.xib */,
-				7CA2EED0199D99A60033ED6D /* ProfileViewController.xib */,
 				7CE794E8199C4EF20096772C /* ProviderDetailsViewController.xib */,
 				7C4261481988D820001D234A /* ProviderListTableViewCell.xib */,
 				7C4261491988D820001D234A /* ProviderListViewController.xib */,
 				7C2348C1196FD4A200C9F0A9 /* RegistrationViewController.xib */,
-				7CA2EEC7199D938F0033ED6D /* SettingsViewController.xib */,
 				7CBC77141964DED7003987FA /* SideMenuViewController.xib */,
 			);
 			path = iPhone;
@@ -933,8 +1008,12 @@
 				7CBC771C1964DED7003987FA /* FindProviderViewController.xib in Resources */,
 				7CB961F6199B2B750084AFD5 /* MemberInfo.png in Resources */,
 				7C7D64671974BEFB00AF246A /* about@2x.png in Resources */,
+				7C81C44D19A19D1300AFAF98 /* FindProviderMenuViewController_iPad.xib in Resources */,
+				7CF47DD519A3297A001552E3 /* SideMenuiPadViewController.xib in Resources */,
 				7C7D64681974BEFB00AF246A /* menubtn@2x.png in Resources */,
+				7C81C44519A19D1300AFAF98 /* ChangePasswordViewController_iPad.xib in Resources */,
 				7C42614B1988D820001D234A /* ProviderListTableViewCell.xib in Resources */,
+				7C81C44619A19D1300AFAF98 /* ClaimsListTableViewCell_iPad.xib in Resources */,
 				7CB961F9199B2D110084AFD5 /* FindProvider.png in Resources */,
 				7CA2EEC3199D8D1E0033ED6D /* imgSettings.png in Resources */,
 				7C4261501988DB0D001D234A /* arrowright@2x.png in Resources */,
@@ -944,26 +1023,36 @@
 				7CC9A8571973712300E89DD4 /* productlisting.png in Resources */,
 				7C7D64831974CF8A00AF246A /* textwhitebox.png in Resources */,
 				7CE794EE199C4EF20096772C /* ProviderDetailsViewController.xib in Resources */,
+				7C81C45919A19D1300AFAF98 /* RegistrationViewController_iPad.xib in Resources */,
 				7C7D646D1974BF5000AF246A /* FAQs.png in Resources */,
+				7C81C45119A19D1300AFAF98 /* LocationViewController_iPad.xib in Resources */,
+				7C81C45819A19D1300AFAF98 /* ProviderListViewController_iPad.xib in Resources */,
 				7CE794EC199C4EF20096772C /* ForgotPassViewController.xib in Resources */,
 				7CB961F5199B2B750084AFD5 /* Member.png in Resources */,
 				7C3CC4A0196F637300AB4EC6 /* checkbox_empty.png in Resources */,
+				7C81C45619A19D1300AFAF98 /* ProviderDetailsViewController_iPad.xib in Resources */,
 				7C3CC496196F62B100AB4EC6 /* Netcare logo.png in Resources */,
 				7CC9A8641973785100E89DD4 /* check@2x.png in Resources */,
 				7C3CC4A3196F639000AB4EC6 /* registrationbox.png in Resources */,
 				7C3CC490196F62B100AB4EC6 /* memberbtn.png in Resources */,
 				7CB3652F19627C28003E216F /* InfoPlist.strings in Resources */,
+				7C81C44719A19D1300AFAF98 /* ClaimsViewController_iPad.xib in Resources */,
 				7C3CC49C196F62B100AB4EC6 /* whitebox.png in Resources */,
 				7C7D64691974BEFB00AF246A /* survey.png in Resources */,
 				7CD142641993504500DBE77A /* IDFront.png in Resources */,
+				7C81C45019A19D1300AFAF98 /* GenSurveyViewController_iPad.xib in Resources */,
 				7CC9A8521973712300E89DD4 /* deductible@2x.png in Resources */,
+				7C81C44919A19D1300AFAF98 /* DependentInfoViewController_iPad.xib in Resources */,
 				7C3CC483196F62B100AB4EC6 /* deductible.png in Resources */,
 				7C3CC47C196F62B100AB4EC6 /* nav bar.png in Resources */,
+				7C81C45319A19D1300AFAF98 /* MainViewController_iPad.xib in Resources */,
 				7CC9A8661973785100E89DD4 /* checkbox@2x.png in Resources */,
+				7C81C44819A19D1300AFAF98 /* DeductibleViewController_iPad.xib in Resources */,
 				7CC9A8501973712300E89DD4 /* aboutNetcare@2x.png in Resources */,
 				7C84FF471999A60700ED76CA /* shirnk.png in Resources */,
 				7CE794EA199C4EF20096772C /* ClaimsListTableViewCell.xib in Resources */,
 				7C7D64661974BEFB00AF246A /* about.png in Resources */,
+				7C81C44F19A19D1300AFAF98 /* ForgotPassViewController_iPad.xib in Resources */,
 				7CBC77201964DED7003987FA /* MemberInfoViewController.xib in Resources */,
 				7C3CC4A7196F66F200AB4EC6 /* Default-568h@2x.png in Resources */,
 				7C4CCDD1198F493400F6043E /* bg_box.png in Resources */,
@@ -977,8 +1066,11 @@
 				7CE794ED199C4EF20096772C /* LocationViewController.xib in Resources */,
 				7CC9A84F1973712300E89DD4 /* aboutNetcare.png in Resources */,
 				7CC9A8581973712300E89DD4 /* productlisting@2x.png in Resources */,
+				7CF47DDC19A329A5001552E3 /* ProfileViewController_iPad.xib in Resources */,
 				7C84FF451999A51200ED76CA /* disclosure.png in Resources */,
+				7C81C44419A19D1300AFAF98 /* AboutViewController_iPad.xib in Resources */,
 				7C3CC48D196F62B100AB4EC6 /* logout.png in Resources */,
+				7C81C45719A19D1300AFAF98 /* ProviderListTableViewCell_iPad.xib in Resources */,
 				7C3CC491196F62B100AB4EC6 /* menubtn.png in Resources */,
 				7C7D646A1974BEFB00AF246A /* survey@2x.png in Resources */,
 				7CBC77171964DED7003987FA /* DeductibleViewController.xib in Resources */,
@@ -991,14 +1083,18 @@
 				7CA2EECD199D94AE0033ED6D /* imgProfile@2x.png in Resources */,
 				7C3CC47B196F62B100AB4EC6 /* menuBG.png in Resources */,
 				7CC9A8531973712300E89DD4 /* events.png in Resources */,
+				7C81C45519A19D1300AFAF98 /* ProductListingViewController_iPad.xib in Resources */,
 				7C2348C2196FD4A200C9F0A9 /* RegistrationViewController.xib in Resources */,
+				7C81C44A19A19D1300AFAF98 /* DependentsTableViewCell_iPad.xib in Resources */,
+				7C81C44B19A19D1300AFAF98 /* EventsViewController_iPad.xib in Resources */,
 				7C3CC47E196F62B100AB4EC6 /* signin bar.png in Resources */,
 				7C42614A1988D820001D234A /* FindProviderMenuViewController.xib in Resources */,
+				7CF47DD919A32986001552E3 /* SettingsViewController.xib in Resources */,
 				7CC9A85C197371E600E89DD4 /* claims.png in Resources */,
+				7C81C46119A1B1A000AFAF98 /* expired.png in Resources */,
 				7CC9A8541973712300E89DD4 /* events@2x.png in Resources */,
 				7C3CC484196F62B100AB4EC6 /* dependentbtn.png in Resources */,
 				7CC9A8511973712300E89DD4 /* claims@2x.png in Resources */,
-				7CA2EED2199D99A60033ED6D /* ProfileViewController.xib in Resources */,
 				7CBC771D1964DED7003987FA /* GenSurveyViewController.xib in Resources */,
 				7C7D64601974BABB00AF246A /* loginbar.png in Resources */,
 				7C3CC48C196F62B100AB4EC6 /* icon.png in Resources */,
@@ -1006,21 +1102,25 @@
 				7C7D64761974C20F00AF246A /* deductiblebox.png in Resources */,
 				7C3CC4A5196F647400AB4EC6 /* LaunchImg_568hRetina.png in Resources */,
 				7CC9A8421973628B00E89DD4 /* home@2x.png in Resources */,
+				7CF47DDD19A329A5001552E3 /* SettingsViewController_iPad.xib in Resources */,
 				7CD142631993504500DBE77A /* IDBack.png in Resources */,
 				7CA2EECC199D94AE0033ED6D /* imgProfile.png in Resources */,
 				7C7D648919750F4D00AF246A /* arrowleft@2x.png in Resources */,
 				7C42614F1988DB0D001D234A /* arrowright.png in Resources */,
 				7CC9A8551973712300E89DD4 /* logout@2x.png in Resources */,
 				7CBC77161964DED7003987FA /* ClaimsViewController.xib in Resources */,
+				7C81C45419A19D1300AFAF98 /* MemberInfoViewController_iPad.xib in Resources */,
 				7C3CC478196F62B100AB4EC6 /* background-tablecell.png in Resources */,
+				7C81C45219A19D1300AFAF98 /* LoginViewController_iPad.xib in Resources */,
 				7CBC771E1964DED7003987FA /* LoginViewController.xib in Resources */,
 				7C3CC4A1196F637300AB4EC6 /* checkbox_selected.png in Resources */,
 				7CB3653719627C28003E216F /* Images.xcassets in Resources */,
 				7CC9A8591973712300E89DD4 /* provider.png in Resources */,
 				7CC9A8631973785100E89DD4 /* check.png in Resources */,
 				7C42614C1988D820001D234A /* ProviderListViewController.xib in Resources */,
+				7C81C44C19A19D1300AFAF98 /* FAQViewController_iPad.xib in Resources */,
 				7CBC771F1964DED7003987FA /* MainViewController.xib in Resources */,
-				7CA2EEC9199D938F0033ED6D /* SettingsViewController.xib in Resources */,
+				7CF47DD819A32986001552E3 /* ProfileViewController.xib in Resources */,
 				7CE794E9199C4EF20096772C /* ChangePasswordViewController.xib in Resources */,
 				7CBC77221964DED7003987FA /* SideMenuViewController.xib in Resources */,
 				7CBC77151964DED7003987FA /* AboutViewController.xib in Resources */,
@@ -1049,6 +1149,7 @@
 				7C2B156F198B5DCC00F3C06B /* LocationViewController.m in Sources */,
 				7CB3653519627C28003E216F /* AppDelegate.m in Sources */,
 				7CB961EA199B0F270084AFD5 /* mask.c in Sources */,
+				7C81C45E19A1A73900AFAF98 /* SideMenuiPadViewController.m in Sources */,
 				7CAD29701990BFAF00746285 /* TSPopoverTouchView.m in Sources */,
 				7CC6CA07199B4B0B003A179C /* ChangePasswordViewController.m in Sources */,
 				7CAD29581990BFAF00746285 /* ASIHTTPRequest.m in Sources */,
@@ -1056,7 +1157,6 @@
 				7CAD29601990BFAF00746285 /* Reachability.m in Sources */,
 				7CB365DA19627F37003E216F /* LoginViewController.m in Sources */,
 				7CAD29561990BFAF00746285 /* ASIDownloadCache.m in Sources */,
-				7CBC772C1964E704003987FA /* SideMenuiPadViewController.m in Sources */,
 				7CAD29571990BFAF00746285 /* ASIFormDataRequest.m in Sources */,
 				7CAD29711990BFAF00746285 /* UIBarButtonItem+WEPopover.m in Sources */,
 				7CB961EB199B0F270084AFD5 /* qrencode.c in Sources */,
@@ -1215,13 +1315,13 @@
 		7CB3654E19627C28003E216F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Rene Jaspe (3UY9WM34CJ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jose Camilo Miguel (46ZVL8Y44B)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetCare/NetCare-Prefix.pch";
 				INFOPLIST_FILE = "NetCare/NetCare-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DF8E82C5-DF08-4DCB-9CC7-C7EF79D958CF";
+				PROVISIONING_PROFILE = "bd274775-fa50-4922-b65b-34533f2f6dbb";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1230,13 +1330,13 @@
 		7CB3654F19627C28003E216F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Rene Jaspe (3UY9WM34CJ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jose Camilo Miguel (46ZVL8Y44B)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetCare/NetCare-Prefix.pch";
 				INFOPLIST_FILE = "NetCare/NetCare-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DF8E82C5-DF08-4DCB-9CC7-C7EF79D958CF";
+				PROVISIONING_PROFILE = "bd274775-fa50-4922-b65b-34533f2f6dbb";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

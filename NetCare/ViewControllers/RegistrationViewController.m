@@ -183,6 +183,7 @@
                         else{
                             HUB = [[MBProgressHUD alloc]initWithView:self.view];
                             [self.view addSubview:HUB];
+                            HUB.labelText = @"Retrieving and validating data…";
                             [HUB showWhileExecuting:@selector(submitData) onTarget:self withObject:nil animated:YES];
                         }
                     }
@@ -237,6 +238,7 @@
                         else{
                             HUB = [[MBProgressHUD alloc]initWithView:self.view];
                             [self.view addSubview:HUB];
+                            HUB.labelText = @"Retrieving and validating data…";
                             [HUB showWhileExecuting:@selector(submitData) onTarget:self withObject:nil animated:YES];
                         }
                     }
@@ -286,9 +288,17 @@
         NSString *strStatus = [NSString stringWithFormat:@"%@",[dictData objectForKey:@"strStatus"]];
         if ([strStatus isEqualToString:@"Success"]) {
             [self alertStatus:@"Registeration successfull, please check your registered email address for more information." :@"Success"];
-            LoginViewController *Lvc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:[NSBundle mainBundle]];
-            [self.navigationController setNavigationBarHidden:YES];
-            [self.navigationController pushViewController:Lvc animated:YES];
+            
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                LoginViewController *Lvc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:[NSBundle mainBundle]];
+                [self.navigationController setNavigationBarHidden:YES];
+                [self.navigationController pushViewController:Lvc animated:YES];
+            }
+            else{
+                LoginViewController *Lvc = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPad" bundle:[NSBundle mainBundle]];
+                [self.navigationController setNavigationBarHidden:YES];
+                [self.navigationController pushViewController:Lvc animated:YES];
+            }
         }
         else{
             [self alertStatus:strStatus :@"Error"];

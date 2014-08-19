@@ -188,6 +188,7 @@
     
     HUB = [[MBProgressHUD alloc]initWithView:self.view];
     [self.view addSubview:HUB];
+    HUB.labelText = @"Retrieving and validating data…";
     [HUB showWhileExecuting:@selector(getSecurityQuestion) onTarget:self withObject:nil animated:YES];
     
 }

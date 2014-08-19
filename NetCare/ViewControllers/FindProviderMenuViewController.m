@@ -81,6 +81,7 @@
     
     HUB = [[MBProgressHUD alloc]initWithView:self.view];
     [self.view addSubview:HUB];
+    HUB.labelText = @"Retrieving and validating data…";
     [HUB showWhileExecuting:@selector(getCountryList) onTarget:self withObject:nil animated:YES];
     
 }
@@ -113,7 +114,7 @@
 {
     HUB = [[MBProgressHUD alloc]initWithView:self.view];
     [self.view addSubview:HUB];
-    HUB.labelText = @"Loading State/City";
+    HUB.labelText = @"Retrieving and validating data…";
     [HUB showWhileExecuting:@selector(getSpecializationList) onTarget:self withObject:nil animated:YES];
     
     UIViewController *prodNameView = [[UIViewController alloc]init];
@@ -175,7 +176,7 @@
 {
     HUB = [[MBProgressHUD alloc]initWithView:self.view];
     [self.view addSubview:HUB];
-    HUB.labelText = @"Loading State/City";
+    HUB.labelText = @"Retrieving and validating data…";
     [HUB showWhileExecuting:@selector(getCityList) onTarget:self withObject:nil animated:YES];
 
     UIViewController *prodNameView = [[UIViewController alloc]init];
@@ -223,7 +224,7 @@
         [self dismissKeyboard];
         HUB = [[MBProgressHUD alloc]initWithView:self.view];
         [self.view addSubview:HUB];
-        //HUB.labelText = @"";
+        HUB.labelText = @"Retrieving and validating data…";
         [HUB showWhileExecuting:@selector(searchData) onTarget:self withObject:nil animated:YES];
     }
     
@@ -272,10 +273,22 @@
         NSMutableArray * arrayData = nil;
         arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
         if ([arrayData count] > 0) {
-            ProviderListViewController *plvc = [[ProviderListViewController alloc] initWithNibName:@"ProviderListViewController" bundle:[NSBundle mainBundle]];
-            plvc.responseData = urlData;
-            [self.navigationController setNavigationBarHidden:YES];
-            [self.navigationController pushViewController:plvc animated:YES];
+
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                ProviderListViewController *plvc = [[ProviderListViewController alloc] initWithNibName:@"ProviderListViewController" bundle:[NSBundle mainBundle]];
+                plvc.responseData = urlData;
+                [self.navigationController setNavigationBarHidden:YES];
+                [self.navigationController pushViewController:plvc animated:YES];
+            }
+            else{
+                ProviderListViewController *plvc = [[ProviderListViewController alloc] initWithNibName:@"ProviderListViewController_iPad" bundle:[NSBundle mainBundle]];
+                plvc.responseData = urlData;
+                [self.navigationController setNavigationBarHidden:YES];
+                [self.navigationController pushViewController:plvc animated:YES];
+            }
+            
+            
+            
         }
         else{
             [self alertStatus:@"Not found" :@""];

@@ -2,17 +2,16 @@
 //  SideMenuiPadViewController.h
 //  NetCare
 //
-//  Created by MacTwo Moylan on 7/3/14.
+//  Created by MacTwo Moylan on 8/18/14.
 //  Copyright (c) 2014 NetCare. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface SideMenuiPadViewController : UIViewController
-{
-    
+@interface SideMenuiPadViewController : UIViewController{
+    IBOutlet UIScrollView * scrollView;
 }
-
+@property (nonatomic, retain) IBOutlet UIScrollView * scrollView;
 @property (strong, nonatomic) UITabBarController *tabBarController;
 - (IBAction)btnHome:(id)sender;
 - (IBAction)btnMemberInfo:(id)sender;
@@ -26,5 +25,7 @@
 - (IBAction)btnFAQ:(id)sender;
 - (IBAction)btnAbout:(id)sender;
 - (IBAction)btnLogout:(id)sender;
+- (IBAction)btnSettings:(id)sender;
+
 
 @end

@@ -49,7 +49,7 @@
     
     HUB = [[MBProgressHUD alloc]initWithView:self.view];
     [self.view addSubview:HUB];
-    HUB.labelText = @"Getting dependents information.";
+    HUB.labelText = @"Retrieving and validating data…";
     [HUB showWhileExecuting:@selector(getDependentsInfo) onTarget:self withObject:nil animated:YES];
     [self sendAudit:@"Dependents Information"];
 }
@@ -94,7 +94,6 @@
     [dateFormat setDateFormat:@"MM/dd/yyyy"];
     NSDate * dateDOB = [dateFormat dateFromString:components[0]];
     strDOB = [dateFormat stringFromDate:dateDOB];
-    
     
     NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"GetUserIDInfo"];
     NSLog(@"strURL: %@",strPortalURL);
@@ -141,8 +140,15 @@
     static NSString *simpleTableIdentifier = @"Cell";
     DependentsTableViewCell *cell = (DependentsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil){
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DependentsTableViewCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DependentsTableViewCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        else{
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DependentsTableViewCell_iPad" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+            
+        }
     }
     
     cell.lblName.text = [jsonData objectForKey:@"strName"];

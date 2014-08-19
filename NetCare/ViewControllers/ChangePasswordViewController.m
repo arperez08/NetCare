@@ -69,10 +69,40 @@
         NSString *status = [NSString stringWithFormat:@"%@",[jsonData objectForKey:@"strStatus"]];
         if ([status isEqualToString:@"Success"]) {
             [self alertStatus:@"Reset password successful. Please login with your new password." :@"Notification"];
-            LoginViewController *rvc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:[NSBundle mainBundle]];
-            [self.navigationController setNavigationBarHidden:YES];
-            [self.navigationController pushViewController:rvc animated:YES];
+            
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                LoginViewController *rvc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:[NSBundle mainBundle]];
+                [self.navigationController setNavigationBarHidden:YES];
+                [self.navigationController pushViewController:rvc animated:YES];
+            }
+            else{
+                LoginViewController *rvc = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPad" bundle:[NSBundle mainBundle]];
+                [self.navigationController setNavigationBarHidden:YES];
+                [self.navigationController pushViewController:rvc animated:YES];
+            }
+            //LoginViewController *rvc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:[NSBundle mainBundle]];
         }
+    }
+}
+
+- (void) sendEmailReset {
+    NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary *userData = [userLogin objectForKey:@"userData"];
+    NSString *strEmailAdd = [userData objectForKey:@"strEmailAdd"];
+    NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"SendReset"];
+    NSLog(@"strURL: %@",strPortalURL);
+
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
+    [request setRequestMethod:@"POST"];
+    [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
+    [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
+    [request setPostValue:strEmailAdd forKey:@"strEmailAdd"];
+    [request startSynchronous];
+    NSData *urlData = [request responseData];
+    NSError *error = [request error];
+    if (!error) {
+        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+        NSLog(@"SendReset: %@",responseData);
     }
 }
 

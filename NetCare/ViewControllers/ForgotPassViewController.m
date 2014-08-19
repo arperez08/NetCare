@@ -208,11 +208,21 @@
         NSString *status = [NSString stringWithFormat:@"%@",[jsonData objectForKey:@"strStatus"]];
         
         if ([status isEqualToString:@"Success"]) {
-            ChangePasswordViewController *rvc = [[ChangePasswordViewController alloc] initWithNibName:@"ChangePasswordViewController" bundle:[NSBundle mainBundle]];
-            rvc.userName = txtUsername.text;
-            rvc.memberNumber = txtMemberNum.text;
-            [self.navigationController setNavigationBarHidden:YES];
-            [self.navigationController pushViewController:rvc animated:YES];
+            
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                ChangePasswordViewController *rvc = [[ChangePasswordViewController alloc] initWithNibName:@"ChangePasswordViewController" bundle:[NSBundle mainBundle]];
+                rvc.userName = txtUsername.text;
+                rvc.memberNumber = txtMemberNum.text;
+                [self.navigationController setNavigationBarHidden:YES];
+                [self.navigationController pushViewController:rvc animated:YES];
+            }
+            else{
+                ChangePasswordViewController *rvc = [[ChangePasswordViewController alloc] initWithNibName:@"ChangePasswordViewController_iPad" bundle:[NSBundle mainBundle]];
+                rvc.userName = txtUsername.text;
+                rvc.memberNumber = txtMemberNum.text;
+                [self.navigationController setNavigationBarHidden:YES];
+                [self.navigationController pushViewController:rvc animated:YES];
+            }
         }
         else{
             [self alertStatus:@"Please check your data." :@"Error"];
@@ -234,6 +244,7 @@
     else{
         HUB = [[MBProgressHUD alloc]initWithView:self.view];
         [self.view addSubview:HUB];
+        HUB.labelText = @"Retrieving and validating data…";
         [HUB showWhileExecuting:@selector(getSecurityQuestion) onTarget:self withObject:nil animated:YES];
     }
 }

@@ -45,9 +45,16 @@
 }
 
 - (IBAction)btnProfile:(id)sender {
-    ProfileViewController *rvc = [[ProfileViewController alloc] initWithNibName:@"ProfileViewController" bundle:[NSBundle mainBundle]];
-    [self.navigationController setNavigationBarHidden:YES];
-    [self.navigationController pushViewController:rvc animated:YES];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        ProfileViewController *rvc = [[ProfileViewController alloc] initWithNibName:@"ProfileViewController" bundle:[NSBundle mainBundle]];
+        [self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController pushViewController:rvc animated:YES];
+    }
+    else{
+        ProfileViewController *rvc = [[ProfileViewController alloc] initWithNibName:@"ProfileViewController_iPad" bundle:[NSBundle mainBundle]];
+        [self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController pushViewController:rvc animated:YES];
+    }
 }
 
 #pragma mark - Actions
@@ -70,10 +77,22 @@
     userData = [[NSMutableDictionary alloc] init];
     userData = [userLogin objectForKey:@"userData"];
     NSString *userName = [userLogin objectForKey:@"Username"];
-    ChangePasswordViewController *rvc = [[ChangePasswordViewController alloc] initWithNibName:@"ChangePasswordViewController" bundle:[NSBundle mainBundle]];
-    rvc.userName = userName;
-    rvc.memberNumber = [userData objectForKey:@"strMemTinNbr"];
-    [self.navigationController setNavigationBarHidden:YES];
-    [self.navigationController pushViewController:rvc animated:YES];
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        ChangePasswordViewController *rvc = [[ChangePasswordViewController alloc] initWithNibName:@"ChangePasswordViewController" bundle:[NSBundle mainBundle]];
+        rvc.userName = userName;
+        rvc.memberNumber = [userData objectForKey:@"strMemTinNbr"];
+        [self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController pushViewController:rvc animated:YES];
+    }
+    else{
+        ChangePasswordViewController *rvc = [[ChangePasswordViewController alloc] initWithNibName:@"ChangePasswordViewController_iPad" bundle:[NSBundle mainBundle]];
+        rvc.userName = userName;
+        rvc.memberNumber = [userData objectForKey:@"strMemTinNbr"];
+        [self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController pushViewController:rvc animated:YES];
+    }
+    
+
 }
 @end

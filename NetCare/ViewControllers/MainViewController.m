@@ -78,42 +78,84 @@
 }
 
 - (IBAction)btnFindProvider:(id)sender {
-    FindProviderMenuViewController *hvc = [[FindProviderMenuViewController alloc] initWithNibName:@"FindProviderMenuViewController" bundle:[NSBundle mainBundle]];
-    [self.navigationController setNavigationBarHidden:YES];
-    [self.navigationController pushViewController:hvc animated:YES];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        FindProviderMenuViewController *hvc = [[FindProviderMenuViewController alloc] initWithNibName:@"FindProviderMenuViewController" bundle:[NSBundle mainBundle]];
+        [self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController pushViewController:hvc animated:YES];
+    }
+    else{
+        FindProviderMenuViewController *hvc = [[FindProviderMenuViewController alloc] initWithNibName:@"FindProviderMenuViewController_iPad" bundle:[NSBundle mainBundle]];
+        [self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController pushViewController:hvc animated:YES];
+    }
 }
 
 - (IBAction)btnClaimUpdates:(id)sender {
-    ClaimsViewController *hvc = [[ClaimsViewController alloc] initWithNibName:@"ClaimsViewController" bundle:[NSBundle mainBundle]];
-    [self.navigationController setNavigationBarHidden:YES];
-    [self.navigationController pushViewController:hvc animated:YES];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        ClaimsViewController *hvc = [[ClaimsViewController alloc] initWithNibName:@"ClaimsViewController" bundle:[NSBundle mainBundle]];
+        [self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController pushViewController:hvc animated:YES];
+    }
+    else{
+        ClaimsViewController *hvc = [[ClaimsViewController alloc] initWithNibName:@"ClaimsViewController_iPad" bundle:[NSBundle mainBundle]];
+        [self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController pushViewController:hvc animated:YES];
+    }
 }
 
 - (IBAction)bthMemberInfo:(id)sender {
     NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
-    NSMutableDictionary *userData = [userLogin objectForKey:@"userData"];
-    int userType = [[userData objectForKey:@"strUserTyp"]intValue];
+    //NSMutableDictionary *userData = [userLogin objectForKey:@"userData"];
+    //int userType = [[userData objectForKey:@"strUserTyp"]intValue];
+    NSMutableDictionary *userInfo = [userLogin objectForKey:@"userInfo"];
+    int strDepedent = [[userInfo objectForKey:@"strDepedent"]intValue];
     
-    if (userType == 0) {
-        MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController" bundle:[NSBundle mainBundle]];
-        DependentInfoViewController *dvc = [[DependentInfoViewController alloc] initWithNibName:@"DependentInfoViewController" bundle:[NSBundle mainBundle]];
-        hvc.title = @"Principal";
-        hvc.tabBarItem.image = [UIImage imageNamed:@"primary"];
-        dvc.title = @"Dependent(s)";
-        dvc.tabBarItem.image = [UIImage imageNamed:@"dependent"];
-        self.tabBarController = [[UITabBarController alloc] init];
-        self.tabBarController.viewControllers = @[hvc, dvc];
- 
-        UIColor *hexColor = [self colorFromHexString:@"#0d2b9c"];
-        self.tabBarController.tabBar.barTintColor = hexColor;
-        self.tabBarController.tabBar.tintColor = [UIColor whiteColor];
-        [self.tabBarController.navigationController setNavigationBarHidden:YES];
-        [self.navigationController pushViewController:self.tabBarController animated:YES];
+    if (strDepedent == 0) {
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController" bundle:[NSBundle mainBundle]];
+                DependentInfoViewController *dvc = [[DependentInfoViewController alloc] initWithNibName:@"DependentInfoViewController" bundle:[NSBundle mainBundle]];
+                hvc.title = @"Principal";
+                hvc.tabBarItem.image = [UIImage imageNamed:@"primary"];
+                dvc.title = @"Dependent(s)";
+                dvc.tabBarItem.image = [UIImage imageNamed:@"dependent"];
+                self.tabBarController = [[UITabBarController alloc] init];
+                self.tabBarController.viewControllers = @[hvc, dvc];
+                
+                UIColor *hexColor = [self colorFromHexString:@"#0d2b9c"];
+                self.tabBarController.tabBar.barTintColor = hexColor;
+                self.tabBarController.tabBar.tintColor = [UIColor whiteColor];
+                [self.tabBarController.navigationController setNavigationBarHidden:YES];
+                [self.navigationController pushViewController:self.tabBarController animated:YES];
+            }
+            else{
+                MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController_iPad" bundle:[NSBundle mainBundle]];
+                DependentInfoViewController *dvc = [[DependentInfoViewController alloc] initWithNibName:@"DependentInfoViewController_iPad" bundle:[NSBundle mainBundle]];
+                hvc.title = @"Principal";
+                hvc.tabBarItem.image = [UIImage imageNamed:@"primary"];
+                dvc.title = @"Dependent(s)";
+                dvc.tabBarItem.image = [UIImage imageNamed:@"dependent"];
+                self.tabBarController = [[UITabBarController alloc] init];
+                self.tabBarController.viewControllers = @[hvc, dvc];
+                
+                UIColor *hexColor = [self colorFromHexString:@"#0d2b9c"];
+                self.tabBarController.tabBar.barTintColor = hexColor;
+                self.tabBarController.tabBar.tintColor = [UIColor whiteColor];
+                [self.tabBarController.navigationController setNavigationBarHidden:YES];
+                [self.navigationController pushViewController:self.tabBarController animated:YES];
+                
+            }
     }
     else{
-        MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController" bundle:[NSBundle mainBundle]];
-        [self.navigationController setNavigationBarHidden:YES];
-        [self.navigationController pushViewController:hvc animated:YES];
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController" bundle:[NSBundle mainBundle]];
+            [self.navigationController setNavigationBarHidden:YES];
+            [self.navigationController pushViewController:hvc animated:YES];
+        }
+        else{
+            MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController_iPad" bundle:[NSBundle mainBundle]];
+            [self.navigationController setNavigationBarHidden:YES];
+            [self.navigationController pushViewController:hvc animated:YES];
+        }
     }
 }
 

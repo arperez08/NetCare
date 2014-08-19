@@ -60,8 +60,15 @@
     static NSString *simpleTableIdentifier = @"Cell";
     ProviderListTableViewCell *cell = (ProviderListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil){
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ProviderListTableViewCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
+        
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ProviderListTableViewCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        else{
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ProviderListTableViewCell_iPad" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
     }
     cell.lblName.text = [NSString stringWithFormat:@"%@",[jsonData objectForKey:@"strPrvName"]];
     cell.lblSpecialization.text = [NSString stringWithFormat:@"%@",[jsonData objectForKey:@"strSpecialist"]];
@@ -78,10 +85,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSMutableDictionary *jsonData = [arrayData objectAtIndex:indexPath.section];
     
-    ProviderDetailsViewController *pdvc = [[ProviderDetailsViewController alloc] initWithNibName:@"ProviderDetailsViewController" bundle:[NSBundle mainBundle]];
-    pdvc.jsonData = jsonData;
-    [self.navigationController setNavigationBarHidden:YES];
-    [self.navigationController pushViewController:pdvc animated:YES];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        ProviderDetailsViewController *pdvc = [[ProviderDetailsViewController alloc] initWithNibName:@"ProviderDetailsViewController" bundle:[NSBundle mainBundle]];
+        pdvc.jsonData = jsonData;
+        [self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController pushViewController:pdvc animated:YES];
+    }
+    else{
+        
+        ProviderDetailsViewController *pdvc = [[ProviderDetailsViewController alloc] initWithNibName:@"ProviderDetailsViewController_iPad" bundle:[NSBundle mainBundle]];
+        pdvc.jsonData = jsonData;
+        [self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController pushViewController:pdvc animated:YES];
+    }
+    
+    
+
 
 }
 

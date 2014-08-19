@@ -150,10 +150,13 @@
 - (IBAction)btnMemberInfo:(id)sender {
     [self sendAudit:@"Member Information"];
     NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
-    NSMutableDictionary *userData = [userLogin objectForKey:@"userData"];
-    int userType = [[userData objectForKey:@"strUserTyp"]intValue];
+    //NSMutableDictionary *userData = [userLogin objectForKey:@"userData"];
+    //int userType = [[userData objectForKey:@"strUserTyp"]intValue];
     
-    if (userType == 0) {
+    NSMutableDictionary *userInfo = [userLogin objectForKey:@"userInfo"];
+    int strDepedent = [[userInfo objectForKey:@"strDepedent"]intValue];
+    
+    if (strDepedent == 0) {
         MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController" bundle:[NSBundle mainBundle]];
         DependentInfoViewController *dvc = [[DependentInfoViewController alloc] initWithNibName:@"DependentInfoViewController" bundle:[NSBundle mainBundle]];
         hvc.title = @"Principal";
@@ -185,6 +188,7 @@
                                                                                         leftViewController:leftViewController
                                                                                        rightViewController:nil
                                                                                                    options:nil];
+        [self.navigationController setNavigationBarHidden:YES];
         [self.navigationController pushViewController:revealController animated:YES];
     }
 }

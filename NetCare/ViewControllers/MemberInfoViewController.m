@@ -18,6 +18,7 @@
 @synthesize imgCard, imgCardBack, cardContainer,btnFlip,viewEligibility,imgQRCode;
 @synthesize btnMenu, lblTitle, imgTopBar,imgWhitebox;
 @synthesize lblFullName,lblDental,lblMedical,lblPlanName, lblMemNbr;
+@synthesize imgExpiredCard,imgExpiredDetails;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,7 +35,7 @@
     // Do any additional setup after loading the view from its nib.
     
     self.title = @"Member Information";
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
     userData = [[NSMutableDictionary alloc] init];
@@ -49,16 +50,23 @@
     lblPlanName.text = [userInfo objectForKey:@"strPlanName"];
 
     
-    
-    
-    
     NSString * status = [userInfo objectForKey:@"strStatus"];
     if ([status isEqualToString:@"Eligible"]) {
         UIImage* image = [UIImage imageNamed:@"whitebox"];
         imgWhitebox.image = image;
+        imgExpiredCard.hidden = YES;
+        imgExpiredDetails.hidden = YES;
+        btnFlip.hidden = NO;
+    }
+    else{
+        btnFlip.hidden = YES;
+        imgExpiredCard.hidden = NO;
+        imgExpiredDetails.hidden = NO;
     }
 
     [self.cardContainer addSubview:imgCardBack];
+    [self.cardContainer addSubview:imgExpiredCard];
+    
 
     UIImage *bgimg = [UIImage imageNamed:@"IDFront"];
     UIImage *img = [self drawTextName:@"" inImage:bgimg atPoint:CGPointMake(0, 0)];
@@ -80,11 +88,21 @@
     UIView *tabBar = [self.tabBarController.view.subviews objectAtIndex:1];
     if([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait || [UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortraitUpsideDown) {
         // Portrairt mode
+        
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            self.cardContainer.frame = CGRectMake(1.0, 57.0, 320, 200);
+            self.imgCard.frame = CGRectMake(1.0, 1.0, 316, 195);
+            self.imgCardBack.frame = CGRectMake(1.0, 1.0, 316, 195);
+            self.btnFlip.frame = CGRectMake(1.0, 1.0, 316, 195);
+        }
+        else{
+            self.cardContainer.frame = CGRectMake(1.0, 63.0, 768, 451);
+            self.imgCard.frame = CGRectMake(58.0, 1.0, 652, 431);
+            self.imgCardBack.frame = CGRectMake(58.0, 1.0, 652, 431);
+            self.btnFlip.frame = CGRectMake(58.0, 1.0, 652, 431);
+        }
+        
         tabBar.hidden = FALSE;
-        self.cardContainer.frame = CGRectMake(1.0, 57.0, 320, 200);
-        self.imgCard.frame = CGRectMake(1.0, 1.0, 316, 195);
-        self.imgCardBack.frame = CGRectMake(1.0, 1.0, 316, 195);
-        self.btnFlip.frame = CGRectMake(1.0, 1.0, 316, 195);
         viewEligibility.hidden = NO;
         btnMenu.hidden = NO;
         lblTitle.hidden = NO;
@@ -147,6 +165,8 @@
         else
             strCoverage = [NSString stringWithFormat:@"%@/ %@",strCoverage,@"DRUGS"];
     }
+    
+    lblMedical.text =strCoverage;
     
     UIGraphicsBeginImageContext(myImage.size);
     [myImage drawInRect:CGRectMake(1, 5, 575, 365)];

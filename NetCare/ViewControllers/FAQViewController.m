@@ -109,6 +109,12 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return  320;
+    }
+    else{
+        return  700;
+    }
     return  320;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -127,35 +133,65 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     //View with the button to expand and shrink and
     //Label to display the Heading.
-    UIView *headerView=[[UIView alloc]initWithFrame:CGRectMake(0, 10, 280, 44)];
     
-    //Background Image
-    //UIImageView *headerBg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"background-tablecell"]];
-    //[headerView addSubview:headerBg];
-    
-    //Button
-    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame=CGRectMake(2, 2, 280, 44);
-    button.tag=section+1;
-    [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"shirnk.png"] forState:UIControlStateNormal];
-    [button setImage:[UIImage imageNamed:@"disclosure.png"] forState:UIControlStateSelected];
-    if([[cellCount objectAtIndex:section] intValue]==0)
-        button.selected=YES;
-    else
-        button.selected=NO;
-    [headerView addSubview:button];
-    
-    //Label
-    UILabel *headerTitle=[[UILabel alloc]initWithFrame:CGRectMake(15, 2, 280, 44)];
-    [headerTitle setFont:[UIFont fontWithName:@"Helvetica-Bold" size:12]];
-    [headerTitle setTextColor:[UIColor whiteColor]];
-    [headerTitle setBackgroundColor:[UIColor clearColor]];
-    [headerTitle setText:[sectionArray objectAtIndex:section]];
-    headerTitle.lineBreakMode = NSLineBreakByWordWrapping;
-    headerTitle.numberOfLines = 0;
-    [headerView addSubview:headerTitle];
-    return  headerView;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        UIView *headerView=[[UIView alloc]initWithFrame:CGRectMake(0, 10, 280, 44)];
+        
+        //Background Image
+        //UIImageView *headerBg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"background-tablecell"]];
+        //[headerView addSubview:headerBg];
+        //Button
+        UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame=CGRectMake(2, 2, 280, 44);
+        button.tag=section+1;
+        [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:[UIImage imageNamed:@"shirnk.png"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"disclosure.png"] forState:UIControlStateSelected];
+        if([[cellCount objectAtIndex:section] intValue]==0)
+            button.selected=YES;
+        else
+            button.selected=NO;
+        [headerView addSubview:button];
+        
+        //Label
+        UILabel *headerTitle=[[UILabel alloc]initWithFrame:CGRectMake(15, 2, 280, 44)];
+        [headerTitle setFont:[UIFont fontWithName:@"Helvetica-Bold" size:12]];
+        [headerTitle setTextColor:[UIColor whiteColor]];
+        [headerTitle setBackgroundColor:[UIColor clearColor]];
+        [headerTitle setText:[sectionArray objectAtIndex:section]];
+        headerTitle.lineBreakMode = NSLineBreakByWordWrapping;
+        headerTitle.numberOfLines = 0;
+        [headerView addSubview:headerTitle];
+        return  headerView;
+    }
+    else{
+        UIView *headerView=[[UIView alloc]initWithFrame:CGRectMake(0, 10, 700, 44)];
+        UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame=CGRectMake(2, 2, 700, 44);
+        button.tag=section+1;
+        [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:[UIImage imageNamed:@"shirnk.png"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"disclosure.png"] forState:UIControlStateSelected];
+        button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        
+        if([[cellCount objectAtIndex:section] intValue]==0)
+            button.selected=YES;
+        else
+            button.selected=NO;
+
+        [headerView addSubview:button];
+        UILabel *headerTitle=[[UILabel alloc]initWithFrame:CGRectMake(15, 2, 700, 44)];
+        [headerTitle setFont:[UIFont fontWithName:@"Helvetica-Bold" size:14]];
+        [headerTitle setTextColor:[UIColor whiteColor]];
+        [headerTitle setBackgroundColor:[UIColor clearColor]];
+        [headerTitle setText:[sectionArray objectAtIndex:section]];
+        headerTitle.lineBreakMode = NSLineBreakByWordWrapping;
+        headerTitle.numberOfLines = 0;
+        [headerView addSubview:headerTitle];
+        return  headerView;
+        
+    }
+    return nil;
 }
 
 //datasource
@@ -170,16 +206,31 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell=[[UITableViewCell alloc]  initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     //Add the Label
-    UILabel *cellTitle=[[UILabel alloc]initWithFrame:CGRectMake(15, 5, 280, 350)];
-    [cellTitle setBackgroundColor:[UIColor clearColor]];
-    [cellTitle setFont:[UIFont fontWithName:@"Helvetica" size:12]];
-    [cellTitle setTextColor:[UIColor blackColor]];
-    [cellTitle setText:[[cellArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
-    cellTitle.lineBreakMode = NSLineBreakByWordWrapping;
-    cellTitle.numberOfLines = 0;
-    [cellTitle sizeToFit];
-    [cell.contentView addSubview:cellTitle];
-    return  cell;
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        UILabel *cellTitle=[[UILabel alloc]initWithFrame:CGRectMake(15, 5, 280, 350)];
+        [cellTitle setBackgroundColor:[UIColor clearColor]];
+        [cellTitle setFont:[UIFont fontWithName:@"Helvetica" size:12]];
+        [cellTitle setTextColor:[UIColor blackColor]];
+        [cellTitle setText:[[cellArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
+        cellTitle.lineBreakMode = NSLineBreakByWordWrapping;
+        cellTitle.numberOfLines = 0;
+        [cellTitle sizeToFit];
+        [cell.contentView addSubview:cellTitle];
+        return  cell;
+    }
+    else{
+        UILabel *cellTitle=[[UILabel alloc]initWithFrame:CGRectMake(15, 5, 700, 350)];
+        [cellTitle setBackgroundColor:[UIColor clearColor]];
+        [cellTitle setFont:[UIFont fontWithName:@"Helvetica" size:14]];
+        [cellTitle setTextColor:[UIColor blackColor]];
+        [cellTitle setText:[[cellArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
+        cellTitle.lineBreakMode = NSLineBreakByWordWrapping;
+        cellTitle.numberOfLines = 0;
+        [cellTitle sizeToFit];
+        [cell.contentView addSubview:cellTitle];
+        return  cell;
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{

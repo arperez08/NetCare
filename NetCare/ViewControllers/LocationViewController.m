@@ -103,20 +103,28 @@ MKRoute *routeDetails;
     
     self.mapView.delegate = self;
     
-    if (!smallMap) {
-        if ([[UIScreen mainScreen] bounds].size.height == 568) {
-            self.mapView.frame = CGRectMake(0, 0, 320, 335);
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        if (!smallMap) {
+            if ([[UIScreen mainScreen] bounds].size.height == 568) {
+                self.mapView.frame = CGRectMake(0, 0, 320, 335);
+            }
+            else{
+                self.mapView.frame = CGRectMake(0, 0, 320, 272);
+            }
+            smallMap = YES;
         }
         else{
-            self.mapView.frame = CGRectMake(0, 0, 320, 272);
+            self.mapView.frame = CGRectMake(0, 0, 320, 524);
+            smallMap = NO;
         }
-        smallMap = YES;
     }
     else{
-        self.mapView.frame = CGRectMake(0, 0, 320, 524);
-        smallMap = NO;
+        self.mapView.frame = CGRectMake(0, 0, 768, 816);
     }
     
+    
+    
+
 
     //CLLocation *userLoc = mapView.userLocation.location;
     //CLLocationCoordinate2D fromCoordinate = userLoc.coordinate;

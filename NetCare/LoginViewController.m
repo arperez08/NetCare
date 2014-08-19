@@ -195,33 +195,6 @@
 }
 
 - (IBAction)btnLogin:(id)sender {
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-//        MainViewController *mvc = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:[NSBundle mainBundle]];
-//        SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
-//        
-//        UINavigationController *navigateVC = [[UINavigationController alloc] initWithRootViewController:mvc];
-//        UIViewController *leftViewController = smvc;
-//        PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:navigateVC
-//                                                                                        leftViewController:leftViewController
-//                                                                                       rightViewController:nil
-//                                                                                                   options:nil];
-//        [self.navigationController setNavigationBarHidden:YES];
-//        [self.navigationController pushViewController:revealController animated:YES];
-//    }
-//    else {
-//        MainViewController *mvc = [[MainViewController alloc] initWithNibName:@"MainViewController_iPad" bundle:[NSBundle mainBundle]];
-//        SideMenuiPadViewController *smvc = [[SideMenuiPadViewController alloc] init];
-//        
-//        UINavigationController *navigateVC = [[UINavigationController alloc] initWithRootViewController:mvc];
-//        UIViewController *leftViewController = smvc;
-//        PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:navigateVC
-//                                                                                        leftViewController:leftViewController
-//                                                                                       rightViewController:nil
-//                                                                                                   options:nil];
-//        [self.navigationController setNavigationBarHidden:YES];
-//        [self.navigationController pushViewController:revealController animated:YES];
-//    }
-    
     if ([txtUser.text isEqualToString:@""]) {
         [self alertStatus:@"Please input your Username." :@"Error"];
         [self sendAudit:@"LoginFailed"];
@@ -237,15 +210,14 @@
         else{
             //HUB = [[MBProgressHUD alloc]initWithView:self.view];
             //[self.view addSubview:HUB];
+            //HUB.labelText = @"Retrieving and validating data…";
             //[HUB showWhileExecuting:@selector(userLogin) onTarget:self withObject:nil animated:YES];
             [self userLogin];
-            
         }
     }
 }
 
 - (void) userLogin{
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"AuthenGetUser"];
     NSLog(@"strURL: %@",strPortalURL);
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
@@ -317,9 +289,12 @@
 }
 
 - (void) getUserData{
+    
+    [self sendAudit:@"Login"];
+    
     NSString *strMemTINNbr=@"";
     NSString *strDOB=@"";
-    
+    NSString *strLastName = @"";
     NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"AuthenGetUser"];
     NSLog(@"strURL: %@",strPortalURL);
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
@@ -340,11 +315,11 @@
         strMemTINNbr = [dictData objectForKey:@"strMemTinNbr"];
         NSString *dtDOB = [dictData objectForKey:@"dtDOB"];
         NSArray *components = [dtDOB componentsSeparatedByString:@" "];
-        
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
         [dateFormat setDateFormat:@"MM/dd/yyyy"];
         NSDate * dateDOB = [dateFormat dateFromString:components[0]];
         strDOB = [dateFormat stringFromDate:dateDOB];
+        strLastName = [dictData objectForKey:@"strLastName"];
         
         NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
         [userLogin setObject:dictData forKey:@"userData"];
@@ -355,14 +330,13 @@
     [request setRequestMethod:@"POST"];
     [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
     [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
-    [request setPostValue:strMemTINNbr forKey:@"strMemTINNbr"];
+    [request setPostValue:strMemTINNbr forKey:@"strMemberID"];
     [request setPostValue:strDOB forKey:@"strDOB"];
-    [request setPostValue:@"0" forKey:@"intMemType"];
+    [request setPostValue:strLastName forKey:@"strLastName"];
     [request startSynchronous];
     urlData = [request responseData];
     error = [request error];
     if (!error) {
-        [self sendAudit:@"Login"];
         NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
         NSLog(@"responseData UserInfo: %@",responseData);
         NSMutableArray *arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
@@ -370,19 +344,45 @@
         NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
         [userLogin setObject:dictData forKey:@"userInfo"];
         
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+//        MainViewController *mvc = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:[NSBundle mainBundle]];
+//        SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
+//        UINavigationController *navigateVC = [[UINavigationController alloc] initWithRootViewController:mvc];
+//        UIViewController *leftViewController = smvc;
+//        PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:navigateVC
+//                                                                                        leftViewController:leftViewController
+//                                                                                       rightViewController:nil
+//                                                                                                   options:nil];
+//        [self.navigationController setNavigationBarHidden:YES];
+//        [self.navigationController pushViewController:revealController animated:YES];
         
-        MainViewController *mvc = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:[NSBundle mainBundle]];
-        SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
-        UINavigationController *navigateVC = [[UINavigationController alloc] initWithRootViewController:mvc];
-        UIViewController *leftViewController = smvc;
-        PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:navigateVC
-                                                                                        leftViewController:leftViewController
-                                                                                       rightViewController:nil
-                                                                                                   options:nil];
-        [self.navigationController setNavigationBarHidden:YES];
-        [self.navigationController pushViewController:revealController animated:YES];
-    }
+        
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            MainViewController *mvc = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:[NSBundle mainBundle]];
+            SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
+            
+            UINavigationController *navigateVC = [[UINavigationController alloc] initWithRootViewController:mvc];
+            UIViewController *leftViewController = smvc;
+            PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:navigateVC
+                                                                                            leftViewController:leftViewController
+                                                                                           rightViewController:nil
+                                                                                                       options:nil];
+            [self.navigationController setNavigationBarHidden:YES];
+            [self.navigationController pushViewController:revealController animated:YES];
+        }
+        else {
+            MainViewController *mvc = [[MainViewController alloc] initWithNibName:@"MainViewController_iPad" bundle:[NSBundle mainBundle]];
+            SideMenuiPadViewController *smvc = [[SideMenuiPadViewController alloc] init];
+            
+            UINavigationController *navigateVC = [[UINavigationController alloc] initWithRootViewController:mvc];
+            UIViewController *leftViewController = smvc;
+            PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:navigateVC
+                                                                                            leftViewController:leftViewController
+                                                                                           rightViewController:nil
+                                                                                                       options:nil];
+            [self.navigationController setNavigationBarHidden:YES];
+            [self.navigationController pushViewController:revealController animated:YES];
+        }
+            }
 }
 
 - (IBAction)btnRegister:(id)sender {

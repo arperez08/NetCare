@@ -27,7 +27,14 @@
     NSMutableDictionary *userInfo;
     
     IBOutlet UIImageView *imgQRCode;
+    IBOutlet UIImageView *imgExpiredCard;
+    IBOutlet UIImageView *imgExpiredDetails;
+    
 }
+@property (nonatomic, retain) IBOutlet UIImageView *imgExpiredCard;
+
+@property (nonatomic, retain) IBOutlet UIImageView *imgExpiredDetails;
+
 @property (nonatomic, retain) IBOutlet UIImageView *imgQRCode;
 @property (nonatomic, retain) IBOutlet UIImageView *imgCard;
 @property (nonatomic, retain) IBOutlet UIImageView *imgCardBack;

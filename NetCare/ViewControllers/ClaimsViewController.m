@@ -161,6 +161,7 @@
 - (IBAction)btnSubmit:(id)sender {
     HUB = [[MBProgressHUD alloc]initWithView:self.view];
     [self.view addSubview:HUB];
+    HUB.labelText = @"Retrieving and validating data…";
     [HUB showWhileExecuting:@selector(getClaimsData) onTarget:self withObject:nil animated:YES];
     //[self getClaimsData];
 }
@@ -188,8 +189,15 @@
     static NSString *simpleTableIdentifier = @"Cell";
     ClaimsListTableViewCell *cell = (ClaimsListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil){
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ClaimsListTableViewCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
+        
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ClaimsListTableViewCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        else{
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ClaimsListTableViewCell_iPad" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
     }
     
     NSString *ServiceDate = [jsonData objectForKey:@"strServiceDate"];
