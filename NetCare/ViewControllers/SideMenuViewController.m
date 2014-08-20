@@ -143,6 +143,7 @@
     UIColor *hexColor = [self colorFromHexString:@"#0d2b9c"];
     self.tabBarController.tabBar.barTintColor = hexColor;
     self.tabBarController.tabBar.tintColor = [UIColor whiteColor];
+    self.tabBarController.tabBar.itemPositioning = UITabBarItemPositioningFill;
     [self.tabBarController.navigationController setNavigationBarHidden:YES];
     [self.navigationController pushViewController:revealController animated:YES];
 }
@@ -156,10 +157,10 @@
     NSMutableDictionary *userInfo = [userLogin objectForKey:@"userInfo"];
     int strDepedent = [[userInfo objectForKey:@"strDepedent"]intValue];
     
-    if (strDepedent > 0) {
+    if (strDepedent == 0) {
         MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController" bundle:[NSBundle mainBundle]];
         DependentInfoViewController *dvc = [[DependentInfoViewController alloc] initWithNibName:@"DependentInfoViewController" bundle:[NSBundle mainBundle]];
-        hvc.title = @"Principal";
+        hvc.title = @"Member Information";
         hvc.tabBarItem.image = [UIImage imageNamed:@"primary"];
         dvc.title = @"Dependent(s)";
         dvc.tabBarItem.image = [UIImage imageNamed:@"dependent"];
@@ -176,6 +177,7 @@
         UIColor *hexColor = [self colorFromHexString:@"#0d2b9c"];
         self.tabBarController.tabBar.barTintColor = hexColor;
         self.tabBarController.tabBar.tintColor = [UIColor whiteColor];
+        self.tabBarController.tabBar.itemPositioning = UITabBarItemPositioningFill;
         [self.tabBarController.navigationController setNavigationBarHidden:YES];
         [self.navigationController pushViewController:revealController animated:YES];
     }

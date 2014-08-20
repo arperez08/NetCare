@@ -333,7 +333,7 @@
     [request setPostValue:strMemTINNbr forKey:@"strMemTINNbr"];
     [request setPostValue:strDOB forKey:@"strDOB"];
     [request setPostValue:strLastName forKey:@"strLastName"];
-    [request setPostValue:@"1" forKey:@"intMemType"];
+    [request setPostValue:@"0" forKey:@"intMemType"];
     [request startSynchronous];
     urlData = [request responseData];
     error = [request error];
@@ -387,15 +387,29 @@
 }
 
 - (IBAction)btnRegister:(id)sender {
-    RegistrationViewController *rvc = [[RegistrationViewController alloc] initWithNibName:@"RegistrationViewController" bundle:[NSBundle mainBundle]];
-    [self.navigationController setNavigationBarHidden:YES];
-    [self.navigationController pushViewController:rvc animated:YES];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        RegistrationViewController *rvc = [[RegistrationViewController alloc] initWithNibName:@"RegistrationViewController" bundle:[NSBundle mainBundle]];
+        [self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController pushViewController:rvc animated:YES];
+    }
+    else{
+        RegistrationViewController *rvc = [[RegistrationViewController alloc] initWithNibName:@"RegistrationViewController_iPad" bundle:[NSBundle mainBundle]];
+        [self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController pushViewController:rvc animated:YES];
+    }
 }
 
 - (IBAction)btnForgot:(id)sender {
-    ForgotPassViewController *rvc = [[ForgotPassViewController alloc] initWithNibName:@"ForgotPassViewController" bundle:[NSBundle mainBundle]];
-    [self.navigationController setNavigationBarHidden:YES];
-    [self.navigationController pushViewController:rvc animated:YES];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        ForgotPassViewController *rvc = [[ForgotPassViewController alloc] initWithNibName:@"ForgotPassViewController" bundle:[NSBundle mainBundle]];
+        [self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController pushViewController:rvc animated:YES];
+    }
+    else{
+        ForgotPassViewController *rvc = [[ForgotPassViewController alloc] initWithNibName:@"ForgotPassViewController_iPad" bundle:[NSBundle mainBundle]];
+        [self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController pushViewController:rvc animated:YES];
+    }
 }
 
 - (IBAction)btnShowPassword:(id)sender {

@@ -34,7 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.title = @"Member Information";
+    //self.title = @"Member Information";
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
