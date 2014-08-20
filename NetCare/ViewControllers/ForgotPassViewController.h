@@ -20,7 +20,9 @@
     IBOutlet UIView *viewQuestion;
     IBOutlet UIButton *btnNext;
     NSString *securityQuestion;
+    NSString *usersEmail;
 }
+@property (strong, nonatomic) NSString *usersEmail;;
 @property (strong, nonatomic) IBOutlet UITextField *txtMemberNum;
 @property (strong, nonatomic) IBOutlet UITextField *txtUsername;
 @property (strong, nonatomic) IBOutlet UILabel *txtSecretQuestion;

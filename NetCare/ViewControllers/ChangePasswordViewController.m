@@ -17,7 +17,7 @@
 @end
 
 @implementation ChangePasswordViewController
-@synthesize memberNumber,userName, txtNewPassword,txtRePassword;
+@synthesize memberNumber,userName, txtNewPassword,txtRePassword, userEmail;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -69,7 +69,7 @@
         NSString *status = [NSString stringWithFormat:@"%@",[jsonData objectForKey:@"strStatus"]];
         if ([status isEqualToString:@"Success"]) {
             [self alertStatus:@"Reset password successful. Please login with your new password." :@"Notification"];
-            
+            [self sendEmailReset:userEmail];
             if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
                 LoginViewController *rvc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:[NSBundle mainBundle]];
                 [self.navigationController setNavigationBarHidden:YES];
@@ -85,13 +85,16 @@
     }
 }
 
-- (void) sendEmailReset {
-    NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
-    NSMutableDictionary *userData = [userLogin objectForKey:@"userData"];
-    NSString *strEmailAdd = [userData objectForKey:@"strEmailAdd"];
+- (void) sendEmailReset: (NSString *) strEmailAdd {
+    if (!strEmailAdd) {
+        NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
+        NSMutableDictionary *userData = [[NSMutableDictionary alloc] init];
+        userData = [userLogin objectForKey:@"userData"];
+        strEmailAdd = [userData objectForKey:@"strEmailAdd"];
+    }
+    
     NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"SendReset"];
     NSLog(@"strURL: %@",strPortalURL);
-
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
     [request setRequestMethod:@"POST"];
     [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];

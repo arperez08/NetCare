@@ -154,7 +154,6 @@
 		7CBC77181964DED7003987FA /* DependentInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC770A1964DED7003987FA /* DependentInfoViewController.xib */; };
 		7CBC771A1964DED7003987FA /* EventsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC770C1964DED7003987FA /* EventsViewController.xib */; };
 		7CBC771B1964DED7003987FA /* FAQViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC770D1964DED7003987FA /* FAQViewController.xib */; };
-		7CBC771C1964DED7003987FA /* FindProviderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC770E1964DED7003987FA /* FindProviderViewController.xib */; };
 		7CBC771D1964DED7003987FA /* GenSurveyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC770F1964DED7003987FA /* GenSurveyViewController.xib */; };
 		7CBC771E1964DED7003987FA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77101964DED7003987FA /* LoginViewController.xib */; };
 		7CBC771F1964DED7003987FA /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBC77111964DED7003987FA /* MainViewController.xib */; };
@@ -415,7 +414,6 @@
 		7CBC770A1964DED7003987FA /* DependentInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DependentInfoViewController.xib; sourceTree = "<group>"; };
 		7CBC770C1964DED7003987FA /* EventsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsViewController.xib; sourceTree = "<group>"; };
 		7CBC770D1964DED7003987FA /* FAQViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FAQViewController.xib; sourceTree = "<group>"; };
-		7CBC770E1964DED7003987FA /* FindProviderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindProviderViewController.xib; sourceTree = "<group>"; };
 		7CBC770F1964DED7003987FA /* GenSurveyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GenSurveyViewController.xib; sourceTree = "<group>"; };
 		7CBC77101964DED7003987FA /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		7CBC77111964DED7003987FA /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -911,7 +909,6 @@
 				7CBC770C1964DED7003987FA /* EventsViewController.xib */,
 				7CBC770D1964DED7003987FA /* FAQViewController.xib */,
 				7C4261471988D820001D234A /* FindProviderMenuViewController.xib */,
-				7CBC770E1964DED7003987FA /* FindProviderViewController.xib */,
 				7CE794E6199C4EF20096772C /* ForgotPassViewController.xib */,
 				7CBC770F1964DED7003987FA /* GenSurveyViewController.xib */,
 				7CE794E7199C4EF20096772C /* LocationViewController.xib */,
@@ -1005,7 +1002,6 @@
 			files = (
 				7C7D645F1974BABB00AF246A /* BG.png in Resources */,
 				7CBC771B1964DED7003987FA /* FAQViewController.xib in Resources */,
-				7CBC771C1964DED7003987FA /* FindProviderViewController.xib in Resources */,
 				7CB961F6199B2B750084AFD5 /* MemberInfo.png in Resources */,
 				7C7D64671974BEFB00AF246A /* about@2x.png in Resources */,
 				7C81C44D19A19D1300AFAF98 /* FindProviderMenuViewController_iPad.xib in Resources */,
@@ -1321,7 +1317,7 @@
 				INFOPLIST_FILE = "NetCare/NetCare-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "bd274775-fa50-4922-b65b-34533f2f6dbb";
+				PROVISIONING_PROFILE = "4bded260-c8ee-432d-ae7a-b9e056a6e823";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1336,7 +1332,7 @@
 				INFOPLIST_FILE = "NetCare/NetCare-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "bd274775-fa50-4922-b65b-34533f2f6dbb";
+				PROVISIONING_PROFILE = "4bded260-c8ee-432d-ae7a-b9e056a6e823";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

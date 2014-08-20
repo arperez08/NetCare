@@ -330,9 +330,10 @@
     [request setRequestMethod:@"POST"];
     [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
     [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
-    [request setPostValue:strMemTINNbr forKey:@"strMemberID"];
+    [request setPostValue:strMemTINNbr forKey:@"strMemTINNbr"];
     [request setPostValue:strDOB forKey:@"strDOB"];
     [request setPostValue:strLastName forKey:@"strLastName"];
+    [request setPostValue:@"1" forKey:@"intMemType"];
     [request startSynchronous];
     urlData = [request responseData];
     error = [request error];

@@ -17,7 +17,7 @@
 @end
 
 @implementation ForgotPassViewController
-@synthesize txtAnswer,txtMemberNum,txtSecretQuestion,txtUsername,viewQuestion,btnNext;
+@synthesize txtAnswer,txtMemberNum,txtSecretQuestion,txtUsername,viewQuestion,btnNext,usersEmail;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -177,6 +177,7 @@
         if (![strArrayCount isEqualToString:@"0"]) {
             NSMutableDictionary *jsonData = [arrayData objectAtIndex:0];
             txtSecretQuestion.text = [jsonData objectForKey:@"strSecQstion"];
+            usersEmail = [jsonData objectForKey:@"strEmail"];
             viewQuestion.hidden = NO;
             btnNext.hidden = YES;
         }
@@ -186,7 +187,7 @@
     }
 }
 
-- (void) getResult{
+- (void) getResult {
     NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"AuthForgotPass"];
     NSLog(@"strURL: %@",strPortalURL);
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
@@ -213,6 +214,7 @@
                 ChangePasswordViewController *rvc = [[ChangePasswordViewController alloc] initWithNibName:@"ChangePasswordViewController" bundle:[NSBundle mainBundle]];
                 rvc.userName = txtUsername.text;
                 rvc.memberNumber = txtMemberNum.text;
+                rvc.userEmail = usersEmail;
                 [self.navigationController setNavigationBarHidden:YES];
                 [self.navigationController pushViewController:rvc animated:YES];
             }
@@ -220,6 +222,7 @@
                 ChangePasswordViewController *rvc = [[ChangePasswordViewController alloc] initWithNibName:@"ChangePasswordViewController_iPad" bundle:[NSBundle mainBundle]];
                 rvc.userName = txtUsername.text;
                 rvc.memberNumber = txtMemberNum.text;
+                rvc.userEmail = usersEmail;
                 [self.navigationController setNavigationBarHidden:YES];
                 [self.navigationController pushViewController:rvc animated:YES];
             }

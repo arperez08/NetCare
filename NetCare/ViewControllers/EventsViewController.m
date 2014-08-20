@@ -80,7 +80,6 @@
             }
         }
     }
-    
     [sectionArray addObject:@"Events"];
     [cellArrayValue addObject:strEvents];
     [sectionArray addObject:@"News"];
@@ -159,12 +158,14 @@
         [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [button setImage:[UIImage imageNamed:@"shirnk.png"] forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:@"disclosure.png"] forState:UIControlStateSelected];
+        
         if([[cellCount objectAtIndex:section] intValue]==0)
             button.selected=YES;
         else
             button.selected=NO;
-        [headerView addSubview:button];
         
+        [headerView addSubview:button];
+
         //Label
         UILabel *headerTitle=[[UILabel alloc]initWithFrame:CGRectMake(15, 2, 280, 44)];
         [headerTitle setFont:[UIFont fontWithName:@"Helvetica-Bold" size:12]];
@@ -190,7 +191,7 @@
             button.selected=YES;
         else
             button.selected=NO;
-        
+ 
         [headerView addSubview:button];
         UILabel *headerTitle=[[UILabel alloc]initWithFrame:CGRectMake(15, 2, 700, 44)];
         [headerTitle setFont:[UIFont fontWithName:@"Helvetica-Bold" size:14]];
@@ -271,6 +272,7 @@
         [cellCount replaceObjectAtIndex:_index withObject:[NSNumber numberWithInt:0]];
     else
         [cellCount replaceObjectAtIndex:_index withObject:[NSNumber numberWithLong:[[cellArray objectAtIndex:_index]count]]];
+    
     [MIMtableView reloadData];
 }
 

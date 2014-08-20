@@ -7,15 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
+#import "Reachability.h"
 
 @interface GenSurveyViewController : UIViewController
 {
-    
+    MBProgressHUD *HUB;
+    NSMutableDictionary *userData;
+    NSMutableDictionary *userInfo;
 }
 - (IBAction)btnShowMenu:(id)sender;
+- (IBAction)btnSubmit:(id)sender;
+
 @property (nonatomic, retain) IBOutlet UIScrollView * scrollView;
 @property (strong, nonatomic) IBOutlet UITextField *txtEmail;
 @property (strong, nonatomic) IBOutlet UITextField *txtSubject;
 @property (strong, nonatomic) IBOutlet UITextView *txtComments;
+
+
 
 @end

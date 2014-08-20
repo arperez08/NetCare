@@ -14,11 +14,13 @@
     MBProgressHUD *HUB;
     NSString *userName;
     NSString *memberNumber;
+    NSString *userEmail;
     IBOutlet UITextField *txtNewPassword;
     IBOutlet UITextField *txtRePassword;
 }
 @property (strong, nonatomic) NSString *userName;
 @property (strong, nonatomic) NSString *memberNumber;
+@property (strong, nonatomic) NSString *userEmail;
 @property (strong, nonatomic) IBOutlet UITextField *txtNewPassword;
 @property (strong, nonatomic) IBOutlet UITextField *txtRePassword;
 

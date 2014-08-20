@@ -48,33 +48,36 @@
     lblMemNbr.text = [userData objectForKey:@"strMemTinNbr"];
     lblFullName.text = [userInfo objectForKey:@"strName"];
     lblPlanName.text = [userInfo objectForKey:@"strPlanName"];
-
     
+    [self.imgCard removeFromSuperview];
+    [self.cardContainer addSubview:imgCardBack];
+
     NSString * status = [userInfo objectForKey:@"strStatus"];
     if ([status isEqualToString:@"Eligible"]) {
-        UIImage* image = [UIImage imageNamed:@"whitebox"];
-        imgWhitebox.image = image;
-        imgExpiredCard.hidden = YES;
-        imgExpiredDetails.hidden = YES;
-        btnFlip.hidden = NO;
+        UIImage *bgimg = [UIImage imageNamed:@"IDFront"];
+        UIImage *img = [self drawTextName:@"" inImage:bgimg atPoint:CGPointMake(0, 0)];
+        NSString *strMemTinNbr = [userData objectForKey:@"strMemTinNbr"];
+        imgQRCode.image = [self generateQRCode:strMemTinNbr];
+        UIImage *imgWithQR = [self drawQR:imgQRCode.image inImage:img atPoint:CGPointMake(0, 0)];
+        imgCardBack.image = imgWithQR;
     }
     else{
-        btnFlip.hidden = YES;
-        imgExpiredCard.hidden = NO;
-        imgExpiredDetails.hidden = NO;
+        UIImage *bgimg = [UIImage imageNamed:@"IDFront"];
+        UIImage *img = [self drawTextName:@"" inImage:bgimg atPoint:CGPointMake(0, 0)];
+        NSString *strMemTinNbr = [userData objectForKey:@"strMemTinNbr"];
+        imgQRCode.image = [self generateQRCode:strMemTinNbr];
+        UIImage *imgWithQR = [self drawQR:imgQRCode.image inImage:img atPoint:CGPointMake(0, 0)];
+        UIImage *imgWithExpired = [self drawExpire:imgExpiredCard.image inImage:imgWithQR atPoint:CGPointMake(0, 0)];
+        imgCardBack.image = imgWithExpired;
     }
-
-    [self.cardContainer addSubview:imgCardBack];
-    [self.cardContainer addSubview:imgExpiredCard];
     
-
-    UIImage *bgimg = [UIImage imageNamed:@"IDFront"];
-    UIImage *img = [self drawTextName:@"" inImage:bgimg atPoint:CGPointMake(0, 0)];
-    imgCardBack.image = img;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        imgCardBack.transform = CGAffineTransformMakeRotation(M_PI/2);
+        imgCard.transform = CGAffineTransformMakeRotation(M_PI/2);
+    }
     
-    NSString *strMemTinNbr = [userData objectForKey:@"strMemTinNbr"];
-    imgQRCode.image = [self generateQRCode:strMemTinNbr];
-
+    //[self.cardContainer addSubview:imgQRCode];
+    //[self.cardContainer addSubview:imgExpiredCard];
     [self checkInterface];
 }
 
@@ -87,13 +90,25 @@
 -(void) checkInterface{
     UIView *tabBar = [self.tabBarController.view.subviews objectAtIndex:1];
     if([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait || [UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortraitUpsideDown) {
-        // Portrairt mode
         
+        // Portrairt mode
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-            self.cardContainer.frame = CGRectMake(1.0, 57.0, 320, 200);
-            self.imgCard.frame = CGRectMake(1.0, 1.0, 316, 195);
-            self.imgCardBack.frame = CGRectMake(1.0, 1.0, 316, 195);
-            self.btnFlip.frame = CGRectMake(1.0, 1.0, 316, 195);
+//            self.cardContainer.frame = CGRectMake(1.0, 57.0, 320, 200);
+//            self.imgCard.frame = CGRectMake(1.0, 1.0, 316, 195);
+//            self.imgCardBack.frame = CGRectMake(1.0, 1.0, 316, 195);
+//            self.btnFlip.frame = CGRectMake(1.0, 1.0, 316, 195);
+            if ([[UIScreen mainScreen] bounds].size.height == 568) {
+                self.cardContainer.frame = CGRectMake(5.0, 55.0, 320, 450);
+                self.imgCard.frame = CGRectMake(1.0, 1.0, 320, 450);
+                self.imgCardBack.frame = CGRectMake(1.0, 1.0, 320, 450);
+                self.btnFlip.frame = CGRectMake(1.0, 1.0, 320, 450);
+            }
+            else{
+                self.cardContainer.frame = CGRectMake(25.0, 55.0, 280, 380);
+                self.imgCard.frame = CGRectMake(0.0, 0.0, 280, 380);
+                self.imgCardBack.frame = CGRectMake(0.0, 0.0, 280, 380);
+                self.btnFlip.frame = CGRectMake(0.0, 0.0, 280, 380);
+            }
         }
         else{
             self.cardContainer.frame = CGRectMake(1.0, 63.0, 768, 451);
@@ -133,14 +148,34 @@
     }
 }
 
+- (UIImage*) drawExpire:(UIImage*) qrCode inImage:(UIImage*) myImage atPoint:(CGPoint) point {
+    UIGraphicsBeginImageContext(myImage.size);
+    [myImage drawInRect:CGRectMake(1, 5, 575, 365)];
+    UIImageView *myExpireImage = [[UIImageView alloc]init];
+    myExpireImage.frame = CGRectMake(0,50,640,274);
+    myExpireImage.image = qrCode;
+    [myExpireImage.image drawInRect:myExpireImage.frame];
+    UIImage *myNewImage = UIGraphicsGetImageFromCurrentImageContext();
+    return myNewImage;
+}
+
+- (UIImage*) drawQR:(UIImage*) qrCode inImage:(UIImage*) myImage atPoint:(CGPoint) point {
+    UIGraphicsBeginImageContext(myImage.size);
+    [myImage drawInRect:CGRectMake(1, 5, 575, 365)];
+    UIImageView *myQRImage = [[UIImageView alloc]init];
+    myQRImage.frame = CGRectMake(450,205,100,100);
+    myQRImage.image = qrCode;
+    [myQRImage.image drawInRect:myQRImage.frame];
+    UIImage *myNewImage = UIGraphicsGetImageFromCurrentImageContext();
+    return myNewImage;
+}
+
 - (UIImage*) drawTextName:(NSString*) text inImage:(UIImage*) myImage atPoint:(CGPoint) point {
     NSString *strCoverage =@"";
-    
     NSString *strMedical = [userInfo objectForKey:@"strMedical"];
     NSString *strDental = [userInfo objectForKey:@"strDental"];
     NSString *strVision = [userInfo objectForKey:@"strVision"];
     NSString *strDrugs = [userInfo objectForKey:@"strDrugs"];
-    
     if ([strMedical isEqualToString:@"T"]) {
         if ([strCoverage  isEqualToString: @""])
             strCoverage = [NSString stringWithFormat:@"%@ %@",strCoverage,@"MEDICAL"];
@@ -165,9 +200,7 @@
         else
             strCoverage = [NSString stringWithFormat:@"%@/ %@",strCoverage,@"DRUGS"];
     }
-    
     lblMedical.text =strCoverage;
-    
     UIGraphicsBeginImageContext(myImage.size);
     [myImage drawInRect:CGRectMake(1, 5, 575, 365)];
     UITextView *myText = [[UITextView alloc] init];
@@ -218,43 +251,43 @@
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration;
 {
     UIView *tabBar = [self.tabBarController.view.subviews objectAtIndex:1];
-    if(toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
-    {
-        tabBar.hidden = TRUE;
-        if ([[UIScreen mainScreen] bounds].size.height == 568) {            // iPhone 5/5S
-            self.cardContainer.frame = CGRectMake(30.0, 20.0, 520, 290);
-            self.imgCard.frame = CGRectMake(0.0, 0.0, 510, 290);
-            self.imgCardBack.frame = CGRectMake(0.0, 0.0, 510, 290);
-            self.btnFlip.frame = CGRectMake(0.0, 0.0, 510, 290);
-            viewEligibility.hidden = YES;
-            btnMenu.hidden = YES;
-            lblTitle.hidden = YES;
-            imgTopBar.hidden = YES;
-        }
-        else{                                                               // iPhone 4/4S
-            self.cardContainer.frame = CGRectMake(20.0, 20.0, 450, 290);
-            self.imgCard.frame = CGRectMake(0.0, 0.0, 450, 290);
-            self.imgCardBack.frame = CGRectMake(0.0, 0.0, 450, 290);
-            self.btnFlip.frame = CGRectMake(0.0, 0.0, 450, 290);
-            viewEligibility.hidden = YES;
-            btnMenu.hidden = YES;
-            lblTitle.hidden = YES;
-            imgTopBar.hidden = YES;
-        }
-    }
-    else
-    {
+//    if(toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
+//    {
+//        tabBar.hidden = TRUE;
+//        if ([[UIScreen mainScreen] bounds].size.height == 568) {            // iPhone 5/5S
+//            self.cardContainer.frame = CGRectMake(30.0, 20.0, 520, 290);
+//            self.imgCard.frame = CGRectMake(0.0, 0.0, 510, 290);
+//            self.imgCardBack.frame = CGRectMake(0.0, 0.0, 510, 290);
+//            self.btnFlip.frame = CGRectMake(0.0, 0.0, 510, 290);
+//            viewEligibility.hidden = YES;
+//            btnMenu.hidden = YES;
+//            lblTitle.hidden = YES;
+//            imgTopBar.hidden = YES;
+//        }
+//        else{                                                               // iPhone 4/4S
+//            self.cardContainer.frame = CGRectMake(20.0, 20.0, 450, 290);
+//            self.imgCard.frame = CGRectMake(0.0, 0.0, 450, 290);
+//            self.imgCardBack.frame = CGRectMake(0.0, 0.0, 450, 290);
+//            self.btnFlip.frame = CGRectMake(0.0, 0.0, 450, 290);
+//            viewEligibility.hidden = YES;
+//            btnMenu.hidden = YES;
+//            lblTitle.hidden = YES;
+//            imgTopBar.hidden = YES;
+//        }
+//    }
+//    else
+//    {
         // Portrairt mode
         tabBar.hidden = FALSE;
-        self.cardContainer.frame = CGRectMake(1.0, 57.0, 320, 200);
-        self.imgCard.frame = CGRectMake(1.0, 1.0, 316, 195);
-        self.imgCardBack.frame = CGRectMake(1.0, 1.0, 316, 195);
-        self.btnFlip.frame = CGRectMake(1.0, 1.0, 316, 195);
+        //self.cardContainer.frame = CGRectMake(1.0, 57.0, 320, 200);
+        //self.imgCard.frame = CGRectMake(1.0, 1.0, 316, 195);
+        //self.imgCardBack.frame = CGRectMake(1.0, 1.0, 316, 195);
+        //self.btnFlip.frame = CGRectMake(1.0, 1.0, 316, 195);
         viewEligibility.hidden = NO;
         btnMenu.hidden = NO;
         lblTitle.hidden = NO;
         imgTopBar.hidden = NO;
-    }
+//    }
 }
 
 #pragma mark - Actions
