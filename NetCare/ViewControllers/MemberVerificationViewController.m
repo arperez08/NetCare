@@ -232,38 +232,47 @@
 }
 
 - (IBAction)btnGo:(id)sender {
-    NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"GetUserCoverage"];
-    NSLog(@"strURL: %@",strPortalURL);
-    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
-    [request setRequestMethod:@"POST"];
-    [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
-    [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
-    [request setPostValue:txtMemberNumber.text forKey:@"strMemTINNbr"];
-    [request startSynchronous];
-    NSData *urlData = [request responseData];
-    NSError *error = [request error];
-    if (!error) {
-        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
-        NSLog(@"responseData UserData: %@",responseData);
-        
-        if ([responseData isEqualToString:@"ORA-03135: connection lost contact"]) {
-            [self alertStatus:@"Connection lost, Please try again." :@"Connection"];
-        }
-        else{
-            NSMutableArray *arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
-            NSMutableDictionary *dictData = [arrayData objectAtIndex:0];
-            NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
-            [userLogin setObject:dictData forKey:@"userInfo"];
+    
+    if ([txtMemberNumber.text isEqualToString:@""]) {
+        [self alertStatus:@"Please input Member Number" :@"Error"];
+    }
+    else{
+        NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"GetUserCoverage"];
+        NSLog(@"strURL: %@",strPortalURL);
+        ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
+        [request setRequestMethod:@"POST"];
+        [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
+        [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
+        [request setPostValue:txtMemberNumber.text forKey:@"strMemTINNbr"];
+        [request startSynchronous];
+        NSData *urlData = [request responseData];
+        NSError *error = [request error];
+        if (!error) {
+            NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+            NSLog(@"responseData UserData: %@",responseData);
             
-            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-                MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController" bundle:[NSBundle mainBundle]];
-                [self.navigationController setNavigationBarHidden:YES];
-                [self.navigationController pushViewController:hvc animated:YES];
+            if ([responseData isEqualToString:@"ORA-03135: connection lost contact"]) {
+                [self alertStatus:@"Connection lost, Please try again." :@"Connection"];
+            }
+            else if ([responseData isEqualToString:@"[null]"]){
+                [self alertStatus:@"Member Number not found." :@"Error"];
             }
             else{
-                MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController_iPad" bundle:[NSBundle mainBundle]];
-                [self.navigationController setNavigationBarHidden:YES];
-                [self.navigationController pushViewController:hvc animated:YES];
+                NSMutableArray *arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
+                NSMutableDictionary *dictData = [arrayData objectAtIndex:0];
+                NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
+                [userLogin setObject:dictData forKey:@"userInfo"];
+                
+                if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                    MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController" bundle:[NSBundle mainBundle]];
+                    [self.navigationController setNavigationBarHidden:YES];
+                    [self.navigationController pushViewController:hvc animated:YES];
+                }
+                else{
+                    MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController_iPad" bundle:[NSBundle mainBundle]];
+                    [self.navigationController setNavigationBarHidden:YES];
+                    [self.navigationController pushViewController:hvc animated:YES];
+                }
             }
         }
     }
