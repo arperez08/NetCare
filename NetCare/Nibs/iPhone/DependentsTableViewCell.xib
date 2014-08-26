@@ -13,8 +13,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IDFront.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Yl-27-vO6">
-                        <rect key="frame" x="4" y="20" width="313" height="182"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IDFront.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Yl-27-vO6">
+                        <rect key="frame" x="2" y="7" width="314" height="209"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lblName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAD-Dg-FfV">

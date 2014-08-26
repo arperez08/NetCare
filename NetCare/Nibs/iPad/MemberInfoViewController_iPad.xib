@@ -20,6 +20,7 @@
                 <outlet property="lblMemNbr" destination="Ybr-7l-pEE" id="LhN-no-Vkc"/>
                 <outlet property="lblPlanName" destination="e2W-aB-5In" id="SLE-wo-Upf"/>
                 <outlet property="lblTitle" destination="uB1-aG-gPZ" id="0Si-CA-X2B"/>
+                <outlet property="lblTitleBar" destination="uB1-aG-gPZ" id="yGC-hN-DOm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewEligibility" destination="ydI-s3-vgY" id="4sy-u4-qv6"/>
             </connections>
@@ -58,11 +59,11 @@
                     <rect key="frame" x="0.0" y="63" width="768" height="451"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IDBack.png" id="ZJx-VA-far">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IDBack.png" id="ZJx-VA-far">
                             <rect key="frame" x="58" y="0.0" width="652" height="431"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IDFront.png" id="IXa-Fu-g7T">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IDFront.png" id="IXa-Fu-g7T">
                             <rect key="frame" x="58" y="1" width="652" height="430"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>

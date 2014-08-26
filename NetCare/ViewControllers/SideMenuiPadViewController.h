@@ -10,9 +10,18 @@
 
 @interface SideMenuiPadViewController : UIViewController{
     IBOutlet UIScrollView * scrollView;
+    NSMutableDictionary *userData;
+    NSMutableDictionary *userInfo;
+    int strUserTyp;
 }
 @property (nonatomic, retain) IBOutlet UIScrollView * scrollView;
 @property (strong, nonatomic) UITabBarController *tabBarController;
+@property (strong, nonatomic) IBOutlet UIButton *btnClaims;
+@property (strong, nonatomic) IBOutlet UIButton *btnDeductible;
+@property (strong, nonatomic) IBOutlet UIButton *btnMemberInfo;
+
+
+
 - (IBAction)btnHome:(id)sender;
 - (IBAction)btnMemberInfo:(id)sender;
 - (IBAction)btnEligibility:(id)sender;

@@ -25,6 +25,7 @@
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "Constants.h"
+#import "MemberVerificationViewController.h"
 
 @interface SideMenuViewController ()
 
@@ -32,6 +33,7 @@
 
 @implementation SideMenuViewController
 @synthesize scrollView;
+@synthesize btnClaims,btnDeductible,btnMemberInfo;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -50,7 +52,25 @@
     // Do any additional setup after loading the view from its nib.
     [self.navigationController setNavigationBarHidden:YES];
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 800);
-
+    
+    NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
+    userData = [[NSMutableDictionary alloc] init];
+    userData = [userLogin objectForKey:@"userData"];
+    userInfo = [[NSMutableDictionary alloc] init];
+    userInfo = [userLogin objectForKey:@"userInfo"];
+    
+    strUserTyp  = [[userData objectForKey:@"strUserTyp"] intValue];
+    
+    if (strUserTyp > 0) {
+        btnDeductible.enabled = NO;
+        btnClaims.enabled = NO;
+        [btnMemberInfo setTitle:@"  Member Coverage Verifier" forState:UIControlStateNormal];
+    }
+    else{
+        btnDeductible.enabled = YES;
+        btnClaims.enabled = YES;
+        [btnMemberInfo setTitle:@"  Member Information" forState:UIControlStateNormal];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,8 +82,6 @@
 -(void) sendAudit: (NSString *) moduleName {
     NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
     NSString *userName = [userLogin objectForKey:@"Username"];
-    NSMutableDictionary *userData = [[NSMutableDictionary alloc] init];
-    userData = [userLogin objectForKey:@"userData"];
     NSString *strMemTinNbr = [userData objectForKey:@"strMemTinNbr"];
     
     NSDate *now = [NSDate date];
@@ -89,8 +107,6 @@
         NSLog(@"RegisterAudit: %@",responseData);
     }
 }
-
-
 
 
 - (UIColor *)colorFromHexString:(NSString *)hexString {
@@ -150,39 +166,10 @@
 
 - (IBAction)btnMemberInfo:(id)sender {
     [self sendAudit:@"Member Information"];
-    NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
-    //NSMutableDictionary *userData = [userLogin objectForKey:@"userData"];
-    //int userType = [[userData objectForKey:@"strUserTyp"]intValue];
-    
-    NSMutableDictionary *userInfo = [userLogin objectForKey:@"userInfo"];
     int strDepedent = [[userInfo objectForKey:@"strDepedent"]intValue];
     
-    if (strDepedent == 0) {
-        MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController" bundle:[NSBundle mainBundle]];
-        DependentInfoViewController *dvc = [[DependentInfoViewController alloc] initWithNibName:@"DependentInfoViewController" bundle:[NSBundle mainBundle]];
-        hvc.title = @"Member Information";
-        hvc.tabBarItem.image = [UIImage imageNamed:@"primary"];
-        dvc.title = @"Dependent(s)";
-        dvc.tabBarItem.image = [UIImage imageNamed:@"dependent"];
-        self.tabBarController = [[UITabBarController alloc] init];
-        self.tabBarController.viewControllers = @[hvc, dvc];
-        SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
-        UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:self.tabBarController];
-        //UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
-        UIViewController *leftViewController = smvc;
-        PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:homeVC
-                                                                                        leftViewController:leftViewController
-                                                                                       rightViewController:nil
-                                                                                                   options:nil];
-        UIColor *hexColor = [self colorFromHexString:@"#0d2b9c"];
-        self.tabBarController.tabBar.barTintColor = hexColor;
-        self.tabBarController.tabBar.tintColor = [UIColor whiteColor];
-        self.tabBarController.tabBar.itemPositioning = UITabBarItemPositioningFill;
-        [self.tabBarController.navigationController setNavigationBarHidden:YES];
-        [self.navigationController pushViewController:revealController animated:YES];
-    }
-    else{
-        MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController" bundle:[NSBundle mainBundle]];
+    if (strUserTyp > 0){
+        MemberVerificationViewController *hvc = [[MemberVerificationViewController alloc] initWithNibName:@"MemberVerificationViewController" bundle:[NSBundle mainBundle]];
         SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
         UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
         UIViewController *leftViewController = smvc;
@@ -192,6 +179,44 @@
                                                                                                    options:nil];
         [self.navigationController setNavigationBarHidden:YES];
         [self.navigationController pushViewController:revealController animated:YES];
+    }
+    else{
+        if (strDepedent == 0) {
+            MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController" bundle:[NSBundle mainBundle]];
+            DependentInfoViewController *dvc = [[DependentInfoViewController alloc] initWithNibName:@"DependentInfoViewController" bundle:[NSBundle mainBundle]];
+            hvc.title = @"Member Information";
+            hvc.tabBarItem.image = [UIImage imageNamed:@"primary"];
+            dvc.title = @"Dependent(s)";
+            dvc.tabBarItem.image = [UIImage imageNamed:@"dependent"];
+            self.tabBarController = [[UITabBarController alloc] init];
+            self.tabBarController.viewControllers = @[hvc, dvc];
+            SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
+            UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:self.tabBarController];
+            //UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
+            UIViewController *leftViewController = smvc;
+            PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:homeVC
+                                                                                            leftViewController:leftViewController
+                                                                                           rightViewController:nil
+                                                                                                       options:nil];
+            UIColor *hexColor = [self colorFromHexString:@"#0d2b9c"];
+            self.tabBarController.tabBar.barTintColor = hexColor;
+            self.tabBarController.tabBar.tintColor = [UIColor whiteColor];
+            self.tabBarController.tabBar.itemPositioning = UITabBarItemPositioningFill;
+            [self.tabBarController.navigationController setNavigationBarHidden:YES];
+            [self.navigationController pushViewController:revealController animated:YES];
+        }
+        else{
+            MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController" bundle:[NSBundle mainBundle]];
+            SideMenuViewController *smvc = [[SideMenuViewController alloc] init];
+            UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
+            UIViewController *leftViewController = smvc;
+            PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:homeVC
+                                                                                            leftViewController:leftViewController
+                                                                                           rightViewController:nil
+                                                                                                       options:nil];
+            [self.navigationController setNavigationBarHidden:YES];
+            [self.navigationController pushViewController:revealController animated:YES];
+        }
     }
 }
 

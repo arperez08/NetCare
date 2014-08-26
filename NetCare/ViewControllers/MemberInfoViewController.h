@@ -31,6 +31,9 @@
     IBOutlet UIImageView *imgExpiredDetails;
     
 }
+
+@property (strong, nonatomic) IBOutlet UILabel *lblTitleBar;
+
 @property (nonatomic, retain) IBOutlet UIImageView *imgExpiredCard;
 
 @property (nonatomic, retain) IBOutlet UIImageView *imgExpiredDetails;

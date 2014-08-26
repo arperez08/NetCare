@@ -14,14 +14,14 @@
 #import "DependentInfoViewController.h"
 #import "ClaimsViewController.h"
 #import "FindProviderMenuViewController.h"
-
+#import "MemberVerificationViewController.h"
 
 @interface MainViewController ()
 
 @end
 
 @implementation MainViewController
-
+@synthesize btnClaims;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,6 +42,17 @@
     if (self.navigationController.revealController.type & PKRevealControllerTypeLeft)
     {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:revealImagePortrait landscapeImagePhone:nil style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView:)];
+    }
+    
+    NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary *userData = [userLogin objectForKey:@"userData"];
+    int strUserTyp  = [[userData objectForKey:@"strUserTyp"] intValue];
+    
+    if (strUserTyp > 0){
+        btnClaims.enabled = NO;
+    }
+    else{
+        btnClaims.enabled = YES;
     }
 }
 
@@ -105,12 +116,26 @@
 
 - (IBAction)bthMemberInfo:(id)sender {
     NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
-    //NSMutableDictionary *userData = [userLogin objectForKey:@"userData"];
+    NSMutableDictionary *userData = [userLogin objectForKey:@"userData"];
     //int userType = [[userData objectForKey:@"strUserTyp"]intValue];
     NSMutableDictionary *userInfo = [userLogin objectForKey:@"userInfo"];
     int strDepedent = [[userInfo objectForKey:@"strDepedent"]intValue];
+    int strUserTyp  = [[userData objectForKey:@"strUserTyp"] intValue];
     
-    if (strDepedent == 0) {
+    if (strUserTyp > 0){
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            MemberVerificationViewController *hvc = [[MemberVerificationViewController alloc] initWithNibName:@"MemberVerificationViewController" bundle:[NSBundle mainBundle]];
+            [self.navigationController setNavigationBarHidden:YES];
+            [self.navigationController pushViewController:hvc animated:YES];
+        }
+        else{
+            MemberVerificationViewController *hvc = [[MemberVerificationViewController alloc] initWithNibName:@"MemberVerificationViewController_iPad" bundle:[NSBundle mainBundle]];
+            [self.navigationController setNavigationBarHidden:YES];
+            [self.navigationController pushViewController:hvc animated:YES];
+        }
+    }
+    else{
+        if (strDepedent == 0) {
             if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
                 MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController" bundle:[NSBundle mainBundle]];
                 DependentInfoViewController *dvc = [[DependentInfoViewController alloc] initWithNibName:@"DependentInfoViewController" bundle:[NSBundle mainBundle]];
@@ -145,17 +170,18 @@
                 [self.navigationController pushViewController:self.tabBarController animated:YES];
                 
             }
-    }
-    else{
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-            MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController" bundle:[NSBundle mainBundle]];
-            [self.navigationController setNavigationBarHidden:YES];
-            [self.navigationController pushViewController:hvc animated:YES];
         }
         else{
-            MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController_iPad" bundle:[NSBundle mainBundle]];
-            [self.navigationController setNavigationBarHidden:YES];
-            [self.navigationController pushViewController:hvc animated:YES];
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController" bundle:[NSBundle mainBundle]];
+                [self.navigationController setNavigationBarHidden:YES];
+                [self.navigationController pushViewController:hvc animated:YES];
+            }
+            else{
+                MemberInfoViewController *hvc = [[MemberInfoViewController alloc] initWithNibName:@"MemberInfoViewController_iPad" bundle:[NSBundle mainBundle]];
+                [self.navigationController setNavigationBarHidden:YES];
+                [self.navigationController pushViewController:hvc animated:YES];
+            }
         }
     }
 }

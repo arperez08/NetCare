@@ -12,6 +12,9 @@
 
 }
 @property (strong, nonatomic) UITabBarController *tabBarController;
+@property (strong, nonatomic) IBOutlet UIButton *btnClaims;
+
+
 - (IBAction)btnShowMenu:(id)sender;
 - (IBAction)btnFindProvider:(id)sender;
 - (IBAction)btnClaimUpdates:(id)sender;

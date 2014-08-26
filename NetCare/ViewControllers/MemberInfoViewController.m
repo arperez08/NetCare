@@ -18,7 +18,7 @@
 @synthesize imgCard, imgCardBack, cardContainer,btnFlip,viewEligibility,imgQRCode;
 @synthesize btnMenu, lblTitle, imgTopBar,imgWhitebox;
 @synthesize lblFullName,lblDental,lblMedical,lblPlanName, lblMemNbr;
-@synthesize imgExpiredCard,imgExpiredDetails;
+@synthesize imgExpiredCard,imgExpiredDetails,lblTitleBar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

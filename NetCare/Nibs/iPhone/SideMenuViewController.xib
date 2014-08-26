@@ -6,6 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SideMenuViewController">
             <connections>
+                <outlet property="btnClaims" destination="xp8-nA-2DM" id="tpx-RC-crM"/>
+                <outlet property="btnDeductible" destination="CXX-r6-9PS" id="H5w-oW-ZPc"/>
+                <outlet property="btnMemberInfo" destination="4Pu-T8-NVz" id="mS6-Lo-5nQ"/>
                 <outlet property="scrollView" destination="yhC-nC-GNw" id="NiP-Ax-UuY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

@@ -255,9 +255,16 @@
 }
 
 - (void) submitData {
+    NSString *strTinNum = @"";
     int intIDType = 0;
-    if (!memberCheckbox)
+    if (!memberCheckbox){
         intIDType = 1;
+        strTinNum = txtTINNum.text;
+    }
+    else{
+        strTinNum = txtMemberNum.text;
+    }
+    
     NSString *strIDType = [NSString stringWithFormat:@"%d",intIDType];
     NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"RegisterUser"];
     NSLog(@"strURL: %@",strPortalURL);
@@ -265,7 +272,7 @@
     [request setRequestMethod:@"POST"];
     [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
     [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
-    [request setPostValue:txtMemberNum.text forKey:@"strMemTINNbr"];
+    [request setPostValue:strTinNum forKey:@"strMemTINNbr"];
     [request setPostValue:txtSSN.text forKey:@"strSSN"];
     [request setPostValue:txtFirstName.text forKey:@"strFirstName"];
     [request setPostValue:txtMiddle.text forKey:@"strMiddleName"];

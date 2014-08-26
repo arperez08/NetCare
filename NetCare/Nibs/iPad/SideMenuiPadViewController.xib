@@ -6,6 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SideMenuiPadViewController">
             <connections>
+                <outlet property="btnClaims" destination="Qjt-P6-AFQ" id="eDd-LG-PFF"/>
+                <outlet property="btnDeductible" destination="vCg-vT-s3h" id="bLk-vV-EJc"/>
+                <outlet property="btnMemberInfo" destination="rM4-UW-pJ8" id="PmR-yQ-unV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
