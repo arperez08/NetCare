@@ -80,7 +80,7 @@
                     <rect key="frame" x="0.0" y="516" width="768" height="508"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitebox_expired.png" id="rMt-co-hID">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitebox.png" id="rMt-co-hID">
                             <rect key="frame" x="0.0" y="25" width="768" height="483"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -166,6 +166,6 @@
         <image name="IDFront.png" width="576" height="368"/>
         <image name="menubtn.png" width="18" height="18"/>
         <image name="nav bar.png" width="640" height="107"/>
-        <image name="whitebox_expired.png" width="640" height="362"/>
+        <image name="whitebox.png" width="640" height="362"/>
     </resources>
 </document>

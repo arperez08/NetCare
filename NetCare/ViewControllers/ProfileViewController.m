@@ -208,9 +208,8 @@
     if (!error) {
         NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
         NSLog(@"GetProfile: %@",responseData);
-        NSMutableArray *arrayData = [[NSMutableArray alloc]init];
-        arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
-        NSString *strArrayCount = [NSString stringWithFormat:@"%d",[arrayData count]];
+        NSMutableArray *arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
+        NSString *strArrayCount = [NSString stringWithFormat:@"%lu",(unsigned long)[arrayData count]];
         if (![strArrayCount isEqualToString:@"0"]) {
             NSMutableDictionary *jsonData = [arrayData objectAtIndex:0];
             txtSecurityQ.text = [jsonData objectForKey:@"strSecQstion"];
@@ -225,6 +224,7 @@
 }
 
 - (IBAction)btnModify:(id)sender {
+    [self dismissKeyboard];
     if (boolSwitch == NO) {
         imgQuestion.hidden = NO;
         imgEmail.hidden = NO;
@@ -278,8 +278,7 @@
     if (!error) {
         NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
         NSLog(@"UpdateProfile: %@",responseData);
-        NSMutableArray *arrayData = [[NSMutableArray alloc]init];
-        arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
+        //NSMutableArray *arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
     }
 }
 

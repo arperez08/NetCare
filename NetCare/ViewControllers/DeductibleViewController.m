@@ -63,8 +63,7 @@
     if (!error) {
         NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
         NSLog(@"Data: %@",responseData);
-        NSMutableArray *arrayData = [[NSMutableArray alloc]init];
-        arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
+        NSMutableArray *arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
         NSMutableDictionary *jsonData = [arrayData objectAtIndex:0];
         
         txtIndDeductable.text = [NSString stringWithFormat:@"%.02f",[[jsonData objectForKey:@"strIndivDeductible"] floatValue]];

@@ -20,6 +20,7 @@ MKRoute *routeDetails;
 
 @synthesize mapView, toolBar, jsonData;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -27,6 +28,17 @@ MKRoute *routeDetails;
     }
     return self;
 }
+
+- (void) alertStatus:(NSString *)msg :(NSString *)title
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                        message:msg
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil, nil];
+    [alertView performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
+}
+
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -40,12 +52,14 @@ MKRoute *routeDetails;
                                    target: self
                                    action:@selector(changeMapType:)];
 
+//    UIImage *image = [UIImage imageNamed:@"direction.png"];
+//    UIBarButtonItem *systemItem1 = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(btnGetDirections:)];
+    
     UIBarButtonItem *getDirection = [[UIBarButtonItem alloc]
                                      initWithTitle: @"Get Direction"
                                      style:UIBarButtonItemStyleBordered
                                      target: self
                                      action:@selector(btnGetDirections:)];
-    
     
     NSArray *buttons = [[NSArray alloc] initWithObjects:typeButton, getDirection, nil];
     toolBar.items = buttons;
@@ -100,31 +114,7 @@ MKRoute *routeDetails;
 }
 
 - (IBAction)btnGetDirections:(id)sender {
-    
     self.mapView.delegate = self;
-    
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        if (!smallMap) {
-            if ([[UIScreen mainScreen] bounds].size.height == 568) {
-                self.mapView.frame = CGRectMake(0, 0, 320, 335);
-            }
-            else{
-                self.mapView.frame = CGRectMake(0, 0, 320, 272);
-            }
-            smallMap = YES;
-        }
-        else{
-            self.mapView.frame = CGRectMake(0, 0, 320, 524);
-            smallMap = NO;
-        }
-    }
-    else{
-        self.mapView.frame = CGRectMake(0, 0, 768, 816);
-    }
-    
-    
-    
-
 
     //CLLocation *userLoc = mapView.userLocation.location;
     //CLLocationCoordinate2D fromCoordinate = userLoc.coordinate;
@@ -143,8 +133,35 @@ MKRoute *routeDetails;
     [directions calculateDirectionsWithCompletionHandler: ^(MKDirectionsResponse *response, NSError *error) {
         if (error) {
             NSLog(@"error:%@", error);
+            [self alertStatus:@"A route could not be determined between these locations." :@"Error"];
         }
         else {
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                if (!smallMap) {
+                    if ([[UIScreen mainScreen] bounds].size.height == 568) {
+                        self.mapView.frame = CGRectMake(0, 0, 320, 335);
+                    }
+                    else{
+                        self.mapView.frame = CGRectMake(0, 0, 320, 272);
+                    }
+                    smallMap = YES;
+                }
+                else{
+                    self.mapView.frame = CGRectMake(0, 0, 320, 524);
+                    smallMap = NO;
+                }
+            }
+            else{
+                if (!smallMap){
+                     self.mapView.frame = CGRectMake(0, 0, 768, 816);
+                    smallMap = YES;
+                }
+                else{
+                    self.mapView.frame = CGRectMake(0, 0, 768, 980);
+                    smallMap = NO;
+                }
+            }
+            
             //MKRoute *routeDetails = response.routes[0];
             routeDetails = response.routes.lastObject;
             [self.mapView addOverlay:routeDetails.polyline];

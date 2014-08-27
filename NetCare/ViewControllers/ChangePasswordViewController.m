@@ -38,49 +38,66 @@
     [alertView performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
 }
 
+-(BOOL)connected {
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus currrentStatus = [reachability currentReachabilityStatus];
+    return currrentStatus;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+}
+
+
+-(void)dismissKeyboard {
+    [txtNewPassword resignFirstResponder];
+    [txtRePassword resignFirstResponder];
 }
 
 - (void) resetPassword{
-    NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"ResetPass"];
-    NSLog(@"strURL: %@",strPortalURL);
-    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
-    [request setRequestMethod:@"POST"];
-    [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
-    [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
-    [request setPostValue:memberNumber forKey:@"strMemTinNbr"];
-    [request setPostValue:userName forKey:@"struUserName"];
-    [request setPostValue:txtNewPassword.text forKey:@"strNewPass"];
-    [request startSynchronous];
-    NSData *urlData = [request responseData];
-    NSError *error = [request error];
-    if (!error) {
-        
-        [self sendAudit:@"ChangePassword"];
-        
-        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
-        NSLog(@"Data: %@",responseData);
-        NSMutableArray *arrayData = [[NSMutableArray alloc]init];
-        arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
-        NSMutableDictionary *jsonData = [arrayData objectAtIndex:0];
-        NSString *status = [NSString stringWithFormat:@"%@",[jsonData objectForKey:@"strStatus"]];
-        if ([status isEqualToString:@"Success"]) {
-            [self alertStatus:@"Reset password successful. Please login with your new password." :@"Notification"];
-            [self sendEmailReset:userEmail];
-            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-                LoginViewController *rvc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:[NSBundle mainBundle]];
-                [self.navigationController setNavigationBarHidden:YES];
-                [self.navigationController pushViewController:rvc animated:YES];
+    if ([self connected] == NotReachable){
+        [self alertStatus:@"No Network Connection" :@"Notification"];
+    }
+    else{
+        NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"ResetPass"];
+        NSLog(@"strURL: %@",strPortalURL);
+        ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
+        [request setRequestMethod:@"POST"];
+        [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
+        [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
+        [request setPostValue:memberNumber forKey:@"strMemTinNbr"];
+        [request setPostValue:userName forKey:@"struUserName"];
+        [request setPostValue:txtNewPassword.text forKey:@"strNewPass"];
+        [request startSynchronous];
+        NSData *urlData = [request responseData];
+        NSError *error = [request error];
+        if (!error) {
+            NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+            NSLog(@"Data: %@",responseData);
+            NSMutableArray *arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
+            NSMutableDictionary *jsonData = [arrayData objectAtIndex:0];
+            NSString *status = [NSString stringWithFormat:@"%@",[jsonData objectForKey:@"strStatus"]];
+            if ([status isEqualToString:@"Success"]) {
+                [self sendAudit:@"ChangePassword"];
+                [self sendEmailReset:userEmail];
+                [self alertStatus:@"Reset password successful. Please login with your new password." :@"Notification"];
+                if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                    LoginViewController *rvc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:[NSBundle mainBundle]];
+                    [self.navigationController setNavigationBarHidden:YES];
+                    [self.navigationController pushViewController:rvc animated:YES];
+                }
+                else{
+                    LoginViewController *rvc = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPad" bundle:[NSBundle mainBundle]];
+                    [self.navigationController setNavigationBarHidden:YES];
+                    [self.navigationController pushViewController:rvc animated:YES];
+                }
+                //LoginViewController *rvc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:[NSBundle mainBundle]];
             }
-            else{
-                LoginViewController *rvc = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPad" bundle:[NSBundle mainBundle]];
-                [self.navigationController setNavigationBarHidden:YES];
-                [self.navigationController pushViewController:rvc animated:YES];
-            }
-            //LoginViewController *rvc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:[NSBundle mainBundle]];
         }
     }
 }
@@ -88,8 +105,7 @@
 - (void) sendEmailReset: (NSString *) strEmailAdd {
     if (!strEmailAdd) {
         NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
-        NSMutableDictionary *userData = [[NSMutableDictionary alloc] init];
-        userData = [userLogin objectForKey:@"userData"];
+        NSMutableDictionary *userData = [userLogin objectForKey:@"userData"];
         strEmailAdd = [userData objectForKey:@"strEmailAdd"];
     }
     
@@ -151,15 +167,17 @@
 }
 
 - (IBAction)btnSubmit:(id)sender {
+    [self dismissKeyboard];
     if (([txtNewPassword.text isEqualToString:@""]) && ([txtRePassword.text isEqualToString:@""])) {
         [self alertStatus:@"New Password is required" :@"Error"];
     }
     else{
         if ([txtNewPassword.text isEqual:txtRePassword.text]) {
-            //HUB = [[MBProgressHUD alloc]initWithView:self.view];
-            //[self.view addSubview:HUB];
-            //[HUB showWhileExecuting:@selector(resetPassword) onTarget:self withObject:nil animated:YES];
-            [self resetPassword];
+            HUB = [[MBProgressHUD alloc]initWithView:self.view];
+            HUB.labelText = @"Retrieving and validating data…";
+            [self.view addSubview:HUB];
+            [HUB showWhileExecuting:@selector(resetPassword) onTarget:self withObject:nil animated:YES];
+            //[self resetPassword];
         }
         else{
             [self alertStatus:@"Password did not match" :@"Error"];

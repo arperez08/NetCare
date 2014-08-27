@@ -121,7 +121,7 @@
 
 
 - (IBAction)btnHome:(id)sender {
-    [self sendAudit:@"Home"];
+    //[self sendAudit:@"Home"];
     MainViewController *mvc = [[MainViewController alloc] initWithNibName:@"MainViewController_iPad" bundle:[NSBundle mainBundle]];
     SideMenuiPadViewController *smvc = [[SideMenuiPadViewController alloc] init];
     UINavigationController *navigateVC = [[UINavigationController alloc] initWithRootViewController:mvc];
@@ -135,7 +135,7 @@
 }
 
 - (IBAction)btnAbout:(id)sender {
-    [self sendAudit:@"About"];
+    //[self sendAudit:@"About"];
     AboutViewController *avc = [[AboutViewController alloc] initWithNibName:@"AboutViewController_iPad" bundle:[NSBundle mainBundle]];
     GenSurveyViewController *gsvc = [[GenSurveyViewController alloc] initWithNibName:@"GenSurveyViewController_iPad" bundle:[NSBundle mainBundle]];
     FAQViewController *faqvc = [[FAQViewController alloc] initWithNibName:@"FAQViewController_iPad" bundle:[NSBundle mainBundle]];
@@ -167,7 +167,7 @@
 }
 
 - (IBAction)btnMemberInfo:(id)sender {
-    [self sendAudit:@"Member Information"];
+    //[self sendAudit:@"Member Information"];
     int strDepedent = [[userInfo objectForKey:@"strDepedent"]intValue];
     
     if (strUserTyp > 0){
@@ -227,7 +227,7 @@
 }
 
 - (IBAction)btnClaims:(id)sender {
-    [self sendAudit:@"Claims"];
+    //[self sendAudit:@"Claims"];
     ClaimsViewController *hvc = [[ClaimsViewController alloc] initWithNibName:@"ClaimsViewController_iPad" bundle:[NSBundle mainBundle]];
     SideMenuiPadViewController *smvc = [[SideMenuiPadViewController alloc] init];
     UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
@@ -240,7 +240,7 @@
 }
 
 - (IBAction)btnDeductable:(id)sender {
-    [self sendAudit:@"Duductible"];
+    //[self sendAudit:@"Duductible"];
     DeductibleViewController *hvc = [[DeductibleViewController alloc] initWithNibName:@"DeductibleViewController_iPad" bundle:[NSBundle mainBundle]];
     SideMenuiPadViewController *smvc = [[SideMenuiPadViewController alloc] init];
     UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
@@ -253,13 +253,13 @@
 }
 
 - (IBAction)btnLogout:(id)sender {
-    [self sendAudit:@"Logout"];
+    //[self sendAudit:@"Logout"];
     LoginViewController *mvc = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPad" bundle:[NSBundle mainBundle]];
     [self.navigationController pushViewController:mvc animated:YES];
 }
 
 - (IBAction)btnSettings:(id)sender {
-    [self sendAudit:@"Settings"];
+    //[self sendAudit:@"Settings"];
     SettingsViewController *hvc = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController_iPad" bundle:[NSBundle mainBundle]];
     SideMenuiPadViewController *smvc = [[SideMenuiPadViewController alloc] init];
     UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
@@ -274,7 +274,7 @@
 }
 
 - (IBAction)btnProduct:(id)sender {
-    [self sendAudit:@"Product"];
+    //[self sendAudit:@"Product"];
     ProductListingViewController *hvc = [[ProductListingViewController alloc] initWithNibName:@"ProductListingViewController_iPad" bundle:[NSBundle mainBundle]];
     SideMenuiPadViewController *smvc = [[SideMenuiPadViewController alloc] init];
     UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
@@ -287,7 +287,7 @@
 }
 
 - (IBAction)btnEvents:(id)sender {
-    [self sendAudit:@"Events"];
+    //[self sendAudit:@"Events"];
     EventsViewController *hvc = [[EventsViewController alloc] initWithNibName:@"EventsViewController_iPad" bundle:[NSBundle mainBundle]];
     SideMenuiPadViewController *smvc = [[SideMenuiPadViewController alloc] init];
     UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
@@ -324,7 +324,7 @@
 }
 
 - (IBAction)btnFindProvider:(id)sender {
-    [self sendAudit:@"Find Provider"];
+    //[self sendAudit:@"Find Provider"];
     FindProviderMenuViewController *hvc = [[FindProviderMenuViewController alloc] initWithNibName:@"FindProviderMenuViewController_iPad" bundle:[NSBundle mainBundle]];
     SideMenuiPadViewController *smvc = [[SideMenuiPadViewController alloc] init];
     UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];

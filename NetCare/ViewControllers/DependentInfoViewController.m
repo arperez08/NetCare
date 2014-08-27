@@ -88,12 +88,11 @@
     NSString *strMemTINNbr= [userData objectForKey:@"strMemTinNbr"];
     NSString *dtDOB = [userData objectForKey:@"dtDOB"];
     NSArray *components = [dtDOB componentsSeparatedByString:@" "];
-    NSString *strDOB = components[0];
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"MM/dd/yyyy"];
     NSDate * dateDOB = [dateFormat dateFromString:components[0]];
-    strDOB = [dateFormat stringFromDate:dateDOB];
+    NSString *strDOB = [dateFormat stringFromDate:dateDOB];
     
     NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"GetUserIDInfo"];
     NSLog(@"strURL: %@",strPortalURL);

@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
+#import "Reachability.h"
 
 @interface SideMenuViewController : UIViewController{
     IBOutlet UIScrollView * scrollView;
     NSMutableDictionary *userData;
     NSMutableDictionary *userInfo;
     int strUserTyp;
+    MBProgressHUD *HUB;
 }
 @property (nonatomic, retain) IBOutlet UIScrollView * scrollView;
 @property (strong, nonatomic) UITabBarController *tabBarController;

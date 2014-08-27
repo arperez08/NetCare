@@ -84,7 +84,7 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HealthCare.png" id="w2Y-gz-GcG">
-                    <rect key="frame" x="-1" y="115" width="321" height="92"/>
+                    <rect key="frame" x="0.0" y="110" width="320" height="92"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>

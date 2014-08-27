@@ -37,6 +37,12 @@
     [alertView performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
 }
 
+-(BOOL)connected {
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus currrentStatus = [reachability currentReachabilityStatus];
+    return currrentStatus;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -55,7 +61,6 @@
 
 
 #define kOFFSET_FOR_KEYBOARD 60.0
-
 -(void)keyboardWillShow {
     // Animate the current view out of the way
     if (self.view.frame.origin.y >= 0)
@@ -169,11 +174,8 @@
     if (!error) {
         NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
         NSLog(@"Data: %@",responseData);
-        NSMutableArray *arrayData = [[NSMutableArray alloc]init];
-        arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
-        
-        NSString *strArrayCount = [NSString stringWithFormat:@"%d",[arrayData count]];
-
+        NSMutableArray *arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
+        NSString *strArrayCount = [NSString stringWithFormat:@"%lu",(unsigned long)[arrayData count]];
         if (![strArrayCount isEqualToString:@"0"]) {
             NSMutableDictionary *jsonData = [arrayData objectAtIndex:0];
             txtSecretQuestion.text = [jsonData objectForKey:@"strSecQstion"];
@@ -203,8 +205,7 @@
     if (!error) {
         NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
         NSLog(@"Data: %@",responseData);
-        NSMutableArray *arrayData = [[NSMutableArray alloc]init];
-        arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
+        NSMutableArray *arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
         NSMutableDictionary *jsonData = [arrayData objectAtIndex:0];
         NSString *status = [NSString stringWithFormat:@"%@",[jsonData objectForKey:@"strStatus"]];
         
@@ -253,9 +254,15 @@
 }
 
 - (IBAction)btnSubmit:(id)sender {
-//    HUB = [[MBProgressHUD alloc]initWithView:self.view];
-//    [self.view addSubview:HUB];
-//    [HUB showWhileExecuting:@selector(getResult) onTarget:self withObject:nil animated:YES];
-    [self getResult];
+    [self dismissKeyboard];
+    if ([self connected] == NotReachable){
+        [self alertStatus:@"No Network Connection" :@"Notification"];
+    }
+    else{
+        HUB = [[MBProgressHUD alloc]initWithView:self.view];
+        HUB.labelText = @"Retrieving and validating data…";
+        [self.view addSubview:HUB];
+        [HUB showWhileExecuting:@selector(getResult) onTarget:self withObject:nil animated:YES];
+    }
 }
 @end
