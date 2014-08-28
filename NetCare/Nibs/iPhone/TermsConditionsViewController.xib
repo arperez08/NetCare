@@ -32,49 +32,38 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" id="afg-hh-ULa">
-                    <rect key="frame" x="20" y="65" width="280" height="363"/>
+                    <rect key="frame" x="10" y="65" width="290" height="363"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <attributedString key="attributedText">
-                        <fragment>
-                            <string key="content">Our Vision
-"We are individuals dedicated to improving the delivery and management of health care in the areas we serve, by providing exceptional service to our clients, members and providers."
-
-</string>
+                        <fragment content="References in this">
                             <attributes>
-                                <font key="NSFont" metaFont="toolTip"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <font key="NSOriginalFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
                             </attributes>
                         </fragment>
-                        <fragment content="Company Profile">
+                        <fragment content=" ">
                             <attributes>
-                                <font key="NSFont" metaFont="smallSystem"/>
-                                <font key="NSOriginalFont" size="14" name="HelveticaNeue-Medium"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                        <fragment>
-                            <string key="content">
-Learn more about the fastest growing life and health insurance company in the Marianas and Micronesia.
-
-</string>
-                            <attributes>
-                                <font key="NSFont" metaFont="toolTip"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="Management Team">
-                            <attributes>
-                                <font key="NSFont" metaFont="smallSystem"/>
-                                <font key="NSOriginalFont" size="14" name="HelveticaNeue-Medium"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                <color key="NSColor" red="0.98431372549019602" green="0.0" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <font key="NSOriginalFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
                             </attributes>
                         </fragment>
                         <fragment>
-                            <string key="content">
-Life and Health Key Management Team. </string>
+                            <string key="content">Mobile App to linked sites or specified third parties, products or services do not constitute or imply endorsement by NetCare Life &amp; Health Insurance Company.   Except as expressly permitted by NetCare, you shall not copy, use , modify or in any way may exploit copyrighted materials. Violations will be prosecuted to the full extent of the law. When using the links listed on this Mobile App, please be aware that NetCare is not responsible for the privacy policies or the accuracy of content of these links.   Please review our Mobile App periodically as the NetCare's Privacy Policy may change from time to time without prior notice. We reserve the right to add to, delete, modify or otherwise change any or all of the Terms and Conditions of use and/or Privacy Policy at any time. Changes and updates will be noted.
+ 
+© 2014 NetCare Life and Health Insurance. All rights reserved.</string>
                             <attributes>
-                                <font key="NSFont" metaFont="toolTip"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <font key="NSOriginalFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
                             </attributes>
                         </fragment>
                     </attributedString>
@@ -93,7 +82,7 @@ Life and Health Key Management Team. </string>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fMA-SY-yNZ">
                     <rect key="frame" x="76" y="436" width="169" height="43"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <state key="normal" title="Accept and Continue" backgroundImage="signin bar.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

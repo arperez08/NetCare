@@ -243,13 +243,21 @@
         else
             strCoverage = [NSString stringWithFormat:@"%@/ %@",strCoverage,@"DRUGS"];
     }
+    
+    NSString *dtDOB = [userInfo objectForKey:@"strEffectiveDate"];
+    NSArray *components = [dtDOB componentsSeparatedByString:@" "];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"MM/dd/yyyy"];
+    NSDate * dateDOB = [dateFormat dateFromString:components[0]];
+    NSString *strEffDate = [dateFormat stringFromDate:dateDOB];
+    
     lblMedical.text =strCoverage;
     UIGraphicsBeginImageContext(myImage.size);
     [myImage drawInRect:CGRectMake(1, 5, 575, 365)];
     UITextView *myText = [[UITextView alloc] init];
     myText.frame = CGRectMake(10,110,320,300);
     //myText.text = text;
-    myText.text = [NSString stringWithFormat:@"%@\nMember#: %@\n\n%@\n\n%@", lblFullName.text, lblMemNbr.text,lblPlanName.text,strCoverage];
+    myText.text = [NSString stringWithFormat:@"%@\nMember#: %@\n\n%@\n\n%@\nEffective Date: %@", lblFullName.text, lblMemNbr.text,lblPlanName.text,strCoverage,strEffDate];
     myText.font = [UIFont fontWithName:@"Arial" size:18.0f];
     myText.textColor = [UIColor blackColor];
     NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];

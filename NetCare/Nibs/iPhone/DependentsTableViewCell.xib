@@ -35,14 +35,26 @@
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Effective Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-8R-3XA">
+                        <rect key="frame" x="10" y="145" width="83" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lblPlan" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="173" translatesAutoresizingMaskIntoConstraints="NO" id="xG8-GL-zBz">
-                        <rect key="frame" x="10" y="104" width="173" height="34"/>
+                        <rect key="frame" x="11" y="103" width="173" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lblCoverage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkh-lN-Kd5">
-                        <rect key="frame" x="10" y="133" width="297" height="21"/>
+                        <rect key="frame" x="10" y="129" width="297" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lblEffectiveDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRO-JI-JNV">
+                        <rect key="frame" x="92" y="145" width="224" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                         <nil key="highlightedColor"/>
@@ -51,6 +63,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="lblCoverage" destination="jkh-lN-Kd5" id="Q5W-rP-Qgk"/>
+                <outlet property="lblEffectiveDate" destination="tRO-JI-JNV" id="SgL-on-moK"/>
                 <outlet property="lblMemberNum" destination="GFc-aN-1Wd" id="xlO-YY-w2K"/>
                 <outlet property="lblName" destination="UAD-Dg-FfV" id="6Gl-4W-o7w"/>
                 <outlet property="lblPlan" destination="xG8-GL-zBz" id="M3e-jp-CBn"/>

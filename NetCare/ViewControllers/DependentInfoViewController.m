@@ -180,11 +180,19 @@
             strCoverage = [NSString stringWithFormat:@"%@/ %@",strCoverage,@"DRUGS"];
     }
 
+    NSString *dtDOB = [userInfo objectForKey:@"strEffectiveDate"];
+    NSArray *components = [dtDOB componentsSeparatedByString:@" "];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"MM/dd/yyyy"];
+    NSDate * dateDOB = [dateFormat dateFromString:components[0]];
+    NSString *strEffDate = [dateFormat stringFromDate:dateDOB];
+    
+    
     cell.lblName.text = [jsonData objectForKey:@"strName"];
     cell.lblMemberNum.text = [jsonData objectForKey:@"strMemNbr"];
     cell.lblPlan.text = [jsonData objectForKey:@"strPlanName"];
     cell.lblCoverage.text = strCoverage;
-    
+    cell.lblEffectiveDate.text = strEffDate;
     cell.backgroundColor = [UIColor clearColor];
     cell.backgroundView = [[UIView alloc] init];
     cell.selectedBackgroundView = [[UIView alloc] init];

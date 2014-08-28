@@ -9,7 +9,7 @@
 #import "DependentsTableViewCell.h"
 
 @implementation DependentsTableViewCell
-@synthesize lblCoverage,lblPlan,lblMemberNum,lblName;
+@synthesize lblCoverage,lblPlan,lblMemberNum,lblName,lblEffectiveDate;
 - (void)awakeFromNib
 {
     // Initialization code

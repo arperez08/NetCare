@@ -13,11 +13,14 @@
     IBOutlet UILabel *lblMemberNum;
     IBOutlet UILabel *lblPlan;
     IBOutlet UILabel *lblCoverage;
+    IBOutlet UILabel *lblEffectiveDate;
 }
 
 @property (strong, nonatomic) IBOutlet UILabel *lblName;
 @property (strong, nonatomic) IBOutlet UILabel *lblMemberNum;
 @property (strong, nonatomic) IBOutlet UILabel *lblPlan;
 @property (strong, nonatomic) IBOutlet UILabel *lblCoverage;
+@property (strong, nonatomic) IBOutlet UILabel *lblEffectiveDate;
+
 
 @end
