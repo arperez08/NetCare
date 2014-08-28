@@ -16,7 +16,7 @@
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "Constants.h"
-
+#import "PrivacyPolicyViewController.h"
 
 @interface LoginViewController ()
 
@@ -199,11 +199,11 @@
     
     if ([txtUser.text isEqualToString:@""]) {
         [self alertStatus:@"Please input your Username." :@"Error"];
-        [self sendAudit:@"LoginFailed"];
+        [self sendAudit:@"LoginFailed - Please input your Username."];
     }
     else if ([txtPassword.text isEqualToString:@""]){
         [self alertStatus:@"Please input your Password." :@"Error"];
-        [self sendAudit:@"LoginFailed"];
+        [self sendAudit:@"LoginFailed - Please input your Password."];
     }
     else {
         if ([self connected] == NotReachable){
@@ -221,7 +221,7 @@
 
 -(void) sendAudit: (NSString *) moduleName {
     NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
-    NSString *userName = [userLogin objectForKey:@"Username"];
+    NSString *userName = txtUser.text;
     userData = [userLogin objectForKey:@"userData"];
     NSString *strMemTinNbr = [userData objectForKey:@"strMemTinNbr"];
     
@@ -276,17 +276,18 @@
             
         }
         else{
+            [self sendAudit:@"LoginFailed - Please check your Username or Password."];
             [self alertStatus:@"Please check your Username or Password." :@"Error"];
         }
     }
     else{
+        [self sendAudit:@"LoginFailed"];
         [self alertStatus:[NSString stringWithFormat:@"%@",error] :@"Error"];
         NSLog(@"error: %@",error);
     }
 }
 
 - (void) getUserData{
-    [self sendAudit:@"Login"];
     NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"AuthenGetUser"];
     NSLog(@"strURL: %@",strPortalURL);
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
@@ -332,6 +333,8 @@
     strDOB = [dateFormat stringFromDate:dateDOB];
     strLastName = [userData objectForKey:@"strLastName"];
     int strUserTyp = [[userData objectForKey:@"strUserTyp"]intValue];
+    
+    [self sendAudit:@"Login"];
     if (strUserTyp > 0){
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             MainViewController *mvc = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:[NSBundle mainBundle]];
@@ -420,14 +423,21 @@
 
 - (IBAction)btnRegister:(id)sender {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        RegistrationViewController *rvc = [[RegistrationViewController alloc] initWithNibName:@"RegistrationViewController" bundle:[NSBundle mainBundle]];
+//        RegistrationViewController *rvc = [[RegistrationViewController alloc] initWithNibName:@"RegistrationViewController" bundle:[NSBundle mainBundle]];
+//        [self.navigationController setNavigationBarHidden:YES];
+//        [self.navigationController pushViewController:rvc animated:YES];
+        PrivacyPolicyViewController *rvc = [[PrivacyPolicyViewController alloc] initWithNibName:@"PrivacyPolicyViewController" bundle:[NSBundle mainBundle]];
         [self.navigationController setNavigationBarHidden:YES];
         [self.navigationController pushViewController:rvc animated:YES];
     }
     else{
-        RegistrationViewController *rvc = [[RegistrationViewController alloc] initWithNibName:@"RegistrationViewController_iPad" bundle:[NSBundle mainBundle]];
+//        RegistrationViewController *rvc = [[RegistrationViewController alloc] initWithNibName:@"RegistrationViewController_iPad" bundle:[NSBundle mainBundle]];
+//        [self.navigationController setNavigationBarHidden:YES];
+//        [self.navigationController pushViewController:rvc animated:YES];
+        PrivacyPolicyViewController *rvc = [[PrivacyPolicyViewController alloc] initWithNibName:@"PrivacyPolicyViewController_iPad" bundle:[NSBundle mainBundle]];
         [self.navigationController setNavigationBarHidden:YES];
         [self.navigationController pushViewController:rvc animated:YES];
+
     }
 }
 

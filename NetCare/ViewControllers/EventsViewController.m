@@ -35,13 +35,49 @@
     self.title = @"Upcoming Events";
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
+    NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
+    userData = [[NSMutableDictionary alloc] init];
+    userData = [userLogin objectForKey:@"userData"];
+    userInfo = [[NSMutableDictionary alloc] init];
+    userInfo = [userLogin objectForKey:@"userInfo"];
+    
     HUB = [[MBProgressHUD alloc]initWithView:self.view];
     [self.view addSubview:HUB];
     HUB.labelText = @"Retrieving and validating data…";
     [HUB showWhileExecuting:@selector(getEvents) onTarget:self withObject:nil animated:YES];
 }
 
+-(void) sendAudit: (NSString *) moduleName {
+    NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
+    NSString *userName = [userLogin objectForKey:@"Username"];
+    NSString *strMemTinNbr = [userData objectForKey:@"strMemTinNbr"];
+    
+    NSDate *now = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"MM/dd/yyyy HH:mm:ss"];
+    NSString *dateNow = [dateFormat stringFromDate:now];
+    
+    NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"RegisterAudit"];
+    NSLog(@"strURL: %@",strPortalURL);
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
+    [request setRequestMethod:@"POST"];
+    [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
+    [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
+    [request setPostValue:moduleName forKey:@"strModule"];
+    [request setPostValue:strMemTinNbr forKey:@"strMemTINNbr"];
+    [request setPostValue:userName forKey:@"strUserName"];
+    [request setPostValue:dateNow forKey:@"strEntryDTime"];
+    [request startSynchronous];
+    NSData *urlData = [request responseData];
+    NSError *error = [request error];
+    if (!error) {
+        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+        NSLog(@"RegisterAudit: %@",responseData);
+    }
+}
+
 - (void) getEvents{
+    [self sendAudit:@"Upcoming Events"];
     NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"GetNewsEvents"];
     NSLog(@"%@",strPortalURL);
     NSURL *url = [NSURL URLWithString:strPortalURL];

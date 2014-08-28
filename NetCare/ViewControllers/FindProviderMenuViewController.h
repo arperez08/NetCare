@@ -25,6 +25,10 @@
     IBOutlet UIButton *btnSpecialization;
     NSMutableArray *arrayItemsSpecialization;
     UIPickerView *SpecializationPicker;
+
+    NSMutableDictionary *userData;
+    NSMutableDictionary *userInfo;
+
 }
 
 @property (strong, nonatomic) IBOutlet UITextField *txtCountry;

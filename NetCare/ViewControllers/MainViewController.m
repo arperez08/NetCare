@@ -15,6 +15,9 @@
 #import "ClaimsViewController.h"
 #import "FindProviderMenuViewController.h"
 #import "MemberVerificationViewController.h"
+#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
+#import "Constants.h"
 
 @interface MainViewController ()
 
@@ -45,16 +48,56 @@
     }
     
     NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
-    NSMutableDictionary *userData = [userLogin objectForKey:@"userData"];
-    int strUserTyp  = [[userData objectForKey:@"strUserTyp"] intValue];
+    userData = [[NSMutableDictionary alloc] init];
+    userData = [userLogin objectForKey:@"userData"];
+    userInfo = [[NSMutableDictionary alloc] init];
+    userInfo = [userLogin objectForKey:@"userInfo"];
     
+    int strUserTyp  = [[userData objectForKey:@"strUserTyp"] intValue];
     if (strUserTyp > 0){
         btnClaims.enabled = NO;
     }
     else{
         btnClaims.enabled = YES;
     }
+    
+    HUB = [[MBProgressHUD alloc]initWithView:self.view];
+    [self.view addSubview:HUB];
+    HUB.labelText = @"Retrieving and validating data…";
+    [HUB showWhileExecuting:@selector(sendAudit:) onTarget:self withObject:nil animated:YES];
 }
+
+
+-(void) sendAudit: (NSString *) moduleName {
+    moduleName = @"Home";
+    NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
+    NSString *userName = [userLogin objectForKey:@"Username"];
+    NSString *strMemTinNbr = [userData objectForKey:@"strMemTinNbr"];
+    
+    NSDate *now = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"MM/dd/yyyy HH:mm:ss"];
+    NSString *dateNow = [dateFormat stringFromDate:now];
+    
+    NSString * strPortalURL = [NSString stringWithFormat:PORTAL_URL,@"RegisterAudit"];
+    NSLog(@"strURL: %@",strPortalURL);
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:strPortalURL]];
+    [request setRequestMethod:@"POST"];
+    [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"];
+    [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
+    [request setPostValue:moduleName forKey:@"strModule"];
+    [request setPostValue:strMemTinNbr forKey:@"strMemTINNbr"];
+    [request setPostValue:userName forKey:@"strUserName"];
+    [request setPostValue:dateNow forKey:@"strEntryDTime"];
+    [request startSynchronous];
+    NSData *urlData = [request responseData];
+    NSError *error = [request error];
+    if (!error) {
+        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+        NSLog(@"RegisterAudit: %@",responseData);
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -115,10 +158,7 @@
 }
 
 - (IBAction)bthMemberInfo:(id)sender {
-    NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
-    NSMutableDictionary *userData = [userLogin objectForKey:@"userData"];
     //int userType = [[userData objectForKey:@"strUserTyp"]intValue];
-    NSMutableDictionary *userInfo = [userLogin objectForKey:@"userInfo"];
     int strDepedent = [[userInfo objectForKey:@"strDepedent"]intValue];
     int strUserTyp  = [[userData objectForKey:@"strUserTyp"] intValue];
     

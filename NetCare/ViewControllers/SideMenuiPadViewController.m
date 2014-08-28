@@ -22,10 +22,13 @@
 #import "AboutViewController.h"
 #import "FindProviderMenuViewController.h"
 #import "SettingsViewController.h"
+#import "PrivacyPolicyViewController.h"
+#import "TermsConditionsViewController.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "Constants.h"
 #import "MemberVerificationViewController.h"
+
 
 @interface SideMenuiPadViewController ()
 
@@ -139,16 +142,24 @@
     AboutViewController *avc = [[AboutViewController alloc] initWithNibName:@"AboutViewController_iPad" bundle:[NSBundle mainBundle]];
     GenSurveyViewController *gsvc = [[GenSurveyViewController alloc] initWithNibName:@"GenSurveyViewController_iPad" bundle:[NSBundle mainBundle]];
     FAQViewController *faqvc = [[FAQViewController alloc] initWithNibName:@"FAQViewController_iPad" bundle:[NSBundle mainBundle]];
+    PrivacyPolicyViewController *ppvc = [[PrivacyPolicyViewController alloc] initWithNibName:@"PrivacyPolicyViewController_iPad" bundle:[NSBundle mainBundle]];
+    ppvc.fromMenu = YES;
+    TermsConditionsViewController *tcvc = [[TermsConditionsViewController alloc] initWithNibName:@"TermsConditionsViewController_iPad" bundle:[NSBundle mainBundle]];
+    tcvc.fromMenu = YES;
     
-    avc.title = @"About NetCare";
-    avc.tabBarItem.image = [UIImage imageNamed:@"about"];
+    avc.title = @"About";
+    avc.tabBarItem.image = [UIImage imageNamed:@"aboutNetcare"];
     gsvc.title = @"Contact Us";
-    gsvc.tabBarItem.image = [UIImage imageNamed:@"survey"];
+    gsvc.tabBarItem.image = [UIImage imageNamed:@"productlisting"];
     faqvc.title = @"FAQ's";
     faqvc.tabBarItem.image = [UIImage imageNamed:@"FAQs"];
+    ppvc.title = @"Privacy Policy";
+    ppvc.tabBarItem.image = [UIImage imageNamed:@"privilege"];
+    tcvc.title = @"T & C";
+    tcvc.tabBarItem.image = [UIImage imageNamed:@"claims"];
     
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[avc, gsvc, faqvc];
+    self.tabBarController.viewControllers = @[avc, gsvc, faqvc, ppvc, tcvc];
     SideMenuiPadViewController *smvc = [[SideMenuiPadViewController alloc] init];
     UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:self.tabBarController];
     //UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:hvc];
@@ -253,7 +264,7 @@
 }
 
 - (IBAction)btnLogout:(id)sender {
-    //[self sendAudit:@"Logout"];
+    [self sendAudit:@"Logout"];
     LoginViewController *mvc = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPad" bundle:[NSBundle mainBundle]];
     [self.navigationController pushViewController:mvc animated:YES];
 }

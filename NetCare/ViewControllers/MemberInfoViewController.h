@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
+#import "Reachability.h"
 
 @interface MemberInfoViewController : UIViewController{
     IBOutlet UIImageView *imgCard;
@@ -30,6 +32,7 @@
     IBOutlet UIImageView *imgExpiredCard;
     IBOutlet UIImageView *imgExpiredDetails;
     
+    MBProgressHUD *HUB;
 }
 
 @property (strong, nonatomic) IBOutlet UILabel *lblTitleBar;

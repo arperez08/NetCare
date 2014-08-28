@@ -29,6 +29,9 @@
     UIPickerView *securityQuestion;
     IBOutlet UIButton *btnSecurity;
     NSMutableArray *arrayQuestions;
+    
+    BOOL privacyChecked;
+    BOOL termsChecked;
 }
 - (IBAction)btnBack:(id)sender;
 - (IBAction)btnMember:(id)sender;
@@ -36,6 +39,9 @@
 - (IBAction)btnTerms:(id)sender;
 - (IBAction)btnSubmit:(id)sender;
 
+
+@property (nonatomic) BOOL privacyChecked;
+@property (nonatomic) BOOL termsChecked;
 
 @property (strong, nonatomic) IBOutlet UITextField *txtSecQuestion;
 @property (strong, nonatomic) IBOutlet UITextField *txtAnswer;

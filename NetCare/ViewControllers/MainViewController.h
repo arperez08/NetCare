@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
+#import "Reachability.h"
 
 @interface MainViewController : UIViewController{
-
+    MBProgressHUD *HUB;
+    NSMutableDictionary *userData;
+    NSMutableDictionary *userInfo;
 }
 @property (strong, nonatomic) UITabBarController *tabBarController;
 @property (strong, nonatomic) IBOutlet UIButton *btnClaims;

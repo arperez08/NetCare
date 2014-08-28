@@ -22,6 +22,7 @@
 @synthesize scrollView;
 @synthesize txtTINNum, txtSSN, txtMemberNum, txtLastName, txtFirstName,txtMiddle, txtDOB, txtEmail, txtUserName,txtPasswrod, txtRePassword;
 @synthesize btnTems,btnMember,btnProvider,txtSecQuestion,txtAnswer;
+@synthesize privacyChecked, termsChecked;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,7 +60,16 @@
     
     memberCheckbox = YES;
     providerCheckbox = NO;
-    termsCheckbox = NO;
+    
+    if (termsChecked == YES) {
+        [btnTems setImage:[UIImage imageNamed:@"check.png"] forState:UIControlStateNormal];
+        termsCheckbox = YES;
+    }
+    else{
+        [btnTems setImage:nil forState:UIControlStateNormal];
+        termsCheckbox = NO;
+    }
+    
     
     [self.navigationController setNavigationBarHidden:YES];
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 1200);

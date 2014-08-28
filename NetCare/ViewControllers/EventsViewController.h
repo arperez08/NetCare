@@ -17,6 +17,8 @@
     NSMutableArray *sectionArray;
     NSMutableArray *cellArray;
     NSMutableArray *cellCount;
+    NSMutableDictionary *userData;
+    NSMutableDictionary *userInfo;
 }
 @property(nonatomic,retain)IBOutlet UITableView *MIMtableView;
 - (IBAction)btnShowMenu:(id)sender;

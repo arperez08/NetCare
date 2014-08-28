@@ -53,7 +53,6 @@
     [self.view addGestureRecognizer:tap];
 }
 
-
 -(void)dismissKeyboard {
     [txtNewPassword resignFirstResponder];
     [txtRePassword resignFirstResponder];
