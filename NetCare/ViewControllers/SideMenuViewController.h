@@ -27,17 +27,18 @@
 
 - (IBAction)btnHome:(id)sender;
 - (IBAction)btnMemberInfo:(id)sender;
-- (IBAction)btnEligibility:(id)sender;
 - (IBAction)btnClaims:(id)sender;
 - (IBAction)btnDeductable:(id)sender;
 - (IBAction)btnFindProvider:(id)sender;
 - (IBAction)btnProduct:(id)sender;
 - (IBAction)btnEvents:(id)sender;
+- (IBAction)btnAbout:(id)sender;
+- (IBAction)btnSettings:(id)sender;
+- (IBAction)btnLogout:(id)sender;
 - (IBAction)btnSurvey:(id)sender;
 - (IBAction)btnFAQ:(id)sender;
-- (IBAction)btnAbout:(id)sender;
-- (IBAction)btnLogout:(id)sender;
-- (IBAction)btnSettings:(id)sender;
+- (IBAction)btnEligibility:(id)sender;
+
 
 
 

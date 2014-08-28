@@ -59,8 +59,10 @@
     if ([status isEqualToString:@"Eligible"]) {
         UIImage *bgimg = [UIImage imageNamed:@"IDFront"];
         UIImage *img = [self drawTextName:@"" inImage:bgimg atPoint:CGPointMake(0, 0)];
+        
         NSString *strMemTinNbr = [userData objectForKey:@"strMemTinNbr"];
         imgQRCode.image = [self generateQRCode:strMemTinNbr];
+        
         UIImage *imgWithQR = [self drawQR:imgQRCode.image inImage:img atPoint:CGPointMake(0, 0)];
         imgCardBack.image = imgWithQR;
     }

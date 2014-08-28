@@ -97,9 +97,11 @@ MKRoute *routeDetails;
 	  
 	[mapView addAnnotation:myAnnotation1];
 	[annotations addObject:myAnnotation1];
+
 	NSLog(@"%lu",(unsigned long)[annotations count]);
     MKMapRect flyTo = MKMapRectNull;
-	for (id <MKAnnotation> annotation in annotations) {
+	
+    for (id <MKAnnotation> annotation in annotations) {
         MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
         MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0, 0);
         if (MKMapRectIsNull(flyTo)) {
@@ -242,7 +244,6 @@ MKRoute *routeDetails;
 - (IBAction)btnBack:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 
 #pragma mark MKMapViewDelegate
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {

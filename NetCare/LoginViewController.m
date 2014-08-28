@@ -7,16 +7,16 @@
 //
 
 #import "LoginViewController.h"
-#import "PKRevealController.h"
 #import "MainViewController.h"
 #import "ForgotPassViewController.h"
 #import "SideMenuViewController.h"
 #import "SideMenuiPadViewController.h"
 #import "RegistrationViewController.h"
-#import "ASIHTTPRequest.h"
-#import "ASIFormDataRequest.h"
 #import "Constants.h"
 #import "PrivacyPolicyViewController.h"
+#import "PKRevealController.h"
+#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
 
 @interface LoginViewController ()
 
@@ -203,7 +203,7 @@
     }
     else if ([txtPassword.text isEqualToString:@""]){
         [self alertStatus:@"Please input your Password." :@"Error"];
-        [self sendAudit:@"LoginFailed - Please input your Password."];
+        [self sendAudit:@"LoginFailed - Please input your Password"];
     }
     else {
         if ([self connected] == NotReachable){
@@ -282,7 +282,7 @@
     }
     else{
         [self sendAudit:@"LoginFailed"];
-        [self alertStatus:[NSString stringWithFormat:@"%@",error] :@"Error"];
+        [self alertStatus:@"A connection failure occurred." :@"Error"];
         NSLog(@"error: %@",error);
     }
 }

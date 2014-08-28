@@ -150,10 +150,40 @@
         }
     }
     
+    NSString *strCoverage =@"";
+    NSString *strMedical = [jsonData objectForKey:@"strMedical"];
+    NSString *strDental = [jsonData objectForKey:@"strDental"];
+    NSString *strVision = [jsonData objectForKey:@"strVision"];
+    NSString *strDrugs = [jsonData objectForKey:@"strDrugs"];
+    if ([strMedical isEqualToString:@"T"]) {
+        if ([strCoverage  isEqualToString: @""])
+            strCoverage = [NSString stringWithFormat:@"%@ %@",strCoverage,@"MEDICAL"];
+        else
+            strCoverage = [NSString stringWithFormat:@"%@/ %@",strCoverage,@"MEDICAL"];
+    }
+    if ([strDental isEqualToString:@"T"]) {
+        if ([strCoverage  isEqualToString: @""])
+            strCoverage = [NSString stringWithFormat:@"%@ %@",strCoverage,@"DENTAL"];
+        else
+            strCoverage = [NSString stringWithFormat:@"%@/ %@",strCoverage,@"DENTAL"];
+    }
+    if ([strVision isEqualToString:@"T"]) {
+        if ([strCoverage  isEqualToString: @""])
+            strCoverage = [NSString stringWithFormat:@"%@ %@",strCoverage,@"VISION"];
+        else
+            strCoverage = [NSString stringWithFormat:@"%@/ %@",strCoverage,@"VISION"];
+    }
+    if ([strDrugs isEqualToString:@"T"]) {
+        if ([strCoverage  isEqualToString: @""])
+            strCoverage = [NSString stringWithFormat:@"%@ %@",strCoverage,@"DRUGS"];
+        else
+            strCoverage = [NSString stringWithFormat:@"%@/ %@",strCoverage,@"DRUGS"];
+    }
+
     cell.lblName.text = [jsonData objectForKey:@"strName"];
     cell.lblMemberNum.text = [jsonData objectForKey:@"strMemNbr"];
     cell.lblPlan.text = [jsonData objectForKey:@"strPlanName"];
-    cell.lblCoverage.text = @"";
+    cell.lblCoverage.text = strCoverage;
     
     cell.backgroundColor = [UIColor clearColor];
     cell.backgroundView = [[UIView alloc] init];
