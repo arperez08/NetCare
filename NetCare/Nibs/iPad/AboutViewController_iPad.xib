@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController">
             <connections>
+                <outlet property="MIMtableView" destination="qVf-vP-CoB" id="t07-1o-sqT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,6 +19,19 @@
                     <rect key="frame" x="0.0" y="0.0" width="768" height="1112"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Netcare logo.png" id="Aeu-yJ-jqx">
+                    <rect key="frame" x="306" y="42" width="156" height="115"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <tableView clipsSubviews="YES" alpha="0.80000001192092896" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qVf-vP-CoB">
+                    <rect key="frame" x="0.0" y="177" width="768" height="788"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.050980392159999999" green="0.16862745100000001" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="DoR-7K-P4o"/>
+                        <outlet property="delegate" destination="-1" id="EDM-0c-ce3"/>
+                    </connections>
+                </tableView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav bar.png" id="n1F-Uz-OR1">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="55"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -29,55 +43,6 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" id="OpD-KY-sVk">
-                    <rect key="frame" x="20" y="78" width="728" height="894"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <attributedString key="attributedText">
-                        <fragment>
-                            <string key="content">Our Vision
-"We are individuals dedicated to improving the delivery and management of health care in the areas we serve, by providing exceptional service to our clients, members and providers."
-
-</string>
-                            <attributes>
-                                <font key="NSFont" metaFont="toolTip"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="Company Profile">
-                            <attributes>
-                                <font key="NSFont" metaFont="smallSystem"/>
-                                <font key="NSOriginalFont" size="14" name="HelveticaNeue-Medium"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                        <fragment>
-                            <string key="content">
-Learn more about the fastest growing life and health insurance company in the Marianas and Micronesia.
-
-</string>
-                            <attributes>
-                                <font key="NSFont" metaFont="toolTip"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="Management Team">
-                            <attributes>
-                                <font key="NSFont" metaFont="smallSystem"/>
-                                <font key="NSOriginalFont" size="14" name="HelveticaNeue-Medium"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                        <fragment>
-                            <string key="content">
-Life and Health Key Management Team. </string>
-                            <attributes>
-                                <font key="NSFont" metaFont="toolTip"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="exI-kx-v3t">
                     <rect key="frame" x="0.0" y="16" width="40" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -96,6 +61,7 @@ Life and Health Key Management Team. </string>
     </objects>
     <resources>
         <image name="BG.png" width="640" height="1136"/>
+        <image name="Netcare logo.png" width="332" height="157"/>
         <image name="menubtn.png" width="18" height="18"/>
         <image name="nav bar.png" width="640" height="107"/>
     </resources>

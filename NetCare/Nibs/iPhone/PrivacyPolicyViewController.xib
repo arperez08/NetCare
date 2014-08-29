@@ -36,8 +36,56 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <attributedString key="attributedText">
                         <fragment>
-                            <string key="content">NetCare respects the right to privacy and has implemented safeguards to protect personal information. Your right to privacy is important to us and we are committed to a secure handling of personal health information for all members.   NetCare treats personal health information confidentially and limits access to only those individuals necessary to conduct company business. These persons are trained in the importance of security and privacy and must comply with NetCare's internal privacy policies.   All information that is collected from this Mobile App will be treated with care and will not be reused, licensed or disclosed in any manner outside of NetCare's contracted business partners unless authorized by you or required by legal or judicial proceedings.
-Privacy Statement
+                            <string key="content">NetCare respects the right to privacy and has implemented safeguards to protect personal information. Your right to privacy is important to us and we are committed to a secure handling of personal health information for all members.   NetCare treats personal health information confidentially and limits access to only those individuals necessary to conduct company business. These persons are trained in the importance of security and privacy and must comply with NetCare's internal privacy policies.   All information that is collected from this Mobile App will be treated with care and will not be reused, licensed or disclosed in any manner outside of NetCare's contracted business partners unless authorized by you or required by legal or judicial proceedings.</string>
+                            <attributes>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <font key="NSOriginalFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <color key="NSColor" red="0.98431372549019602" green="0.0" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                            <attributes>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <font key="NSOriginalFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Privacy Statement">
+                            <attributes>
+                                <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
+                                <font key="NSOriginalFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <color key="NSColor" red="0.98431372549019602" green="0.0" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">
 Your privacy is very important to NetCare and we have developed this Privacy Statement to advise you of NetCare’s policy for collecting, using and disseminating information obtained through this Mobile App</string>
                             <attributes>
                                 <font key="NSFont" size="14" name="HelveticaNeue"/>

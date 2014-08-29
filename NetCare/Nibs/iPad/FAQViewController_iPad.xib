@@ -41,7 +41,7 @@
                     </connections>
                 </button>
                 <tableView clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QAn-kF-Ghb">
-                    <rect key="frame" x="0.0" y="177" width="768" height="761"/>
+                    <rect key="frame" x="0.0" y="177" width="768" height="788"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="0.050980392159999999" green="0.16862745100000001" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>

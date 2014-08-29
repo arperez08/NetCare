@@ -32,49 +32,183 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" id="T1L-V6-afL">
-                    <rect key="frame" x="20" y="65" width="728" height="850"/>
+                    <rect key="frame" x="20" y="65" width="728" height="861"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <attributedString key="attributedText">
                         <fragment>
-                            <string key="content">Our Vision
-"We are individuals dedicated to improving the delivery and management of health care in the areas we serve, by providing exceptional service to our clients, members and providers."
-
-</string>
+                            <string key="content">NetCare respects the right to privacy and has implemented safeguards to protect personal information. Your right to privacy is important to us and we are committed to a secure handling of personal health information for all members.   NetCare treats personal health information confidentially and limits access to only those individuals necessary to conduct company business. These persons are trained in the importance of security and privacy and must comply with NetCare's internal privacy policies.   All information that is collected from this Mobile App will be treated with care and will not be reused, licensed or disclosed in any manner outside of NetCare's contracted business partners unless authorized by you or required by legal or judicial proceedings.</string>
                             <attributes>
-                                <font key="NSFont" metaFont="toolTip"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
                             </attributes>
                         </fragment>
-                        <fragment content="Company Profile">
+                        <fragment content=" ">
                             <attributes>
-                                <font key="NSFont" metaFont="smallSystem"/>
-                                <font key="NSOriginalFont" size="14" name="HelveticaNeue-Medium"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                <color key="NSColor" red="0.98431372549019602" green="0.0" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                            <attributes>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Privacy Statement">
+                            <attributes>
+                                <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <color key="NSColor" red="0.98431372549019602" green="0.0" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
                             </attributes>
                         </fragment>
                         <fragment>
                             <string key="content">
-Learn more about the fastest growing life and health insurance company in the Marianas and Micronesia.
-
-</string>
+Your privacy is very important to NetCare and we have developed this Privacy Statement to advise you of NetCare’s policy for collecting, using and disseminating information obtained through this Mobile App</string>
                             <attributes>
-                                <font key="NSFont" metaFont="toolTip"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
                             </attributes>
                         </fragment>
-                        <fragment content="Management Team">
+                        <fragment content=".  ">
                             <attributes>
-                                <font key="NSFont" metaFont="smallSystem"/>
-                                <font key="NSOriginalFont" size="14" name="HelveticaNeue-Medium"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                <color key="NSColor" red="0.98431372549019602" green="0.0" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Use and Disclosure of Personal Data ">
+                            <attributes>
+                                <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
                             </attributes>
                         </fragment>
                         <fragment>
-                            <string key="content">
-Life and Health Key Management Team. </string>
+                            <string key="content">  Information you share with NetCare may be used in a variety of ways that let us assist you and provide you with better service. We may also use this information to perform administrative, technical, or other functions that help us manage our site and deliver new functionality to you. Voluntarily providing any individually identifiable information, such as names, postal addresses, e-mail addresses, phone numbers, and other personal information to NetCare indicates your authorization to allow NetCare to enter such information to our data bases. Such information may be used as described or for other purposes in accordance with Guam and Federal law. Unless otherwise authorized by the visitor, NetCare will not sell, rent, or licensed Protected Health Information to unaffiliated third parties or entities unless required to do so by government authorities or in accordance with applicable law.   </string>
                             <attributes>
-                                <font key="NSFont" metaFont="toolTip"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Security Measures ">
+                            <attributes>
+                                <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">  NetCare has implemented numerous security features to prevent or limit the unauthorized release of or access to Protected Health Information and will continue to assess, update and modify our security and confidentiality policies and procedures to help protect such information.   </string>
+                            <attributes>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Use of Electronic Mail ">
+                            <attributes>
+                                <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">  NetCare strives to maintain control of this Mobile App, within the constraints of current internet technology. We may provide e-mail links on our site to further facilitate communication between NetCare and our providers, members and visitors. NetCare may not however warrant or guarantee that this site provides a means for completely secure and private communication. Most non-encrypted internet email communications have the potential to be accessed and viewed by other internet users without your knowledge or permission while in transit to NetCare.   </string>
+                            <attributes>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Protection of Children ">
+                            <attributes>
+                                <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">  This Mobile App does not contain content directed to children under the age of thirteen (13) years. To the extent that NetCare can determine the age of visitors by their submissions or communications, we do not collect or post information regarding children under the age of thirteen (13) years without the consent or authorization of a parent or legal guardian.   </string>
+                            <attributes>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Your Privacy When Using Links to Other Sites ">
+                            <attributes>
+                                <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">  NetCare does its best to ensure your privacy on the NetCare Mobile App, we are not responsible for the privacy practices of other sites. NetCare is not responsible for the privacy practices of any other site you access from a link from our Mobile App. We strongly encourage you to review the privacy practices of any Mobile App you visit.   </string>
+                            <attributes>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Changes To Our Mobile App Privacy Statement ">
+                            <attributes>
+                                <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">  This Mobile App Privacy Statement was last revised and effective as of April 1, 2004. NetCare may change this statement from time to time without notice. This statement is not intended to and does not create any contractual or other legal right in or on behalf of any party.
+</string>
+                            <attributes>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
                             </attributes>
                         </fragment>
                     </attributedString>
@@ -92,7 +226,7 @@ Life and Health Key Management Team. </string>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nhR-pp-V4C">
-                    <rect key="frame" x="300" y="929" width="169" height="43"/>
+                    <rect key="frame" x="300" y="943" width="169" height="43"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Accept and Continue" backgroundImage="signin bar.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

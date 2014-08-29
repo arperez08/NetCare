@@ -95,18 +95,27 @@
         NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
         NSLog(@"Data: %@",responseData);
         NSMutableArray *arrayData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:nil];
-        NSMutableDictionary *jsonData = [arrayData objectAtIndex:0];
         
-        txtIndDeductable.text = [NSString stringWithFormat:@"%.02f",[[jsonData objectForKey:@"strIndivDeductible"] floatValue]];
-        txtIFamDeductable.text = [NSString stringWithFormat:@"%.02f",[[jsonData objectForKey:@"strFamDeductible"] floatValue]];
-        
-        float indCurrDeduc = [[jsonData objectForKey:@"strIndCurrDeduc"] floatValue];
-        float FamCurrDeduc = [[jsonData objectForKey:@"strFamCurrDeduc"] floatValue];
-        float IndRemaining = [txtIndDeductable.text floatValue] - indCurrDeduc;
-        float FamRemaining = [txtIFamDeductable.text floatValue] - FamCurrDeduc;
-        
-        txtIndRemaining.text = [NSString stringWithFormat:@"%.02f",IndRemaining];
-        txtFamRemaining.text = [NSString stringWithFormat:@"%.02f",FamRemaining];
+        if ([arrayData count] == 0) {
+            txtIndDeductable.text = @"0.0";
+            txtIFamDeductable.text = @"0.0";
+            txtIndRemaining.text = @"0.0";
+            txtFamRemaining.text = @"0.0";
+        }
+        else{
+            NSMutableDictionary *jsonData = [arrayData objectAtIndex:0];
+            
+            txtIndDeductable.text = [NSString stringWithFormat:@"%.02f",[[jsonData objectForKey:@"strIndivDeductible"] floatValue]];
+            txtIFamDeductable.text = [NSString stringWithFormat:@"%.02f",[[jsonData objectForKey:@"strFamDeductible"] floatValue]];
+            
+            float indCurrDeduc = [[jsonData objectForKey:@"strIndCurrDeduc"] floatValue];
+            float FamCurrDeduc = [[jsonData objectForKey:@"strFamCurrDeduc"] floatValue];
+            float IndRemaining = [txtIndDeductable.text floatValue] - indCurrDeduc;
+            float FamRemaining = [txtIFamDeductable.text floatValue] - FamCurrDeduc;
+            
+            txtIndRemaining.text = [NSString stringWithFormat:@"%.02f",IndRemaining];
+            txtFamRemaining.text = [NSString stringWithFormat:@"%.02f",FamRemaining];
+        }
     }
 }
 

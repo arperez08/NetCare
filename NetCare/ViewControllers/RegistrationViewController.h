@@ -10,7 +10,7 @@
 #import "MBProgressHUD.h"
 #import "Reachability.h"
 
-@interface RegistrationViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface RegistrationViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 {
     MBProgressHUD *HUB;
     

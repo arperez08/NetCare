@@ -128,6 +128,58 @@
     [txtAnswer resignFirstResponder];
 }
 
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    BOOL lowerCaseLetter = 0;
+    BOOL upperCaseLetter = 0;
+    BOOL digit =0;
+    BOOL specialCharacter = 0;
+    if([textField.text length] >= 5)
+    {
+        for (int i = 0; i < [txtPasswrod.text length]; i++)
+        {
+            unichar c = [txtPasswrod.text characterAtIndex:i];
+            if(!lowerCaseLetter)
+            {
+                lowerCaseLetter = [[NSCharacterSet lowercaseLetterCharacterSet] characterIsMember:c];
+            }
+            if(!upperCaseLetter)
+            {
+                upperCaseLetter = [[NSCharacterSet uppercaseLetterCharacterSet] characterIsMember:c];
+            }
+            if(!digit)
+            {
+                digit = [[NSCharacterSet decimalDigitCharacterSet] characterIsMember:c];
+            }
+            if(!specialCharacter)
+            {
+                specialCharacter = [[NSCharacterSet symbolCharacterSet] characterIsMember:c];
+            }
+        }
+        
+        if(specialCharacter && digit && lowerCaseLetter && upperCaseLetter)
+        {
+            //do what u want
+        }
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Password"
+                                                            message:@"Please Ensure that you have at least \n one lower case letter \n one upper case letter \n one digit \n one special character"
+                                                           delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+        
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Password"
+                                                        message:@"Please Enter at least 6 password"
+                                                       delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+
+
 -(BOOL) NSStringIsValidEmail:(NSString *)checkString {
     BOOL stricterFilter = YES;
     NSString *stricterFilterString = @"[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}";
@@ -187,6 +239,7 @@
             else{
                 if ([self NSStringIsValidEmail:txtEmail.text]){
                     if ([txtPasswrod.text isEqual:txtRePassword.text]) {
+                        
                         if (!termsCheckbox) {
                             [self alertStatus:@"Please accept terms and conditions" :@"Error"];
                         }
@@ -196,6 +249,7 @@
                             HUB.labelText = @"Retrieving and validating data…";
                             [HUB showWhileExecuting:@selector(submitData) onTarget:self withObject:nil animated:YES];
                         }
+                        
                     }
                     else{
                         [self alertStatus:@"Password did not match" :@"Error"];
@@ -242,6 +296,7 @@
             else{
                 if ([self NSStringIsValidEmail:txtEmail.text]){
                     if ([txtPasswrod.text isEqual:txtRePassword.text]) {
+                        
                         if (!termsCheckbox) {
                             [self alertStatus:@"Please accept terms and conditions" :@"Error"];
                         }
@@ -251,6 +306,7 @@
                             HUB.labelText = @"Retrieving and validating data…";
                             [HUB showWhileExecuting:@selector(submitData) onTarget:self withObject:nil animated:YES];
                         }
+                        
                     }
                     else{
                         [self alertStatus:@"Password did not match" :@"Error"];
@@ -263,6 +319,7 @@
         }
     }
 }
+
 
 - (void) submitData {
     NSString *strTinNum = @"";
