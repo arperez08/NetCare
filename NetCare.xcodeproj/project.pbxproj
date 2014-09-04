@@ -120,7 +120,6 @@
 		7CB365CA19627E20003E216F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB365C919627E20003E216F /* libz.dylib */; };
 		7CB365D119627ED1003E216F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB365CF19627ED1003E216F /* MainViewController.m */; };
 		7CB365D519627EFF003E216F /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB365D319627EFF003E216F /* SideMenuViewController.m */; };
-		7CB365DA19627F37003E216F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB365D819627F37003E216F /* LoginViewController.m */; };
 		7CB365E619628A98003E216F /* FindProviderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB365E419628A98003E216F /* FindProviderViewController.m */; };
 		7CB365F1196290E3003E216F /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB365EF196290E3003E216F /* AboutViewController.m */; };
 		7CB54B0D19AD68C900F42AB1 /* LaunchImg_Retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CB54B0C19AD68C900F42AB1 /* LaunchImg_Retina.png */; };
@@ -209,6 +208,7 @@
 		7CC9A8681973A6BA00E89DD4 /* shadowline.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9A8671973A6BA00E89DD4 /* shadowline.png */; };
 		7CD142631993504500DBE77A /* IDBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD142611993504500DBE77A /* IDBack.png */; };
 		7CD142641993504500DBE77A /* IDFront.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD142621993504500DBE77A /* IDFront.png */; };
+		7CD870F719B58BE600EB83E2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD870F619B58BE600EB83E2 /* LoginViewController.m */; };
 		7CE794E9199C4EF20096772C /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE794E3199C4EF20096772C /* ChangePasswordViewController.xib */; };
 		7CE794EA199C4EF20096772C /* ClaimsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE794E4199C4EF20096772C /* ClaimsListTableViewCell.xib */; };
 		7CE794EB199C4EF20096772C /* DependentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE794E5199C4EF20096772C /* DependentsTableViewCell.xib */; };
@@ -396,8 +396,6 @@
 		7CB365CF19627ED1003E216F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		7CB365D219627EFF003E216F /* SideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
 		7CB365D319627EFF003E216F /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
-		7CB365D719627F37003E216F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
-		7CB365D819627F37003E216F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		7CB365E319628A98003E216F /* FindProviderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindProviderViewController.h; sourceTree = "<group>"; };
 		7CB365E419628A98003E216F /* FindProviderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindProviderViewController.m; sourceTree = "<group>"; };
 		7CB365EE196290E3003E216F /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
@@ -502,6 +500,8 @@
 		7CC9A8671973A6BA00E89DD4 /* shadowline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadowline.png; sourceTree = "<group>"; };
 		7CD142611993504500DBE77A /* IDBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IDBack.png; sourceTree = "<group>"; };
 		7CD142621993504500DBE77A /* IDFront.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IDFront.png; sourceTree = "<group>"; };
+		7CD870F519B58BE600EB83E2 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		7CD870F619B58BE600EB83E2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7CE794E3199C4EF20096772C /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
 		7CE794E4199C4EF20096772C /* ClaimsListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClaimsListTableViewCell.xib; sourceTree = "<group>"; };
 		7CE794E5199C4EF20096772C /* DependentsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DependentsTableViewCell.xib; sourceTree = "<group>"; };
@@ -789,6 +789,8 @@
 		7CB365CD19627ED1003E216F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7CD870F519B58BE600EB83E2 /* LoginViewController.h */,
+				7CD870F619B58BE600EB83E2 /* LoginViewController.m */,
 				7CB365EE196290E3003E216F /* AboutViewController.h */,
 				7CB365EF196290E3003E216F /* AboutViewController.m */,
 				7CC6CA04199B4B0B003A179C /* ChangePasswordViewController.h */,
@@ -817,8 +819,6 @@
 				7CA90C9F1963D14E00E9545A /* GenSurveyViewController.m */,
 				7C2B156C198B5DCC00F3C06B /* LocationViewController.h */,
 				7C2B156D198B5DCC00F3C06B /* LocationViewController.m */,
-				7CB365D719627F37003E216F /* LoginViewController.h */,
-				7CB365D819627F37003E216F /* LoginViewController.m */,
 				7CB365CE19627ED1003E216F /* MainViewController.h */,
 				7CB365CF19627ED1003E216F /* MainViewController.m */,
 				7CA90C3B196382E900E9545A /* MemberInfoViewController.h */,
@@ -1275,7 +1275,6 @@
 				7CAD29581990BFAF00746285 /* ASIHTTPRequest.m in Sources */,
 				7CAD295D1990BFAF00746285 /* PKRevealController.m in Sources */,
 				7CAD29601990BFAF00746285 /* Reachability.m in Sources */,
-				7CB365DA19627F37003E216F /* LoginViewController.m in Sources */,
 				7CAD29561990BFAF00746285 /* ASIDownloadCache.m in Sources */,
 				7CAD29571990BFAF00746285 /* ASIFormDataRequest.m in Sources */,
 				7CAD29711990BFAF00746285 /* UIBarButtonItem+WEPopover.m in Sources */,
@@ -1308,6 +1307,7 @@
 				7CAD295E1990BFAF00746285 /* PKRevealControllerContainerView.m in Sources */,
 				7C8053191988CA0E00FB6243 /* ProviderListViewController.m in Sources */,
 				7CB961ED199B0F270084AFD5 /* qrspec.c in Sources */,
+				7CD870F719B58BE600EB83E2 /* LoginViewController.m in Sources */,
 				7CB365F1196290E3003E216F /* AboutViewController.m in Sources */,
 				7CAD29591990BFAF00746285 /* ASIInputStream.m in Sources */,
 				7CAD296E1990BFAF00746285 /* TSPopoverController.m in Sources */,
